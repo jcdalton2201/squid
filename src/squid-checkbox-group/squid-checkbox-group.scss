@@ -1,0 +1,38 @@
+:host {
+    border: 0;
+    outline: 0;
+    padding: 0;
+    margin-bottom: 48px;
+    display: block;
+}
+
+.fieldset {
+    border: 0;
+    outline: 0;
+    padding: 0;
+    margin-bottom: 48px;
+    margin-bottom: 0;
+}
+
+.fieldset__legend {
+    font-size: 16px;
+    line-height: 1.5em;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.fieldset__legend [class*="__helper--error"] {
+    font-size: 12px;
+    line-height: 1.5em;
+    font-weight: 400;
+    padding: 0;
+    margin-top: 8px;
+}
+
+.fieldset .form-field:last-of-type {
+    margin-bottom: 0;
+}
+
+.fieldset .form-field:last-of-type {
+    margin-bottom: 0;
+}

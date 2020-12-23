@@ -1,0 +1,45 @@
+@import '../variables';
+#container{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    squid-helpers {            
+        color: var(--red-default,$color-base-red-50);
+    }
+    .label-wrapper{
+        display: flex;
+        justify-content: space-between;
+        color: var(--dark-gray,$color-base-charcoal-70);
+        font-size: .75rem;
+        opacity: .9;
+        letter-spacing: .5px;
+        margin-bottom: var(--padding-small,4px);
+        position: relative;
+        vertical-align: middle; 
+    }
+    label {
+       text-transform: capitalize;
+    }
+    input {
+        border-radius: var(--radius-default,4px);
+        background-image: none;
+        box-shadow: none;
+        font-size: 1rem;
+        height: var(--height-default, 1rem);
+        line-height: 1.5;
+        margin: 0;
+        padding: var(--padding-default,8px);
+        border: 2px solid var(--gray-default,$color-base-charcoal-30);
+        
+        &:disabled {
+            cursor: not-allowed;
+        }
+        &:read-only {
+            cursor: not-allowed;
+        }
+        width: auto;
+        &.textfield__input--error{
+            border: 2px solid var(--red-default,$color-base-red-50);
+        }
+    }
+}

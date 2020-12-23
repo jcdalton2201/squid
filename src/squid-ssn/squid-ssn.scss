@@ -1,0 +1,10 @@
+.toggle-button {
+    color:#255f82;
+    font-size:.85rem;
+    background: none;
+    border:0 none;
+    cursor: pointer;
+    &:hover {
+        color:#013d58;
+    }
+}
