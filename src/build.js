@@ -4,6 +4,7 @@ import './squid-button/squid-button.js';
 import './squid-character-count/squid-character-count.js';
 import './squid-checkbox/squid-checkbox.js';
 import './squid-checkbox-group/squid-checkbox-group.js';
+import './squid-combobox/squid-combobox.js';
 import './squid-currency/squid-currency.js';
 import './squid-dialog/squid-dialog.js';
 import './squid-errors/squid-errors.js';

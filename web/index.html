@@ -6,39 +6,27 @@
     <title>Test Harness</title>
 </head>
 <body>
-    <squid-alert type="global">
-        <p slot="message"><strong class="emphasis">Global alert</strong> message goes here stating the message. </p>
-        <span slot="button-text">Acknowledge</span>
-      </squid-alert>
-    <h2>Success alert</h2>
-<squid-alert type="success">
-  <p slot="message">Message goes here stating the message. </p>
-  <span slot="button-text">Acknowledge</span>
-</squid-alert>
-<h2>Warning alert</h2>
-<squid-alert type="warning">
-  <p slot="message">Message goes here stating the message. </p>
-  <span slot="button-text">Acknowledge</span>
-</squid-alert>
-<h2>Error alert</h2>
-<squid-alert type="error">
-  <p slot="message">Message goes here stating the message. </p>
-  <span slot="button-text">Acknowledge</span>
-</squid-alert>
-<h2>Informational alert</h2>
-<squid-alert type="informational">
-  <p slot="message">Message goes here stating the message. </p>
-  <span slot="button-text">Acknowledge</span>
-</squid-alert>
+    <form action="javascript:void(0)">
+      <squid-combobox id='box' name='box' required>
+        <span slot='label'>Star Wars</span>
+        <option value="ME">Harry Potter</option>
+        <option value="Ron Weasley">Ron Weasley</option>
+        <option value="Hermione Granger">Hermione Granger</option>
+        <option value="Albus Dumbledore">Albus Dumbledore</option>
+        <option value="Severus Snape">Severus Snape</option>
+        <option value="Sirius Black">Sirius Black</option>
+        <option value="Neville 'freaking' Longbottom">Neville Longbottom</option>
+        <option value="Voldemort">He Who Must Not Be Named</option>
+      </squid-combobox>
+      <squid-input required>hello</squid-input>
+      <squid-button>value</squid-button>
+    </form>
 </body>
 <script src='squid-core-ui.js' ></script>
 <script>
-    setTimeout(()=>{
-        document.querySelector('squid-radio-group').value = 'maybe';
-        console.log(document.querySelector('squid-radio-group').value) ;
-    },3000);
-    // document.querySelector('one').addEventListener('formdata',({formData})=>{
-    //     console.log('hello');
-    // });
+  document.querySelector('squid-combobox').data = ['Harry Potter','Ron Weasley','Hermione Granger','Albus Dumbledore','Severus Snape','Sirius Black','Voldemort'];
+  document.querySelector('squid-button').addEventListener('click',(evt)=>{
+    console.log(document.querySelector('squid-combobox').value);
+  })
 </script>
 </html>

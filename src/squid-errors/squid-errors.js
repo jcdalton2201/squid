@@ -62,13 +62,15 @@ export class SquidErrors extends LitElement {
         if(parentHost) {
             setTimeout(()=>{
                 this.describes = parentHost.querySelector('input');
-                this._initInput(this.describes);
-                this._invalidClass = {
-                    checkbox: 'checkbox__input--error',
-                    textarea: 'textfield__textarea--error'
-                }[this.describes.type] || 'textfield__input-error';
-                if(this.describes.tagName === 'SELECT') {
-                    this._invalidClass = 'select__input--error';
+                if(this.describes){
+                    this._initInput(this.describes);
+                    this._invalidClass = {
+                        checkbox: 'checkbox__input--error',
+                        textarea: 'textfield__textarea--error'
+                    }[this.describes.type] || 'textfield__input-error';
+                    if(this.describes.tagName === 'SELECT') {
+                        this._invalidClass = 'select__input--error';
+                    }
                 }
             });
         } else {

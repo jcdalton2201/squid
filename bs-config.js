@@ -29,7 +29,7 @@ module.exports = {
     proxy: false,
     port: 3000,
     middleware: [],
-    serveStatic: ['docs'],
+    serveStatic: ['web','dist'],
     ghostMode: {
         clicks: true,
         scroll: true,
