@@ -2,7 +2,7 @@
 import '../../dist/squid-checkbox/squid-checkbox.js';
 import readme from './readme.md';
 export default {
-    title: 'checkbox'
+    title: 'input'
 };
 
 const temp = (args) => {
