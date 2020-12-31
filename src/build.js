@@ -1,6 +1,7 @@
 import './squid-a/squid-a.js';
 import './squid-alert/squid-alert.js';
 import './squid-button/squid-button.js';
+import './squid-calendar/squid-calendar.js';
 import './squid-character-count/squid-character-count.js';
 import './squid-checkbox/squid-checkbox.js';
 import './squid-checkbox-group/squid-checkbox-group.js';
@@ -18,6 +19,7 @@ import './squid-radio-group/squid-radio-group.js';
 import './squid-ssn/squid-ssn.js';
 import './squid-telephone/squid-telephone.js';
 import './utils/baseElement.js';
+import './utils/dateUtils.js';
 import './utils/defineSquidElement.js';
 import './utils/findParentForm.js';
 import './utils/findShadowRoot.js';

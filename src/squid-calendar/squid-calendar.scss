@@ -1,0 +1,80 @@
+@import '../variables';
+.container{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    max-width: 200px;
+    .header {
+        grid-column: 1 / -1;
+        color: white;
+        // background-color: #005c99;
+        background-color: $color-base-blue-40;
+        padding: 8px;
+        
+    }
+    .left-nav {
+        grid-column: 1/2;
+        padding: 4px;
+        cursor: pointer;
+        background-color: $color-base-charcoal-30;
+        display: flex;
+        justify-content: flex-start;
+    }
+    .middle-nav {
+        grid-column: 2/-2;
+        display: flex;
+        justify-content: center;
+        font-size: .90rem;
+        align-items: center;
+        cursor: pointer;
+        background-color: $color-base-charcoal-30;
+    }
+    .right-nav {
+        grid-column: -1/-2;
+        padding: 4px;
+        cursor: pointer;
+        background-color: $color-base-charcoal-30;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .close-buttons {
+        grid-column: 1/-1;
+        display: flex;
+        justify-content: center;
+        a {
+            margin: 0 4px;
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+    .title {
+        font-size: .90rem;
+        text-align: center;
+    }
+    .day {
+        font-size: .90rem;
+        text-align: center;
+        cursor: pointer;
+        padding: 16% 0;
+        &.selected-date {
+            background-color:$color-base-primary-green;
+            border-radius: 50%;
+            color: $color-base-white;
+        }
+    }
+    .year {
+        font-size: .90rem;
+        text-align: center;
+        cursor: pointer;
+        padding: 16% 0;
+        &.even {
+            grid-column: 2/4;
+        }
+        &.odd {
+            grid-column: 4/6;
+        }
+        
+    }
+    .hide {
+        display: none;
+    }
+}

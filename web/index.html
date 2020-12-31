@@ -7,26 +7,11 @@
 </head>
 <body>
     <form action="javascript:void(0)">
-      <squid-combobox id='box' name='box' required>
-        <span slot='label'>Star Wars</span>
-        <option value="ME">Harry Potter</option>
-        <option value="Ron Weasley">Ron Weasley</option>
-        <option value="Hermione Granger">Hermione Granger</option>
-        <option value="Albus Dumbledore">Albus Dumbledore</option>
-        <option value="Severus Snape">Severus Snape</option>
-        <option value="Sirius Black">Sirius Black</option>
-        <option value="Neville 'freaking' Longbottom">Neville Longbottom</option>
-        <option value="Voldemort">He Who Must Not Be Named</option>
-      </squid-combobox>
-      <squid-input required>hello</squid-input>
-      <squid-button>value</squid-button>
+      <squid-calendar id='cal' name='cal' value='01/05/2020'></squid-calendar>
     </form>
 </body>
 <script src='squid-core-ui.js' ></script>
 <script>
-  document.querySelector('squid-combobox').data = ['Harry Potter','Ron Weasley','Hermione Granger','Albus Dumbledore','Severus Snape','Sirius Black','Voldemort'];
-  document.querySelector('squid-button').addEventListener('click',(evt)=>{
-    console.log(document.querySelector('squid-combobox').value);
-  })
+  
 </script>
 </html>
