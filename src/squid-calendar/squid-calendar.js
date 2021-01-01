@@ -57,18 +57,10 @@ export class SquidCalendar extends BaseElement {
         return html`
             <div data-ref="container" class="container">
                 <div class="header">
-                    ${this.value
-        ? dayOfWeek[this.value.getDay()]
-        : dayOfWeek[this.displayMonth.getDay()]},
-                    ${this.value
-        ? months[this.value.getMonth()].abbr
-        : months[this.displayMonth.getMonth()].abbr}
-                    ${this.value
-        ? this.value.getDate()
-        : this.currentDate.getDate()}
-                    ${this.value
-        ? this.value.getFullYear()
-        : this.currentDate.getFullYear()}
+                    ${this.value ? dayOfWeek[this.value.getDay()] : dayOfWeek[this.displayMonth.getDay()]},
+                    ${this.value ? months[this.value.getMonth()].abbr : months[this.displayMonth.getMonth()].abbr}
+                    ${this.value ? this.value.getDate() : this.currentDate.getDate()}
+                    ${this.value ? this.value.getFullYear() : this.currentDate.getFullYear()}
                 </div>
                 <div class="left-nav"  @click=${this.__decrease}>
                     <svg
@@ -221,7 +213,7 @@ export class SquidCalendar extends BaseElement {
         this.value = new Date(this.displayMonth.getTime());
         this.value.setDate(temp);
         this.requestUpdate();
-        emitEvent('date-selected', null, this);
+        emitEvent('date-selected', {value:this.getAttribute('value')}, this);
     }
     __removeSelectDate() {
         if (this.renderRoot.querySelector('.selected-date')) {

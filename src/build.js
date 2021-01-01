@@ -7,6 +7,7 @@ import './squid-checkbox/squid-checkbox.js';
 import './squid-checkbox-group/squid-checkbox-group.js';
 import './squid-combobox/squid-combobox.js';
 import './squid-currency/squid-currency.js';
+import './squid-datepicker/squid-datepicker.js';
 import './squid-dialog/squid-dialog.js';
 import './squid-errors/squid-errors.js';
 import './squid-input/squid-input.js';
