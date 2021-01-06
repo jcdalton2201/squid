@@ -1,4 +1,7 @@
 @import '../variables';
+squid-helpers {            
+    color: var(--red-default,$color-base-red-50);
+}
 label {
     color: var(--dark-gray,$color-base-charcoal-70);
     font-size: .75rem;

@@ -45,8 +45,9 @@ export class SquidCombobox extends SquidInputBase {
     }
     render(){
         return html`
-<label for="" id='${this.id}-label' class='combobox-label'><slot name='label'></slot></label>
-<div class='combobox-wrapper'>
+<div id="container" data-ref="wrapper">
+    <label for="" id='${this.id}-label' class='combobox-label'><slot name='label'></slot></label>
+    <div class='combobox-wrapper'>
         <div id='${this.id}-combobox'>
             <input type='text' role="combobox"
             aria-labelledby='${this.id}-label'
@@ -77,7 +78,7 @@ export class SquidCombobox extends SquidInputBase {
                 ${option}
             </div>`)}
         </div>
-        
+    </div>
 </div> 
         `;
     }

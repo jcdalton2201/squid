@@ -27,7 +27,7 @@ export class SquidInputBase extends BaseElement {
      */
     get checkValidity() {
         const input = this.__getInput();
-        return input.checkValidity.bind(this);
+        return input.checkValidity.bind(input);
     }
     /**
      * proxy input validity
