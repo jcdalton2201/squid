@@ -19,6 +19,7 @@ import './squid-radio/squid-radio.js';
 import './squid-radio-group/squid-radio-group.js';
 import './squid-ssn/squid-ssn.js';
 import './squid-telephone/squid-telephone.js';
+import './squid-textarea/squid-textarea.js';
 import './utils/baseElement.js';
 import './utils/dateUtils.js';
 import './utils/defineSquidElement.js';

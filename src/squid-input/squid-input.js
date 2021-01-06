@@ -74,7 +74,7 @@ export class SquidInput extends SquidInputBase {
         <div id="container" data-ref="wrapper">
             <div class="label-wrapper">
                 <label class="textfield__label" for="squid-input-${this._uid}" data-ref="label"><slot></slot>${this._showDisabled}</label>
-                <squid-character-count data-ref="counter" ?hidden=${!this.counter} id="counter-${this._uid}" }></squid-character-count>
+                <squid-character-count data-ref="counter" ?hidden=${!this.counter} id="counter-${this._uid}" ></squid-character-count>
             </div>
             <input class="textfield__input" 
                     type="${this._inputType}" 

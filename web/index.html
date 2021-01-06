@@ -7,17 +7,11 @@
 </head>
 <body>
     <form action="javascript:void(0)">
-      <squid-input>First Name</squid-input>
-      <squid-datepicker id='cal' name='cal' >Birth Date</squid-datepicker>
-      <squid-input>Last Name</squid-input>
-      <squid-button>submit</squid-button>
+      <squid-textarea rows="10" required maxlength='10' counter>First Name</squid-textarea>
     </form>
 </body>
 <script src='squid-core-ui.js' ></script>
 <script>
-  document.querySelector('squid-datepicker').value = '01/01/2020';
-  document.querySelector('squid-button').addEventListener('click',()=>{
-    console.log(document.querySelector('squid-datepicker').value)
-  });
+
 </script>
 </html>
