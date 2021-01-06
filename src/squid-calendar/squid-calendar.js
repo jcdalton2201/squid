@@ -40,6 +40,7 @@ export class SquidCalendar extends BaseElement {
             '__toggleYear',
             '__setYear',
             'submit',
+            'close',
         ]);
         const millDate = Date.now();
         this.currentDate = new Date(millDate);
@@ -143,12 +144,15 @@ export class SquidCalendar extends BaseElement {
                     `
     )}
                 <div class="close-buttons">
+                    <a href="javascript:void(0)" @click=${this.close}>CLOSE</a>
                     <a href="javascript:void(0)" @click=${this.submit}>OK</a>
                 </div>
             </div>
         `;
     }
-
+    close() {
+        emitEvent('date-close', null, this);  
+    }
     submit() {
         emitEvent('date-submit', null, this);
     }
