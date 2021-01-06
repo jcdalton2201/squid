@@ -8,6 +8,25 @@ export class SquidDatepicker extends SquidInput {
     static get styles() {
         return [...super.styles, styles];
     }
+    static get properties() {
+        return {
+            value: {
+                type: String,
+                reflect: true,
+                converter: {
+                    toAttribute(value) {
+                        return value.toLocaleDateString();
+                    },
+                    fromAttribute(value) {
+                        if(value){
+                            return new Date(value);
+                        }
+                        return null;
+                    },
+                },
+            },
+        };
+    }
     constructor() {
         super();
         this.bindMethods(['toggleCalendar', 'selectedValue']);
@@ -39,7 +58,7 @@ export class SquidDatepicker extends SquidInput {
                 ?disabled=${this.disabled}
                 ?required=${this.required}
                 ?readonly=${this.readonly}
-                
+                value=${this.value.toLocaleDateString()}
                 ?autofocus=${this.autofocus}
                 ?compact=${this.compact}
                 @input=${this.__onInput}
