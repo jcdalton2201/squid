@@ -1,8 +1,9 @@
 {
   "name": "@populus/squid",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "Component Library for FED at Populus Fin",
   "main": "index.js",
+  "files": ["dist"],
   "scripts": {
     "bs": "browser-sync start -c ./bs-config.js",
     "build": "rollup -c",

@@ -34,7 +34,6 @@ export class SquidDatepicker extends SquidInput {
         <input class="textfield__input" 
                 type="${this._inputType}" 
                 name="squid-input" 
-                value="" 
                 id="squid-input-${this._uid}" 
                 data-ref="input"
                 ?disabled=${this.disabled}
@@ -59,7 +58,10 @@ export class SquidDatepicker extends SquidInput {
     }
     toggleCalendar(){
         const { calendar } = this.refs;
-        calendar.value = new Date(this.value);
+        const newDate = new Date(this.value);
+        if(newDate != 'Invalid Date'){
+            calendar.value = new Date(this.value);
+        }
         calendar.classList.toggle('hide');
     }
     selectedValue(){
