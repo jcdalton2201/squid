@@ -7,11 +7,17 @@
 </head>
 <body>
     <form action="javascript:void(0)">
-      <squid-datepicker value='1/1/2020'>First Name</squid-datepicker>
+      <squid-combobox datalabel='value' datavalue='key' value='Three'>
+        <label slot="label">Component</label>
+      </squid-combobox>
     </form>
 </body>
 <script src='squid-core-ui.js' ></script>
 <script>
-
+const item = document.querySelector('squid-combobox');
+// item.data = [{key:'1',value:'jason'},{key:'2',value:'king'},{key:'3',value:'queen'},{key:'4',value:'jack'}]
+// item.value = '2';
+item.data = ['One', 'Two' ,'Three', 'Four'];
+item.value = 'Two';
 </script>
 </html>

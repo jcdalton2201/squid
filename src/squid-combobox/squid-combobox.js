@@ -9,11 +9,16 @@ export class SquidCombobox extends SquidInputBase {
     }
     static get properties() {
         return {
-            value:{type:String},
+            value:{
+                type:String,
+                attribute:true,
+                reflect:true},
             disabled:{type:Boolean},
             required:{type:Boolean},
             readonly:{type:Boolean},
             autofocus:{type:Boolean},
+            datalabel:{type:String,attribute:true,},
+            datavalue:{type:String,attribute:true}
         };
     }
     constructor() {
@@ -25,23 +30,51 @@ export class SquidCombobox extends SquidInputBase {
         this.addEventListener('blur', this._closeOptions);
     }
     set value(value) {
-        const oldValue = this.renderRoot.querySelector('input').value;
-        if(value !== oldValue) {
-            this.renderRoot.querySelector('input').value = value; 
+        if(this.renderRoot.querySelector('input')){
+            const oldValue = this.renderRoot.querySelector('input').value;
+            if(value !== oldValue) {
+                if(this._objectData){
+                    console.log([...this._objectData.values()]);
+                    const objValue = [...this._objectData.values()].indexOf(value);
+                    this.renderRoot.querySelector('input').value = [...this._objectData.keys()][objValue];
+                } else {
+                    this.renderRoot.querySelector('input').value = value; 
+                }
+            }
+            this.dispatchEvent(new CustomEvent('squid-input-change'));
         }
-        this.dispatchEvent(new CustomEvent('squid-input-change'));
     }
     get value(){
+        if(this._objectData){
+            return this._objectData.get(this.renderRoot.querySelector('input').value);
+        }
         return this.renderRoot.querySelector('input').value;
     }
+    
     set data(value){
+        
         let oldValue = this._data;
-        this._data = value;
+        this._objectData = null;
+        if(value.find(item => typeof item === 'object')) {
+            if(!this.datalabel || !this.datavalue){
+                console.error(`We must have a ${this.datalabel?'':' datalabel '} ${this.datavalue?'':' datavalue '}`);
+            }
+            this._objectData = new Map();
+            value.forEach(item => this._objectData.set(item[this.datalabel],item[this.datavalue]));
+            this._data = [...this._objectData.keys()];
+            console.log(this._data);
+        } else {
+            this._data = value;
+        }
         this._displayData = this._data;
         this.requestUpdate('data',oldValue);
+        if(this.value !== this.getAttribute('value')){
+            this.value = this.getAttribute('value');
+        }
     }
     firstUpdated(){
         this.buildRefs();
+        
     }
     render(){
         return html`

@@ -15,7 +15,10 @@ export class SquidDatepicker extends SquidInput {
                 reflect: true,
                 converter: {
                     toAttribute(value) {
-                        return value.toLocaleDateString();
+                        if(value instanceof Date){
+                            return this.localization.format(value);
+                        } 
+                        return value;
                     },
                     fromAttribute(value) {
                         if(value){
@@ -58,7 +61,7 @@ export class SquidDatepicker extends SquidInput {
                 ?disabled=${this.disabled}
                 ?required=${this.required}
                 ?readonly=${this.readonly}
-                value=${this.value.toLocaleDateString()}
+                value=${this.value ?this.value:''}
                 ?autofocus=${this.autofocus}
                 ?compact=${this.compact}
                 @input=${this.__onInput}
