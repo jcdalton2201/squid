@@ -7,22 +7,10 @@
 </head>
 <body>
     <form action="javascript:void(0)">
-      <squid-select   required>
-       <span slot='label'>England</span>
-       <option value='' ></option>
-       <option value='1'>King</option>
-       <option value='2'>Queen</option>
-      </squid-select>
+      <squid-email>Email</squid-email>
     </form>
 </body>
 <script src='squid-core-ui.js' ></script>
 <script>
-const item = document.querySelector('squid-select');
-item.addEventListener('squid-select-change',(evt) => console.log(evt.currentTarget.value));
-
-// setTimeout(()=>{
-//   const x = document.querySelector('squid-select');
-//   x.value = '1';
-// },4000);
 </script>
 </html>
