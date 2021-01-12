@@ -1,0 +1,67 @@
+@import '../variables';
+
+.container{
+    &[radius="2"]{
+        border-radius: 2px;
+    }
+    &[radius="4"]{
+        border-radius: 4px;
+    }
+    &[padding="tiny"]{
+        padding:8px;
+    }
+    &[padding="small"]{
+        padding:16px;
+    }
+    &[padding="normal"]{
+        padding:24px;
+    }
+    &[padding="medium"]{
+        padding:32px;
+    }
+    &[padding="large"]{
+        padding:48px;
+    }
+    &[padding="xlarge"]{
+        padding:64px;
+    }
+    &[padding="xxlarge"]{
+        padding:96px;
+    }
+    &[margin="tiny"]{
+        margin:8px;
+    }
+    &[margin="small"]{
+        margin:16px;
+    }
+    &[margin="normal"]{
+        margin:24px;
+    }
+    &[margin="medium"]{
+        margin:32px;
+    }
+    &[margin="large"]{
+        margin:48px;
+    }
+    &[margin="xlarge"]{
+        margin:64px;
+    }
+    &[margin="xxlarge"]{
+        margin:96px;
+    }
+    &[elevation]{
+        box-shadow: none;
+    }
+    &[elevation="1"]{
+        box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+    }
+    &[elevation="2"]{
+        box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
+    }
+    &[elevation="3"]{
+        box-shadow: 0 8px 10px -5px rgba(0,0,0,.2), 0 16px 24px 2px rgba(0,0,0,.14), 0 6px 30px 5px rgba(0,0,0,.12);
+    }
+    &[elevation="none"]{
+        box-shadow: none;
+    }
+}
