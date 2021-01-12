@@ -45,10 +45,13 @@ export class SquidCombobox extends SquidInputBase {
         }
     }
     get value(){
-        if(this._objectData){
-            return this._objectData.get(this.renderRoot.querySelector('input').value);
+        if(this.renderRoot.querySelector('input')){
+            if(this._objectData){
+                return this._objectData.get(this.renderRoot.querySelector('input').value);
+            }
+            return this.renderRoot.querySelector('input').value;
         }
-        return this.renderRoot.querySelector('input').value;
+        return '';
     }
     
     set data(value){
@@ -68,9 +71,10 @@ export class SquidCombobox extends SquidInputBase {
         }
         this._displayData = this._data;
         this.requestUpdate('data',oldValue);
-        if(this.value !== this.getAttribute('value')){
-            this.value = this.getAttribute('value');
-        }
+        console.log(this.value, this.getAttribute('value'));
+        // if(this.value !== this.getAttribute('value')){
+        // this.value = this.getAttribute('value');
+        // }
     }
     firstUpdated(){
         this.buildRefs();

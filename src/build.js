@@ -17,6 +17,7 @@ import './squid-number/squid-number.js';
 import './squid-password/squid-password.js';
 import './squid-radio/squid-radio.js';
 import './squid-radio-group/squid-radio-group.js';
+import './squid-select/squid-select.js';
 import './squid-ssn/squid-ssn.js';
 import './squid-telephone/squid-telephone.js';
 import './squid-textarea/squid-textarea.js';
