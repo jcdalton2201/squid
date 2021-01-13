@@ -6,11 +6,12 @@
     <title>Test Harness</title>
 </head>
 <body>
-  <squid-container radius='2' elevation='none' padding='normal' margin='tiny'>
-    <form action="javascript:void(0)">
-      <squid-email>Email</squid-email>
-    </form>
-  </squid-container>
+<squid-accordion >
+  <span slot="summary">This it the title</span>
+  <div slot="content">
+    <p>Hello</p>
+  </div>
+</squid-accordion>
 </body>
 <script src='squid-core-ui.js' ></script>
 <script>

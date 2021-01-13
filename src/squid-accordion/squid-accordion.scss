@@ -1,0 +1,136 @@
+@import '../variables';
+.accordion {
+    box-sizing: border-box;
+    button {
+        background: none;
+        border: 0;
+        margin: 0;
+        padding: 0;
+        text-align: left;
+        margin: 0;
+        margin-bottom: 1rem;
+        font-family: $asset-font-proxima-name, "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+        font-size: 1rem;
+        line-height: 1.5em;
+        font-weight: 600; 
+    }
+    .accordion-item {
+        overflow: hidden;
+        border-top: 1px solid #c9ced2;
+        &:first-child{
+            border-top:0 none;
+        }
+    }
+    .accordion-title{
+        background: none;
+        border: 0;
+        text-align: left;
+        font-family: $asset-font-proxima-name, "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+        font-size: 1rem;
+        line-height: 1.5em;
+        font-weight: 600;
+        box-sizing: border-box;
+        position: relative;
+        width: 100%;
+        display: block;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-left: $size-small;
+        padding-right: $size-small;
+        cursor: pointer;
+        &:hover{
+            outline: 0 none;
+            background-color: #f2f3f4;
+            color: $color-font-tertiary;
+            &::after{
+                z-index: 100;
+                
+                background: url('data:image/svg+xml;utf8,<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class=""><path fill="blue" d="M376 232H216V72c0-4.42-3.58-8-8-8h-32c-4.42 0-8 3.58-8 8v160H8c-4.42 0-8 3.58-8 8v32c0 4.42 3.58 8 8 8h160v160c0 4.42 3.58 8 8 8h32c4.42 0 8-3.58 8-8V280h160c4.42 0 8-3.58 8-8v-32c0-4.42-3.58-8-8-8z" class=""></path></svg>');  
+                background-repeat: no-repeat;
+            }
+        }
+        &:after {
+            content: "";
+            position: absolute;
+            right: $size-small;
+            top: calc(50% - 6px);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 12px;
+            width: 13px;
+            background: url('data:image/svg+xml;utf8,<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class=""><path fill="$color-base-button-progressive-default" d="M376 232H216V72c0-4.42-3.58-8-8-8h-32c-4.42 0-8 3.58-8 8v160H8c-4.42 0-8 3.58-8 8v32c0 4.42 3.58 8 8 8h160v160c0 4.42 3.58 8 8 8h32c4.42 0 8-3.58 8-8V280h160c4.42 0 8-3.58 8-8v-32c0-4.42-3.58-8-8-8z" class=""></path></svg>');  
+            background-repeat: no-repeat;
+
+        }
+        &.accordion-title--active {
+            &:hover {
+                color: $color-base-button-progressive-default;
+                &:after {
+                    height: 12px;
+                    width: 12px;
+                    background: url('data:image/svg+xml;utf8,<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" ><path fill="blue" d="M376 232H8c-4.42 0-8 3.58-8 8v32c0 4.42 3.58 8 8 8h368c4.42 0 8-3.58 8-8v-32c0-4.42-3.58-8-8-8z"></path></svg>');
+                    background-repeat: no-repeat;
+                } 
+            }
+            &:after{
+                content: "";
+                position: absolute;
+                right: $size-small;
+                top: calc(50% - 1px);
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 12px;
+                width: 12px;
+                background: url('data:image/svg+xml;utf8,<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" ><path fill="black" d="M376 232H8c-4.42 0-8 3.58-8 8v32c0 4.42 3.58 8 8 8h368c4.42 0 8-3.58 8-8v-32c0-4.42-3.58-8-8-8z"></path></svg>');
+                background-repeat: no-repeat;
+            }
+        }
+    }
+    .accordion-section {
+        display: block;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 250ms cubic-bezier(0, 0.25, 0.75, 1);
+        will-change: max-height;
+        &.accordion-section--active{
+            max-height: 600px;
+            transition: max-height 250ms ease-in;
+            * {
+                margin-top: 0;
+                padding-top: 0;
+            } 
+        }
+        .accordion-content {
+            padding: $size-small $size-small 1rem;
+        }
+    }
+    &.accordion--dark{
+        .accordion-title{
+            background-color: $color-base-blue-50;
+            color:$color-base-white;
+            &:hover{
+                color:$color-base-white;
+                background-color: $color-base-blue-60;
+            }
+            &:after{
+                background: url('data:image/svg+xml;utf8,<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class=""><path fill="white" d="M376 232H216V72c0-4.42-3.58-8-8-8h-32c-4.42 0-8 3.58-8 8v160H8c-4.42 0-8 3.58-8 8v32c0 4.42 3.58 8 8 8h160v160c0 4.42 3.58 8 8 8h32c4.42 0 8-3.58 8-8V280h160c4.42 0 8-3.58 8-8v-32c0-4.42-3.58-8-8-8z" class=""></path></svg>');
+                background-repeat: no-repeat; 
+            }
+            &.accordion-title--active {
+                &:after{
+                    background: url('data:image/svg+xml;utf8,<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" ><path fill="white" d="M376 232H8c-4.42 0-8 3.58-8 8v32c0 4.42 3.58 8 8 8h368c4.42 0 8-3.58 8-8v-32c0-4.42-3.58-8-8-8z"></path></svg>');
+                    background-repeat: no-repeat;
+                }
+            }
+        }
+        .accordion-section {
+            background-color: $color-base-blue-50;
+            color:$color-base-white;
+        }
+    }
+}
+:host {
+    display: block;
+  }
