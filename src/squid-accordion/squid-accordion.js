@@ -64,7 +64,7 @@ export class SquidAccordion extends BaseElement {
     toggle() {
         this.open = !this.open;
         this.requestUpdate();
-        emitEvent('accordion-toggle',null,this);
+        emitEvent('accordion-toggle',this.open,this);
     }
 }
 defineSquidElement('squid-accordion',SquidAccordion);

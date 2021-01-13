@@ -1,5 +1,6 @@
 import './squid-a/squid-a.js';
 import './squid-accordion/squid-accordion.js';
+import './squid-accordion-group/squid-accordion-group.js';
 import './squid-alert/squid-alert.js';
 import './squid-button/squid-button.js';
 import './squid-calendar/squid-calendar.js';

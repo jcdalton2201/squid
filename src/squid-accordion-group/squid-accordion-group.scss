@@ -1,0 +1,14 @@
+@import '../variables';
+:host {
+    display: block;
+  }
+  
+  ::slotted(squid-accordion) {
+    border-top: 1px solid $color-base-charcoal-50;
+    margin-bottom: 0;
+  }
+  
+  ::slotted(squid-accordion:first-of-type) {
+    border-top: 0;
+  }
+  
