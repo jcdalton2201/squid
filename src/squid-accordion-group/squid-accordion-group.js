@@ -29,7 +29,6 @@ export class SquidAccordionGroup extends BaseElement {
      * @param {Event} evt 
      */
     _manageGroup(evt){
-        console.log(evt);
         if(evt.detail){
             this.querySelectorAll('[open]').forEach(accordion => {
                 if(accordion !== evt.currentTarget) {

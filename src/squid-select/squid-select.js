@@ -58,7 +58,6 @@ export class SquidSelect extends SquidInput {
         this.dispatchEvent(new CustomEvent('squid-select-change'));
     }
     __slotUpdate(){
-        console.log('hello');
         const { input } = this.refs;
         if(this.querySelector('option')){
             input.innerHTML = '';

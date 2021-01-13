@@ -34,7 +34,6 @@ export class SquidCombobox extends SquidInputBase {
             const oldValue = this.renderRoot.querySelector('input').value;
             if(value !== oldValue) {
                 if(this._objectData){
-                    console.log([...this._objectData.values()]);
                     const objValue = [...this._objectData.values()].indexOf(value);
                     this.renderRoot.querySelector('input').value = [...this._objectData.keys()][objValue];
                 } else {
@@ -65,16 +64,11 @@ export class SquidCombobox extends SquidInputBase {
             this._objectData = new Map();
             value.forEach(item => this._objectData.set(item[this.datalabel],item[this.datavalue]));
             this._data = [...this._objectData.keys()];
-            console.log(this._data);
         } else {
             this._data = value;
         }
         this._displayData = this._data;
         this.requestUpdate('data',oldValue);
-        console.log(this.value, this.getAttribute('value'));
-        // if(this.value !== this.getAttribute('value')){
-        // this.value = this.getAttribute('value');
-        // }
     }
     firstUpdated(){
         this.buildRefs();
@@ -240,7 +234,6 @@ export class SquidCombobox extends SquidInputBase {
      */
     _selectValue(evt){
         const item = parseInt(evt.currentTarget.id.replace('result-row-',''));
-        console.log(item);
         const { input } = this.refs;
         input.value = this._displayData[item];
         this.activeElement = undefined;
