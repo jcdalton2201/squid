@@ -16,6 +16,10 @@ export class SquidSelect extends SquidInput {
     firstUpdated(){
         this.buildRefs();
     }
+    get checkValidity() {
+        const input = this.renderRoot.querySelector('select');
+        return input.checkValidity.bind(input);
+    }
     set value(_value){
 
         if(this.renderRoot.querySelector('select')){

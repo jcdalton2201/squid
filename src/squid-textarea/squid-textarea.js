@@ -30,6 +30,10 @@ export class SquidTextarea extends SquidInputBase {
         super();
         this.bindMethods(['__onInput']);
     }
+    get checkValidity() {
+        const input = this.renderRoot.querySelector('textarea');
+        return input.checkValidity.bind(input);
+    }
     set value(value) {
         if(this.renderRoot.querySelector('textarea')){
             const oldValue = this.renderRoot.querySelector('textarea').value;
