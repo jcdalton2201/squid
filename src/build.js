@@ -14,6 +14,7 @@ import './squid-datepicker/squid-datepicker.js';
 import './squid-dialog/squid-dialog.js';
 import './squid-email/squid-email.js';
 import './squid-errors/squid-errors.js';
+import './squid-hero-number/squid-hero-number.js';
 import './squid-input/squid-input.js';
 import './squid-input-base/squid-input-base.js';
 import './squid-input-mask/squid-input-mask.js';
