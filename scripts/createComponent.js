@@ -156,7 +156,7 @@ describe('Unit and Functional Tests for squid-${name}',()=>{
     });
     afterAll(async () => { })
     it('Test the accessibility of ${name}',async()=>{
-        browser = difUtil.setTestName(
+        browser = await difUtil.setTestName(
             'Test the accessibility of ${name}'
         );
         page = await difUtil.createPage(browser);
