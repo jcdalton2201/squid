@@ -19,6 +19,7 @@
     "prestart": "npm run build",
     "pretest": "npm run build",
     "prework": "npm run build",
+    "release": "standard-version",
     "storybook": "start-storybook -p 6006",
     "test": "jasmine spec/**/*.js",
     "prewatchFiles": "npm run lint",
