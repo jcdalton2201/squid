@@ -2,7 +2,7 @@
 const difUtil = require('../diff-util.js');
 const { AxePuppeteer } = require('@axe-core/puppeteer');
 const AxeUtil = require('../axe-util.js');
-xdescribe('Unit and Functional Tests for squid-input-mask',()=>{
+describe('Unit and Functional Tests for squid-input-mask',()=>{
     let browser = null;
     let page = null;
     beforeAll(async () => {
@@ -17,7 +17,7 @@ xdescribe('Unit and Functional Tests for squid-input-mask',()=>{
     });
     afterAll(async () => { });
     it('Test the accessibility of input-mask',async()=>{
-        browser = difUtil.setTestName(
+        browser = await difUtil.setTestName(
             'Test the accessibility of input-mask'
         );
         page = await difUtil.createPage(browser);
@@ -33,7 +33,7 @@ xdescribe('Unit and Functional Tests for squid-input-mask',()=>{
         expect(AxeUtil.isValid(results)).toBeTruthy();
     });
     it('Test the mask will throw error of input-mask',async()=>{
-        browser = difUtil.setTestName(
+        browser = await difUtil.setTestName(
             'Test the accessibility of input-mask'
         );
         page = await difUtil.createPage(browser);

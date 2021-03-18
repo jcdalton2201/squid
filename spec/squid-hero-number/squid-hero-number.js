@@ -2,7 +2,7 @@
 const difUtil = require('../diff-util.js');
 const { AxePuppeteer } = require('@axe-core/puppeteer');
 const AxeUtil = require('../axe-util.js');
-xdescribe('Unit and Functional Tests for squid-hero-number',()=>{
+describe('Unit and Functional Tests for squid-hero-number',()=>{
     let browser = null;
     let page = null;
     beforeAll(async () => {
@@ -17,7 +17,7 @@ xdescribe('Unit and Functional Tests for squid-hero-number',()=>{
     });
     afterAll(async () => { });
     it('Test the accessibility of hero-number',async()=>{
-        browser = difUtil.setTestName(
+        browser = await difUtil.setTestName(
             'Test the accessibility of hero-number'
         );
         page = await difUtil.createPage(browser);
@@ -33,7 +33,7 @@ xdescribe('Unit and Functional Tests for squid-hero-number',()=>{
         expect(AxeUtil.isValid(results)).toBeTruthy();
     });
     it('Test the currency of hero-number',async()=>{
-        browser = difUtil.setTestName(
+        browser = await difUtil.setTestName(
             'Test the currency of hero-number'
         );
         page = await difUtil.createPage(browser);

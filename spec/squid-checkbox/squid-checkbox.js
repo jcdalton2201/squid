@@ -2,7 +2,7 @@
 const difUtil = require('../diff-util.js');
 const { AxePuppeteer } = require('@axe-core/puppeteer');
 const AxeUtil = require('../axe-util.js');
-xdescribe('Unit and Functional Tests for squid-checkbox',()=>{
+describe('Unit and Functional Tests for squid-checkbox',()=>{
     let browser = null;
     let page = null;
     beforeAll(async () => {
@@ -17,7 +17,7 @@ xdescribe('Unit and Functional Tests for squid-checkbox',()=>{
     });
     afterAll(async () => { });
     it('Test the accessibility of checkbox',async()=>{
-        browser = difUtil.setTestName(
+        browser = await difUtil.setTestName(
             'Test the accessibility of checkbox'
         );
         page = await difUtil.createPage(browser);
@@ -33,7 +33,7 @@ xdescribe('Unit and Functional Tests for squid-checkbox',()=>{
         expect(AxeUtil.isValid(results)).toBeTruthy();
     });
     it('Test the click of checkbox',async()=>{
-        browser = difUtil.setTestName(
+        browser = await difUtil.setTestName(
             'Test the click of checkbox'
         );
         page = await difUtil.createPage(browser);
@@ -53,7 +53,7 @@ xdescribe('Unit and Functional Tests for squid-checkbox',()=>{
         expect(value).toEqual('test1');
     });
     it('Test the toggle indeterminate state of checkbox',async()=>{
-        browser = difUtil.setTestName(
+        browser = await difUtil.setTestName(
             'Test toggle indeterminate state of checkbox'
         );
         page = await difUtil.createPage(browser);
@@ -75,7 +75,7 @@ xdescribe('Unit and Functional Tests for squid-checkbox',()=>{
         expect(input2.indeterminate).toBeFalsy();
     });
     it('Test checkbox disabled will work',async()=>{
-        browser = difUtil.setTestName(
+        browser = await difUtil.setTestName(
             'Test checkbox disabled will work'
         );
         page = await difUtil.createPage(browser);

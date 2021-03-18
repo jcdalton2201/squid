@@ -2,7 +2,7 @@
 const difUtil = require('../diff-util.js');
 const { AxePuppeteer } = require('@axe-core/puppeteer');
 const AxeUtil = require('../axe-util.js');
-xdescribe('Unit and Functional Tests for squid-ssn',()=>{
+describe('Unit and Functional Tests for squid-ssn',()=>{
     let browser = null;
     let page = null;
     beforeAll(async () => {
@@ -17,7 +17,7 @@ xdescribe('Unit and Functional Tests for squid-ssn',()=>{
     });
     afterAll(async () => { });
     it('Test the accessibility of ssn',async()=>{
-        browser = difUtil.setTestName(
+        browser = await difUtil.setTestName(
             'Test the accessibility of ssn'
         );
         page = await difUtil.createPage(browser);
@@ -33,7 +33,7 @@ xdescribe('Unit and Functional Tests for squid-ssn',()=>{
         expect(AxeUtil.isValid(results)).toBeTruthy();
     });
     it('Test the typing of ssn',async()=>{
-        browser = difUtil.setTestName(
+        browser = await difUtil.setTestName(
             'Test the typing of ssn'
         );
         page = await difUtil.createPage(browser);
@@ -59,7 +59,7 @@ xdescribe('Unit and Functional Tests for squid-ssn',()=>{
         await button.click();
     });
     it('Test the validating of ssn',async()=>{
-        browser = difUtil.setTestName(
+        browser = await difUtil.setTestName(
             'Test the typing of ssn'
         );
         page = await difUtil.createPage(browser);

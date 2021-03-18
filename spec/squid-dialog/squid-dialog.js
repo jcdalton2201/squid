@@ -2,7 +2,7 @@
 const difUtil = require('../diff-util.js');
 const { AxePuppeteer } = require('@axe-core/puppeteer');
 const AxeUtil = require('../axe-util.js');
-xdescribe('Unit and Functional Tests for squid-dialog',()=>{
+describe('Unit and Functional Tests for squid-dialog',()=>{
     let browser = null;
     let page = null;
     beforeAll(async () => {
@@ -17,7 +17,7 @@ xdescribe('Unit and Functional Tests for squid-dialog',()=>{
     });
     afterAll(async () => { });
     it('Test the accessibility of dialog',async()=>{
-        browser = difUtil.setTestName(
+        browser = await difUtil.setTestName(
             'Test the accessibility of dialog'
         );
         page = await difUtil.createPage(browser);
@@ -34,7 +34,7 @@ xdescribe('Unit and Functional Tests for squid-dialog',()=>{
         expect(AxeUtil.isValid(results)).toBeTruthy();
     });
     it('Test the closing of dialog',async()=>{
-        browser = difUtil.setTestName(
+        browser = await difUtil.setTestName(
             'Test the accessibility of dialog'
         );
         page = await difUtil.createPage(browser);

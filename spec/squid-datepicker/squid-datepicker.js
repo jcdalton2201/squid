@@ -2,7 +2,7 @@
 const difUtil = require('../diff-util.js');
 const { AxePuppeteer } = require('@axe-core/puppeteer');
 const AxeUtil = require('../axe-util.js');
-xdescribe('Unit and Functional Tests for squid-datepicker',()=>{
+describe('Unit and Functional Tests for squid-datepicker',()=>{
     let browser = null;
     let page = null;
     beforeAll(async () => {
@@ -17,7 +17,7 @@ xdescribe('Unit and Functional Tests for squid-datepicker',()=>{
     });
     afterAll(async () => { });
     it('Test the accessibility of datepicker',async()=>{
-        browser = difUtil.setTestName(
+        browser = await difUtil.setTestName(
             'Test the accessibility of datepicker'
         );
         page = await difUtil.createPage(browser);
@@ -33,7 +33,7 @@ xdescribe('Unit and Functional Tests for squid-datepicker',()=>{
         expect(AxeUtil.isValid(results)).toBeTruthy();
     });
     it('Test the toggle of the calendar in datepicker',async()=>{
-        browser = difUtil.setTestName(
+        browser = await difUtil.setTestName(
             'Test the toggle of the calendar in datepicker'
         );
         page = await difUtil.createPage(browser);

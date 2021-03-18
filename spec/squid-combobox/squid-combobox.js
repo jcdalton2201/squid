@@ -2,7 +2,7 @@
 const difUtil = require('../diff-util.js');
 const { AxePuppeteer } = require('@axe-core/puppeteer');
 const AxeUtil = require('../axe-util.js');
-xdescribe('Unit and Functional Tests for squid-combobox',()=>{
+describe('Unit and Functional Tests for squid-combobox',()=>{
     let browser = null;
     let page = null;
     beforeAll(async () => {
@@ -17,7 +17,7 @@ xdescribe('Unit and Functional Tests for squid-combobox',()=>{
     });
     afterAll(async () => { });
     it('Test the accessibility of combobox',async()=>{
-        browser = difUtil.setTestName(
+        browser = await difUtil.setTestName(
             'Test the accessibility of combobox'
         );
         page = await difUtil.createPage(browser);
@@ -36,7 +36,7 @@ xdescribe('Unit and Functional Tests for squid-combobox',()=>{
         expect(AxeUtil.isValid(results)).toBeTruthy();
     });
     it('Test the we will type a char and the select box will open',async()=>{
-        browser = difUtil.setTestName(
+        browser = await difUtil.setTestName(
             'Test the we will type a char and the select box will open'
         );
         page = await difUtil.createPage(browser);
@@ -67,7 +67,7 @@ xdescribe('Unit and Functional Tests for squid-combobox',()=>{
         expect(grid).toEqual('Severus Snape');
     });
     it('Test the we will type a select a item',async()=>{
-        browser = difUtil.setTestName(
+        browser = await difUtil.setTestName(
             'Test the we will type a select a item'
         );
         page = await difUtil.createPage(browser);
@@ -99,7 +99,7 @@ xdescribe('Unit and Functional Tests for squid-combobox',()=>{
         expect(grid2).toEqual('');
     });
     it('Test the we can set the value',async()=>{
-        browser = difUtil.setTestName(
+        browser = await difUtil.setTestName(
             'Test the we can set the value'
         );
         page = await difUtil.createPage(browser);
@@ -121,7 +121,7 @@ xdescribe('Unit and Functional Tests for squid-combobox',()=>{
         expect(grid).toEqual('Harry Potter');
     });
     it('Test the we can set the value to an object',async()=>{
-        browser = difUtil.setTestName(
+        browser = await difUtil.setTestName(
             'Test the we can set the value'
         );
         page = await difUtil.createPage(browser);

@@ -2,7 +2,7 @@
 const difUtil = require('../diff-util.js');
 const { AxePuppeteer } = require('@axe-core/puppeteer');
 const AxeUtil = require('../axe-util.js');
-xdescribe('Unit and Functional Tests for squid-select',()=>{
+describe('Unit and Functional Tests for squid-select',()=>{
     let browser = null;
     let page = null;
     beforeAll(async () => {
@@ -17,7 +17,7 @@ xdescribe('Unit and Functional Tests for squid-select',()=>{
     });
     afterAll(async () => { });
     it('Test the accessibility of select',async()=>{
-        browser = difUtil.setTestName(
+        browser = await difUtil.setTestName(
             'Test the accessibility of select'
         );
         page = await difUtil.createPage(browser);
@@ -36,7 +36,7 @@ xdescribe('Unit and Functional Tests for squid-select',()=>{
         expect(AxeUtil.isValid(results)).toBeTruthy();
     });
     it('Test the select of an option',async()=>{
-        browser = difUtil.setTestName(
+        browser = await difUtil.setTestName(
             'Test the select of an option'
         );
         page = await difUtil.createPage(browser);

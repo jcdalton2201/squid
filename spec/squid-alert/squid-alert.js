@@ -2,7 +2,7 @@
 const difUtil = require('../diff-util.js');
 const { AxePuppeteer } = require('@axe-core/puppeteer');
 const AxeUtil = require('../axe-util.js');
-xdescribe('Unit and Functional Tests for squid-alert',()=>{
+describe('Unit and Functional Tests for squid-alert',()=>{
     let browser = null;
     let page = null;
     beforeAll(async () => {
@@ -17,7 +17,7 @@ xdescribe('Unit and Functional Tests for squid-alert',()=>{
     });
     afterAll(async () => { });
     it('Test the accessibility of alert',async()=>{
-        browser = difUtil.setTestName(
+        browser = await difUtil.setTestName(
             'Test the accessibility of alert'
         );
         page = await difUtil.createPage(browser);
@@ -34,7 +34,7 @@ xdescribe('Unit and Functional Tests for squid-alert',()=>{
         expect(AxeUtil.isValid(results)).toBeTruthy();
     });
     it('Test we can remove the alert', async()=>{
-        browser = difUtil.setTestName(
+        browser = await difUtil.setTestName(
             'Test the accessibility of alert'
         );
         page = await difUtil.createPage(browser);
@@ -55,7 +55,7 @@ xdescribe('Unit and Functional Tests for squid-alert',()=>{
         expect(alert).toBeFalsy();
     });
     it('Test we can remove the alert with ack', async()=>{
-        browser = difUtil.setTestName(
+        browser = await difUtil.setTestName(
             'Test the accessibility of alert with ack'
         );
         page = await difUtil.createPage(browser);

@@ -2,7 +2,7 @@
 const difUtil = require('../diff-util.js');
 const { AxePuppeteer } = require('@axe-core/puppeteer');
 const AxeUtil = require('../axe-util.js');
-xdescribe('Unit and Functional Tests for squid-radio',()=>{
+describe('Unit and Functional Tests for squid-radio',()=>{
     let browser = null;
     let page = null;
     beforeAll(async () => {
@@ -17,7 +17,7 @@ xdescribe('Unit and Functional Tests for squid-radio',()=>{
     });
     afterAll(async () => { });
     it('Test the accessibility of radio-group',async()=>{
-        browser = difUtil.setTestName(
+        browser = await difUtil.setTestName(
             'Test the accessibility of radio-group'
         );
         page = await difUtil.createPage(browser);
@@ -35,7 +35,7 @@ xdescribe('Unit and Functional Tests for squid-radio',()=>{
         expect(AxeUtil.isValid(results)).toBeTruthy();
     });
     it('Test the click on no and value for group is no',async()=>{
-        browser = difUtil.setTestName(
+        browser = await difUtil.setTestName(
             'Test the click on no and value for group is no'
         );
         page = await difUtil.createPage(browser);
@@ -57,7 +57,7 @@ xdescribe('Unit and Functional Tests for squid-radio',()=>{
         expect(value).toEqual('no');
     });
     it('Test the keyup and keydown with space will set a group.',async()=>{
-        browser = difUtil.setTestName(
+        browser = await difUtil.setTestName(
             'Test the keyup and keydown with space will set a group'
         );
         page = await difUtil.createPage(browser);
@@ -92,7 +92,7 @@ xdescribe('Unit and Functional Tests for squid-radio',()=>{
         expect(value).toEqual('maybe');
     });
     it('Test the hardset of a group.',async()=>{
-        browser = difUtil.setTestName(
+        browser = await difUtil.setTestName(
             'Test the hardset of a group.'
         );
         page = await difUtil.createPage(browser);

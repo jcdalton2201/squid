@@ -2,7 +2,7 @@
 const difUtil = require('../diff-util.js');
 const { AxePuppeteer } = require('@axe-core/puppeteer');
 const AxeUtil = require('../axe-util.js');
-xdescribe('Unit and Functional Tests for squid-calendar',()=>{
+describe('Unit and Functional Tests for squid-calendar',()=>{
     let browser = null;
     let page = null;
     beforeAll(async () => {
@@ -17,7 +17,7 @@ xdescribe('Unit and Functional Tests for squid-calendar',()=>{
     });
     afterAll(async () => { });
     it('Test the accessibility of calendar',async()=>{
-        browser = difUtil.setTestName(
+        browser = await difUtil.setTestName(
             'Test the accessibility of calendar'
         );
         page = await difUtil.createPage(browser);
@@ -31,7 +31,7 @@ xdescribe('Unit and Functional Tests for squid-calendar',()=>{
         expect(AxeUtil.isValid(results)).toBeTruthy();
     });
     it('Test the increase and descrese will work',async()=>{
-        browser = difUtil.setTestName(
+        browser = await difUtil.setTestName(
             'Test the increase and descrese will work'
         );
         page = await difUtil.createPage(browser);
@@ -67,7 +67,7 @@ xdescribe('Unit and Functional Tests for squid-calendar',()=>{
         expect(year).toEqual(2017);
     });
     it('Test the default year is this year',async()=>{
-        browser = difUtil.setTestName(
+        browser = await difUtil.setTestName(
             'Test the default year is this year'
         );
         page = await difUtil.createPage(browser);
@@ -82,7 +82,7 @@ xdescribe('Unit and Functional Tests for squid-calendar',()=>{
         expect(year).toEqual(current);
     });
     it('Test the selecting a date will change the value',async()=>{
-        browser = difUtil.setTestName(
+        browser = await difUtil.setTestName(
             'Test the selecting a date will change the value'
         );
         page = await difUtil.createPage(browser);

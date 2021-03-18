@@ -1,6 +1,7 @@
-const Differencify = require('differencify');
+const puppeteer = require('puppeteer');
+// const Differencify = require('differencify');
 const coverageUtil = require('./coverage-util.js');
-const differencify = new Differencify({});
+// const differencify = new Differencify({});
 let browser = null;
 let page = null;
 jasmine.getEnv().addReporter({
@@ -15,23 +16,17 @@ jasmine.getEnv().addReporter({
     }
 });
 
-module.exports.setTestName = function setTestName(name) {
+module.exports.setTestName = async function setTestName() {
     jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
     if(!browser) {
-        browser = differencify.init({
-            testName: name,
-            chain: false,
-            headless: false,
-        });
-    } else {
-        browser.setTestName('name');
+        browser = await puppeteer.launch({ headless: true });
     }
     return browser;
 
 };
 module.exports.createPage = async function createPage(browser) {
     if(!page){
-        await browser.launch({ headless: true, product: 'chrome' });
+        // await browser.launch({ headless: true, product: 'chrome' });
         page =  await browser.newPage();
         coverageUtil.startCoverage(page);
     }

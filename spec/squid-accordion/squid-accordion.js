@@ -2,7 +2,7 @@
 const difUtil = require('../diff-util.js');
 const { AxePuppeteer } = require('@axe-core/puppeteer');
 const AxeUtil = require('../axe-util.js');
-xdescribe('Unit and Functional Tests for squid-accordion',()=>{
+describe('Unit and Functional Tests for squid-accordion',()=>{
     let browser = null;
     let page = null;
     beforeAll(async () => {
@@ -17,7 +17,7 @@ xdescribe('Unit and Functional Tests for squid-accordion',()=>{
     });
     afterAll(async () => { });
     it('Test the accessibility of accordion',async()=>{
-        browser = difUtil.setTestName(
+        browser = await difUtil.setTestName(
             'Test the accessibility of accordion'
         );
         page = await difUtil.createPage(browser);
@@ -36,7 +36,7 @@ xdescribe('Unit and Functional Tests for squid-accordion',()=>{
         expect(AxeUtil.isValid(results)).toBeTruthy();
     });
     it('Test the toggle of accordion',async()=>{
-        browser = difUtil.setTestName(
+        browser = await difUtil.setTestName(
             'Test the toggle of accordion'
         );
         page = await difUtil.createPage(browser);
