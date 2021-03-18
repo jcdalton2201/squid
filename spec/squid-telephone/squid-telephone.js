@@ -2,7 +2,7 @@
 const difUtil = require('../diff-util.js');
 const { AxePuppeteer } = require('@axe-core/puppeteer');
 const AxeUtil = require('../axe-util.js');
-describe('Unit and Functional Tests for squid-telephone',()=>{
+xdescribe('Unit and Functional Tests for squid-telephone',()=>{
     let browser = null;
     let page = null;
     beforeAll(async () => {

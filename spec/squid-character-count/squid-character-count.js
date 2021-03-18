@@ -1,7 +1,7 @@
 const difUtil = require('../diff-util.js');
 const { AxePuppeteer } = require('@axe-core/puppeteer');
 const AxeUtil = require('../axe-util.js');
-describe('Unit and Functional Tests for squid-character-count',()=>{
+xdescribe('Unit and Functional Tests for squid-character-count',()=>{
     let browser = null;
     let page = null;
     beforeAll(async () => {
@@ -43,7 +43,7 @@ describe('Unit and Functional Tests for squid-character-count',()=>{
         await page.evaluate(element => {
             element.innerHTML =
                 `<squid-character-count  id="test">Jason</squid-character-count>
-                <input aria-describedby="test" maxlength='5'>`;
+                <input aria-xdescribedby="test" maxlength='5'>`;
         }, bodyhandle);
         await page.waitForSelector('squid-character-count');
         const input = await page.evaluateHandle(body => {

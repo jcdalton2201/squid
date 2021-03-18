@@ -3,7 +3,7 @@ const difUtil = require('../diff-util.js');
 const { AxePuppeteer } = require('@axe-core/puppeteer');
 const AxeUtil = require('../axe-util.js');
 
-describe('Unit and Functional Tests for squid-currency',()=>{
+xdescribe('Unit and Functional Tests for squid-currency',()=>{
     let browser = null;
     let page = null;
     beforeAll(async () => {
@@ -68,7 +68,7 @@ describe('Unit and Functional Tests for squid-currency',()=>{
         // const [jsCoverage] = await coverageUtil.stopCoverage(page);
         // await coverageUtil.displayCoverage(jsCoverage,{include:['squid-core-ui.js']});
     });
-    it('Test the max of currency',async(done)=>{
+    it('Test the max of currency',async()=>{
         
         browser = difUtil.setTestName(
             'Test the max of currency'
@@ -93,8 +93,6 @@ describe('Unit and Functional Tests for squid-currency',()=>{
         const errorMessage = await page.$eval('squid-currency', el => el.shadowRoot.querySelector('squid-helpers')._message);
         expect(results).toBeTruthy();
         expect(errorMessage).toEqual('The value does not fit in the necessary range');
-        // const [jsCoverage] = await coverageUtil.stopCoverage(page);
-        // await coverageUtil.displayCoverage(jsCoverage,{include:['squid-core-ui.js']});
-        done();
+
     });
 });

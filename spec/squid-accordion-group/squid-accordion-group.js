@@ -3,7 +3,7 @@ const difUtil = require('../diff-util.js');
 const { AxePuppeteer } = require('@axe-core/puppeteer');
 const AxeUtil = require('../axe-util.js');
 
-describe('Unit and Functional Tests for squid-accordion-group',()=>{
+xdescribe('Unit and Functional Tests for squid-accordion-group',()=>{
     let browser = null;
     let page = null;
 

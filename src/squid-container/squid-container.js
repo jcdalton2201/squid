@@ -24,8 +24,16 @@ export class SquidContainer extends BaseElement {
             margin:{
                 type:String,
                 attribute:true
-            }
+            },
+            bgColor:{
+                type:String,
+                attribute:true
+            },
         };
+    }
+    constructor() {
+        super();
+        this.bgColor = 'white';
     }
     render(){
         return html`
@@ -34,6 +42,7 @@ export class SquidContainer extends BaseElement {
             padding="${this.padding ? this.padding:''}"
             elevation="${this.elevation ? this.elevation:''}"
             margin="${this.margin ? this.margin:''}"
+            style="background-color:${this.bgColor}"
         
         ><slot></slot></div>
         `;
