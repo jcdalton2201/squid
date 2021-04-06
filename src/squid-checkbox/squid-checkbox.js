@@ -58,7 +58,7 @@ export class SquidCheckbox extends SquidInputBase {
                     ?autofocus=${this.autofocus}
                     ?compact=${this.compact}
                     ?checked=${this.checked}
-                    ?aria-checked=${this.checked}
+                    aria-checked=${this.checked}
                     @change=${this.__onChange}
                     aria-describedby="helpers-${this._uid}"
                 />
@@ -81,6 +81,7 @@ export class SquidCheckbox extends SquidInputBase {
      * @param {Event} evt onChange Event
      */
     __onChange(evt){
+        console.log('onchange');
         if(this.checked !== evt.currentTarget.checked) {
             this.checked = evt.currentTarget.checked;
         }

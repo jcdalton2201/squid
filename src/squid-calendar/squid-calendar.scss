@@ -15,7 +15,7 @@
         grid-column: 1/2;
         padding: 4px;
         cursor: pointer;
-        background-color: $color-base-charcoal-30;
+        background-color: $color-base-gray-80;
         display: flex;
         justify-content: flex-start;
     }
@@ -26,13 +26,13 @@
         font-size: .90rem;
         align-items: center;
         cursor: pointer;
-        background-color: $color-base-charcoal-30;
+        background-color: $color-base-gray-80;
     }
     .right-nav {
         grid-column: -1/-2;
         padding: 4px;
         cursor: pointer;
-        background-color: $color-base-charcoal-30;
+        background-color: $color-base-gray-80;
         display: flex;
         justify-content: flex-end;
     }
@@ -56,7 +56,7 @@
         cursor: pointer;
         padding: 16% 0;
         &.selected-date {
-            background-color:$color-base-primary-green;
+            background-color:$color-base-green-30;
             border-radius: 50%;
             color: $color-base-white;
         }

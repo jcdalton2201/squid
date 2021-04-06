@@ -26,6 +26,7 @@ import './squid-select/squid-select.js';
 import './squid-ssn/squid-ssn.js';
 import './squid-telephone/squid-telephone.js';
 import './squid-textarea/squid-textarea.js';
+import './squid-toggle/squid-toggle.js';
 import './utils/baseElement.js';
 import './utils/dateUtils.js';
 import './utils/defineSquidElement.js';

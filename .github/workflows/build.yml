@@ -1,0 +1,33 @@
+name: CI
+
+on: 
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      
+      - name: apt update
+        run : apt-get update -y -q
+      - name: insall libx11-xcb1
+        run: apt-get install libx11-xcb1
+      - name: insall libnss3-dev
+        run: apt-get install libnss3-dev
+      - uses: actions/checkout@v2
+      - name: update permissions
+        run: |
+          cd ..
+          sudo chmod -R 777 .
+      - name: NPM installs
+        run: npm install
+      - name: build src
+        run: npm run build
+      - name: build chrome
+        run: node node_modules/puppeteer/install.js
+      - name: run lint
+        run: npm run lint
+      - name: coverage test
+        run: npm run coverage

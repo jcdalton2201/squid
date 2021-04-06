@@ -9,7 +9,7 @@
     .label-wrapper{
         display: flex;
         justify-content: space-between;
-        color: var(--dark-gray,$color-base-charcoal-70);
+        color: var(--dark-gray,$color-base-gray-30);
         font-size: .75rem;
         opacity: .9;
         letter-spacing: .5px;
@@ -29,7 +29,7 @@
         line-height: 1.5;
         margin: 0;
         padding: var(--padding-default,8px);
-        border: 2px solid var(--gray-default,$color-base-charcoal-30);
+        border: 2px solid var(--gray-default,$color-base-gray-30);
         
         &:disabled {
             cursor: not-allowed;

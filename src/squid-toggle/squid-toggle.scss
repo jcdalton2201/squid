@@ -1,0 +1,70 @@
+@import "../variables";
+#container {
+    .toggle-wrapper {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 12px;
+    }
+    .label-wrapper{
+        color: var(--dark-gray,$color-base-gray-30);
+        font-size: .75rem;
+        opacity: .9;
+        letter-spacing: .5px;
+        margin-bottom: var(--padding-small,4px);
+        vertical-align: middle; 
+    }
+    label {
+       text-transform: capitalize;
+    }
+    input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+        &:focus + .simpleToggleSwitch {
+            box-shadow: 0 0 1px 2px $color-base-focus-ring;
+          }
+        &:disabled + .simpleToggleSwitch{
+            cursor: not-allowed;
+        }
+        &:read-only + .simpleToggleSwitch{
+            cursor: not-allowed;
+        }
+    }
+    .simpleToggleSwitch {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--toggle-color-track-background-unchecked,$toggle-color-track-background-unchecked);
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+        border-radius: 34px;
+        &:before {
+            position: absolute;
+            content: "";
+            height: 24px;
+            width: 24px;
+            left: 4px;
+            bottom: -6px;
+            background-color: var(--toggle-color-button-background-unchecked, $toggle-color-button-background-unchecked);
+            -webkit-transition: 0.4s;
+            transition: 0.4s;
+            border-radius: 50%;
+        }
+    }
+    .checkbox_toggle:checked {
+        opacity: 1;
+    }
+    .checkbox_toggle:checked + .simpleToggleSwitch {
+        background-color: var(--toggle-color-track-background-unchecked,$toggle-color-track-background-checked);
+    }
+    .checkbox_toggle:checked + .simpleToggleSwitch:before {
+        background-color: var(--toggle-color-button-background-checked,$toggle-color-button-background-checked);
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
+}

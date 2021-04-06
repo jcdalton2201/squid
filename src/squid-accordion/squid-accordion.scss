@@ -9,7 +9,7 @@
         text-align: left;
         margin: 0;
         margin-bottom: 1rem;
-        font-family: $asset-font-proxima-name, "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+        font-family: $font-cabin-name, "Helvetica Neue", "Helvetica", "Arial", sans-serif;
         font-size: 1rem;
         line-height: 1.5em;
         font-weight: 600; 
@@ -25,7 +25,7 @@
         background: none;
         border: 0;
         text-align: left;
-        font-family: $asset-font-proxima-name, "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+        font-family: $font-cabin-name, "Helvetica Neue", "Helvetica", "Arial", sans-serif;
         font-size: 1rem;
         line-height: 1.5em;
         font-weight: 600;
@@ -43,7 +43,7 @@
         &:hover{
             outline: 0 none;
             background-color: #f2f3f4;
-            color: $color-font-tertiary;
+            color: $color-font-secondary;
             &::after{
                 z-index: 100;
                 
@@ -60,13 +60,13 @@
             background-size: cover;
             height: 12px;
             width: 13px;
-            background: url('data:image/svg+xml;utf8,<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class=""><path fill="$color-base-button-progressive-default" d="M376 232H216V72c0-4.42-3.58-8-8-8h-32c-4.42 0-8 3.58-8 8v160H8c-4.42 0-8 3.58-8 8v32c0 4.42 3.58 8 8 8h160v160c0 4.42 3.58 8 8 8h32c4.42 0 8-3.58 8-8V280h160c4.42 0 8-3.58 8-8v-32c0-4.42-3.58-8-8-8z" class=""></path></svg>');  
+            background: url('data:image/svg+xml;utf8,<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class=""><path fill="$color-base-gray-50" d="M376 232H216V72c0-4.42-3.58-8-8-8h-32c-4.42 0-8 3.58-8 8v160H8c-4.42 0-8 3.58-8 8v32c0 4.42 3.58 8 8 8h160v160c0 4.42 3.58 8 8 8h32c4.42 0 8-3.58 8-8V280h160c4.42 0 8-3.58 8-8v-32c0-4.42-3.58-8-8-8z" class=""></path></svg>');  
             background-repeat: no-repeat;
 
         }
         &.accordion-title--active {
             &:hover {
-                color: $color-base-button-progressive-default;
+                color: $color-base-gray-50;
                 &:after {
                     height: 12px;
                     width: 12px;

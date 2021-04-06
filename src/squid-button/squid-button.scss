@@ -1,23 +1,23 @@
 @import '../variables';
 button {
-    border-radius: $size-tiny;
+    border-radius: $button-space-border-radius-default;
     box-sizing: border-box;
     cursor: pointer;
     display: inline-block;
-    font-family: $asset-font-proxima-name, "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-    font-size: 20px;
+    font-family: $font-cabin-name, "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-size: $button-font-size-defaut;
     font-weight: 400;
-    height: $size-x-large;
-    line-height: $size-x-large;
+    height: $button-space-height-default;
+    line-height: $button-space-line-height-default;
     min-width: 100%;
     text-align: center;
     text-decoration: none;
     white-space: nowrap;
     margin: 0;
-    padding: 0 $size-normal;
-    background: $color-base-button-progressive-default;
+    padding: $button-space-padding-default;
+    background: $button-color-background-action-default;
     border: 0;
-    color: $color-base-white;
+    color: $button-color-text-action-default;
     slot {
         &[loading] {
             display: none;
@@ -26,21 +26,21 @@ button {
     &.small {
         min-width: auto;
         height: fit-content;
-        padding: $size-tiny;
-        font-size: .75rem;
-        line-height: 1rem;
+        padding: $button-space-padding-tiny;
+        font-size: $button-font-size-very-small;
+        line-height: $button-space-height-small;
     }
     &:visited {
-        color: $color-base-white ;
+        color: $button-color-text-action-default ;
     }
     &:hover {
-        background: $color-base-button-progressive-hover;
-        color: $color-base-white;
+        background: $button-color-background-progressive-hover;
+        color: $button-color-text-action-hover;
         text-decoration: none;
     }
     &:active {
-        background: $color-base-button-progressive-active;
-        color: $color-base-white;
+        background: $button-color-background-progressive-active;
+        color: $button-color-text-action-default;
         text-decoration: none;
     }
    
@@ -51,23 +51,23 @@ button {
         height: auto;
         min-width: initial;
         padding: 0;
-        color: $color-base-button-progressive-default;
+        color: $button-color-text-default-default;
         &:hover {
-            color: $color-base-button-progressive-hover;
+            color: $button-color-text-default-hover;
             text-decoration: underline 
         }
         &:active {
-            color: $color-base-button-progressive-active;
+            color: $button-color-text-default-active;
             text-decoration: underline 
         }
         &:disabled {
-            color: $color-base-button-progressive-disabled;
+            color: $button-color-text-default-disabled;
             text-decoration: none;
             cursor: not-allowed;
         }
         &::before {
             content: "";
-            border: solid $color-base-button-progressive-default;
+            border: solid $button-color-text-default-default;
             border-width: 0 2px 2px 0;
             content: "";
             display: inline-block;
@@ -78,15 +78,15 @@ button {
             transform: rotate(135deg);
             -webkit-transform: rotate(135deg);
             &:hover {
-                color: $color-base-button-progressive-hover;
+                color: $button-color-text-default-hover;
                 text-decoration: underline 
             }
             &:active {
-                color: $color-base-button-progressive-active;
+                color: $button-color-text-default-active;
                 text-decoration: underline 
             }
             &:disabled {
-                color: $color-base-button-progressive-disabled;
+                color: $button-color-text-default-disabled;
                 text-decoration: none;
                 cursor: not-allowed;
             }
@@ -99,23 +99,23 @@ button {
         height: auto;
         min-width: initial;
         padding: 0;
-        color: $color-base-button-progressive-default;
+        color: $button-color-text-default-default;
         &:hover {
-            color: $color-base-button-progressive-hover;
+            color: $button-color-text-default-hover;
             text-decoration: underline ;
         }
         &:active {
-            color: $color-base-button-progressive-active;
+            color: $button-color-text-default-active;
             text-decoration: underline ;
         }
         &:disabled {
-            color: $color-base-button-progressive-disabled;
+            color: $button-color-text-default-disabled;
             text-decoration: none;
             cursor: not-allowed;
         }
         &::after {
             content: "";
-            border: solid $color-base-button-progressive-default;
+            border: solid $button-color-text-default-default;
             border-width: 0 2px 2px 0;
             content: "";
             display: inline-block;
@@ -126,22 +126,22 @@ button {
             transform: rotate(-45deg);
             -webkit-transform: rotate(-45deg);
             &:hover {
-                color: $color-base-button-progressive-hover;
+                color: $button-color-text-default-hover;
                 text-decoration: underline 
             }
             &:active {
-                color: $color-base-button-progressive-active;
+                color: $button-color-text-default-active;
                 text-decoration: underline 
             }
             &:disabled {
-                color: $color-base-button-progressive-disabled;
+                color: $button-color-text-default-disabled;
                 text-decoration: none;
                 cursor: not-allowed;
             }
         }
     }
     &.action{
-        background: $color-base-button-action-default;
+        background: $button-color-background-action-default;
         &:hover {
           filter: brightness(120%) saturate(120%);   
         }
@@ -151,31 +151,31 @@ button {
         
     }
     &.progressive {
-        background: $color-base-button-progressive-default;
+        background: $button-color-background-progressive-default;
         &:hover {
-            background: $color-base-button-progressive-hover;   
+            background: $button-color-background-progressive-hover;   
         }
         &:active {
-            background: $color-base-button-progressive-active;
+            background: $button-color-background-progressive-active;
         }
     }
     &.regressive {
-        background: $color-base-button-regressive-default;
+        background: $button-color-background-regressive-default;
         &:hover {
-            background: $color-base-button-regressive-hover;   
+            background: $button-color-background-regressive-hover;   
         }
         &:active {
-            background: $color-base-button-regressive-active;
+            background: $button-color-background-regressive-active;
         }
     }
     &.destructive {
-        background: $color-base-button-destructive-default;
+        background: $button-color-background-destructive-default;
         
         &:hover {
-            background: $color-base-button-destructive-hover;   
+            background: $button-color-background-destructive-hover;   
         }
         &:active {
-            background: $color-base-button-destructive-active;
+            background: $button-color-background-destructive-active;
         }
     }
     &.text {
@@ -185,30 +185,30 @@ button {
         height: auto;
         min-width: initial;
         padding: 0;
-        color: $color-base-button-progressive-default;
+        color: $button-color-text-default-default;
         &:hover {
-            color: $color-base-button-progressive-hover;
+            color: $button-color-text-default-hover;
             text-decoration: underline ;
         }
         &:active {
-            color: $color-base-button-progressive-active;
+            color: $button-color-text-default-active;
             text-decoration: underline ;
         }
         &:disabled {
-            color: $color-base-button-progressive-disabled;
+            color: $button-color-text-default-disabled;
             text-decoration: none;
             cursor: not-allowed;
         }
     }
     &:disabled {
-        color: $color-base-button-progressive-disabled;
-        background: $color-base-charcoal-50;
-        border-color: $color-base-charcoal-50;
+        color: $button-color-text-default-disabled;
+        background: $color-base-gray-50;
+        border-color: $color-base-gray-50;
         cursor: not-allowed;
         &:hover {
-            color: $color-base-button-progressive-disabled;
-            background: $color-base-charcoal-50;
-            border-color: $color-base-charcoal-50;
+            color: $button-color-text-default-disabled;
+            background: $color-base-gray-50;
+            border-color: $color-base-gray-50;
             text-decoration: none;
         }
     }

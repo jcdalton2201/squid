@@ -42,5 +42,13 @@ or an Array of objects with datalabel and datavalue attributes set|
 ```html
 <squid-combobox name="world" placeholder="Harry Potter characters">
   <label slot="label">Favorite Harry Potter Character</label>
+  <option value="ME">Harry Potter</option>
+  <option value="Ron Weasley">Ron Weasley</option>
+  <option value="Hermione Granger">Hermione Granger</option>
+  <option value="Albus Dumbledore">Albus Dumbledore</option>
+  <option value="Severus Snape">Severus Snape</option>
+  <option value="Sirius Black">Sirius Black</option>
+  <option value="Neville 'freaking' Longbottom">Neville Longbottom</option>
+  <option value="Voldemort">He Who Must Not Be Named</option>
 </squid-combobox>
 ```
