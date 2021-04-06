@@ -59,7 +59,7 @@
         opacity: 1;
     }
     .checkbox_toggle:checked + .simpleToggleSwitch {
-        background-color: var(--toggle-color-track-background-unchecked,$toggle-color-track-background-checked);
+        background-color: var(--toggle-color-track-background-checked,$toggle-color-track-background-checked);
     }
     .checkbox_toggle:checked + .simpleToggleSwitch:before {
         background-color: var(--toggle-color-button-background-checked,$toggle-color-button-background-checked);
