@@ -1,0 +1,82 @@
+@import "../variables";
+.drawer-wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    .drawer-background {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+        -webkit-transition: opacity 0.2s ease-in-out;
+        -o-transition: opacity 0.2s ease-in-out;
+        transition: opacity 0.2s ease-in-out;
+        background-color: #b2b2bf;
+        opacity: 0.7;
+        overflow: hidden;
+    }
+    .drawer-containter {
+        position: fixed;
+        &.right {
+            right: 0;
+            -webkit-transform: translate(100%);
+            -ms-transform: translate(100%);
+            transform: translate(100%);
+        }
+        &.left {
+            left: 0;
+            -webkit-transform: translate(-100%);
+            -ms-transform: translate(-100%);
+            transform: translate(-100%);
+        }
+        display: -ms-flexbox;
+        display: flex;
+        z-index: 1100;
+        width: 90%;
+        max-width: 25.125rem;
+        height: 100%;
+        -ms-flex-direction: column;
+        flex-direction: column;
+
+        -webkit-transition: -webkit-transform 0.2s ease;
+        transition: -webkit-transform 0.2s ease;
+        -o-transition: transform 0.2s ease;
+        transition: transform 0.2s ease;
+        transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+        outline: 0;
+        background: #fff;
+        overflow-y: scroll;
+        &.display {
+            -webkit-transform: translate(0);
+            -ms-transform: translate(0);
+            transform: translate(0);
+        }
+        .drawer-containter-headeer {
+            display: flex;
+            min-height: 3rem;
+            padding: 0.75rem;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            -ms-flex: 0 0;
+            flex: 0 0;
+            -webkit-box-shadow: 0 -1px 0 0 #dddde5 inset;
+            box-shadow: inset 0 -1px 0 0 #dddde5;
+            button {
+                border: none;
+                cursor: pointer;
+            }
+        }
+    }
+    .drawer-content {
+        padding: $size-padding-small;
+    }
+}

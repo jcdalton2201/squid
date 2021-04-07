@@ -12,6 +12,7 @@ import './squid-container/squid-container.js';
 import './squid-currency/squid-currency.js';
 import './squid-datepicker/squid-datepicker.js';
 import './squid-dialog/squid-dialog.js';
+import './squid-drawer/squid-drawer.js';
 import './squid-email/squid-email.js';
 import './squid-errors/squid-errors.js';
 import './squid-hero-number/squid-hero-number.js';
