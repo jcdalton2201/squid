@@ -4,48 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test Harness</title>
+    <style>
+
+    </style>
 </head>
 <body>
-  <squid-drawer posistion='right'>
-    <span slot='button'>Info</span>
-    <span slot='title'>Shakespears Quotes</span>
-    <squid-accordion-group>
-  <!-- one -->
-  <squid-accordion>
-    <span slot="summary">The first accordion in the group</span>
-    <div slot="content">
-      <p>Four score and seven years ago our fathers brought forth on this continent a new nation conceived in liberty and dedicated to the proposition that all men are created equal.</p>
-    </div>
-  </squid-accordion>
-
-  <!-- two -->
-  <squid-accordion>
-    <span slot="summary">The middle child</span>
-    <div slot="content">
-      <p>Four score and seven years ago our fathers brought forth on this continent a new nation conceived in liberty and dedicated to the proposition that all men are created equal.</p>
-    </div>
-  </squid-accordion>
-
-  <!-- three -->
-  <squid-accordion>
-    <span slot="summary">Accordion number three</span>
-    <div slot="content">
-      <p>Four score and seven years ago our fathers brought forth on this continent a new nation conceived in liberty and dedicated to the proposition that all men are created equal.</p>
-    </div>
-  </squid-accordion>
-</squid-accordion-group>
-  </squid-drawer>
-
-  <squid-drawer posistion='left'>
-    <span slot='button'>why</span>
-    <span slot='title'>OK see this</span>
-    <squid-accordion-group>
-  <p>some useless info</p>
-</squid-accordion-group>
-  </squid-drawer>
+  <form id='myform' action="javascript:void(0)">
+    <squid-toggle name='turn on'></squid-toggle>
+    <input name='last'>
+    <squid-input name='first' required>First Name</squid-input>
+    <squid-stepper name='stepper' label='Traveller Class' value='2'>
+      <option value='1'>First</option>
+      <option value='2'>Buisness</option>
+      <option value='3'>Coach</option>
+    </squid-stepper>
+    <squid-button class='submit'>Submit</squid-button>
+  </form>
 </body>
 <script src='squid-core-ui.js' ></script>
 <script>
-  
+  document.querySelector('squid-stepper').addEventListener('change',(evt)=>{
+    console.log(evt.target);
+  });
 </script>
 </html>

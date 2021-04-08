@@ -56,7 +56,7 @@ describe('Unit and Functional Tests for squid-drawer',()=>{
         await button.click();
         await page.waitForTimeout(500);
         const classList = await page.$eval('squid-drawer', el => el.shadowRoot.querySelector('.drawer-containter').classList);
-        expect(classList[1]).toEqual('display');
+        expect(classList[2]).toEqual('display');
         await page.waitForSelector('squid-drawer');
         const drawerclose = await page.evaluateHandle(() => {
             const x = document.querySelector('squid-drawer').shadowRoot.querySelector('button');

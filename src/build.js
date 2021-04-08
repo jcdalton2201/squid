@@ -25,6 +25,7 @@ import './squid-radio/squid-radio.js';
 import './squid-radio-group/squid-radio-group.js';
 import './squid-select/squid-select.js';
 import './squid-ssn/squid-ssn.js';
+import './squid-stepper/squid-stepper.js';
 import './squid-telephone/squid-telephone.js';
 import './squid-textarea/squid-textarea.js';
 import './squid-toggle/squid-toggle.js';

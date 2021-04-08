@@ -34,3 +34,4 @@ The `SquidToggle` element is an implementation of the [checkbox element](https:/
 <squid-toggle checked="true">Chcekbox checked</squid-toggle>
 <squid-toggle disabled>Chcekbox &mdash; disabled</squid-toggle>
 <squid-toggle required>Chcekbox &mdash; required</squid-toggle>
+```
