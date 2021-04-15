@@ -1,6 +1,6 @@
 {
   "name": "@populus/squid",
-  "version": "0.0.31",
+  "version": "0.0.1",
   "description": "Component Library for FED at Populus Fin",
   "main": "index.js",
   "files": [

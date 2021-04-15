@@ -53,16 +53,18 @@ button {
         padding: 0;
         color: $button-color-text-default-default;
         &:hover {
-            color: $button-color-text-default-hover;
-            text-decoration: underline 
+            color: $button-color-text-default-default;
+            text-decoration: underline;
+            background: none;
         }
         &:active {
             color: $button-color-text-default-active;
             text-decoration: underline 
         }
         &:disabled {
-            color: $button-color-text-default-disabled;
+            color: $button-color-text-default-default;
             text-decoration: none;
+            background: none;
             cursor: not-allowed;
         }
         &::before {
@@ -88,6 +90,7 @@ button {
             &:disabled {
                 color: $button-color-text-default-disabled;
                 text-decoration: none;
+                background: none;
                 cursor: not-allowed;
             }
         }
@@ -102,15 +105,18 @@ button {
         color: $button-color-text-default-default;
         &:hover {
             color: $button-color-text-default-hover;
+            background: none;
             text-decoration: underline ;
         }
         &:active {
             color: $button-color-text-default-active;
+            background: none;
             text-decoration: underline ;
         }
         &:disabled {
-            color: $button-color-text-default-disabled;
+            color: $button-color-text-default-default;
             text-decoration: none;
+            background: none;
             cursor: not-allowed;
         }
         &::after {
@@ -195,20 +201,22 @@ button {
             text-decoration: underline ;
         }
         &:disabled {
-            color: $button-color-text-default-disabled;
+            color: $button-color-text-default-active;
             text-decoration: none;
+            background: none;
+            border-color: none;
             cursor: not-allowed;
         }
     }
     &:disabled {
         color: $button-color-text-default-disabled;
-        background: $color-base-gray-50;
-        border-color: $color-base-gray-50;
+        background: $button-color-background-action-disabled;
+        border-color: $button-color-background-action-disabled;
         cursor: not-allowed;
         &:hover {
             color: $button-color-text-default-disabled;
-            background: $color-base-gray-50;
-            border-color: $color-base-gray-50;
+            background: $button-color-background-action-disabled;
+            border-color: $button-color-background-action-disabled;
             text-decoration: none;
         }
     }
