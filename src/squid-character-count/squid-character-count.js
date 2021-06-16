@@ -1,9 +1,10 @@
 
-import {LitElement, html} from 'lit-element';
+import { html } from 'lit';
 import { defineSquidElement } from '../utils/defineSquidElement.js';
 import styles from './squid-character-count.scss';
 import { findSahdowRoot } from '../utils/findShadowRoot.js';
-export class SquidCharacterCount extends LitElement {
+import { BaseElement } from '../utils/baseElement.js';
+export class SquidCharacterCount extends BaseElement {
     static get styles() {
         return [styles];
     }

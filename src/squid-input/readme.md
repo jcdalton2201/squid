@@ -11,7 +11,7 @@ Squid breaks up the input elements each into their own component for convenience
 
 ## Inherits
 
-`SquidButton` inherits from [`LitElement`](https://lit-element.polymer-project.org/).
+`SquidButton` inherits from [`LitElement`](https://lit.polymer-project.org/).
 
 ## Attributes
 

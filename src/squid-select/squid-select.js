@@ -1,5 +1,5 @@
 
-import {html} from 'lit-element';
+import {html} from 'lit';
 import { SquidInput } from '../squid-input/squid-input.js';
 import { defineSquidElement } from '../utils/defineSquidElement.js';
 import styles from './squid-select.scss';

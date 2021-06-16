@@ -1,4 +1,4 @@
-import { html } from 'lit-element';
+import { html } from 'lit';
 import { SquidInputBase } from '../squid-input-base/squid-input-base.js';
 import { defineSquidElement } from '../utils/defineSquidElement.js';
 import styles from './squid-checkbox.scss';

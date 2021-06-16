@@ -1,5 +1,5 @@
 
-import {html} from 'lit-element';
+import {html} from 'lit';
 import { BaseElement } from '../utils/baseElement.js';
 import { defineSquidElement } from '../utils/defineSquidElement.js';
 import { emitEvent } from '../utils/squidEvents.js';

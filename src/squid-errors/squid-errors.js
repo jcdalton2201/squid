@@ -1,9 +1,10 @@
-import {LitElement, html} from 'lit-element';
+import {  html } from 'lit';
 import { defineSquidElement } from '../utils/defineSquidElement.js';
 import styles from './squid-errors.scss';
 import {findParentForm} from '../utils/findParentForm.js';
 import {findSahdowRoot} from '../utils/findShadowRoot.js';
-export class SquidErrors extends LitElement {
+import { BaseElement } from '../utils/baseElement.js';
+export class SquidErrors extends BaseElement {
     static get styles() {
         return [styles];
     }

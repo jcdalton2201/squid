@@ -4,7 +4,8 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import postCSSPlugin from 'rollup-plugin-postcss';
 import postcssLit from 'rollup-plugin-postcss-lit';
-
+import { terser } from 'rollup-plugin-terser';
+import gzipPlugin from 'rollup-plugin-gzip';
 const postCSS = postCSSPlugin({
     inject: false,
     minimize: {
@@ -39,4 +40,15 @@ const bundelFiles = {
     ],
     plugins: [resolve(), commonjs(), postCSS, postcssLit()],
 };
-export default [...individualFiles, bundelFiles];
+const minFiles = {
+    input: 'src/build.js',
+    output: [
+        {
+            file: 'dist/squid-core-ui.min.js',
+            format: 'esm',
+            sourcemap: true,
+        },
+    ],
+    plugins: [resolve(), commonjs(), postCSS, postcssLit(), terser(), gzipPlugin({fileName: '.js'})],
+};
+export default [...individualFiles, bundelFiles,minFiles];

@@ -1,5 +1,5 @@
-import { html } from 'lit-element';
-import { render } from 'lit-html';
+import { html } from 'lit';
+import { render } from 'lit';
 import { defineSquidElement } from '../utils/defineSquidElement.js';
 import styles from './squid-drawer.scss';
 import '../squid-button/squid-button.js';

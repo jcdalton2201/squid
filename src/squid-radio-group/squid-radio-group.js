@@ -1,5 +1,5 @@
 
-import {html} from 'lit-element';
+import {html} from 'lit';
 import { defineSquidElement } from '../utils/defineSquidElement.js';
 import styles from './squid-radio-group.scss';
 import '../squid-radio/squid-radio.js';

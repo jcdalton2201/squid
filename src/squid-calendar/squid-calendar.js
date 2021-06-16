@@ -1,5 +1,5 @@
 import { BaseElement } from '../utils/baseElement.js';
-import { html } from 'lit-element';
+import { html } from 'lit';
 import { defineSquidElement } from '../utils/defineSquidElement.js';
 import styles from './squid-calendar.scss';
 import { months, dayOfWeek } from '../utils/dateUtils.js';

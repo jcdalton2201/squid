@@ -1,7 +1,8 @@
-import {LitElement, html} from 'lit-element';
+import { html } from 'lit';
+import { BaseElement } from '../utils/baseElement.js';
 import { defineSquidElement } from '../utils/defineSquidElement.js';
 import styles from './squid-a.scss';
-export class SquidA extends LitElement {
+export class SquidA extends BaseElement {
     static get styles() {
         return [styles];
     }

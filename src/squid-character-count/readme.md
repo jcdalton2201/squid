@@ -6,7 +6,7 @@ The `SquidCharacterCount` is used to allow a user to track how many characters a
 
 ## Inherits
 
-`SquidCharacterCounter` inherits from [`LitElement`](https://lit-element.polymer-project.org/).
+`SquidCharacterCounter` inherits from [`LitElement`](https://lit.polymer-project.org/).
 
 ## Attributes
 
