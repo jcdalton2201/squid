@@ -8,6 +8,7 @@ export class SquidToggle extends SquidCheckbox {
     }
     constructor() {
         super();
+        this.checked = false;
     }
     render() {
         return html` <div id="container" data-ref="wrapper">

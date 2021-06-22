@@ -10,6 +10,7 @@ export class SquidRadio extends SquidInputBase {
         this.bindMethods(['__onChange']);
         // this.internals = this.attachInternals();
         this.is = 'radio';
+        this.checked = false;
     }
     // static get formAssociated() {
     //     return true;

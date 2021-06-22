@@ -25,6 +25,7 @@ export class SquidAccordion extends BaseElement {
         super();
         this.bindMethods(['toggle']);
         this.theme='light';
+        this.open = false;
     }
     firstUpdated(){
         this.buildRefs();

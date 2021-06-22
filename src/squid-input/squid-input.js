@@ -34,28 +34,28 @@ export class SquidInput extends SquidInputBase {
         this._showDisabled = '';
         this._inputType = type;
     }
-    set pattern(value) {
-        const input = this.renderRoot.querySelector('input');
-        if(!input){
-            setTimeout(()=>{
-                const input = this.renderRoot.querySelector('input');
-                const oldValue = input.pattern;
-                if(value) {
-                    input.pattern = value;
-                }
-                this.requestUpdate('pattern',oldValue);
-            });
-        } else {
-            const oldValue = input.pattern;
-            if(value) {
-                input.pattern = value;
-            }
-            this.requestUpdate('pattern',oldValue);
-        }
-    }
-    get pattern(){
-        return this.renderRoot.querySelector('input').pattern;
-    }
+    // set pattern(value) {
+    //     const input = this.renderRoot.querySelector('input');
+    //     if(!input){
+    //         setTimeout(()=>{
+    //             const input = this.renderRoot.querySelector('input');
+    //             const oldValue = input.pattern;
+    //             if(value) {
+    //                 input.pattern = value;
+    //             }
+    //             this.requestUpdate('pattern',oldValue);
+    //         });
+    //     } else {
+    //         const oldValue = input.pattern;
+    //         if(value) {
+    //             input.pattern = value;
+    //         }
+    //         this.requestUpdate('pattern',oldValue);
+    //     }
+    // }
+    // get pattern(){
+    //     return this.renderRoot.querySelector('input').pattern;
+    // }
     set value(value) {
         const oldValue = this.renderRoot.querySelector('input').value;
         if(value !== oldValue) {
@@ -82,6 +82,7 @@ export class SquidInput extends SquidInputBase {
                     value="" 
                     id="squid-input-${this._uid}" 
                     data-ref="input"
+                    pattern=${this.pattern}
                     ?disabled=${this.disabled}
                     ?required=${this.required}
                     ?readonly=${this.readonly}

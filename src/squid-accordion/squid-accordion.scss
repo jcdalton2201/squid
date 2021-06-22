@@ -38,7 +38,7 @@
         cursor: pointer;
         &:hover{
             outline: 0 none;
-            background-color: $color-neutral-80;
+            background-color: $color-neutral-90;
             color: $font-color-default;
             &::after{
                 z-index: 100;
