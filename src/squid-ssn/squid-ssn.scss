@@ -1,10 +1,11 @@
+@import "../variables";
 .toggle-button {
-    color:#255f82;
-    font-size:.85rem;
+    color: $color-primary-default;
+    font-size:$font-size-s;
     background: none;
     border:0 none;
     cursor: pointer;
     &:hover {
-        color:#013d58;
+        filter: brightness(80%) saturate(80%);
     }
 }

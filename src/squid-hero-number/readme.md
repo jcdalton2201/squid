@@ -26,7 +26,7 @@ Setting any attribute or reflected property will trigger a re-render.
 ## Usage
 
 ```html
-<squid-hero-number number="1,234.56"  label="Available credit"></squid-hero-number>
-<squid-hero-number number="1,234.56"  label="Current balance" alignment="center"></squid-hero-number>
-<squid-hero-number number="1,234.56"  label="Current balance" size="small" currency="USD"></squid-hero-number>
+<squid-hero-number number="1234.56"  label="Available credit"></squid-hero-number>
+<squid-hero-number number="1234.56"  label="Current balance" alignment="center"></squid-hero-number>
+<squid-hero-number number="1234.56"  label="Current balance" size="small" currency="USD"></squid-hero-number>
 ```

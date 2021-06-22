@@ -5,9 +5,9 @@
     max-width: 200px;
     .header {
         grid-column: 1 / -1;
-        color: white;
+        color: var(--calendar-color-default, $color-white);
         // background-color: #005c99;
-        background-color: $color-base-blue-40;
+        background-color: var(--calendar-color-background-default,$color-blue-40);
         padding: 8px;
         
     }
@@ -15,7 +15,7 @@
         grid-column: 1/2;
         padding: 4px;
         cursor: pointer;
-        background-color: $color-base-gray-80;
+        background-color: $color-neutral-80;
         display: flex;
         justify-content: flex-start;
     }
@@ -26,13 +26,13 @@
         font-size: .90rem;
         align-items: center;
         cursor: pointer;
-        background-color: $color-base-gray-80;
+        background-color: $color-neutral-80;
     }
     .right-nav {
         grid-column: -1/-2;
-        padding: 4px;
+        padding: $space-inset-xs;
         cursor: pointer;
-        background-color: $color-base-gray-80;
+        background-color: $color-neutral-80;
         display: flex;
         justify-content: flex-end;
     }
@@ -56,9 +56,9 @@
         cursor: pointer;
         padding: 16% 0;
         &.selected-date {
-            background-color:$color-base-green-30;
+            background-color:$color-green-30;
             border-radius: 50%;
-            color: $color-base-white;
+            color: $color-white;
         }
     }
     .year {

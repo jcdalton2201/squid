@@ -1,6 +1,7 @@
+@import '../variables';
 .radiobutton--label {
-    color: #141414;
-    font-size: 16px;
+    color: var (--font-color-default,$font-color-default);
+    font-size: $size-m;
 }
 
 .radiobutton--input {
@@ -19,32 +20,32 @@
 }
 
 .radiobutton--input:hover+.radiobutton--label::before, .radiobutton--input:focus+.radiobutton--label::before {
-    border: 2px solid #255f82;
+    border: 2px solid  var(--color-primary-default, $color-primary-default);
 }
 
 .radiobutton--input:checked+.radiobutton--label::before {
-    border: 8px solid #255f82;
+    border: $size-s solid  var(--color-primary-default, $color-primary-default);
 }
 
 .radiobutton--input:checked:hover+.radiobutton--label::before, .radiobutton--input:checked:focus+.radiobutton--label::before {
-    border-color: #10253f;
+    filter: brightness(80%) saturate(80%);
 }
 
 .radiobutton--input:disabled+.radiobutton--label {
-    color: #7d7d7d;
+    color: $color-neutral-40;
 }
 
 .radiobutton--input:disabled+.radiobutton--label::before {
-    background-color: #f4f4f4;
-    border: 1px solid #d4d4d4;
+    background-color: $color-neutral-90;
+    border: 1px solid $color-neutral-80;
 }
 
 .radiobutton--input:disabled:checked+.radiobutton--label {
-    color: #7d7d7d;
+    color: $color-neutral-40;
 }
 
 .radiobutton--input:disabled:checked+.radiobutton--label::before {
-    border: 8px solid #d4d4d4;
+    border: $size-s solid $color-neutral-80;
 }
 
 .radiobutton--input+.radiobutton--label {
@@ -65,31 +66,31 @@
 }
 
 .radiobutton--input+.radiobutton--label::before {
-    background: #fff;
-    border: 1px solid #696969;
+    background: $color-white;
+    border: 1px solid $color-neutral-30;
     border-radius: 50%;
     box-sizing: border-box;
-    margin-right: 16px;
+    margin-right: $size-m;
 }
 
 .radiobutton--error+.radiobutton--label::before {
-    border: 2px solid #cc2427;
+    border: $size-xxs solid $color-alert-error;
 }
 
 .radiobutton--helper {
     padding-left: 40px;
-    color: #141414;
+    color: $color-neutral-10;
     display: block;
-    font-size: 12px;
-    margin-top: 8px;
+    font-size: $font-size-s;
+    margin-top: $size-m;
 }
 
 .radiobutton--helper--error {
     padding-left: 40px;
-    color: #cc2427;
+    color: $color-alert-error;
     display: block;
-    font-size: 12px;
-    margin-top: 8px;
+    font-size: $font-size-s;
+    margin-top: $size-m;
 }
 
 :host {

@@ -35,3 +35,4 @@ The `SquidCheckbox` element is an implementation of the [checkbox element](https
 <squid-checkbox checked="true">Chcekbox checked</squid-checkbox>
 <squid-checkbox disabled>Chcekbox &mdash; disabled</squid-checkbox>
 <squid-checkbox required>Chcekbox &mdash; required</squid-checkbox>
+```

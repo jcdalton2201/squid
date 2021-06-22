@@ -4,16 +4,16 @@
     flex-direction: column;
     width: auto;
     squid-helpers {            
-        color: var(--red-default,$color-base-red-50);
+        color: var(--color-alert-error,$color-alert-error);
     }
     .label-wrapper{
         display: flex;
         justify-content: space-between;
-        color: var(--dark-gray,$color-base-gray-30);
-        font-size: .75rem;
+        color: var(--font-color-default,$color-neutral-30);
+        font-size: $font-size-xs;
         opacity: .9;
         letter-spacing: .5px;
-        margin-bottom: var(--padding-small,4px);
+        margin-bottom: var(--space-inset-xs,$space-inset-xs);
         position: relative;
         vertical-align: middle; 
     }
@@ -21,15 +21,15 @@
        text-transform: capitalize;
     }
     input {
-        border-radius: var(--radius-default,4px);
+        border-radius: var(--radius-default,$size-xs);
         background-image: none;
         box-shadow: none;
-        font-size: 1rem;
-        height: var(--height-default, 1rem);
+        font-size: $font-size-default;
+        height: var(--font-size-default,$size-m);
         line-height: 1.5;
         margin: 0;
-        padding: var(--padding-default,8px);
-        border: 2px solid var(--gray-default,$color-base-mute-60);
+        padding: var(--padding-default,$size-s);
+        border: 2px solid var(--font-color-default,$color-neutral-60);
         
         &:disabled {
             cursor: not-allowed;
@@ -39,7 +39,7 @@
         }
         width: auto;
         &.textfield__input--error{
-            border: 2px solid var(--red-default,$color-base-red-50);
+            border: 2px solid var(--color-alert-error,$color-alert-error);
         }
     }
 }

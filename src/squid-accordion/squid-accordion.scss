@@ -9,14 +9,14 @@
         text-align: left;
         margin: 0;
         margin-bottom: 1rem;
-        font-family: $font-cabin-name, "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-        font-size: 1rem;
+        font-family: $button-font-family;
+        font-size: $button-font-size-default;
+        font-weight: $button-font-weight;
         line-height: 1.5em;
-        font-weight: 600; 
     }
     .accordion-item {
         overflow: hidden;
-        border-top: 1px solid #c9ced2;
+        border-top: 1px solid $color-neutral-80;
         &:first-child{
             border-top:0 none;
         }
@@ -25,25 +25,21 @@
         background: none;
         border: 0;
         text-align: left;
-        font-family: $font-cabin-name, "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-        font-size: 1rem;
+        font-family: $button-font-family;
+        font-size: $button-font-size-default;
+        font-weight: $button-font-weight;
         line-height: 1.5em;
-        font-weight: 600;
         box-sizing: border-box;
         position: relative;
         width: 100%;
         display: block;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        margin-top: 0;
-        margin-bottom: 0;
-        padding-left: $size-small;
-        padding-right: $size-small;
+        padding: $size-m $size-s;
+        margin: 0;
         cursor: pointer;
         &:hover{
             outline: 0 none;
-            background-color: #f2f3f4;
-            color: $color-font-secondary;
+            background-color: $color-neutral-80;
+            color: $font-color-default;
             &::after{
                 z-index: 100;
                 
@@ -54,19 +50,19 @@
         &:after {
             content: "";
             position: absolute;
-            right: $size-small;
+            right: $size-s;
             top: calc(50% - 6px);
             background-repeat: no-repeat;
             background-size: cover;
             height: 12px;
-            width: 13px;
-            background: url('data:image/svg+xml;utf8,<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class=""><path fill="$color-base-gray-50" d="M376 232H216V72c0-4.42-3.58-8-8-8h-32c-4.42 0-8 3.58-8 8v160H8c-4.42 0-8 3.58-8 8v32c0 4.42 3.58 8 8 8h160v160c0 4.42 3.58 8 8 8h32c4.42 0 8-3.58 8-8V280h160c4.42 0 8-3.58 8-8v-32c0-4.42-3.58-8-8-8z" class=""></path></svg>');  
+            width: 12px;
+            background: url('data:image/svg+xml;utf8,<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class=""><path fill="$color-neutral-50" d="M376 232H216V72c0-4.42-3.58-8-8-8h-32c-4.42 0-8 3.58-8 8v160H8c-4.42 0-8 3.58-8 8v32c0 4.42 3.58 8 8 8h160v160c0 4.42 3.58 8 8 8h32c4.42 0 8-3.58 8-8V280h160c4.42 0 8-3.58 8-8v-32c0-4.42-3.58-8-8-8z" class=""></path></svg>');  
             background-repeat: no-repeat;
 
         }
         &.accordion-title--active {
             &:hover {
-                color: $color-base-gray-50;
+                color: $color-neutral-50;
                 &:after {
                     height: 12px;
                     width: 12px;
@@ -77,7 +73,7 @@
             &:after{
                 content: "";
                 position: absolute;
-                right: $size-small;
+                right: $size-s;
                 top: calc(50% - 1px);
                 background-repeat: no-repeat;
                 background-size: cover;
@@ -103,16 +99,16 @@
             } 
         }
         .accordion-content {
-            padding: $size-small $size-small 1rem;
+            padding: $size-s $size-s $size-m;
         }
     }
     &.accordion--dark{
         .accordion-title{
-            background-color: $color-base-blue-50;
-            color:$color-base-white;
+            background-color: $color-blue-50;
+            color:$color-white;
             &:hover{
-                color:$color-base-white;
-                background-color: $color-base-blue-60;
+                color:$color-white;
+                background-color: $color-blue-60;
             }
             &:after{
                 background: url('data:image/svg+xml;utf8,<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class=""><path fill="white" d="M376 232H216V72c0-4.42-3.58-8-8-8h-32c-4.42 0-8 3.58-8 8v160H8c-4.42 0-8 3.58-8 8v32c0 4.42 3.58 8 8 8h160v160c0 4.42 3.58 8 8 8h32c4.42 0 8-3.58 8-8V280h160c4.42 0 8-3.58 8-8v-32c0-4.42-3.58-8-8-8z" class=""></path></svg>');
@@ -126,8 +122,8 @@
             }
         }
         .accordion-section {
-            background-color: $color-base-blue-50;
-            color:$color-base-white;
+            background-color: $color-blue-50;
+            color:$color-white;
         }
     }
 }

@@ -1,19 +1,19 @@
 @import "../variables";
 #container {
     label {
-        color: var(--dark-gray,$color-base-gray-30);
-        font-size: .75rem;
+        color: var(--font-color-default,$color-neutral-30);
+        font-size: $font-size-xs;
         opacity: .9;
         letter-spacing: .5px;
-        margin-bottom: var(--padding-small,4px);
+        margin-bottom: $space-inset-xs;
     }
     .input {
         display: flex;
         align-items: center;
-        font-size: $size-medium;
+        font-size: $size-m;
         text-align: center;
         button {
-            border: 1px solid black;
+            border: 1px solid $color-neutral-10;
             border-radius: 50%;
             width: 30px;
             height: 30px;
@@ -22,14 +22,14 @@
             align-items: center;
             cursor: pointer;
             &.disabled{
-                background-color: $color-base-mute-70;
+                background-color: $color-neutral-70;
                 cursor:not-allowed;
             }
             &:hover {
-                border-color: royalblue;
+                border-color: var(--color-primary-default,$color-primary-default);
             }
             &:focus {
-                outline: $color-base-focus-ring auto 1px;
+                outline: $color-focus-ring auto 1px;
             }
             svg {
             }

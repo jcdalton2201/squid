@@ -1,9 +1,9 @@
 @import '../variables';
 squid-helpers {            
-    color: var(--red-default,$color-base-red-50);
+    color: var(--color-alert-error,$color-alert-error);
 }
 label {
-    color: var(--dark-gray,$color-base-gray-30);
+    color: var(--dark-gray,$color-neutral-30);
     font-size: .75rem;
     opacity: .9;
     letter-spacing: .5px;
@@ -22,7 +22,7 @@ label {
         line-height: 1.5;
         margin: 0;
         padding: var(--padding-default,8px);
-        border: 2px solid var(--gray-default,$color-base-mute-60);
+        border: 2px solid var(--gray-default,$color-neutral-60);
         
         &:disabled {
             cursor: not-allowed;
@@ -32,13 +32,13 @@ label {
         }
         width: auto;
         &.textfield__input--error{
-            border: 2px solid var(--red-default,$color-base-red-50);
+            border: 2px solid var(--color-alert-error,$color-alert-error);
         }
     }
     .grid {
         min-width: 230px;
-        background: white;
-        border: 1px solid #ccc;
+        background: $color-white;
+        border: 1px solid $color-neutral-10;
         list-style: none;
         margin: 0;
         padding: 0;
@@ -55,13 +55,13 @@ label {
             cursor: default;
             margin: 0;
             &.active-decendant{
-                background-color: $color-base-blue-90;
+                background-color: $color-blue-90;
             }
             &:hover {
-                background-color: $color-base-blue-90;
+                background-color: $color-blue-90;
             }
             &:focus {
-                background-color: $color-base-blue-90;
+                background-color: $color-blue-90;
                 outline: webkit-focus-ring-color auto 1px;
             }
         }

@@ -1,23 +1,32 @@
-@import '../variables';
+@import "../variables";
 button {
-    border-radius: $button-space-border-radius-default;
+    border-radius: var(
+        --button-space-border-radius-default,
+        $button-space-border-radius-default
+    );
     box-sizing: border-box;
     cursor: pointer;
     display: inline-block;
-    font-family: $font-cabin-name, "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-    font-size: $button-font-size-defaut;
-    font-weight: 400;
+    font-family: $button-font-family;
+    font-size: $button-font-size-default;
+    font-weight: $button-font-weight;
     height: $button-space-height-default;
     line-height: $button-space-line-height-default;
     min-width: 100%;
     text-align: center;
     text-decoration: none;
     white-space: nowrap;
-    margin: 0;
-    padding: $button-space-padding-default;
-    background: $button-color-background-action-default;
-    border: 0;
-    color: $button-color-text-action-default;
+    margin: var(---button-space-margin-none, $button-space-margin-none);
+    padding: var(--button-space-padding-default, $button-space-padding-default);
+    background: var(
+        --button-color-background-active,
+        $button-color-background-active
+    );
+    border: var(
+        ---button-space-border-width-none,
+        $button-space-border-width-none
+    );
+    color: var(--button-color-text-default, $button-color-text-default);
     slot {
         &[loading] {
             display: none;
@@ -27,68 +36,76 @@ button {
         min-width: auto;
         height: fit-content;
         padding: $button-space-padding-tiny;
-        font-size: $button-font-size-very-small;
+        font-size: $button-font-size-small;
         line-height: $button-space-height-small;
     }
     &:visited {
-        color: $button-color-text-action-default ;
+        color: var(--button-color-text-default, $button-color-text-default);
     }
     &:hover {
-        background: $button-color-background-progressive-hover;
-        color: $button-color-text-action-hover;
+        filter: brightness(120%) saturate(120%);
         text-decoration: none;
     }
     &:active {
-        background: $button-color-background-progressive-active;
-        color: $button-color-text-action-default;
+        filter: brightness(80%) saturate(80%);
         text-decoration: none;
     }
-   
+
     &.left {
         background: transparent;
-        font-size: $size-normal;
-        line-height: $size-x-large;
+        font-size: $button-font-size-default;
+        line-height: $button-space-line-height-text;
         height: auto;
         min-width: initial;
         padding: 0;
-        color: $button-color-text-default-default;
+        color: var(--button-color-text-anchor, $button-color-text-anchor);
         &:hover {
-            color: $button-color-text-default-default;
+            color: var(--button-color-text-anchor, $button-color-text-anchor);
             text-decoration: underline;
             background: none;
         }
         &:active {
-            color: $button-color-text-default-active;
-            text-decoration: underline 
+            color: var(--button-color-text-anchor, $button-color-text-anchor);
+            text-decoration: underline;
         }
         &:disabled {
-            color: $button-color-text-default-default;
+            color: var(--button-color-text-anchor, $button-color-text-anchor);
             text-decoration: none;
             background: none;
             cursor: not-allowed;
         }
         &::before {
             content: "";
-            border: solid $button-color-text-default-default;
-            border-width: 0 2px 2px 0;
+            border: solid
+                var(--button-color-text-anchor, $button-color-text-anchor);
+            border-width: 0 $size-xxs $size-xxs 0;
             content: "";
             display: inline-block;
             padding: 2px;
             position: relative;
             top: -2px;
-            margin-right: $size-small;
+            margin-right: $size-xxs;
             transform: rotate(135deg);
             -webkit-transform: rotate(135deg);
             &:hover {
-                color: $button-color-text-default-hover;
-                text-decoration: underline 
+                color: var(
+                    --button-color-text-anchor,
+                    $button-color-text-anchor
+                );
+                text-decoration: underline;
             }
             &:active {
-                color: $button-color-text-default-active;
-                text-decoration: underline 
+                color: var(
+                    --button-color-text-anchor,
+                    $button-color-text-anchor
+                );
+                text-decoration: underline;
             }
             &:disabled {
-                color: $button-color-text-default-disabled;
+                color: var(
+                    --button-color-text-anchor,
+                    $button-color-text-anchor
+                );
                 text-decoration: none;
                 background: none;
                 cursor: not-allowed;
@@ -97,111 +114,107 @@ button {
     }
     &.right {
         background: transparent;
-        font-size: $size-normal;
-        line-height: $size-large;
+        font-size: $button-font-size-default;
+        line-height: $button-space-line-height-text;
         height: auto;
         min-width: initial;
         padding: 0;
-        color: $button-color-text-default-default;
+        color: var(--button-color-text-anchor);
         &:hover {
-            color: $button-color-text-default-hover;
+            color: var(--button-color-text-anchor, $button-color-text-anchor);
             background: none;
-            text-decoration: underline ;
+            text-decoration: underline;
         }
         &:active {
-            color: $button-color-text-default-active;
+            color: var(--button-color-text-anchor, $button-color-text-anchor);
             background: none;
-            text-decoration: underline ;
+            text-decoration: underline;
         }
         &:disabled {
-            color: $button-color-text-default-default;
+            color: var(--button-color-text-anchor, $button-color-text-anchor);
             text-decoration: none;
             background: none;
             cursor: not-allowed;
         }
         &::after {
             content: "";
-            border: solid $button-color-text-default-default;
-            border-width: 0 2px 2px 0;
+            border: solid
+                var(--button-color-text-anchor, $button-color-text-anchor);
+            border-width: 0 $size-xxs $size-xxs 0;
             content: "";
             display: inline-block;
-            padding: 2px;
+            padding: $size-xxs;
             position: relative;
-            top: -2px;
-            margin-left: $size-small;
+            top: -$size-xxs;
+            margin-left: $size-s;
             transform: rotate(-45deg);
             -webkit-transform: rotate(-45deg);
             &:hover {
-                color: $button-color-text-default-hover;
-                text-decoration: underline 
+                color: var(
+                    --button-color-text-anchor,
+                    $button-color-text-anchor
+                );
+                text-decoration: underline;
             }
             &:active {
-                color: $button-color-text-default-active;
-                text-decoration: underline 
+                color: var(
+                    --button-color-text-anchor,
+                    $button-color-text-anchor
+                );
+                text-decoration: underline;
             }
             &:disabled {
-                color: $button-color-text-default-disabled;
+                color: var(
+                    --button-color-text-anchor,
+                    $button-color-text-anchor
+                );
                 text-decoration: none;
                 cursor: not-allowed;
             }
         }
     }
-    &.action{
-        background: $button-color-background-action-default;
+    &.action {
+        background: var(
+            --button-color-background-active,
+            $button-color-background-active
+        );
         &:hover {
-          filter: brightness(120%) saturate(120%);   
+            filter: brightness(120%) saturate(120%);
         }
         &:active {
-          filter: brightness(80%) saturate(80%);
+            filter: brightness(80%) saturate(80%);
         }
-        
     }
     &.progressive {
-        background: $button-color-background-progressive-default;
-        &:hover {
-            background: $button-color-background-progressive-hover;   
-        }
-        &:active {
-            background: $button-color-background-progressive-active;
-        }
+        background: var(
+            --button-color-background-progressive,
+            $button-color-background-progressive
+        );
     }
     &.regressive {
-        background: $button-color-background-regressive-default;
-        &:hover {
-            background: $button-color-background-regressive-hover;   
-        }
-        &:active {
-            background: $button-color-background-regressive-active;
-        }
+        background: $button-color-background-regressive;
     }
     &.destructive {
-        background: $button-color-background-destructive-default;
-        
-        &:hover {
-            background: $button-color-background-destructive-hover;   
-        }
-        &:active {
-            background: $button-color-background-destructive-active;
-        }
+        background: $button-color-background-destructive;
     }
     &.text {
         background: transparent;
-        font-size: $size-normal;
-        line-height:  $size-large;
+        font-size: $button-font-size-default;
+        line-height: $button-space-line-height-text;
         height: auto;
         min-width: initial;
         padding: 0;
-        color: $button-color-text-default-default;
+        color: var(--button-color-text-anchor, $button-color-text-anchor);
         &:hover {
-            color: $button-color-text-default-hover;
-            text-decoration: underline ;
+            color: var(--button-color-text-anchor, $button-color-text-anchor);
+            text-decoration: underline;
         }
         &:active {
-            color: $button-color-text-default-active;
-            text-decoration: underline ;
+            color: var(--button-color-text-anchor, $button-color-text-anchor);
+            text-decoration: underline;
         }
         &:disabled {
-            color: $button-color-text-default-active;
+            color: var(--button-color-text-anchor, $button-color-text-anchor);
             text-decoration: none;
             background: none;
             border-color: none;
@@ -209,14 +222,14 @@ button {
         }
     }
     &:disabled {
-        color: $button-color-text-default-disabled;
-        background: $button-color-background-action-disabled;
-        border-color: $button-color-background-action-disabled;
+        color: $button-color-text-disabled;
+        background: $button-color-background-disabled;
+        border-color: $button-color-background-disabled;
         cursor: not-allowed;
         &:hover {
-            color: $button-color-text-default-disabled;
-            background: $button-color-background-action-disabled;
-            border-color: $button-color-background-action-disabled;
+            color: $button-color-text-disabled;
+            background: $button-color-background-disabled;
+            border-color: $button-color-background-disabled;
             text-decoration: none;
         }
     }
@@ -231,20 +244,19 @@ button {
             display: inline;
         }
         .group {
-            .primary{
+            .primary {
                 fill: var(--primary-color, currentColor);
                 opacity: var(--primary-opacity, 1);
             }
             .secondary {
                 fill: var(--secondary-color, currentColor);
-                opacity: var(--secondary-opacity, 0.4)
+                opacity: var(--secondary-opacity, 0.4);
             }
         }
         animation: spinner-rotate 0.95s infinite cubic-bezier(0, 0, 1, 1);
     }
-    
 }
-@media only screen and (min-width:600px){
+@media only screen and (min-width: 600px) {
     a {
         min-width: 88px;
     }
@@ -252,33 +264,32 @@ button {
 @keyframes spinner-rotate {
     from {
         transform: rotate(0deg);
-        -ms-transform: rotate(0deg)
+        -ms-transform: rotate(0deg);
     }
     to {
         transform: rotate(360deg);
-        -ms-transform: rotate(360deg)
+        -ms-transform: rotate(360deg);
     }
 }
 @mixin fillSpace() {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 :host-context([expanded]) {
-  &:before {
-    @include fillSpace();
-  }
-  a {
-    position: static;
     &:before {
-      @include fillSpace();
-
+        @include fillSpace();
     }
-    &:after {
-      @include fillSpace();
+    a {
+        position: static;
+        &:before {
+            @include fillSpace();
+        }
+        &:after {
+            @include fillSpace();
+        }
     }
-  }
 }

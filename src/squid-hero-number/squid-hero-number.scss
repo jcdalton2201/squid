@@ -1,24 +1,25 @@
+@import "../variables";
 .hero-numbers {
-    color: #141414;
+    color: $color-neutral-10;
     line-height: 1;
     padding: 0;
     font-feature-settings: "pnum";
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    font-size: 64px;
+    font-size: $size-xl;
     &.center{
         justify-content: center;
     }
     &.small {
-        font-size: 32px;
+        font-size: $size-l;
       }
   }
 .hero-label {
     order: 3;
     padding: 0;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: $font-size-s;
     line-height: 1.5em;
     margin: 0;
     letter-spacing: 0.05em;
@@ -26,7 +27,7 @@
         text-align: center;
     }
     &.small {
-        font-size: 12px;
+        font-size: $font-size-xs;
         line-height: 1.5em;
     }
 }

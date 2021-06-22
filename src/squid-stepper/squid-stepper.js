@@ -89,7 +89,9 @@ export class SquidStepper extends BaseElement {
                   role="img"  
                   viewBox="0 0 24 24"
                   height="18px" 
-                  class="minus-circle">
+                  class="minus-circle"
+                  
+                  >
                   <path d="M1.5 12A1.5 1.5 0 0 1 3 10.5h18a1.5 1.5 0 0 1 0 3H3A1.5 1.5 0 0 1 1.5 12z"></path>
           </svg>
           </button>

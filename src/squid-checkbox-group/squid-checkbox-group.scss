@@ -1,8 +1,9 @@
+@import '../variables';
 :host {
     border: 0;
     outline: 0;
     padding: 0;
-    margin-bottom: 48px;
+    margin-bottom: $size-l;
     display: block;
 }
 
@@ -10,23 +11,23 @@
     border: 0;
     outline: 0;
     padding: 0;
-    margin-bottom: 48px;
+    margin-bottom: $size-l;
     margin-bottom: 0;
 }
 
 .fieldset__legend {
     font-size: 16px;
     line-height: 1.5em;
-    font-weight: 600;
+    font-weight:  $font-weight-semi;
     margin-bottom: 24px;
 }
 
 .fieldset__legend [class*="__helper--error"] {
     font-size: 12px;
     line-height: 1.5em;
-    font-weight: 400;
+    font-weight: $font-weight-regular;
     padding: 0;
-    margin-top: 8px;
+    margin-top: $size-xs;
 }
 
 .fieldset .form-field:last-of-type {
