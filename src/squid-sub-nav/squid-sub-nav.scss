@@ -1,0 +1,53 @@
+@import "../variables";
+div[theme="dark"]{
+    color: var(--color-white, $color-white);
+    background-color: var(--color-neutral-20,$color-neutral-20);
+}
+div[theme="dark"] a{
+    color: var(--color-white, $color-white);
+}
+a{
+    cursor: pointer;
+    display: inline-block;
+    font-family: $font-family-default;
+    font-size: $size-14;
+    font-weight: $font-weight-regular;
+    height: $font-size-default;
+    line-height: $font-size-default;
+    text-decoration: none;
+    white-space: nowrap;
+    color: var(--font-color-default, $font-color-default);
+    padding: $space-inset-m;
+
+    &.small {
+        min-width: auto;
+        height: fit-content;
+        padding: $button-space-padding-tiny;
+        font-size: $button-font-size-small;
+        line-height: $button-space-height-small;
+    }
+    &:visited {
+        color: var(--font-color-default, $font-color-default);
+    }
+    &:hover {
+        text-decoration: none;
+        color: var(--color-white,$color-white);
+    }
+    &:active {
+        filter: brightness(80%) saturate(80%);
+        text-decoration: none;
+    }
+}
+
+div{
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: var(--nav-color-background,$color-white);
+    &:hover {
+        background-color: var(--color-primary-default,$color-primary-default);
+        
+    }
+}

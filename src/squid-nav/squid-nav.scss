@@ -1,0 +1,46 @@
+@import "../variables";
+.name {
+    .label {
+        cursor: pointer;
+        display: inline-block;
+        font-family: $font-family-default;
+        font-size: $size-12;
+        font-weight: $font-weight-regular;
+        height: $font-size-default;
+        line-height: $font-size-default;
+        min-width: 90%;
+        text-decoration: none;
+        white-space: nowrap;
+        color: var(--font-color-default, $font-color-default);
+        padding: 8px 0 8px 8px;;
+        svg {
+            width: 12px;
+            height: 12px;
+            margin: 0 8px;
+        }
+        &.small {
+            min-width: auto;
+            height: fit-content;
+            padding: $button-space-padding-tiny;
+            font-size: $button-font-size-small;
+            line-height: $button-space-height-small;
+        }
+        &[theme="dark"]{
+            color: var(--color-white, $color-white);
+            background-color: var(--color-neutral-20,$color-neutral-20);
+        }
+    }
+    .hide {
+        display: none;
+    }
+    .rotate {
+        transform: rotate(180deg);
+    }
+    slot {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--nav-color-background,$color-white);
+        z-index: 100;
+    }
+}
