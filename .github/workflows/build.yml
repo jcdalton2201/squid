@@ -11,11 +11,11 @@ jobs:
     steps:
       
       - name: apt update
-        run : apt-get update -y -q
+        run : sudo apt-get update -y -q
       - name: insall libx11-xcb1
-        run: apt-get install libx11-xcb1
+        run: sudo apt-get install libx11-xcb1
       - name: insall libnss3-dev
-        run: apt-get install libnss3-dev
+        run: sudo apt-get install libnss3-dev
       - uses: actions/checkout@v2
       - name: update permissions
         run: |
