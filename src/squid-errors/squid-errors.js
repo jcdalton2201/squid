@@ -63,6 +63,10 @@ export class SquidErrors extends BaseElement {
         if(parentHost) {
             setTimeout(()=>{
                 this.describes = parentHost.querySelector('input');
+                if(!this.describes){
+                    this.describes = parentHost.querySelector('textarea');
+                    
+                }
                 if(this.describes){
                     this._initInput(this.describes);
                     this._invalidClass = {

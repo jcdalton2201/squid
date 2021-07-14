@@ -6,21 +6,11 @@ export default {
 };
 
 const temp = (args) => {  
-    let disabled = '';
-    let readonly = '';
-    let required = '';
-    if(args.disabled){
-        disabled = 'disabled';
-    }
-    if(args.readonly){
-        readonly = 'readonly';
-    }
-    if(args.required){
-        required = 'required';
-    }
-    return `<squid-email ${disabled} 
-                       ${readonly} 
-                       ${required} 
+
+    return `<squid-email ${args.counter?'counter':''} 
+                        ${args.disabled?'disabled':''} 
+                        ${args.readonly?'readonly':''} 
+                        ${args.required?'required':''} 
                        minlength="${args.minlength}"
                        min="${args.min}"
                        max="${args.max}"
@@ -43,6 +33,7 @@ email.args ={
     min:'',
     max:'',
     placeholder:'',
+    counter:false
 };
 email.story = {
     name: 'email',

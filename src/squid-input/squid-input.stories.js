@@ -6,21 +6,11 @@ export default {
 };
 
 const temp = (args) => {  
-    let disabled = '';
-    let readonly = '';
-    let required = '';
-    if(args.disabled){
-        disabled = 'disabled';
-    }
-    if(args.readonly){
-        readonly = 'readonly';
-    }
-    if(args.required){
-        required = 'required';
-    }
-    return `<squid-input ${disabled} 
-                         ${readonly} 
-                         ${required} 
+
+    return `<squid-input ${args.counter?'counter':''} 
+                         ${args.disabled?'disabled':''} 
+                         ${args.readonly?'readonly':''} 
+                         ${args.required?'required':''} 
                          minlength="${args.minlength}"
                          min="${args.min}"
                          max="${args.max}"
@@ -43,6 +33,7 @@ input.args ={
     min:'',
     max:'',
     placeholder:'',
+    counter:false
 };
 input.story = {
     name: 'input',

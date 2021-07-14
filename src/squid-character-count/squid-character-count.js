@@ -25,6 +25,9 @@ export class SquidCharacterCount extends BaseElement {
         if(parentHost) {
             setTimeout(()=>{
                 this.describes = parentHost.querySelector('input');
+                if(this.describes === null){
+                    this.describes = parentHost.querySelector('textarea');
+                }
                 this._initInput(this.describes);
             });
         } else {
