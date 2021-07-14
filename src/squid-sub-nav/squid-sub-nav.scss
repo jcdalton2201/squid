@@ -16,7 +16,7 @@ a{
     line-height: $font-size-default;
     text-decoration: none;
     white-space: nowrap;
-    color: var(--font-color-default, $font-color-default);
+    color: inherit;
     padding: $space-inset-m;
 
     &.small {
@@ -46,8 +46,9 @@ div{
     flex-wrap: wrap;
     width: 100%;
     background-color: var(--nav-color-background,$color-white);
+    color: var(--font-color-default, $font-color-default);
     &:hover {
         background-color: var(--color-primary-default,$color-primary-default);
-        
+        color: var(--color-white,$color-white);
     }
 }

@@ -24,7 +24,7 @@ describe('Unit and Functional Tests for squid-sub-nav',()=>{
         const bodyhandle = await difUtil.createBodyHandle(page);
         await page.evaluate(element => {
             element.innerHTML =
-                `<squid-sub-nav href='https://gogle.com' theme='white'>
+                `<squid-sub-nav href='https://google.com' theme='white'>
                     Google
                 </squid-sub-nav>`;
         }, bodyhandle);
