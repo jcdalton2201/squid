@@ -83,7 +83,12 @@
     ],
     "ignore": [
       "utils/standardize-key-code.js"
-    ]
+    ],
+    "check-coverage": true,
+    "branches": 80,
+    "lines": 80,
+    "functions": 80,
+    "statements": 80
   },
   "dependencies": {
     "lit": "^2.0.0-rc.2"

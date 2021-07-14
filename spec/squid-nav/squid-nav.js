@@ -48,7 +48,5 @@ describe('Unit and Functional Tests for squid-nav',()=>{
         }, bodyhandle);
         await page.waitForSelector('squid-nav');
         const nav = await page.$eval('squid-nav', el => el.hideList());
-        // console.log(nav.hideList());
-        console.log(nav);
     });
 });
