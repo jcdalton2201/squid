@@ -16,7 +16,7 @@ export class SquidSsn extends SquidInput {
         this.bindMethod('__showHideToggle');
         this.bindMethod('__onBlur');
         this.bindMethod('__onFocus');
-        this._isDelete;
+        this._isDelete = false;
         this.unmaskedValue = '';
         this.maskedValue = '';
         this._obfuscatedValue = '';
@@ -35,7 +35,6 @@ export class SquidSsn extends SquidInput {
         emitEvent('squid-change', _value,this);
         const input = this.__getInput();
         if(input){
-            // input.value = this._addMask(value);
             this._mask(value);
         }
     }

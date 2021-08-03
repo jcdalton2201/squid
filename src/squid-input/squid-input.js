@@ -34,23 +34,35 @@ export class SquidInput extends SquidInputBase {
         this._showDisabled = '';
         this._inputType = type;
     }
+    firstUpdated(){
+        this.updatePattern();
+    }
+    updatePattern(){
+        if(this.pattern){
+            const input = this.renderRoot.querySelector('input');
+            input.pattern = this.pattern;
+        }
+    }
     // set pattern(value) {
-    //     const input = this.renderRoot.querySelector('input');
-    //     if(!input){
-    //         setTimeout(()=>{
-    //             const input = this.renderRoot.querySelector('input');
+    //     console.log(value);
+    //     if(this.renderRoot){
+    //         const input = this.renderRoot.querySelector('input');
+    //         if(!input){
+    //             setTimeout(()=>{
+    //                 const input = this.renderRoot.querySelector('input');
+    //                 const oldValue = input.pattern;
+    //                 if(value) {
+    //                     input.pattern = value;
+    //                 }
+    //                 this.requestUpdate('pattern',oldValue);
+    //             });
+    //         } else {
     //             const oldValue = input.pattern;
     //             if(value) {
     //                 input.pattern = value;
     //             }
     //             this.requestUpdate('pattern',oldValue);
-    //         });
-    //     } else {
-    //         const oldValue = input.pattern;
-    //         if(value) {
-    //             input.pattern = value;
     //         }
-    //         this.requestUpdate('pattern',oldValue);
     //     }
     // }
     // get pattern(){
@@ -82,7 +94,7 @@ export class SquidInput extends SquidInputBase {
                     value="" 
                     id="squid-input-${this._uid}" 
                     data-ref="input"
-                    pattern=${this.pattern}
+                    ?pattern="${this.pattern?this.pattern:''}"
                     ?disabled=${this.disabled}
                     ?required=${this.required}
                     ?readonly=${this.readonly}

@@ -39,7 +39,9 @@ export class SquidInputMask extends SquidInput {
                 this.value = parsedData;
                 input.value = _value;
                 emitEvent('squid-change', _value, this);
-                parsedData === false ? this.setCustomValidity('The information entered does not follow the proper format') : null;
+                if(parsedData === false){
+                    this.setCustomValidity('The information entered does not follow the proper format'); 
+                }
             } else {
                 emitEvent('squid-change', _value, this);
             }

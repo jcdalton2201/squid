@@ -57,21 +57,27 @@ export class SquidInputBase extends BaseElement {
      */
     blur() {
         const input = this.__getInput();
-        input ? input.blur(): null;
+        if(input){
+            input.blur();
+        }
     }
     /**
      * proxy click function
      */
     click() {
         const input = this.__getInput();
-        input ? input.click(): null;
+        if(input) {
+            input.click();
+        }
     }
     /**
      * proxy focus function
      */
     focus() {
         const input = this.__getInput();
-        input ? input.focus(): null;
+        if(input){
+            input.focus();
+        }
     }
     /**
      * Change the default error message
@@ -93,8 +99,12 @@ export class SquidInputBase extends BaseElement {
         if(!message) {
             message = '';
         }
-        input ? input.setCustomValidity(message): null;
-        helpers ? helpers.setCustomError(message): null;
+        if(input){
+            input.setCustomValidity(message);
+        }
+        if(helpers){
+            helpers.setCustomError(message);
+        }
 
     }
     /**

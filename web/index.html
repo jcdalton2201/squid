@@ -1,226 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Test Harness</title>
-        <style>
-            #myform {
-                display: flex;
-                flex-direction: column;
-            }
-            squid-button {
-                margin: 8px;
-                width: fit-content;
-            }
-            :root {
-                --color-primary-default: #06844f;
-                --color-primary-green: #06844f;
-                --color-primary-drk-grey: #232425;
-            }
-        </style>
-    </head>
-    <body>
-        <!-- <div role='nav'>
-            <squid-sub-nav  href='https://new.acecashexpress.com/check-caching'>Prepaid Cards</squid-sub-nav>
-            <squid-nav-group >
-                <squid-nav name='Cards' >
-                    <squid-sub-nav  href='https://new.acecashexpress.com/check-caching'>Prepaid Cards</squid-sub-nav>
-                    <squid-sub-nav  href='https://new.acecashexpress.com/check-caching'>Flare Cards</squid-sub-nav>
-                </squid-nav>
-                <squid-nav name='Money Services'>
-                    <squid-sub-nav  href='https://new.acecashexpress.com/check-caching'>About ACE</squid-sub-nav>
-                    <squid-sub-nav  href='https://new.acecashexpress.com/check-caching'>Tax Service</squid-sub-nav>
-                    <squid-sub-nav  href='https://new.acecashexpress.com/check-caching'>Bill Pay</squid-sub-nav>
-                    <squid-sub-nav  href='https://new.acecashexpress.com/check-caching'>Title Loans</squid-sub-nav>
-                </squid-nav>
-            </squid-nav-group>
-                
-        </div>
-        <form id="myform" action="javascript:void(0)">
-            <squid-toggle name="turn on">Jason</squid-toggle>
-            <input name="last" />
-            <squid-input pattern="^\\d{5}(?:[-\\s]\\d{4})?$">First Name</squid-input>
-            <squid-stepper name="stepper" label="Traveller Class" value="2">
-                <option value="1">First</option>
-                <option value="2">Buisness</option>
-                <option value="3">Coach</option>
-            </squid-stepper>
-            <squid-button class="submit">Submit</squid-button>
-            <squid-button class="submit" variant="progressive"
-                >Submit</squid-button
-            >
-            <squid-button class="submit" variant="regressive"
-                >Submit</squid-button
-            >
-            <squid-button class="submit" variant="destructive"
-                >Submit</squid-button
-            >
-            <squid-button class="submit" disabled>Submit</squid-button>
-            <squid-button class="submit" variant="text" size="small"
-                >Submit</squid-button
-            >
-            <squid-button class="submit" variant="right">Submit</squid-button>
-            <squid-button class="submit" variant="left">Submit</squid-button>
-        </form>
-        <squid-accordion-group>
-            <squid-accordion>
-                <span slot="summary">The first accordion in the group</span>
-                <div slot="content">
-                    <p>
-                        Four score and seven years ago our fathers brought forth
-                        on this continent a new nation conceived in liberty and
-                        dedicated to the proposition that all men are created
-                        equal.
-                    </p>
-                </div>
-            </squid-accordion>
 
-            <squid-accordion>
-                <span slot="summary">The middle child</span>
-                <div slot="content">
-                    <p>
-                        Four score and seven years ago our fathers brought forth
-                        on this continent a new nation conceived in liberty and
-                        dedicated to the proposition that all men are created
-                        equal.
-                    </p>
-                </div>
-            </squid-accordion>
-
-            <squid-accordion>
-                <span slot="summary">Accordion number three</span>
-                <div slot="content">
-                    <p>
-                        Four score and seven years ago our fathers brought forth
-                        on this continent a new nation conceived in liberty and
-                        dedicated to the proposition that all men are created
-                        equal.
-                    </p>
-                </div>
-            </squid-accordion>
-        </squid-accordion-group>
-        <div>
-            <squid-combobox name="world" placeholder="Harry Potter characters">
-                <label slot="label">Favorite Harry Potter Character</label>
-                <option value="ME">Harry Potter</option>
-                <option value="Ron Weasley">Ron Weasley</option>
-                <option value="Hermione Granger">Hermione Granger</option>
-                <option value="Albus Dumbledore">Albus Dumbledore</option>
-                <option value="Severus Snape">Severus Snape</option>
-                <option value="Sirius Black">Sirius Black</option>
-                <option value="Neville 'freaking' Longbottom">Neville Longbottom</option>
-                <option value="Voldemort">He Who Must Not Be Named</option>
-              </squid-combobox>
-        </div>
-        <h2>Global</h2>
-        <squid-alert type="global">
-          <p slot="message">
-              Message goes here stating the message.
-              <a href="javascript:void(0);">Link</a>
-          </p>
-          <span slot="button-text">Acknowledge</span>
-      </squid-alert>
-        <h2>Success alert</h2>
-        <squid-alert type="success">
-            <p slot="message">
-                Message goes here stating the message.
-                <a href="javascript:void(0);">Link</a>
-            </p>
-            <span slot="button-text">Acknowledge</span>
-        </squid-alert>
-        <h2>Warning alert</h2>
-        <squid-alert type="warning">
-            <p slot="message">
-                Message goes here stating the message.
-                <a href="javascript:void(0);">Link</a>
-            </p>
-            <span slot="button-text">Acknowledge</span>
-        </squid-alert>
-        <h2>Error alert</h2>
-        <squid-alert type="error">
-            <p slot="message">
-                Message goes here stating the message.
-                <a href="javascript:void(0);">Link</a>
-            </p>
-            <span slot="button-text">Acknowledge</span>
-        </squid-alert>
-        <h2>Informational alert</h2>
-        <squid-alert type="informational">
-            <p slot="message">
-                Message goes here stating the message.
-                <a href="javascript:void(0);">Link</a>
-            </p>
-            <span slot="button-text">Acknowledge</span>
-        </squid-alert>
-        <squid-calendar>
-        </squid-calendar>
-        <squid-checkbox>Chcekbox</squid-checkbox>
-<squid-checkbox checked="true">Chcekbox checked</squid-checkbox>
-<squid-checkbox disabled>Chcekbox &mdash; disabled</squid-checkbox>
-<squid-checkbox required>Chcekbox &mdash; required</squid-checkbox>
-<squid-drawer >
-    <span slot='button'>Info</span>
-    <span slot='title'>Shakespears Quotes</span>
-    <squid-accordion-group>
-
-  <squid-accordion>
-    <span slot="summary">The first accordion in the group</span>
-    <div slot="content">
-      <p>Four score and seven years ago our fathers brought forth on this continent a new nation conceived in liberty and dedicated to the proposition that all men are created equal.</p>
-    </div>
-  </squid-accordion>
-
-
-  <squid-accordion>
-    <span slot="summary">The middle child</span>
-    <div slot="content">
-      <p>Four score and seven years ago our fathers brought forth on this continent a new nation conceived in liberty and dedicated to the proposition that all men are created equal.</p>
-    </div>
-  </squid-accordion>
-
-
-  <squid-accordion>
-    <span slot="summary">Accordion number three</span>
-    <div slot="content">
-      <p>Four score and seven years ago our fathers brought forth on this continent a new nation conceived in liberty and dedicated to the proposition that all men are created equal.</p>
-    </div>
-  </squid-accordion>
-</squid-accordion-group>
-  </squid-drawer>
-  <squid-hero-number number="1234.56"  label="Available credit"></squid-hero-number>
-<squid-hero-number number="1234.56"  label="Current balance" alignment="center"></squid-hero-number>
-<squid-hero-number number="1234.56"  label="Current balance" size="small" currency="USD"></squid-hero-number>
-<squid-input required minlength="3" maxlength="5" tooltip="Tooltip text">This input will run validations</squid-input>
-<squid-radio-group>
-    <squid-radio >xmas</squid-radio> 
-    <squid-radio >new years</squid-radio> 
-</squid-radio-group>
-
-<squid-select icon>
-    <span slot='label'>Harry Potter Char</span>
-    <option value="ME">Harry Potter</option>
-    <option value="Ron Weasley">Ron Weasley</option>
-    <option value="Hermione Granger">Hermione Granger</option>
-    <option value="Albus Dumbledore">Albus Dumbledore</option>
-    <option value="Severus Snape">Severus Snape</option>
-    <option value="Sirius Black">Sirius Black</option>
-    <option value="Neville 'freaking' Longbottom">Neville Longbottom</option>
-    <option value="Voldemort">He Who Must Not Be Named</option>
-</squid-select>
-<squid-ssn>SSN</squid-ssn> -->
-<form action="javascript:void(0)">
-    <squid-input required>Name</squid-input>
-    <squid-textarea cols="50"  rows="10" required>Help me</squid-textarea>
-</form>
 </body>
+    <div>
+        <squid-nav-group theme='${args.theme}'>
+            <squid-nav  name='Search Engine'>
+            <squid-sub-nav  href='https://google.com'>google</squid-sub-nav>
+            <squid-sub-nav  href='https://bing.com'>bing</squid-sub-nav>
+            </squid-nav>
+            <squid-nav  name='Search Engine2'>
+            <squid-sub-nav  href='https://google.com'>google</squid-sub-nav>
+            <squid-sub-nav  href='https://bing.com'>bing</squid-sub-nav>
+            </squid-nav>
+            </squid-nav-group>
+        
+    </div>
     <script src="squid-core-ui.js"></script>
     <script>
-        document
-            .querySelector("squid-stepper")
-            .addEventListener("change", (evt) => {
-                console.log(evt.target);
-            });
-            document.querySelector("squid-combobox").data = ['Harry Potter','Ron Weasley','Hermione Granger','Albus Dumbledore','Severus Snape','Sirius Black','Voldemort'];
+        document.querySelector('button').addEventListener('click',async()=>{
+            let dev = await navigator.bluetooth.requestDevice({acceptAllDevices:true});
+            console.log(dev);
+        });
     </script>
 </html>

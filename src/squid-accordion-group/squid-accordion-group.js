@@ -42,16 +42,20 @@ export class SquidAccordionGroup extends BaseElement {
         const { keyCode } = evt;
         if (keyCode === 38 || keyCode === 40) {
             const accordions = [...this.querySelectorAll('squid-accordion')];
-            const focused = accordions.reduce((current, next) =>
-                document.activeElement === current ? current : next
-            , false);
+            const focused = accordions.reduce((current, step) =>document.activeElement === current ? current : step
+                , false);
             const focusedIndex = accordions.indexOf(focused);
             const previous = accordions[focusedIndex - 1];
             const next = accordions[focusedIndex + 1];
             if (keyCode === 38) {
-                previous ? previous.focus() : null;
+                if(previous){
+                    previous.focus();
+                }
+                
             } else {
-                next ? next.focus() : null;
+                if(next){
+                    next.focus();
+                }
             }
         }
     }

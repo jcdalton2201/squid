@@ -1,13 +1,16 @@
 const sonarqubeScanner = require('sonarqube-scanner');
 sonarqubeScanner({
-  serverUrl : process.env.SONAR_URL||'https://<sonar-url>/',
+  serverUrl : 'http://localhost:9000',
   options : {
-    'sonar.sources': 'dist',
-    'sonar.tests': 'test/',
-    'sonar.inclusions': 'dist/**/*.js',
-    'sonar.exclusions': 'dist/tokens/tokens.js,test/*.js,dist/*.js,dist/ink.min.js,dist/ink-es5.min.js,dist/ink.js,dist/ink-es5.js,dist/build.js',
-    'sonar.javascript.lcov.itReportPath': 'coverage/lcov.info',
-    'sonar.javascript.lcov.reportPath': 'coverage/lcov-report'
+    'sonar.login':'980b305e384f9cd1dcca940042d10b4ed7479322',
+    'sonar.sources': '.nyc_output/js/src',
+    'sonar.tests': 'spec',
+    'sonar.scm.disabled':'true',
+    'sonar.exclusions':'**/spec/**, src/**/*.scss, src/**/*.stories.js',
+    'sonar.javascript.lcov.itReportPath': '**/coverage/lcov.info',
+    'sonar.javascript.lcov.reportPath': 'coverage/lcov.info',
+    'sonar.language':'js',
+    'sonar.verbose':'true'
   }
 }, ()=>{
   console.log('DONE?');

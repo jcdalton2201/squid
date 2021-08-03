@@ -1,6 +1,5 @@
 
-import {html} from 'lit';
-import {render} from 'lit';
+import {html, render} from 'lit';
 import { BaseElement } from '../utils/baseElement.js';
 import { defineSquidElement } from '../utils/defineSquidElement.js';
 import styles from './squid-stepper.scss';

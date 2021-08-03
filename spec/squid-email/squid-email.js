@@ -51,6 +51,6 @@ describe('Unit and Functional Tests for squid-email',()=>{
         await input.type('tests');
         page.$eval('squid-email', el => el.blur());
         const errorMessage = await page.$eval('squid-email', el => el.shadowRoot.querySelector('squid-helpers')._message);
-        expect(errorMessage).toEqual('This field does not follow the proper pattern');
+        expect(errorMessage).toEqual('The entered value is not the right format');
     });
 });

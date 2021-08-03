@@ -9,7 +9,7 @@ export class SquidNumber extends SquidInput {
      * @param {Event} evt keydown event
      */
     __onInput(evt) {
-        if(evt.target.value === '' & evt.target.validity.badInput){
+        if(evt.target.value === '' && evt.target.validity.badInput){
             return;
         } else {
             this.value = evt.target.value;

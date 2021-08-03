@@ -38,7 +38,9 @@ export class SquidAlert extends BaseElement {
 </div>        `;
     }
     remove(evt){
-        evt ? evt.preventDefault(): null;
+        if(evt){
+            evt.preventDefault();
+        }
         this.parentNode.removeChild(this);
         this.dispatchEvent(new Event('alert-closed'));
     }

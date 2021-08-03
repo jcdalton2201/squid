@@ -15,26 +15,20 @@ export class SquidNavGroup extends BaseElement {
         };
     }
     shouldUpdate(changedProperties){
-        console.log(this.theme);
-        console.log('should update');
-        this.querySelectorAll('squid-sub-nav').forEach(item => {
-            if(this.theme){
-                item.setAttribute('theme',this.theme);
-                this.requestUpdate();
-            }
-        });
+        this.querySelectorAll('squid-sub-nav').forEach(item => this.setTheme(item));
         return changedProperties;
     }
     firstUpdated(){
-        this.querySelectorAll('squid-nav').forEach(item => {
-            if(this.theme){
-                item.setAttribute('theme',this.theme);
-                this.requestUpdate();
-            }
-        });
+        this.querySelectorAll('squid-nav').forEach(item => this.setTheme(item));
     }
     render(){
         return html`<slot></slot>`;
+    }
+    setTheme(item){
+        if(this.theme){
+            item.setAttribute('theme',this.theme);
+            this.requestUpdate();
+        }
     }
 }
 defineSquidElement('squid-nav-group',SquidNavGroup);

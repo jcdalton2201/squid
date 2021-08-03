@@ -26,7 +26,7 @@ export class SquidCombobox extends SquidInputBase {
         this.bindMethods(['_openOptions','_closeOptions','_keyDown', '_selectNext','_selectPrevious','_keyInput','_selectValue',]);
         this._data = [];
         this._displayData = [];
-        this.activeElement;
+        this.activeElemen = null;
         this.addEventListener('blur', this._closeOptions);
     }
     set value(value) {

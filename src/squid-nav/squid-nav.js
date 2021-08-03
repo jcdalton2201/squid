@@ -23,8 +23,6 @@ export class SquidNav extends BaseElement {
         this.theme = 'white';
         
     }
-    updated(){
-    }
     firstUpdated(){
         this.buildRefs();
     }

@@ -2,16 +2,17 @@ import globby from 'globby';
 import path from 'path';
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
-import postCSSPlugin from 'rollup-plugin-postcss';
+// import postCSSPlugin from 'rollup-plugin-postcss';
+import postCSS from 'rollup-plugin-postcss';
 import postcssLit from 'rollup-plugin-postcss-lit';
 import { terser } from 'rollup-plugin-terser';
 import gzipPlugin from 'rollup-plugin-gzip';
-const postCSS = postCSSPlugin({
-    inject: false,
-    minimize: {
-        discardComments: true,
-    },
-});
+// const postCSS = postCSSPlugin({
+//     inject: false,
+//     minimize: {
+//         discardComments: true,
+//     },
+// });
 const ignore = ['src/build.js', 'src/**/*stories.js'];
 const files = globby.sync('src/**/*.js', { ignore });
 console.log(files);
@@ -26,7 +27,12 @@ const individualFiles = files.map(input => ({
         },
     ],
     external,
-    plugins: [postCSS,postcssLit()],
+    plugins: [postCSS({
+        inject: false,
+        minimize: {
+            discardComments: true,
+        },
+    }),postcssLit()],
 }));
 
 const bundelFiles = {
@@ -38,7 +44,11 @@ const bundelFiles = {
             sourcemap: true,
         },
     ],
-    plugins: [resolve(), commonjs(), postCSS, postcssLit()],
+    plugins: [resolve(), commonjs(), postCSS({
+        inject: false,
+        minimize: {
+            discardComments: true,
+        }}), postcssLit()],
 };
 const minFiles = {
     input: 'src/build.js',
@@ -49,6 +59,10 @@ const minFiles = {
             sourcemap: true,
         },
     ],
-    plugins: [resolve(), commonjs(), postCSS, postcssLit(), terser(), gzipPlugin({fileName: '.js'})],
+    plugins: [resolve(), commonjs(), postCSS({
+        inject: false,
+        minimize: {
+            discardComments: true,
+        }}), postcssLit(), terser(), gzipPlugin({fileName: '.js'})],
 };
 export default [...individualFiles, bundelFiles,minFiles];

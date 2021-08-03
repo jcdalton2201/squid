@@ -61,45 +61,48 @@ export class SquidErrors extends BaseElement {
         const selector = `[aria-describedby="${value}"]`;
         const parentHost = findSahdowRoot(this);
         if(parentHost) {
-            setTimeout(()=>{
-                this.describes = parentHost.querySelector('input');
-                if(!this.describes){
-                    this.describes = parentHost.querySelector('textarea');
-                    
-                }
-                if(this.describes){
-                    this._initInput(this.describes);
-                    this._invalidClass = {
-                        checkbox: 'checkbox__input--error',
-                        textarea: 'textfield__textarea--error'
-                    }[this.describes.type] || 'textfield__input-error';
-                    if(this.describes.tagName === 'SELECT') {
-                        this._invalidClass = 'select__input--error';
-                    }
-                }
-            });
+            setTimeout(()=>this.setDescribes(parentHost));
         } else {
-            setTimeout(() => {
-                this.describes = document.querySelector(selector);
-                this._initInput(this.describes);
-                this.count = this.describes ? this.describes.value.length.toString():0;
-                this._invalidClass = {
-                    checkbox: 'checkbox__input--error',
-                    textarea: 'textfield__textarea--error'
-                }[this.describes.type] || 'textfield__input-error';
-                if(this.describes.tagName === 'SELECT') {
-                    this._invalidClass = 'select__input--error';
-                }
-            });
+            setTimeout(() =>this.setSelector(selector));
         }
         this.requestUpdate('id',oldValue);
     }
+
     get id() {
         return this._id;
     }
     get form() {
         this._form = this._form || findParentForm(this);
         return this._form;
+    }
+    setSelector(selector){
+        this.describes = document.querySelector(selector);
+        this._initInput(this.describes);
+        this.count = this.describes ? this.describes.value.length.toString():0;
+        this._invalidClass = {
+            checkbox: 'checkbox__input--error',
+            textarea: 'textfield__textarea--error'
+        }[this.describes.type] || 'textfield__input-error';
+        if(this.describes.tagName === 'SELECT') {
+            this._invalidClass = 'select__input--error';
+        }
+    }
+    setDescribes(parentHost){
+        this.describes = parentHost.querySelector('input');
+        if(!this.describes){
+            this.describes = parentHost.querySelector('textarea');
+                    
+        }
+        if(this.describes){
+            this._initInput(this.describes);
+            this._invalidClass = {
+                checkbox: 'checkbox__input--error',
+                textarea: 'textfield__textarea--error'
+            }[this.describes.type] || 'textfield__input-error';
+            if(this.describes.tagName === 'SELECT') {
+                this._invalidClass = 'select__input--error';
+            }
+        }
     }
     render(){
         return html`<div class="helpers" data-ref="helpers">${this._message}</div>`;
@@ -145,16 +148,20 @@ export class SquidErrors extends BaseElement {
         }
     }
     /**
-     * When the input changes display the messae
-     * @param {Event} evt the event to change
+     * check to see if we need to prevent an event.
+     * @param {Event} evt event to default
+     * @param {Boolean} isInvalid is this invalid
      */
-    handleChange(evt) {
-        const describesInvalid = this.describes && this.describes.validity && this.describes.validity.valid === false;
-        const inputsInvalid = describesInvalid;
-        const isInvalid = describesInvalid || inputsInvalid;
+    preventDefault(evt, isInvalid){
         if (this.form === evt.target && evt.type === 'submit' && isInvalid) {
             evt.preventDefault();
         }
+    }
+    /**
+     * 
+     * @returns {Object} validity a validity object;
+     */
+    checkValidity(){
         let validity = {};
         if (this.describes) {
             validity = this.describes.validity;
@@ -164,6 +171,32 @@ export class SquidErrors extends BaseElement {
         if (!validity) {
             validity = this._inputs[0].validity;
         }
+        return validity;
+    }
+    /**
+     * 
+     * @param {*} helper The helper object
+     * @returns 
+     */
+    setHelper(helper) {
+        if(helper && helper.message){
+            this.appendHelper(helper.message);
+        } else {
+            this.appendHelper('');
+        }
+        
+    }
+
+    /**
+     * When the input changes display the messae
+     * @param {Event} evt the event to change
+     */
+    handleChange(evt) {
+        const describesInvalid = this.describes && this.describes.validity && this.describes.validity.valid === false;
+        const inputsInvalid = describesInvalid;
+        const isInvalid = describesInvalid || inputsInvalid;
+        this.preventDefault(evt, isInvalid);
+        let validity = this.checkValidity();
         const validityKeys = [];
         this.validityMessages.forEach((value, key) => validityKeys.push(key));
         const helper = validityKeys
@@ -172,11 +205,9 @@ export class SquidErrors extends BaseElement {
             .reduce((current, next) => {
                 return current.priority > next.priority ? current : next;
             }, {});
-        if(helper && helper.message){
-            this.appendHelper(helper.message);
-        } else {
-            this.appendHelper('');
-        }
+        
+        
+        this.setHelper(helper);
 
         if (this.describes) {
             if (validity.valid === false) {
