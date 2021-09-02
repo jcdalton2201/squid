@@ -3,23 +3,21 @@
 
 </body>
     <div>
-        <squid-nav-group theme='${args.theme}'>
-            <squid-nav  name='Search Engine'>
-            <squid-sub-nav  href='https://google.com'>google</squid-sub-nav>
-            <squid-sub-nav  href='https://bing.com'>bing</squid-sub-nav>
-            </squid-nav>
-            <squid-nav  name='Search Engine2'>
-            <squid-sub-nav  href='https://google.com'>google</squid-sub-nav>
-            <squid-sub-nav  href='https://bing.com'>bing</squid-sub-nav>
-            </squid-nav>
-            </squid-nav-group>
+        <squid-telephone>tele</squid-telephone>
+        <squid-input value='AAA' >
+            Test input
+            </squid-input>
+        <squid-input-mask mask='AAA-111' value='AAA'>
+            Test
+            </squid-input-mask>
         
     </div>
     <script src="squid-core-ui.js"></script>
     <script>
-        document.querySelector('button').addEventListener('click',async()=>{
-            let dev = await navigator.bluetooth.requestDevice({acceptAllDevices:true});
-            console.log(dev);
-        });
+        const mask = document.querySelector('squid-input');
+        
+        setTimeout(()=>{
+            mask.value = 'ABC'
+        },1000);
     </script>
 </html>

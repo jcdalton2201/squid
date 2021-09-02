@@ -55,11 +55,11 @@ describe('Unit and Functional Tests for squid-input-mask',()=>{
         await input.type('5');
         page.$eval('squid-input-mask', el => el.blur());
         const errorMessage2 = await page.$eval('squid-input-mask', el => el.shadowRoot.querySelector('squid-helpers')._message);
-        expect(errorMessage2).toEqual('This field does not follow the proper pattern');
+        expect(errorMessage2).toEqual('');
         await input.click({clickCount:6});
-        await page.evaluateHandle(body => {
-            body.querySelector('squid-input-mask').renderRoot.querySelector('input').value = '124-ABC';
-        },bodyhandle);
-        await page.$eval('squid-input-mask', el => el.dispatchEvent(new Event('input')));
+        await page.keyboard.press('Backspace');
+        page.$eval('squid-input-mask', el => el.blur());
+        const errorMessage3 = await page.$eval('squid-input-mask', el => el.shadowRoot.querySelector('squid-helpers')._message);
+        expect(errorMessage3).toEqual('');
     });
 });

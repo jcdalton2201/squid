@@ -69,14 +69,16 @@ export class SquidInput extends SquidInputBase {
     //     return this.renderRoot.querySelector('input').pattern;
     // }
     set value(value) {
-        const oldValue = this.renderRoot.querySelector('input').value;
-        if(value !== oldValue) {
-            this.renderRoot.querySelector('input').value = value; 
+        if(this.renderRoot){
+            const oldValue = this.renderRoot.querySelector('input').value;
+            if(value !== oldValue) {
+                this.renderRoot.querySelector('input').value = value; 
+            }
+            if(this.counter) {
+                this.renderRoot.querySelector('squid-character-count').count = (value && value.length) || 0;
+            }
+            this.dispatchEvent(new CustomEvent('squid-input-change'));
         }
-        if(this.counter) {
-            this.renderRoot.querySelector('squid-character-count').count = (value && value.length) || 0;
-        }
-        this.dispatchEvent(new CustomEvent('squid-input-change'));
     }
     get value(){
         return this.renderRoot.querySelector('input').value;
@@ -94,17 +96,17 @@ export class SquidInput extends SquidInputBase {
                     value="" 
                     id="squid-input-${this._uid}" 
                     data-ref="input"
-                    ?pattern="${this.pattern?this.pattern:''}"
+                    ${this.pattern?'pattern='+this.pattern:''}
                     ?disabled=${this.disabled}
                     ?required=${this.required}
                     ?readonly=${this.readonly}
                     ?autofocus=${this.autofocus}
                     ?compact=${this.compact}
                     @input=${this.__onInput}
-                    maxlength="${this.maxlength?this.maxlength:''}"
-                    max="${this.max?this.max:''}"
-                    minlength="${this.minlength?this.minlength:''}"
-                    min="${this.min?this.min:''}"
+                    ${this.maxlength?'maxlength='+this.maxlength:''}
+                    ${this.max?'max='+this.max:''}
+                    ${this.minlength?'minlength='+this.minlength:''}
+                    ${this.min?'min='+this.min:''}
                     placeholder="${this.placeholder?this.placeholder:''}"
                     autocomplete="${this.autocomplete?this.autocomplete:''}"
                      
