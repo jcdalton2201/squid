@@ -3,6 +3,23 @@ import {html} from 'lit';
 import { SquidInput } from '../squid-input/squid-input.js';
 import { defineSquidElement } from '../utils/defineSquidElement.js';
 import styles from './squid-select.scss';
+/**
+ * @tag squid-select
+ * @summary The <select> HTML element represents a control that provides a menu of options:
+ * @prop {Boolean} icon - A boolean value to show the chevron on the input element
+ * @slot label - The label element for this input.
+ * @event squid-select-change - A change to the input's value.
+ * @example <squid-select name="pets" id="pet-select">
+ * <span slot='label'>Animals</span>
+    <option value="">--Please choose an option--</option>
+    <option value="dog">Dog</option>
+    <option value="cat">Cat</option>
+    <option value="hamster">Hamster</option>
+    <option value="parrot">Parrot</option>
+    <option value="spider">Spider</option>
+    <option value="goldfish">Goldfish</option>
+</squid-selec>
+ */
 export class SquidSelect extends SquidInput {
     static get styles() {
         return [styles];

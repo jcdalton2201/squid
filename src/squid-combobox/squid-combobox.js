@@ -3,6 +3,36 @@ import {html} from 'lit';
 import { SquidInputBase } from '../squid-input-base/squid-input-base.js';
 import { defineSquidElement } from '../utils/defineSquidElement.js';
 import styles from './squid-combobox.scss';
+/**
+ * @tag squid-combobox
+ * @summary A combobox is a combination of input element and a select element much like a [datalist](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist), but with some subtle differences. The W3C defines a combobox as:
+
+> A combobox is a widget made up of the combination of two distinct elements: 1) a single-line textbox, and 2) an associated pop-up element for helping users set the value of the textbox. The popup may be a listbox, grid, tree, or dialog. Many implementations also include a third optional element -- a graphical button adjacent to the textbox, indicating the availability of the popup. Activating the button displays the popup if suggestions are available.
+_[-source](https://www.w3.org/TR/wai-aria-practices/#combobox)_
+ * @prop {Boolean} disabled - A proxy for the input disabled attribute. Reflected as a property. 
+ * @prop {Boolean} required - A proxy for the input disabled attribute. Reflected as a property. 
+ * @prop {Boolean} autofocus -  A proxy for the input autofocus attribute. Reflected as a property. 
+ * @prop {String} tooltip -  Sets a tooltip on the combobox label using [`SquidTooltip`](../squid-tooltip). Reflected as a property. 
+ * @prop {String} placeholder -  A proxy for the input placeholder attribute. Reflected as a property. 
+ * @prop {String} size -  Can set the size on the input. Reflected as a property. 
+ * @prop {String} value -  Sets the input's value and emits an `squid-change` event when updated. Reflected as a property. 
+ * @prop {String} datalabel -  Set the string to tell you what property you wish to show in your object array
+ * @prop {String} datavalue -  Set the string to tell you what property you wish to be your key in your object array
+ * @prop {Array} data -  This is the data set you wish to show in the popdown.  It can be an Array of Strings
+or an Array of objects with datalabel and datavalue attributes set
+ * @event squid-change - A [`CustomEvent`](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent) emitted each time a new value is comitted. The event's `detail` property will contain the newly comitted value. 
+ * @example <squid-combobox name="world" placeholder="Harry Potter characters">
+  <label slot="label">Favorite Harry Potter Character</label>
+  <option value="ME">Harry Potter</option>
+  <option value="Ron Weasley">Ron Weasley</option>
+  <option value="Hermione Granger">Hermione Granger</option>
+  <option value="Albus Dumbledore">Albus Dumbledore</option>
+  <option value="Severus Snape">Severus Snape</option>
+  <option value="Sirius Black">Sirius Black</option>
+  <option value="Neville 'freaking' Longbottom">Neville Longbottom</option>
+  <option value="Voldemort">He Who Must Not Be Named</option>
+</squid-combobox>
+ */
 export class SquidCombobox extends SquidInputBase {
     static get styles() {
         return [styles];

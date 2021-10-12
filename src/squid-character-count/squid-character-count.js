@@ -4,6 +4,15 @@ import { defineSquidElement } from '../utils/defineSquidElement.js';
 import styles from './squid-character-count.scss';
 import { findSahdowRoot } from '../utils/findShadowRoot.js';
 import { BaseElement } from '../utils/baseElement.js';
+/**
+ * @prop max {Number} - The denomenator in the current/total fraction. Reflected as a property.
+ * @prop count {Number} - he current character count. Reflected as a property.
+ * @prop id {String} - TheThe element's id, corresponds to the `aria-describedby` attribute on an `HTMLInputElement` in the same `DocumentOrShadowRoot`. The element will hook into this element and attach an event listener to look for changes. Reflected as a property.  
+ * @tag squid-character-count
+ * @summary The `SquidCharacterCount` is used to allow a user to track how many characters are still available in a given input.
+ * @example <squid-character-count id="counter" max="10"></squid-character-count>
+         <input aria-describedby="counter">
+*/
 export class SquidCharacterCount extends BaseElement {
     static get styles() {
         return [styles];

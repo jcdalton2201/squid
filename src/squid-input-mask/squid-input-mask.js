@@ -3,6 +3,13 @@ import { SquidInput } from '../squid-input/squid-input.js';
 import { defineSquidElement } from '../utils/defineSquidElement.js';
 import { MaskUtil } from '../utils/maskUtil.js';
 import { emitEvent} from '../utils/squidEvents.js';
+/**
+ * @tag squid-input-mask
+ * @summary The `SquidInputMask` is functionally an `SquidInput` component with an input mask attached to enforece a particular pattern. This now serves as the base class for [SquidTelephone](../squid-telephone).
+ * @prop {String} mask - The mask to apply to the input. Includes two options: alpha: `'A'` and numeric `'1'`. So a mask for a telephone might be `(111) 111-1111`. For alphanumeric characters, use the `'e'` character. Reflected as a property. **NOTE:** Updating the mask property after the element has been connected to the DOM will not create a new mask.
+ * @example <squid-input-mask mask="(111) 111-1111">Telephone Number</squid-input-mask>
+<squid-input-mask mask="1AAAA11AAAA111111" helper="Format: 1AAAA11AAAA111111">Vehicle Identification Number</squid-input-mask>
+ */
 export class SquidInputMask extends SquidInput {
     constructor(){
         super();

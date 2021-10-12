@@ -4,6 +4,17 @@ import { defineSquidElement } from '../utils/defineSquidElement.js';
 import styles from './squid-radio-group.scss';
 import '../squid-radio/squid-radio.js';
 import { BaseElement } from '../utils/baseElement.js';
+/**
+ * @tag squid-radio-group
+ * @summary a collection of radio buttons describing a set of related options. Only one radio button in a group can be selected at the same time.
+ * @prop {String} value - The value attribute is one which all <input>s share; however, it serves a special purpose for inputs of type radio: when a form is submitted, only radio buttons which are currently checked are submitted to the server, and the reported value is the value of the value attribute. If the value is not otherwise specified, it is the string on by default. This is demonstrated in the section Value above.
+ * @example <squid-radio-group>
+  <h1 slot="title">Vote</h1>
+  <squid-radio name='test' value='yes' >YES</squid-radio>
+  <squid-radio name='test' value='no'>No</squid-radio>
+  <squid-radio name='test' value='maybe'>Maybe</squid-radio>
+</squid-radio-group>
+ */
 export class SquidRadioGroup extends BaseElement {
     static get styles() {
         return [styles];

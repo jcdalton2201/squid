@@ -3,6 +3,19 @@ import {html, render} from 'lit';
 import { BaseElement } from '../utils/baseElement.js';
 import { defineSquidElement } from '../utils/defineSquidElement.js';
 import styles from './squid-stepper.scss';
+/**
+ * @tag squid-stepper
+ * @summary The `SquidStepper` element to allow users to quickly specify a value within a given range.
+ * @prop {String} name - Name of the form control. Submitted with the form as part of a name/value pair.
+ * @prop {String} label - The label for the element and is visual at the top of the element.
+ * @prop {String} value - The initial value of the control.
+ * @event change - Event dispatch when the value has changed.
+ * @example <squid-stepper name='stepper' label='Traveller Class' value='2'>
+    <option value='1'>First</option>
+    <option value='2'>Buisness</option>
+    <option value='3'>Coach</option>
+</squid-stepper>
+ */
 export class SquidStepper extends BaseElement {
     static get styles() {
         return [styles];

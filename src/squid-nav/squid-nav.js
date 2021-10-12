@@ -3,6 +3,18 @@ import { html } from 'lit-element';
 import { BaseElement } from '../utils/baseElement.js';
 import { defineSquidElement } from '../utils/defineSquidElement.js';
 import styles from './squid-nav.scss';
+/**
+ * @tag squid-nav
+ * @summary The `SquidNav` component is an of a  navigation element.
+The base element for a navigation it has an anchor element for linking.
+ * @prop {String} name -The label for this element.
+ * @prop {String} theme - sets a theme to `"light"` or `"dark"`. Default value is light
+ * @event
+ * @example <squid-nav name='Search Engine' theme='dark'>
+    <squid-sub-nav href='https://google.com' theme='dark'>Google</squid-sub-nav>
+    <squid-sub-nav href='https://bing.com' theme='dark'>Bing</squid-sub-nav>
+</squid-nav>
+ */
 export class SquidNav extends BaseElement {
     static get styles() {
         return [styles];

@@ -3,6 +3,34 @@ import {html} from 'lit';
 import {SquidInputBase} from '../squid-input-base/squid-input-base.js';
 import { defineSquidElement } from '../utils/defineSquidElement.js';
 import styles from './squid-input.scss';
+/**
+ * @tag squid-input
+ * @summary The `SquidInput` component is an implementation the HTML [input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input) element.
+
+> Text inputs allow text or numeric values to be entered and edited in one line.
+> Text areas allow multiple lines of text to be entered.
+
+Squid breaks up the input elements each into their own component for convenience including [`SquidCheckbox`](../squid-checkbox), [`SquidCombobox`](../squid-checkbox), [`SquidEmail`](../squid-email), `SquidInput`, [`SquidNumber`](../squid-number), [`SquidPassword`](../squid-password), [`SquidRadio`](../squid-radio), [`SquidSearch`](../squid-search), [`SquidSelect`](SquidSelect), [`SquidSsn`](../squid-ssn), [`SquidTelephone`](../squid-telephone) and [`SquidTextarea`](../squid-textarea).
+ * @prop {String} disabled -  A proxy for the input disabled attribute. Reflected as a property. 
+ * @prop {String} required -  A proxy for the input required attribute. Reflected as a property. 
+ * @prop {String} autofocus -  A proxy for the input autofocus attribute. Reflected as a property. 
+ * @prop {String} compact -  Uses a compact input. This specific style is not defined by the ONE Design System, but used widely across Financial Services. 
+ * @prop {String} tooltip -  Sets a tooltip on the combobox label using [`SquidTooltip`](../squid-tooltip). Reflected as a property. 
+ * @prop {String} placeholder -  A proxy for the input placeholder attribute. Reflected as a property. 
+ * @prop {String} value -  Sets the input's value and emits an `squid-change` event when updated. Reflected as a property. 
+ * @prop {String} minlength -  The input's `minlength` attribute (`minLength` property). Reflected here solely as `minlength`. 
+ * @prop {String} maxlength -  The input's `maxlength` attribute (`maxLength` property). Reflected here solely as `maxlength`. 
+ * @prop {String} readonly -  A proxy for the input's `readonly` attribute (`readOnly`) property. Reflected here as `readonly`. 
+ * @prop {String} autocomplete -  A proxy for the input's `autocomplete` property. Reflected as a property. 
+ * @prop {String} pattern -  A RegEx to be used by the input for validation purposes. Serves as a proxy for the input's pattern property/attribute. 
+ * @prop {String} min -  A proxy for the input's `min` attribute. Reflected as a property. 
+ * @prop {String} max -  A proxy for the input's `max` attribute. Reflected as a property. 
+ * @prop {String} counter -  Displays an instance of the [`SquidCharacterCount`](../squid-character-count) component if set to true and a maxlength is provided. Reflected as a property. 
+ * @event squid-input-change - Event dispatched for an input change.
+ * @example <squid-input required minlength="3" maxlength="5" tooltip="Tooltip text">
+ * This input will run validations
+ * </squid-input>
+ */
 export class SquidInput extends SquidInputBase {
     static get styles() {
         return [styles];

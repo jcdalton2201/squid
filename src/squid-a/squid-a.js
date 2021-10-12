@@ -15,7 +15,8 @@ import styles from './squid-a.scss';
 There are several variants of the button, called types. Each has it's own specific meaning and use cases; more detail can be found at the link above. Here's what the system says about the button component.
 
 >Buttons communicate the action that will take place when triggered. They’re hierarchically more important than link text or another pattern that points to supplementary content.
- * 
+ * @example <p><squid-a href="https://github.com/" target="_blank">GitHub in a new tab</squid-a></p>
+<p><squid-a href="https://google">google</squid-a></p>
  */
 export class SquidA extends BaseElement {
     static get styles() {

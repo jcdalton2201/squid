@@ -4,6 +4,13 @@ import { SquidInput } from '../squid-input/squid-input.js';
 import { defineSquidElement } from '../utils/defineSquidElement.js';
 import styles from './squid-ssn.scss';
 import { emitEvent} from '../utils/squidEvents.js';
+/**
+ * @tag squid-ssn
+ * @summary `SquidSsn` is an implementation of [`SquidInput`](../squid-input) that serves as a social-security number mask for privacy reasons.
+ * @prop {String} value - value of the input.
+ * @event squid-change - The input value has changed.
+ * @example <squid-ssn>Social security number</squid-ssn>
+ */
 export class SquidSsn extends SquidInput {
     constructor() {
         super();

@@ -3,6 +3,38 @@ import { html} from 'lit';
 import { BaseElement } from '../utils/baseElement.js';
 import { defineSquidElement } from '../utils/defineSquidElement.js';
 import styles from './squid-accordion-group.scss';
+/**
+ * 
+ * @tag squid-accordion-group
+ * @summary `SquidAccordion` is a web component. 
+
+The `SquidAccordionGroup` element exists to group instances of `SquidAccordion`. Importing the accordion group also implicitly imports the accordions. The primary function is to group accordions so that only one accordion is open at a time. * 
+ * @example <squid-accordion-group>
+  <!-- one -->
+  <squid-accordion>
+    <span slot="summary">The first accordion in the group</span>
+    <div slot="content">
+      <p>Four score and seven years ago our fathers brought forth on this continent a new nation conceived in liberty and dedicated to the proposition that all men are created equal.</p>
+    </div>
+  </squid-accordion>
+
+  <!-- two -->
+  <squid-accordion>
+    <span slot="summary">The middle child</span>
+    <div slot="content">
+      <p>Four score and seven years ago our fathers brought forth on this continent a new nation conceived in liberty and dedicated to the proposition that all men are created equal.</p>
+    </div>
+  </squid-accordion>
+
+  <!-- three -->
+  <squid-accordion>
+    <span slot="summary">Accordion number three</span>
+    <div slot="content">
+      <p>Four score and seven years ago our fathers brought forth on this continent a new nation conceived in liberty and dedicated to the proposition that all men are created equal.</p>
+    </div>
+  </squid-accordion>
+</squid-accordion-group> 
+*/
 export class SquidAccordionGroup extends BaseElement {
     static get styles() {
         return [styles];

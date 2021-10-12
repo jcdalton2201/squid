@@ -4,6 +4,22 @@ import { BaseElement } from '../utils/baseElement.js';
 import { defineSquidElement } from '../utils/defineSquidElement.js';
 import { emitEvent } from '../utils/squidEvents.js';
 import styles from './squid-accordion.scss';
+/**
+ * 
+ * @prop   {String} theme - The anchor's href. If not set, the value will default to a `javascript:void(0)` value. Reflected as a property. 
+ * @prop   {Boolean} open - The variant attribute defines what class of button is rendered. It is reflected by the `type` property on the element. The possible values are `'link'`, `'action'`, `'progressive'`, `'regressive'`, `'destructive'`, `'ghost'`, `'text'`, `'left'` and `'right'`. If one of the button values is used, the anchor will be given a role of `'button'`. This was previously the `type` attribute until version 5.
+ * @tag squid-accordion
+ * @summary `SquidAccordion` is a web component. 
+
+Accordions provide progressive disclosure, showing focused content and allow users to expose additional content if they choose. Accordions contain a title, an expanded and a collapsed state, spacing, and icons indicating open and close.
+ * @example <squid-accordion>
+  <span slot="summary">This will the the accordion's title</span>
+  <div slot="content">
+    <p>The accordion's content should be placed in the content slot.</p>
+    <p>Anything inside this slot will be hidden unless the accordion is open.</p>
+  </div>
+</squid-accordion>
+ */
 export class SquidAccordion extends BaseElement {
     static get styles() {
         return [styles];

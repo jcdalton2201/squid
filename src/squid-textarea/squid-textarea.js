@@ -2,6 +2,30 @@ import {html} from 'lit';
 import { SquidInputBase } from '../squid-input-base/squid-input-base.js';
 import { defineSquidElement } from '../utils/defineSquidElement.js';
 import styles from './squid-textarea.scss';
+/**
+ * @tag squid-textarea
+ * @summary The `<textarea>` HTML element represents a multi-line plain-text editing control, 
+ * useful when you want to allow users to enter a sizeable amount of free-form text, 
+ * for example a comment on a review or feedback form.
+ * @prop {String} autocomplete - This attribute indicates whether the value of the control can be automatically completed by the browser. values are `off`, `on`.
+ * @prop {Boolean} autofocus - This Boolean attribute lets you specify that a form control should have input focus when the page loads. Only one form-associated element in a document can have this attribute specified.
+ * @prop {String} cols -The visible width of the text control, in average character widths. If it is specified, it must be a positive integer. If it is not specified, the default value is 20
+ * @prop {Boolean} counter - Displays an instance of the [`SquidCharacterCount`](../squid-character-count) component if set to true and a maxlength is provided. Reflected as a property. 
+ * @prop {Boolean} disabled -This Boolean attribute indicates that the user cannot interact with the control.
+ * @prop {String} maxlength - The maximum number of characters (UTF-16 code units) that the user can enter. If this value isn't specified, the user can enter an unlimited number of characters.
+ * @prop {String} minlength - The minimum number of characters (UTF-16 code units) required that the user should enter.
+ * @prop {String} placeholder - A hint to the user of what can be entered in the control. Carriage returns or line-feeds within the placeholder text must be treated as line breaks when rendering the hint.
+ * @prop {Boolean} readonly - This Boolean attribute indicates that the user cannot modify the value of the control. Unlike the disabled attribute, the readonly attribute does not prevent the user from clicking or selecting in the control. The value of a read-only control is still submitted with the form.
+ * @prop {Boolean} required - This attribute specifies that the user must fill in a value before submitting a form.
+ * @prop {String} rows - The number of visible text lines for the control.
+ * @prop {Boolean} spellcheck - Specifies whether the `<textarea>` is subject to spell checking by the underlying browser/OS. The value can be: `true`, `false`, `default`.
+ * @prop {String} value - The text inside of the text area.
+ * @prop {String} wrap - Indicates how the control wraps text. Possible values are: `hard`, `soft`, `off`.
+ * @prop {String} id - An id attribute to allow the `<textarea>` to be associated with a `<label>` element for accessibility purposes
+ * @prop {String} name - The name of the control.
+* @event squid-input-change - change of the value.
+ * @example <squid-textarea cols='100'>Tell us your story</squid-textarea>
+ */
 export class SquidTextarea extends SquidInputBase {
     static get styles() {
         return [styles];

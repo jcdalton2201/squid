@@ -4,6 +4,20 @@ import { defineSquidElement } from '../utils/defineSquidElement.js';
 import styles from './squid-datepicker.scss';
 import { SquidInput } from '../squid-input/squid-input.js';
 import '../squid-calendar/squid-calendar.js';
+/**
+ * @tag squid-datepicker
+ * @summary The `SquidDatepicker` component is an version of input with a type of text.  
+ * It will use the [SquidCalendar](../squid-Calendar) to display a calendar for picking a date.
+ * @prop {String} disabled - A proxy for the input disabled attribute. Reflected as a property. 
+ * @prop {String} required - A proxy for the input required attribute. Reflected as a property. 
+ * @prop {String} autofocus - A proxy for the input autofocus attribute. Reflected as a property. 
+ * @prop {String} placeholder - A proxy for the input placeholder attribute. Reflected as a property. 
+ * @prop {String} value - Sets the input's value and emits an `squid-change` event when updated. Reflected as a property. 
+ * @prop {String} autocomplete - A proxy for the input's `autocomplete` property. Reflected as a property. 
+ * @prop {String} pattern - A RegEx to be used by the input for validation purposes. Serves as a proxy for the input's pattern property/attribute. 
+ * @event squid-change A [`CustomEvent`](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent) emitted each time the input's value is changed. Not to be confused with the browser `change` event which only fires when an input is blurred. The `detail` property contains the input's value.
+ * @example <squid-datepicker required >This input will run validations</squid-datepicker
+ */
 export class SquidDatepicker extends SquidInput {
     static get styles() {
         return [...super.styles, styles];

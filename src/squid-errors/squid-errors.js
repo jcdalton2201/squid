@@ -4,6 +4,13 @@ import styles from './squid-errors.scss';
 import {findParentForm} from '../utils/findParentForm.js';
 import {findSahdowRoot} from '../utils/findShadowRoot.js';
 import { BaseElement } from '../utils/baseElement.js';
+/**
+ * @tag squid-errors
+ * @summary To be used with the SquidInput it will display the error message for validation in a constant manor.
+ * @prop {String} id - the id for the element to be used with labels.
+ * @prop {String} _message - the message to be shown inside the error box.
+ * @example
+ */
 export class SquidErrors extends BaseElement {
     static get styles() {
         return [styles];

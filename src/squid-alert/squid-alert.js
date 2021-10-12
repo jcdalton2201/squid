@@ -3,6 +3,36 @@ import {html} from 'lit';
 import { BaseElement } from '../utils/baseElement.js';
 import { defineSquidElement } from '../utils/defineSquidElement.js';
 import styles from './squid-alert.scss';
+/**
+ * @prop   {String} type -  The `type` attribute controls the type of the alert component. Valid types are `'global'`, `'success'`, `'warning'`, `'error'` or `'informational'`. For guidance on when to use which alert, see the ONE Design System documentation linked above.
+ * @tag squid-alert
+ * @summary `SquidAlert` is a web component. 
+
+> Alerts allow for communication between a system and a user.
+> There are two types of alerts; global alerts and in-app alerts. Global alerts are system-generated and persistent, while inline alerts are presented as feedback in response to a user interaction.
+
+By default the `SquidAlert` element is a global alert, but can be toggled using the `type` attribute.
+ * @example <h2>Success alert</h2>
+<squid-alert type="success">
+  <p slot="message">Message goes here stating the message. <a href="javascript:void(0);">Link</a></p>
+  <span slot="button-text">Acknowledge</span>
+</squid-alert>
+<h2>Warning alert</h2>
+<squid-alert type="warning">
+  <p slot="message">Message goes here stating the message. <a href="javascript:void(0);">Link</a></p>
+  <span slot="button-text">Acknowledge</span>
+</squid-alert>
+<h2>Error alert</h2>
+<squid-alert type="error">
+  <p slot="message">Message goes here stating the message. <a href="javascript:void(0);">Link</a></p>
+  <span slot="button-text">Acknowledge</span>
+</squid-alert>
+<h2>Informational alert</h2>
+<squid-alert type="informational">
+  <p slot="message">Message goes here stating the message. <a href="javascript:void(0);">Link</a></p>
+  <span slot="button-text">Acknowledge</span>
+</squid-alert>
+*/
 export class SquidAlert extends BaseElement {
     static get styles() {
         return [styles];

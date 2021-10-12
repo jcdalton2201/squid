@@ -4,7 +4,16 @@ import { defineSquidElement } from '../utils/defineSquidElement.js';
 import styles from './squid-calendar.scss';
 import { months, dayOfWeek } from '../utils/dateUtils.js';
 import { emitEvent } from '../utils/squidEvents.js';
-
+/**
+ * @prop vaue {String} - This must be in a Javascript Date parsable format
+ * @event selected-date {Date} -  a date has been selected
+ * @event date-submit {Boolean} -  The Ok button has been clicked
+ * @tag squid-calendar
+ * @summary Calendars is a visual calendar for selecting dates.
+ * @example 
+<squid-calendar>
+</squid-calendar>
+*/
 export class SquidCalendar extends BaseElement {
     static get styles() {
         return [styles];

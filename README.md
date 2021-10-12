@@ -22,8 +22,8 @@ Even some frameworks have gotten on board the web components train. Currently Vu
 
 ## Current components
 
-- [Accordion](./src/squid-accordion/squid-accordion.js)
 - [A](./src/squid-a/squid-a.js)
+- [Accordion](./src/squid-accordion/squid-accordion.js)
 - [AccordionGroup](./src/squid-accordion-group/squid-accordion-group.js)
 - [Alert](./src/squid-alert/squid-alert.js)
 - [Button](./src/squid-button/squid-button.js)
@@ -53,8 +53,8 @@ Even some frameworks have gotten on board the web components train. Currently Vu
 - [Ssn](./src/squid-ssn/squid-ssn.js)
 - [Stepper](./src/squid-stepper/squid-stepper.js)
 - [SubNav](./src/squid-sub-nav/squid-sub-nav.js)
-- [Textarea](./src/squid-textarea/squid-textarea.js)
 - [Telephone](./src/squid-telephone/squid-telephone.js)
+- [Textarea](./src/squid-textarea/squid-textarea.js)
 - [Toggle](./src/squid-toggle/squid-toggle.js)
 
 ## Local development
@@ -92,6 +92,16 @@ Or simply run `npm i @populus/squid`. Make sure to have .npmrc set up to point t
 #registry=https://acecashexpress.visualstudio.com/
 ```
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
