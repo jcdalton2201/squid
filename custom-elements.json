@@ -220,62 +220,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/squid-accordion-group/squid-accordion-group.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "SquidAccordionGroup",
-          "members": [
-            {
-              "kind": "method",
-              "name": "disconnected"
-            },
-            {
-              "kind": "method",
-              "name": "_manageGroup",
-              "parameters": [
-                {
-                  "name": "evt",
-                  "type": {
-                    "text": "Event"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "_onKeyDown",
-              "parameters": [
-                {
-                  "name": "evt"
-                }
-              ]
-            }
-          ],
-          "superclass": {
-            "name": "BaseElement",
-            "module": "/src/utils/baseElement.js"
-          },
-          "tagName": "squid-accordion-group",
-          "summary": "`SquidAccordion` is a web component. \n\nThe `SquidAccordionGroup` element exists to group instances of `SquidAccordion`. Importing the accordion group also implicitly imports the accordions. The primary function is to group accordions so that only one accordion is open at a time. *",
-          "example": "<squid-accordion-group>\n<!-- one -->\n<squid-accordion>\n<span slot=\"summary\">The first accordion in the group</span>\n<div slot=\"content\">\n<p>Four score and seven years ago our fathers brought forth on this continent a new nation conceived in liberty and dedicated to the proposition that all men are created equal.</p>\n</div>\n</squid-accordion>\n\n<!-- two -->\n<squid-accordion>\n<span slot=\"summary\">The middle child</span>\n<div slot=\"content\">\n<p>Four score and seven years ago our fathers brought forth on this continent a new nation conceived in liberty and dedicated to the proposition that all men are created equal.</p>\n</div>\n</squid-accordion>\n\n<!-- three -->\n<squid-accordion>\n<span slot=\"summary\">Accordion number three</span>\n<div slot=\"content\">\n<p>Four score and seven years ago our fathers brought forth on this continent a new nation conceived in liberty and dedicated to the proposition that all men are created equal.</p>\n</div>\n</squid-accordion>\n</squid-accordion-group>",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "SquidAccordionGroup",
-          "declaration": {
-            "name": "SquidAccordionGroup",
-            "module": "src/squid-accordion-group/squid-accordion-group.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/squid-alert/squid-alert.js",
       "declarations": [
         {
@@ -351,6 +295,62 @@
           "declaration": {
             "name": "SquidAlert",
             "module": "src/squid-alert/squid-alert.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/squid-accordion-group/squid-accordion-group.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "SquidAccordionGroup",
+          "members": [
+            {
+              "kind": "method",
+              "name": "disconnected"
+            },
+            {
+              "kind": "method",
+              "name": "_manageGroup",
+              "parameters": [
+                {
+                  "name": "evt",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_onKeyDown",
+              "parameters": [
+                {
+                  "name": "evt"
+                }
+              ]
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/utils/baseElement.js"
+          },
+          "tagName": "squid-accordion-group",
+          "summary": "`SquidAccordion` is a web component. \n\nThe `SquidAccordionGroup` element exists to group instances of `SquidAccordion`. Importing the accordion group also implicitly imports the accordions. The primary function is to group accordions so that only one accordion is open at a time. *",
+          "example": "<squid-accordion-group>\n<!-- one -->\n<squid-accordion>\n<span slot=\"summary\">The first accordion in the group</span>\n<div slot=\"content\">\n<p>Four score and seven years ago our fathers brought forth on this continent a new nation conceived in liberty and dedicated to the proposition that all men are created equal.</p>\n</div>\n</squid-accordion>\n\n<!-- two -->\n<squid-accordion>\n<span slot=\"summary\">The middle child</span>\n<div slot=\"content\">\n<p>Four score and seven years ago our fathers brought forth on this continent a new nation conceived in liberty and dedicated to the proposition that all men are created equal.</p>\n</div>\n</squid-accordion>\n\n<!-- three -->\n<squid-accordion>\n<span slot=\"summary\">Accordion number three</span>\n<div slot=\"content\">\n<p>Four score and seven years ago our fathers brought forth on this continent a new nation conceived in liberty and dedicated to the proposition that all men are created equal.</p>\n</div>\n</squid-accordion>\n</squid-accordion-group>",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "SquidAccordionGroup",
+          "declaration": {
+            "name": "SquidAccordionGroup",
+            "module": "src/squid-accordion-group/squid-accordion-group.js"
           }
         }
       ]
@@ -7401,7 +7401,7 @@
               "type": {
                 "text": "String"
               },
-              "description": "The value attribute is one which all <input>s share; however, it serves a special purpose for inputs of type radio: when a form is submitted, only radio buttons which are currently checked are submitted to the server, and the reported value is the value of the value attribute. If the value is not otherwise specified, it is the string on by default. This is demonstrated in the section Value above.",
+              "description": "The value attribute is one which all `<input>`s share; however, it serves a special purpose for inputs of type radio: when a form is submitted, only radio buttons which are currently checked are submitted to the server, and the reported value is the value of the value attribute. If the value is not otherwise specified, it is the string on by default. This is demonstrated in the section Value above.",
               "name": "value",
               "kind": "field",
               "privacy": "public",
@@ -8414,7 +8414,7 @@
           },
           "tagName": "squid-select",
           "summary": "The <select> HTML element represents a control that provides a menu of options:",
-          "example": "<squid-select name=\"pets\" id=\"pet-select\">\n<span slot='label'>Animals</span>\n<option value=\"\">--Please choose an option--</option>\n<option value=\"dog\">Dog</option>\n<option value=\"cat\">Cat</option>\n<option value=\"hamster\">Hamster</option>\n<option value=\"parrot\">Parrot</option>\n<option value=\"spider\">Spider</option>\n<option value=\"goldfish\">Goldfish</option>\n</squid-selec>",
+          "example": "<squid-select name=\"pets\" id=\"pet-select\">\n<span slot='label'>Animals</span>\n<option value=\"\">--Please choose an option--</option>\n<option value=\"dog\">Dog</option>\n<option value=\"cat\">Cat</option>\n<option value=\"hamster\">Hamster</option>\n<option value=\"parrot\">Parrot</option>\n<option value=\"spider\">Spider</option>\n<option value=\"goldfish\">Goldfish</option>\n</squid-select>",
           "customElement": true
         }
       ],

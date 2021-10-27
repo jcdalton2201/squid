@@ -18,7 +18,7 @@ import styles from './squid-select.scss';
     <option value="parrot">Parrot</option>
     <option value="spider">Spider</option>
     <option value="goldfish">Goldfish</option>
-</squid-selec>
+</squid-select>
  */
 export class SquidSelect extends SquidInput {
     static get styles() {
