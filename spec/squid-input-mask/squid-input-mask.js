@@ -32,6 +32,26 @@ describe('Unit and Functional Tests for squid-input-mask',()=>{
         const results = await new AxePuppeteer(page).include('squid-input-mask').analyze();
         expect(AxeUtil.isValid(results)).toBeTruthy();
     });
+    it('test we can add input', async () =>{
+        browser = await difUtil.setTestName(
+            'test we can add input'
+        );
+        page = await difUtil.createPage(browser);
+        const bodyhandle = await difUtil.createBodyHandle(page);
+        await page.evaluate(element => {
+            element.innerHTML =
+                `<squid-input-mask mask='AAAA'>
+                Test
+                </squid-input-mask>`;
+        }, bodyhandle);
+        await page.waitForSelector('squid-input-mask');
+        const input = await page.evaluateHandle(body => {
+            return body.querySelector('squid-input-mask').renderRoot.querySelector('input');
+        },bodyhandle);
+        await input.type('test');
+        const box = await page.$eval('squid-input-mask', el => el.value);
+        expect(box).toEqual('test');
+    });
     it('Test the mask will throw error of input-mask',async()=>{
         browser = await difUtil.setTestName(
             'Test the accessibility of input-mask'

@@ -26,6 +26,21 @@ export class SquidInputMask extends SquidInput {
         this._maskUtil = new MaskUtil(this.__getInput(), this.mask, this);
         this.pattern = this._maskUtil.regExp;
     }
+    set value(value) {
+        if(this.renderRoot){
+            const oldValue = this.renderRoot.querySelector('input').value;
+            if(value !== oldValue) {
+                this.renderRoot.querySelector('input').value = value; 
+            }
+            if(this.counter) {
+                this.renderRoot.querySelector('squid-character-count').count = (value && value.length) || 0;
+            }
+            this.dispatchEvent(new CustomEvent('squid-input-change'));
+        }
+    }
+    get value(){
+        return this.renderRoot.querySelector('input').value;
+    }
     /**
      * Overwrite the input event
      * @param {Event} evt input event

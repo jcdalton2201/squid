@@ -32,4 +32,24 @@ describe('Unit and Functional Tests for squid-telephone',()=>{
         const results = await new AxePuppeteer(page).include('squid-telephone').analyze();
         expect(AxeUtil.isValid(results)).toBeTruthy();
     });
+    it('test we can add telephone number', async () =>{
+        browser = await difUtil.setTestName(
+            'test we can add input'
+        );
+        page = await difUtil.createPage(browser);
+        const bodyhandle = await difUtil.createBodyHandle(page);
+        await page.evaluate(element => {
+            element.innerHTML =
+                `<squid-telephone>
+                Test
+                </squid-telephone>`;
+        }, bodyhandle);
+        await page.waitForSelector('squid-telephone');
+        const input = await page.evaluateHandle(body => {
+            return body.querySelector('squid-telephone').renderRoot.querySelector('input');
+        },bodyhandle);
+        await input.type('1111111111');
+        const box = await page.$eval('squid-telephone', el => el.value);
+        expect(box).toEqual('(111) 111-1111');
+    });
 });

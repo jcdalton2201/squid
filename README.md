@@ -24,8 +24,8 @@ Even some frameworks have gotten on board the web components train. Currently Vu
 
 - [A](./src/squid-a/squid-a.js)
 - [Accordion](./src/squid-accordion/squid-accordion.js)
-- [AccordionGroup](./src/squid-accordion-group/squid-accordion-group.js)
 - [Alert](./src/squid-alert/squid-alert.js)
+- [AccordionGroup](./src/squid-accordion-group/squid-accordion-group.js)
 - [Button](./src/squid-button/squid-button.js)
 - [Calendar](./src/squid-calendar/squid-calendar.js)
 - [CharacterCount](./src/squid-character-count/squid-character-count.js)
@@ -92,6 +92,12 @@ Or simply run `npm i @populus/squid`. Make sure to have .npmrc set up to point t
 #registry=https://acecashexpress.visualstudio.com/
 ```
 
+    
+    
+    
+    
+    
+    
     
     
     
