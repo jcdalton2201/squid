@@ -1,7 +1,7 @@
 
-const difUtil = require('../diff-util.js');
-const { AxePuppeteer } = require('@axe-core/puppeteer');
-const AxeUtil = require('../axe-util.js');
+import { setTestName, createPage, createBodyHandle } from '../diff-util.js';
+import { AxePuppeteer } from '@axe-core/puppeteer';
+import  { isValid } from '../axe-util.js';
 describe('Unit and Functional Tests for squid-toggle',()=>{
     let browser = null;
     let page = null;
@@ -17,11 +17,11 @@ describe('Unit and Functional Tests for squid-toggle',()=>{
     });
     afterAll(async () => { });
     it('Test the accessibility of toggle',async()=>{
-        browser = await difUtil.setTestName(
+        browser = await setTestName(
             'Test the accessibility of toggle'
         );
-        page = await difUtil.createPage(browser);
-        const bodyhandle = await difUtil.createBodyHandle(page);
+        page = await createPage(browser);
+        const bodyhandle = await createBodyHandle(page);
         await page.evaluate(element => {
             element.innerHTML =
                 `<squid-toggle >
@@ -30,14 +30,14 @@ describe('Unit and Functional Tests for squid-toggle',()=>{
         }, bodyhandle);
         await page.waitForSelector('squid-toggle');
         const results = await new AxePuppeteer(page).include('squid-toggle').analyze();
-        expect(AxeUtil.isValid(results)).toBeTruthy();
+        expect(isValid(results)).toBeTruthy();
     });
     it('Test the click of toggle',async()=>{
-        browser = await difUtil.setTestName(
+        browser = await setTestName(
             'Test the click of toggle'
         );
-        page = await difUtil.createPage(browser);
-        const bodyhandle = await difUtil.createBodyHandle(page);
+        page = await createPage(browser);
+        const bodyhandle = await createBodyHandle(page);
         await page.evaluate(element => {
             element.innerHTML =
                 `<squid-toggle value='test1'>
@@ -53,11 +53,11 @@ describe('Unit and Functional Tests for squid-toggle',()=>{
         expect(value).toEqual('test1');
     });
     it('Test toggle disabled will work',async()=>{
-        browser = await difUtil.setTestName(
+        browser = await setTestName(
             'Test toggle disabled will work'
         );
-        page = await difUtil.createPage(browser);
-        const bodyhandle = await difUtil.createBodyHandle(page);
+        page = await createPage(browser);
+        const bodyhandle = await createBodyHandle(page);
         await page.evaluate(element => {
             element.innerHTML =
                 `<squid-toggle disabled>

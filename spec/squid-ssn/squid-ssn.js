@@ -1,7 +1,7 @@
 
-const difUtil = require('../diff-util.js');
-const { AxePuppeteer } = require('@axe-core/puppeteer');
-const AxeUtil = require('../axe-util.js');
+import { setTestName, createPage, createBodyHandle } from '../diff-util.js';
+import { AxePuppeteer } from '@axe-core/puppeteer';
+import  { isValid } from '../axe-util.js';
 describe('Unit and Functional Tests for squid-ssn',()=>{
     let browser = null;
     let page = null;
@@ -17,11 +17,11 @@ describe('Unit and Functional Tests for squid-ssn',()=>{
     });
     afterAll(async () => { });
     it('Test the accessibility of ssn',async()=>{
-        browser = await difUtil.setTestName(
+        browser = await setTestName(
             'Test the accessibility of ssn'
         );
-        page = await difUtil.createPage(browser);
-        const bodyhandle = await difUtil.createBodyHandle(page);
+        page = await createPage(browser);
+        const bodyhandle = await createBodyHandle(page);
         await page.evaluate(element => {
             element.innerHTML =
                 `<squid-ssn >
@@ -30,14 +30,14 @@ describe('Unit and Functional Tests for squid-ssn',()=>{
         }, bodyhandle);
         await page.waitForSelector('squid-ssn');
         const results = await new AxePuppeteer(page).include('squid-ssn').analyze();
-        expect(AxeUtil.isValid(results)).toBeTruthy();
+        expect(isValid(results)).toBeTruthy();
     });
     it('Test the typing of ssn',async()=>{
-        browser = await difUtil.setTestName(
+        browser = await setTestName(
             'Test the typing of ssn'
         );
-        page = await difUtil.createPage(browser);
-        const bodyhandle = await difUtil.createBodyHandle(page);
+        page = await createPage(browser);
+        const bodyhandle = await createBodyHandle(page);
         await page.evaluate(element => {
             element.innerHTML =
                 `<squid-ssn >
@@ -59,11 +59,11 @@ describe('Unit and Functional Tests for squid-ssn',()=>{
         await button.click();
     });
     it('Test the validating of ssn',async()=>{
-        browser = await difUtil.setTestName(
+        browser = await setTestName(
             'Test the typing of ssn'
         );
-        page = await difUtil.createPage(browser);
-        const bodyhandle = await difUtil.createBodyHandle(page);
+        page = await createPage(browser);
+        const bodyhandle = await createBodyHandle(page);
         await page.evaluate(element => {
             element.innerHTML =
                 `<squid-ssn >

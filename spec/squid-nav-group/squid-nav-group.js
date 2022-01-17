@@ -1,7 +1,7 @@
 
-const difUtil = require('../diff-util.js');
-const { AxePuppeteer } = require('@axe-core/puppeteer');
-const AxeUtil = require('../axe-util.js');
+import { setTestName, createPage, createBodyHandle } from '../diff-util.js';
+import { AxePuppeteer } from '@axe-core/puppeteer';
+import  { isValid } from '../axe-util.js';
 describe('Unit and Functional Tests for squid-nav-group',()=>{
     let browser = null;
     let page = null;
@@ -17,11 +17,11 @@ describe('Unit and Functional Tests for squid-nav-group',()=>{
     });
     afterAll(async () => { });
     it('Test the accessibility of nav-group',async()=>{
-        browser = await difUtil.setTestName(
+        browser = await setTestName(
             'Test the accessibility of nav-group'
         );
-        page = await difUtil.createPage(browser);
-        const bodyhandle = await difUtil.createBodyHandle(page);
+        page = await createPage(browser);
+        const bodyhandle = await createBodyHandle(page);
         await page.evaluate(element => {
             element.innerHTML =
                 `<squid-nav-group >
@@ -30,14 +30,14 @@ describe('Unit and Functional Tests for squid-nav-group',()=>{
         }, bodyhandle);
         await page.waitForSelector('squid-nav-group');
         const results = await new AxePuppeteer(page).include('squid-nav-group').analyze();
-        expect(AxeUtil.isValid(results)).toBeTruthy();
+        expect(isValid(results)).toBeTruthy();
     });
     it('Test the accessibility of nav-group with dark theme',async()=>{
-        browser = await difUtil.setTestName(
+        browser = await setTestName(
             'Test the accessibility of nav-group'
         );
-        page = await difUtil.createPage(browser);
-        const bodyhandle = await difUtil.createBodyHandle(page);
+        page = await createPage(browser);
+        const bodyhandle = await createBodyHandle(page);
         await page.evaluate(element => {
             element.innerHTML =
             `<squid-nav-group theme='dark'>
@@ -55,6 +55,6 @@ describe('Unit and Functional Tests for squid-nav-group',()=>{
         }, bodyhandle);
         await page.waitForSelector('squid-nav-group');
         const results = await new AxePuppeteer(page).include('squid-nav-group').analyze();
-        expect(AxeUtil.isValid(results)).toBeTruthy();
+        expect(isValid(results)).toBeTruthy();
     });
 });

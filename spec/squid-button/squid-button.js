@@ -1,7 +1,7 @@
 
-const difUtil = require('../diff-util.js');
-const { AxePuppeteer } = require('@axe-core/puppeteer');
-const AxeUtil = require('../axe-util.js');
+import { setTestName, createPage, createBodyHandle } from '../diff-util.js';
+import { AxePuppeteer } from '@axe-core/puppeteer';
+import  { isValid } from '../axe-util.js';
 describe('Unit and Functional Tests for squid-button',()=>{
     let browser = null;
     let page = null;
@@ -17,12 +17,12 @@ describe('Unit and Functional Tests for squid-button',()=>{
     afterAll(async () => {
     });
     it('Test the accessibility of button',async()=>{
-        browser = await difUtil.setTestName(
+        browser = await setTestName(
             'Test the accessibility of button'
         );
-        page = await difUtil.createPage(browser);
+        page = await createPage(browser);
         // coverageUtil.startCoverage(page);
-        const bodyhandle = await difUtil.createBodyHandle(page);
+        const bodyhandle = await createBodyHandle(page);
         await page.evaluate(element => {
             element.innerHTML =
                 `<squid-button >
@@ -31,14 +31,14 @@ describe('Unit and Functional Tests for squid-button',()=>{
         }, bodyhandle);
         await page.waitForSelector('squid-button');
         const results = await new AxePuppeteer(page).include('squid-button').analyze();
-        expect(AxeUtil.isValid(results)).toBeTruthy();
+        expect(isValid(results)).toBeTruthy();
     });
     it('Test we can click the button', async () =>{
-        browser = await difUtil.setTestName(
+        browser = await setTestName(
             'Test we can click the button'
         );
-        page = await difUtil.createPage(browser);
-        const bodyhandle = await difUtil.createBodyHandle(page);
+        page = await createPage(browser);
+        const bodyhandle = await createBodyHandle(page);
         await page.evaluate(element => {
             element.innerHTML =
                 `<squid-button >
@@ -60,11 +60,11 @@ describe('Unit and Functional Tests for squid-button',()=>{
         
     });
     it('Test we can submit a form', async () =>{
-        browser = await difUtil.setTestName(
+        browser = await setTestName(
             'Test we can submit a form'
         );
-        page = await difUtil.createPage(browser);
-        const bodyhandle = await difUtil.createBodyHandle(page);
+        page = await createPage(browser);
+        const bodyhandle = await createBodyHandle(page);
         await page.evaluate(element => {
             element.innerHTML =
                 `<form href='#'><squid-button >

@@ -1,7 +1,7 @@
 
-const difUtil = require('../diff-util.js');
-const { AxePuppeteer } = require('@axe-core/puppeteer');
-const AxeUtil = require('../axe-util.js');
+import { setTestName, createPage, createBodyHandle } from '../diff-util.js';
+import { AxePuppeteer } from '@axe-core/puppeteer';
+import  { isValid } from '../axe-util.js';
 describe('Unit and Functional Tests for squid-stepper',()=>{
     let browser = null;
     let page = null;
@@ -17,11 +17,11 @@ describe('Unit and Functional Tests for squid-stepper',()=>{
     });
     afterAll(async () => { });
     it('Test the accessibility of stepper',async()=>{
-        browser = await difUtil.setTestName(
+        browser = await setTestName(
             'Test the accessibility of stepper'
         );
-        page = await difUtil.createPage(browser);
-        const bodyhandle = await difUtil.createBodyHandle(page);
+        page = await createPage(browser);
+        const bodyhandle = await createBodyHandle(page);
         await page.evaluate(element => {
             element.innerHTML =
                 `<squid-stepper label='Traveller Class'>
@@ -32,14 +32,14 @@ describe('Unit and Functional Tests for squid-stepper',()=>{
         }, bodyhandle);
         await page.waitForSelector('squid-stepper');
         const results = await new AxePuppeteer(page).include('squid-stepper').analyze();
-        expect(AxeUtil.isValid(results)).toBeTruthy();
+        expect(isValid(results)).toBeTruthy();
     });
     it('Test the we can increase and decrease of stepper',async()=>{
-        browser = await difUtil.setTestName(
+        browser = await setTestName(
             'Test the accessibility of stepper'
         );
-        page = await difUtil.createPage(browser);
-        const bodyhandle = await difUtil.createBodyHandle(page);
+        page = await createPage(browser);
+        const bodyhandle = await createBodyHandle(page);
         await page.evaluate(element => {
             element.innerHTML =
             `<squid-stepper label='Traveller Class'>
@@ -70,11 +70,11 @@ describe('Unit and Functional Tests for squid-stepper',()=>{
         expect(success).toEqual('3');
     });
     it('Test the we can change the options view.',async()=>{
-        browser = await difUtil.setTestName(
+        browser = await setTestName(
             'Test the accessibility of stepper'
         );
-        page = await difUtil.createPage(browser);
-        const bodyhandle = await difUtil.createBodyHandle(page);
+        page = await createPage(browser);
+        const bodyhandle = await createBodyHandle(page);
         await page.evaluate(element => {
             element.innerHTML =
             `<squid-stepper label='Traveller Class'>
@@ -94,11 +94,11 @@ describe('Unit and Functional Tests for squid-stepper',()=>{
         expect(success).toEqual('airplane');
     });
     it('Test the we can set the attribute of value.',async()=>{
-        browser = await difUtil.setTestName(
+        browser = await setTestName(
             'Test the accessibility of stepper'
         );
-        page = await difUtil.createPage(browser);
-        const bodyhandle = await difUtil.createBodyHandle(page);
+        page = await createPage(browser);
+        const bodyhandle = await createBodyHandle(page);
         await page.evaluate(element => {
             element.innerHTML =
             `<squid-stepper label='Traveller Class' value='2'>

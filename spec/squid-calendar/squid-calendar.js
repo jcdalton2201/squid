@@ -1,7 +1,7 @@
 
-const difUtil = require('../diff-util.js');
-const { AxePuppeteer } = require('@axe-core/puppeteer');
-const AxeUtil = require('../axe-util.js');
+import { setTestName, createPage, createBodyHandle } from '../diff-util.js';
+import { AxePuppeteer } from '@axe-core/puppeteer';
+import  { isValid } from '../axe-util.js';
 describe('Unit and Functional Tests for squid-calendar',()=>{
     let browser = null;
     let page = null;
@@ -17,25 +17,25 @@ describe('Unit and Functional Tests for squid-calendar',()=>{
     });
     afterAll(async () => { });
     it('Test the accessibility of calendar',async()=>{
-        browser = await difUtil.setTestName(
+        browser = await setTestName(
             'Test the accessibility of calendar'
         );
-        page = await difUtil.createPage(browser);
-        const bodyhandle = await difUtil.createBodyHandle(page);
+        page = await createPage(browser);
+        const bodyhandle = await createBodyHandle(page);
         await page.evaluate(element => {
             element.innerHTML =
                 '<squid-calendar id=\'cal\' name=\'cal\' value=\'01/05/2020\'></squid-calendar>';
         }, bodyhandle);
         await page.waitForSelector('squid-calendar');
         const results = await new AxePuppeteer(page).include('squid-calendar').analyze();
-        expect(AxeUtil.isValid(results)).toBeTruthy();
+        expect(isValid(results)).toBeTruthy();
     });
     it('Test the increase and descrese will work',async()=>{
-        browser = await difUtil.setTestName(
+        browser = await setTestName(
             'Test the increase and descrese will work'
         );
-        page = await difUtil.createPage(browser);
-        const bodyhandle = await difUtil.createBodyHandle(page);
+        page = await createPage(browser);
+        const bodyhandle = await createBodyHandle(page);
         await page.evaluate(element => {
             element.innerHTML =
                 '<squid-calendar id=\'cal\' name=\'cal\' value=\'01/05/2020\'></squid-calendar>';
@@ -67,11 +67,11 @@ describe('Unit and Functional Tests for squid-calendar',()=>{
         expect(year).toEqual(2017);
     });
     it('Test the default year is this year',async()=>{
-        browser = await difUtil.setTestName(
+        browser = await setTestName(
             'Test the default year is this year'
         );
-        page = await difUtil.createPage(browser);
-        const bodyhandle = await difUtil.createBodyHandle(page);
+        page = await createPage(browser);
+        const bodyhandle = await createBodyHandle(page);
         await page.evaluate(element => {
             element.innerHTML =
                 '<squid-calendar id=\'cal\' name=\'cal\' ></squid-calendar>';
@@ -82,11 +82,11 @@ describe('Unit and Functional Tests for squid-calendar',()=>{
         expect(year).toEqual(current);
     });
     it('Test the selecting a date will change the value',async()=>{
-        browser = await difUtil.setTestName(
+        browser = await setTestName(
             'Test the selecting a date will change the value'
         );
-        page = await difUtil.createPage(browser);
-        const bodyhandle = await difUtil.createBodyHandle(page);
+        page = await createPage(browser);
+        const bodyhandle = await createBodyHandle(page);
         await page.evaluate(element => {
             element.innerHTML =
                 '<squid-calendar id=\'cal\' name=\'cal\' value=\'01/05/2020\'></squid-calendar>';

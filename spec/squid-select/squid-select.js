@@ -1,7 +1,7 @@
 
-const difUtil = require('../diff-util.js');
-const { AxePuppeteer } = require('@axe-core/puppeteer');
-const AxeUtil = require('../axe-util.js');
+import { setTestName, createPage, createBodyHandle } from '../diff-util.js';
+import { AxePuppeteer } from '@axe-core/puppeteer';
+import  { isValid } from '../axe-util.js';
 describe('Unit and Functional Tests for squid-select',()=>{
     let browser = null;
     let page = null;
@@ -17,11 +17,11 @@ describe('Unit and Functional Tests for squid-select',()=>{
     });
     afterAll(async () => { });
     it('Test the accessibility of select',async()=>{
-        browser = await difUtil.setTestName(
+        browser = await setTestName(
             'Test the accessibility of select'
         );
-        page = await difUtil.createPage(browser);
-        const bodyhandle = await difUtil.createBodyHandle(page);
+        page = await createPage(browser);
+        const bodyhandle = await createBodyHandle(page);
         await page.evaluate(element => {
             element.innerHTML =
                 `<squid-select >
@@ -33,14 +33,14 @@ describe('Unit and Functional Tests for squid-select',()=>{
         }, bodyhandle);
         await page.waitForSelector('squid-select');
         const results = await new AxePuppeteer(page).include('squid-select').analyze();
-        expect(AxeUtil.isValid(results)).toBeTruthy();
+        expect(isValid(results)).toBeTruthy();
     });
     it('Test the select of an option',async()=>{
-        browser = await difUtil.setTestName(
+        browser = await setTestName(
             'Test the select of an option'
         );
-        page = await difUtil.createPage(browser);
-        const bodyhandle = await difUtil.createBodyHandle(page);
+        page = await createPage(browser);
+        const bodyhandle = await createBodyHandle(page);
         await page.evaluate(element => {
             element.innerHTML =
                 `<squid-select >

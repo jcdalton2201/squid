@@ -1,7 +1,7 @@
 
-const difUtil = require('../diff-util.js');
-const { AxePuppeteer } = require('@axe-core/puppeteer');
-const AxeUtil = require('../axe-util.js');
+import { setTestName, createPage, createBodyHandle } from '../diff-util.js';
+import { AxePuppeteer } from '@axe-core/puppeteer';
+import  { isValid } from '../axe-util.js';
 describe('Unit and Functional Tests for squid-combobox',()=>{
     let browser = null;
     let page = null;
@@ -17,11 +17,11 @@ describe('Unit and Functional Tests for squid-combobox',()=>{
     });
     afterAll(async () => { });
     it('Test the accessibility of combobox',async()=>{
-        browser = await difUtil.setTestName(
+        browser = await setTestName(
             'Test the accessibility of combobox'
         );
-        page = await difUtil.createPage(browser);
-        const bodyhandle = await difUtil.createBodyHandle(page);
+        page = await createPage(browser);
+        const bodyhandle = await createBodyHandle(page);
         await page.evaluate(element => {
             element.innerHTML =
                 `<squid-combobox >
@@ -33,14 +33,14 @@ describe('Unit and Functional Tests for squid-combobox',()=>{
             return body.querySelector('squid-currency');
         },bodyhandle);
         const results = await new AxePuppeteer(page).include('squid-combobox').analyze();
-        expect(AxeUtil.isValid(results)).toBeTruthy();
+        expect(isValid(results)).toBeTruthy();
     });
     it('Test the we will type a char and the select box will open',async()=>{
-        browser = await difUtil.setTestName(
+        browser = await setTestName(
             'Test the we will type a char and the select box will open'
         );
-        page = await difUtil.createPage(browser);
-        const bodyhandle = await difUtil.createBodyHandle(page);
+        page = await createPage(browser);
+        const bodyhandle = await createBodyHandle(page);
         await page.evaluate(element => {
             element.innerHTML =
             `<squid-combobox >
@@ -67,11 +67,11 @@ describe('Unit and Functional Tests for squid-combobox',()=>{
         expect(grid).toEqual('Severus Snape');
     });
     it('Test the we will type a select a item',async()=>{
-        browser = await difUtil.setTestName(
+        browser = await setTestName(
             'Test the we will type a select a item'
         );
-        page = await difUtil.createPage(browser);
-        const bodyhandle = await difUtil.createBodyHandle(page);
+        page = await createPage(browser);
+        const bodyhandle = await createBodyHandle(page);
         await page.evaluate(element => {
             element.innerHTML =
             `<squid-combobox >
@@ -99,11 +99,11 @@ describe('Unit and Functional Tests for squid-combobox',()=>{
         expect(grid2).toEqual('');
     });
     it('Test the we can set the value',async()=>{
-        browser = await difUtil.setTestName(
+        browser = await setTestName(
             'Test the we can set the value'
         );
-        page = await difUtil.createPage(browser);
-        const bodyhandle = await difUtil.createBodyHandle(page);
+        page = await createPage(browser);
+        const bodyhandle = await createBodyHandle(page);
         await page.evaluate(element => {
             element.innerHTML =
             `<squid-combobox >
@@ -121,11 +121,11 @@ describe('Unit and Functional Tests for squid-combobox',()=>{
         expect(grid).toEqual('Harry Potter');
     });
     it('Test the we can set the value to an object',async()=>{
-        browser = await difUtil.setTestName(
+        browser = await setTestName(
             'Test the we can set the value'
         );
-        page = await difUtil.createPage(browser);
-        const bodyhandle = await difUtil.createBodyHandle(page);
+        page = await createPage(browser);
+        const bodyhandle = await createBodyHandle(page);
         await page.evaluate(element => {
             element.innerHTML =
             `<squid-combobox datavalue='key' datalabel='value'>

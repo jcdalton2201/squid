@@ -1,4 +1,4 @@
-const fs = require('fs');
+import fs from 'fs';
 function init(){
     const fileRead = fs.readFileSync('./custom-elements.json','utf-8');
     const readMe = fs.readFileSync('./README.md','utf-8');

@@ -1,7 +1,7 @@
 
-const difUtil = require('../diff-util.js');
-const { AxePuppeteer } = require('@axe-core/puppeteer');
-const AxeUtil = require('../axe-util.js');
+import { setTestName, createPage, createBodyHandle } from '../diff-util.js';
+import { AxePuppeteer } from '@axe-core/puppeteer';
+import  { isValid } from '../axe-util.js';
 describe('Unit and Functional Tests for squid-radio',()=>{
     let browser = null;
     let page = null;
@@ -17,11 +17,11 @@ describe('Unit and Functional Tests for squid-radio',()=>{
     });
     afterAll(async () => { });
     it('Test the accessibility of radio-group',async()=>{
-        browser = await difUtil.setTestName(
+        browser = await setTestName(
             'Test the accessibility of radio-group'
         );
-        page = await difUtil.createPage(browser);
-        const bodyhandle = await difUtil.createBodyHandle(page);
+        page = await createPage(browser);
+        const bodyhandle = await createBodyHandle(page);
         await page.evaluate(element => {
             element.innerHTML =
                 `<squid-radio-group >
@@ -32,14 +32,14 @@ describe('Unit and Functional Tests for squid-radio',()=>{
         }, bodyhandle);
         await page.waitForSelector('squid-radio-group');
         const results = await new AxePuppeteer(page).include('squid-radio-group').analyze();
-        expect(AxeUtil.isValid(results)).toBeTruthy();
+        expect(isValid(results)).toBeTruthy();
     });
     it('Test the click on no and value for group is no',async()=>{
-        browser = await difUtil.setTestName(
+        browser = await setTestName(
             'Test the click on no and value for group is no'
         );
-        page = await difUtil.createPage(browser);
-        const bodyhandle = await difUtil.createBodyHandle(page);
+        page = await createPage(browser);
+        const bodyhandle = await createBodyHandle(page);
         await page.evaluate(element => {
             element.innerHTML =
                 `<squid-radio-group >
@@ -57,11 +57,11 @@ describe('Unit and Functional Tests for squid-radio',()=>{
         expect(value).toEqual('no');
     });
     it('Test the keyup and keydown with space will set a group.',async()=>{
-        browser = await difUtil.setTestName(
+        browser = await setTestName(
             'Test the keyup and keydown with space will set a group'
         );
-        page = await difUtil.createPage(browser);
-        const bodyhandle = await difUtil.createBodyHandle(page);
+        page = await createPage(browser);
+        const bodyhandle = await createBodyHandle(page);
         await page.evaluate(element => {
             element.innerHTML =
                 `<squid-radio-group >
@@ -92,11 +92,11 @@ describe('Unit and Functional Tests for squid-radio',()=>{
         expect(value).toEqual('maybe');
     });
     it('Test the hardset of a group.',async()=>{
-        browser = await difUtil.setTestName(
+        browser = await setTestName(
             'Test the hardset of a group.'
         );
-        page = await difUtil.createPage(browser);
-        const bodyhandle = await difUtil.createBodyHandle(page);
+        page = await createPage(browser);
+        const bodyhandle = await createBodyHandle(page);
         await page.evaluate(element => {
             element.innerHTML =
                 `<squid-radio-group >

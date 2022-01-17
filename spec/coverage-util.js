@@ -1,12 +1,17 @@
-const v8ToCoverage = require('./v8_to_coverage');
-const pti = require('puppeteer-to-istanbul');
+import V8ToCoverage from './v8_to_coverage.js';
+import pti from 'puppeteer-to-istanbul';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const v8ToCoverage = new V8ToCoverage();
 v8ToCoverage._baseDir =  __dirname.replace('spec','');
 
 /**
  * start the coverage for page.
  * @param {Page} page puppetter page
  */
-module.exports.startCoverage =  function createPage(page) {
+export const startCoverage =  function createPage(page) {
     return Promise.all([page.coverage.startJSCoverage()]);
 };
 
@@ -14,7 +19,7 @@ module.exports.startCoverage =  function createPage(page) {
  * stop the coverage for a page
  * @param {PAge} page puppetter page
  */
-module.exports.stopCoverage =  function createPage(page) {
+export const stopCoverage =  function createPage(page) {
     return Promise.all([page.coverage.stopJSCoverage()]);
 };
 
@@ -23,7 +28,7 @@ module.exports.stopCoverage =  function createPage(page) {
  * @param {Coverage} jsCoverage 
  * @param {Object} config 
  */
-module.exports.displayCoverage =async function displayCoverage(jsCoverage, config = { include:[]}) {
+export const displayCoverage =async function displayCoverage(jsCoverage, config = { include:[]}) {
     try {
         const coverage = [...jsCoverage];
         const tracked = coverage.filter((item) => {

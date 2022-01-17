@@ -1,4 +1,4 @@
-const fs = require('fs');
+import fs from 'fs';
 // const MarkdownIt = require('markdown-it');
 const hljs = require('highlight.js');
 const md = require('markdown-it')({

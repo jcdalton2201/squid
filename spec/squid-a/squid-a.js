@@ -1,6 +1,6 @@
-const difUtil = require('../diff-util.js');
-const { AxePuppeteer } = require('@axe-core/puppeteer');
-const AxeUtil = require('../axe-util.js');
+import { setTestName, createPage, createBodyHandle } from '../diff-util.js';
+import { AxePuppeteer } from '@axe-core/puppeteer';
+import  { isValid } from '../axe-util.js';
 describe('Unit and Functional Tests for squid-a', () => {
     let browser = null;
     let page = null;
@@ -16,11 +16,11 @@ describe('Unit and Functional Tests for squid-a', () => {
     });
     afterAll(async () => { });
     it('Test the accessibility of default anchor', async () => {
-        browser = await difUtil.setTestName(
+        browser = await setTestName(
             'Test accessibility of the default anchor'
         );
-        page = await difUtil.createPage(browser);
-        const bodyhandle = await difUtil.createBodyHandle(page);
+        page = await createPage(browser);
+        const bodyhandle = await createBodyHandle(page);
         await page.evaluate(element => {
             element.innerHTML =
                 `<squid-a >
@@ -29,14 +29,14 @@ describe('Unit and Functional Tests for squid-a', () => {
         }, bodyhandle);
         await page.waitForSelector('squid-a');
         const results = await new AxePuppeteer(page).include('squid-a').analyze();
-        expect(AxeUtil.isValid(results)).toBeTruthy();
+        expect(isValid(results)).toBeTruthy();
     });
     it('Test the visuals of link', async () => {
-        browser = await difUtil.setTestName(
+        browser = await setTestName(
             'Test the visuals of link'
         );
-        page = await difUtil.createPage(browser);
-        const bodyhandle = await difUtil.createBodyHandle(page);
+        page = await createPage(browser);
+        const bodyhandle = await createBodyHandle(page);
         await page.evaluate(element => {
             element.innerHTML =
                 `<squid-a >
@@ -49,11 +49,11 @@ describe('Unit and Functional Tests for squid-a', () => {
         // expect(result1).toBeTruthy();
     });
     it('Test the visuals of link left', async () => {
-        browser = await difUtil.setTestName(
+        browser = await setTestName(
             'Test the visuals of link left'
         );
-        page = await difUtil.createPage(browser);
-        const bodyhandle = await difUtil.createBodyHandle(page);
+        page = await createPage(browser);
+        const bodyhandle = await createBodyHandle(page);
         await page.evaluate(element => {
             element.innerHTML =
                 `<squid-a variant="left">
@@ -66,11 +66,11 @@ describe('Unit and Functional Tests for squid-a', () => {
         // expect(result1).toBeTruthy();
     });
     it('Test the visuals of link right', async () => {
-        browser = await difUtil.setTestName(
+        browser = await setTestName(
             'Test the visuals of link right'
         );
-        page = await difUtil.createPage(browser);
-        const bodyhandle = await difUtil.createBodyHandle(page);
+        page = await createPage(browser);
+        const bodyhandle = await createBodyHandle(page);
         await page.evaluate(element => {
             element.innerHTML =
                 `<squid-a variant="right">

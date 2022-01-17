@@ -1,7 +1,7 @@
 
-const difUtil = require('../diff-util.js');
-const { AxePuppeteer } = require('@axe-core/puppeteer');
-const AxeUtil = require('../axe-util.js');
+import { setTestName, createPage, createBodyHandle } from '../diff-util.js';
+import { AxePuppeteer } from '@axe-core/puppeteer';
+import  { isValid } from '../axe-util.js';
 
 describe('Unit and Functional Tests for squid-accordion-group',()=>{
     let browser = null;
@@ -19,11 +19,11 @@ describe('Unit and Functional Tests for squid-accordion-group',()=>{
     });
     afterAll(async () => { });
     it('Test the accessibility of accordion-group',async()=>{
-        browser = await difUtil.setTestName(
+        browser = await setTestName(
             'Test the accessibility of accordion-group'
         );
-        page = await difUtil.createPage(browser);
-        const bodyhandle = await difUtil.createBodyHandle(page);
+        page = await createPage(browser);
+        const bodyhandle = await createBodyHandle(page);
         await page.evaluate(element => {
             element.innerHTML = `<squid-accordion-group>
             <!-- one -->
@@ -53,14 +53,14 @@ describe('Unit and Functional Tests for squid-accordion-group',()=>{
         }, bodyhandle);
         await page.waitForSelector('squid-accordion-group');
         const results = await new AxePuppeteer(page).include('squid-accordion-group').analyze();
-        expect(AxeUtil.isValid(results)).toBeTruthy();
+        expect(isValid(results)).toBeTruthy();
     });
     it('Test the click of a group works in accordion-group',async()=>{
-        browser = await difUtil.setTestName(
+        browser = await setTestName(
             'Test the click of a group works in accordion-group'
         );
-        page = await difUtil.createPage(browser);
-        const bodyhandle = await difUtil.createBodyHandle(page);
+        page = await createPage(browser);
+        const bodyhandle = await createBodyHandle(page);
         await page.evaluate(element => {
             element.innerHTML = `<squid-accordion-group>
             <!-- one -->

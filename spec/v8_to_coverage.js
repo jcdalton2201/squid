@@ -1,9 +1,9 @@
-const fetch = require('node-fetch');
-var fs = require('fs');
-const mkdirp = require('mkdirp');
-var sourceMapFireFox = require('source-map');
-var lineColumn = require('line-column');
-class V8ToCoverage {
+import fetch from 'node-fetch';
+import fs from 'fs';
+import mkdirp from 'mkdirp';
+import sourceMapFireFox from 'source-map';
+import lineColumn from 'line-column';
+export default class V8ToCoverage {
     constructor() {
 
     }
@@ -275,4 +275,3 @@ class V8ToCoverage {
     }
 }
 
-module.exports = new V8ToCoverage();

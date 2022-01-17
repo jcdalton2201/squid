@@ -130,7 +130,6 @@
           },
           "tagName": "squid-a",
           "summary": "`SquidA` is a web component. \n\nThere are several variants of the button, called types. Each has it's own specific meaning and use cases; more detail can be found at the link above. Here's what the system says about the button component.\n\n>Buttons communicate the action that will take place when triggered. They’re hierarchically more important than link text or another pattern that points to supplementary content.",
-          "example": "<p><squid-a href=\"https://github.com/\" target=\"_blank\">GitHub in a new tab</squid-a></p>\n<p><squid-a href=\"https://google\">google</squid-a></p>",
           "customElement": true
         }
       ],
@@ -203,7 +202,6 @@
           },
           "tagName": "squid-accordion",
           "summary": "`SquidAccordion` is a web component. \n\nAccordions provide progressive disclosure, showing focused content and allow users to expose additional content if they choose. Accordions contain a title, an expanded and a collapsed state, spacing, and icons indicating open and close.",
-          "example": "<squid-accordion>\n<span slot=\"summary\">This will the the accordion's title</span>\n<div slot=\"content\">\n<p>The accordion's content should be placed in the content slot.</p>\n<p>Anything inside this slot will be hidden unless the accordion is open.</p>\n</div>\n</squid-accordion>",
           "customElement": true
         }
       ],
@@ -214,6 +212,61 @@
           "declaration": {
             "name": "SquidAccordion",
             "module": "src/squid-accordion/squid-accordion.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/squid-accordion-group/squid-accordion-group.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "SquidAccordionGroup",
+          "members": [
+            {
+              "kind": "method",
+              "name": "disconnected"
+            },
+            {
+              "kind": "method",
+              "name": "_manageGroup",
+              "parameters": [
+                {
+                  "name": "evt",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_onKeyDown",
+              "parameters": [
+                {
+                  "name": "evt"
+                }
+              ]
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/utils/baseElement.js"
+          },
+          "tagName": "squid-accordion-group",
+          "summary": "`SquidAccordion` is a web component. \n\nThe `SquidAccordionGroup` element exists to group instances of `SquidAccordion`. Importing the accordion group also implicitly imports the accordions. The primary function is to group accordions so that only one accordion is open at a time. *",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "SquidAccordionGroup",
+          "declaration": {
+            "name": "SquidAccordionGroup",
+            "module": "src/squid-accordion-group/squid-accordion-group.js"
           }
         }
       ]
@@ -284,7 +337,6 @@
           },
           "tagName": "squid-alert",
           "summary": "`SquidAlert` is a web component. \n\n> Alerts allow for communication between a system and a user.\n> There are two types of alerts; global alerts and in-app alerts. Global alerts are system-generated and persistent, while inline alerts are presented as feedback in response to a user interaction.\n\nBy default the `SquidAlert` element is a global alert, but can be toggled using the `type` attribute.",
-          "example": "<h2>Success alert</h2>\n<squid-alert type=\"success\">\n<p slot=\"message\">Message goes here stating the message. <a href=\"javascript:void(0);\">Link</a></p>\n<span slot=\"button-text\">Acknowledge</span>\n</squid-alert>\n<h2>Warning alert</h2>\n<squid-alert type=\"warning\">\n<p slot=\"message\">Message goes here stating the message. <a href=\"javascript:void(0);\">Link</a></p>\n<span slot=\"button-text\">Acknowledge</span>\n</squid-alert>\n<h2>Error alert</h2>\n<squid-alert type=\"error\">\n<p slot=\"message\">Message goes here stating the message. <a href=\"javascript:void(0);\">Link</a></p>\n<span slot=\"button-text\">Acknowledge</span>\n</squid-alert>\n<h2>Informational alert</h2>\n<squid-alert type=\"informational\">\n<p slot=\"message\">Message goes here stating the message. <a href=\"javascript:void(0);\">Link</a></p>\n<span slot=\"button-text\">Acknowledge</span>\n</squid-alert>",
           "customElement": true
         }
       ],
@@ -295,62 +347,6 @@
           "declaration": {
             "name": "SquidAlert",
             "module": "src/squid-alert/squid-alert.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/squid-accordion-group/squid-accordion-group.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "SquidAccordionGroup",
-          "members": [
-            {
-              "kind": "method",
-              "name": "disconnected"
-            },
-            {
-              "kind": "method",
-              "name": "_manageGroup",
-              "parameters": [
-                {
-                  "name": "evt",
-                  "type": {
-                    "text": "Event"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "_onKeyDown",
-              "parameters": [
-                {
-                  "name": "evt"
-                }
-              ]
-            }
-          ],
-          "superclass": {
-            "name": "BaseElement",
-            "module": "/src/utils/baseElement.js"
-          },
-          "tagName": "squid-accordion-group",
-          "summary": "`SquidAccordion` is a web component. \n\nThe `SquidAccordionGroup` element exists to group instances of `SquidAccordion`. Importing the accordion group also implicitly imports the accordions. The primary function is to group accordions so that only one accordion is open at a time. *",
-          "example": "<squid-accordion-group>\n<!-- one -->\n<squid-accordion>\n<span slot=\"summary\">The first accordion in the group</span>\n<div slot=\"content\">\n<p>Four score and seven years ago our fathers brought forth on this continent a new nation conceived in liberty and dedicated to the proposition that all men are created equal.</p>\n</div>\n</squid-accordion>\n\n<!-- two -->\n<squid-accordion>\n<span slot=\"summary\">The middle child</span>\n<div slot=\"content\">\n<p>Four score and seven years ago our fathers brought forth on this continent a new nation conceived in liberty and dedicated to the proposition that all men are created equal.</p>\n</div>\n</squid-accordion>\n\n<!-- three -->\n<squid-accordion>\n<span slot=\"summary\">Accordion number three</span>\n<div slot=\"content\">\n<p>Four score and seven years ago our fathers brought forth on this continent a new nation conceived in liberty and dedicated to the proposition that all men are created equal.</p>\n</div>\n</squid-accordion>\n</squid-accordion-group>",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "SquidAccordionGroup",
-          "declaration": {
-            "name": "SquidAccordionGroup",
-            "module": "src/squid-accordion-group/squid-accordion-group.js"
           }
         }
       ]
@@ -479,7 +475,6 @@
           },
           "tagName": "squid-button",
           "summary": "There are several variants of the button, called types. Each has it's own specific meaning and use cases; more detail can be found at the link above. Here's what the system says about the button component.\n\n>Buttons communicate the action that will take place when triggered. They’re hierarchically more important than link text or another pattern that points to supplementary content.",
-          "example": "<squid-button variant=\"action\">Normal action button</squid-button>\n<squid-button variant=\"progressive\" size=\"small\">Small progressive button</squid-button>\n<squid-button variant=\"destructive\" disabled>Disabled destructive button</squid-button>",
           "customElement": true
         }
       ],
@@ -606,7 +601,6 @@
           },
           "tagName": "squid-calendar",
           "summary": "Calendars is a visual calendar for selecting dates.",
-          "example": "<squid-calendar>\n</squid-calendar>",
           "customElement": true
         }
       ],
@@ -690,7 +684,6 @@
           },
           "tagName": "squid-character-count",
           "summary": "The `SquidCharacterCount` is used to allow a user to track how many characters are still available in a given input.",
-          "example": "<squid-character-count id=\"counter\" max=\"10\"></squid-character-count>\n<input aria-describedby=\"counter\">",
           "customElement": true
         }
       ],
@@ -1142,7 +1135,6 @@
           },
           "tagName": "squid-checkbox",
           "summary": "The `SquidCheckbox` element is an implementation of the [checkbox element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox).\n\n> Checkboxes are used to select a single item or multiple items. A checkbox has two selection states: unselected and selected.\n> The difference between radio buttons and checkboxes is that a radio button is for a single selection from a set of options and a checkbox allows for multiple selections from a set of options.\n> The main difference between a toggle and a checkbox is that the [toggle switch](../squid-toggle) is for action and checkbox is for status.",
-          "example": "<squid-checkbox>Chcekbox</squid-checkbox>\n<squid-checkbox checked=\"true\">Chcekbox checked</squid-checkbox>\n<squid-checkbox disabled>Chcekbox &mdash; disabled</squid-checkbox>\n<squid-checkbox required>Chcekbox &mdash; required</squid-checkbox>",
           "customElement": true
         }
       ],
@@ -1251,7 +1243,6 @@
           },
           "tagName": "squid-checkbox-group",
           "summary": "Creates an accessible checkbox group using [`SquidCheckbox`](../squid-checkbox) or a similar component.\n\nThe `SquidCheckbox` element is an implementation of the [checkbox element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox).\n\n> Checkboxes are used to select a single item or multiple items. A checkbox has two selection states: unselected and selected.\n> The difference between radio buttons and checkboxes is that a radio button is for a single selection from a set of options and a checkbox allows for multiple selections from a set of options.\n> The main difference between a toggle and a checkbox is that the [toggle switch](../squid-toggle) is for action and checkbox is for status.",
-          "example": "<squid-checkbox-group legend=\"Favorite Star Wars Movies\">\n<squid-checkbox value=\"The Phantom Menace\" disabled>The Phantom Menace</squid-checkbox>\n<squid-checkbox value=\"Attack of the Clones\" disabled>Attack of the Clones</squid-checkbox>\n<squid-checkbox value=\"Revenge of the Sith\" disabled>Revenge of the Sith</squid-checkbox>\n<squid-checkbox value=\"A New Hope\">A New Hope</squid-checkbox>\n<squid-checkbox value=\"The Empire Strikes Back\">The Empire Strikes Back</squid-checkbox>\n<squid-checkbox value=\"Return of the Jedi\">Return of the Jedi</squid-checkbox>\n<squid-checkbox value=\"The Force Awakens\">The Force Awakens</squid-checkbox>\n<squid-checkbox value=\"The Last Jedi\">The Last Jedi</squid-checkbox>\n<squid-checkbox value=\"Rogue One\">Rogue One</squid-checkbox>\n<squid-checkbox value=\"Solo\">Solo</squid-checkbox>\n</squid-checkbox-group>",
           "customElement": true
         }
       ],
@@ -1699,7 +1690,6 @@
           },
           "tagName": "squid-combobox",
           "summary": "A combobox is a combination of input element and a select element much like a [datalist](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist), but with some subtle differences. The W3C defines a combobox as:\n\n> A combobox is a widget made up of the combination of two distinct elements: 1) a single-line textbox, and 2) an associated pop-up element for helping users set the value of the textbox. The popup may be a listbox, grid, tree, or dialog. Many implementations also include a third optional element -- a graphical button adjacent to the textbox, indicating the availability of the popup. Activating the button displays the popup if suggestions are available.\n_[-source](https://www.w3.org/TR/wai-aria-practices/#combobox)_",
-          "example": "<squid-combobox name=\"world\" placeholder=\"Harry Potter characters\">\n<label slot=\"label\">Favorite Harry Potter Character</label>\n<option value=\"ME\">Harry Potter</option>\n<option value=\"Ron Weasley\">Ron Weasley</option>\n<option value=\"Hermione Granger\">Hermione Granger</option>\n<option value=\"Albus Dumbledore\">Albus Dumbledore</option>\n<option value=\"Severus Snape\">Severus Snape</option>\n<option value=\"Sirius Black\">Sirius Black</option>\n<option value=\"Neville 'freaking' Longbottom\">Neville Longbottom</option>\n<option value=\"Voldemort\">He Who Must Not Be Named</option>\n</squid-combobox>",
           "customElement": true
         }
       ],
@@ -1799,7 +1789,6 @@
           },
           "tagName": "squid-container",
           "summary": "This is a contain around a section of html.",
-          "example": "<squid-container  padding=\"normal\" elevation=\"1\" radius=\"4\">\n<h1>Squid Container</h1>\n\n<p>Really just a fancy, accessible wrapper.</p>\n</squid-container>",
           "customElement": true
         }
       ],
@@ -2504,7 +2493,6 @@
           },
           "tagName": "squid-currency",
           "summary": "`SquidCurrency` is an implementation of [`SquidInput`](../squid-input) with a custom mask.\nDefault amount is empty, not 0\nDollar sign is instantly prepended to the typed input amount upon input\nDollar sign is always displayed on the left side of the number\nFor amounts of less than $1, display $0.XX\nField does not pass value of dollar sign on submit\nNo custom number pads\nAmount input must allow for input of <1.00 amounts",
-          "example": "<squid-currency></squid-currency>",
           "customElement": true,
           "events": [
             {
@@ -3207,7 +3195,6 @@
           },
           "tagName": "squid-datepicker",
           "summary": "The `SquidDatepicker` component is an version of input with a type of text.  \nIt will use the [SquidCalendar](../squid-Calendar) to display a calendar for picking a date.",
-          "example": "<squid-datepicker required >This input will run validations</squid-datepicker",
           "customElement": true
         }
       ],
@@ -3373,7 +3360,6 @@
           },
           "tagName": "squid-drawer",
           "summary": "The `SquidDrawer` A navigation drawer provides access to destinations and app functionality, such as switching accounts. It can either be permanently on-screen or controlled by a navigation menu icon.\n\n> Drawer has two slots that should be filled.\n> slot='button' is the name that goes in the button field\n> slot='title' is the title that will display in the drawer\n> The rest of the html will be placed in the drawer.",
-          "example": "<squid-drawer >\n<span slot='button'>Info</span>\n<span slot='title'>Shakespears Quotes</span>\n<squid-accordion-group>\n<!-- one -->\n<squid-accordion>\n<span slot=\"summary\">The first accordion in the group</span>\n<div slot=\"content\">\n<p>Four score and seven years ago our fathers brought forth on this continent a new nation conceived in liberty and dedicated to the proposition that all men are created equal.</p>\n</div>\n</squid-accordion>\n\n<!-- two -->\n<squid-accordion>\n<span slot=\"summary\">The middle child</span>\n<div slot=\"content\">\n<p>Four score and seven years ago our fathers brought forth on this continent a new nation conceived in liberty and dedicated to the proposition that all men are created equal.</p>\n</div>\n</squid-accordion>\n\n<!-- three -->\n<squid-accordion>\n<span slot=\"summary\">Accordion number three</span>\n<div slot=\"content\">\n<p>Four score and seven years ago our fathers brought forth on this continent a new nation conceived in liberty and dedicated to the proposition that all men are created equal.</p>\n</div>\n</squid-accordion>\n</squid-accordion-group>\n</squid-drawer>",
           "customElement": true
         }
       ],
@@ -3402,7 +3388,6 @@
           },
           "tagName": "squid-email",
           "summary": "The `SquidEmail` defines a field for an e-mail address. \nThe input value is automatically validated to ensure it is a properly formatted e-mail address.",
-          "example": "<squid-email>Test Email</squid-email>",
           "customElement": true,
           "attributes": [
             {
@@ -4470,7 +4455,6 @@
           },
           "tagName": "squid-hero-number",
           "summary": "The `SquidHeroNumber` elemement is a stylized display of a number and label.\n> Hero Numbers are used to surface important data points in a stylistic manner. One common usage is displaying account balances or other critical account information.\n\nFurther information and usage guidelines can be found at the lsquid above.",
-          "example": "<squid-hero-number number=\"1234.56\"  label=\"Available credit\"></squid-hero-number>\n<squid-hero-number number=\"1234.56\"  label=\"Current balance\" alignment=\"center\"></squid-hero-number>\n<squid-hero-number number=\"1234.56\"  label=\"Current balance\" size=\"small\" currency=\"USD\"></squid-hero-number>",
           "customElement": true
         }
       ],
@@ -4969,7 +4953,6 @@
           },
           "tagName": "squid-input",
           "summary": "The `SquidInput` component is an implementation the HTML [input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input) element.\n\n> Text inputs allow text or numeric values to be entered and edited in one line.\n> Text areas allow multiple lines of text to be entered.\n\nSquid breaks up the input elements each into their own component for convenience including [`SquidCheckbox`](../squid-checkbox), [`SquidCombobox`](../squid-checkbox), [`SquidEmail`](../squid-email), `SquidInput`, [`SquidNumber`](../squid-number), [`SquidPassword`](../squid-password), [`SquidRadio`](../squid-radio), [`SquidSearch`](../squid-search), [`SquidSelect`](SquidSelect), [`SquidSsn`](../squid-ssn), [`SquidTelephone`](../squid-telephone) and [`SquidTextarea`](../squid-textarea).",
-          "example": "<squid-input required minlength=\"3\" maxlength=\"5\" tooltip=\"Tooltip text\">\nThis input will run validations\n</squid-input>",
           "customElement": true
         }
       ],
@@ -5155,6 +5138,20 @@
           "name": "SquidInputMask",
           "members": [
             {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "String"
+              },
+              "description": " Sets the input's value and emits an `squid-change` event when updated. Reflected as a property.",
+              "privacy": "public",
+              "attribute": "value",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
+            {
               "kind": "method",
               "name": "__onInput",
               "parameters": [
@@ -5191,20 +5188,6 @@
             {
               "kind": "method",
               "name": "updatePattern",
-              "inheritedFrom": {
-                "name": "SquidInput",
-                "module": "src/squid-input/squid-input.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "value",
-              "type": {
-                "text": "String"
-              },
-              "description": " Sets the input's value and emits an `squid-change` event when updated. Reflected as a property.",
-              "privacy": "public",
-              "attribute": "value",
               "inheritedFrom": {
                 "name": "SquidInput",
                 "module": "src/squid-input/squid-input.js"
@@ -5812,7 +5795,6 @@
           },
           "tagName": "squid-input-mask",
           "summary": "The `SquidInputMask` is functionally an `SquidInput` component with an input mask attached to enforece a particular pattern. This now serves as the base class for [SquidTelephone](../squid-telephone).",
-          "example": "<squid-input-mask mask=\"(111) 111-1111\">Telephone Number</squid-input-mask>\n<squid-input-mask mask=\"1AAAA11AAAA111111\" helper=\"Format: 1AAAA11AAAA111111\">Vehicle Identification Number</squid-input-mask>",
           "customElement": true,
           "events": [
             {
@@ -5895,7 +5877,6 @@
           },
           "tagName": "squid-nav",
           "summary": "The `SquidNav` component is an of a  navigation element.\nThe base element for a navigation it has an anchor element for linking.",
-          "example": "<squid-nav name='Search Engine' theme='dark'>\n<squid-sub-nav href='https://google.com' theme='dark'>Google</squid-sub-nav>\n<squid-sub-nav href='https://bing.com' theme='dark'>Bing</squid-sub-nav>\n</squid-nav>",
           "customElement": true
         }
       ],
@@ -5951,7 +5932,6 @@
           },
           "tagName": "squid-nav-group",
           "summary": "The `SquidNavGroup` component is an of a  navigation element.\nThis is a group of squid nav elements.",
-          "example": "<squid-nav-group>\n<squid-nav name='Search Engine' theme='dark'>\n<squid-sub-nav href='https://google.com' theme='dark'>Google</squid-sub-nav>\n<squid-sub-nav href='https://bing.com' theme='dark'>Bing</squid-sub-nav>\n</squid-nav>\n<squid-nav name='News' theme='dark'>\n<squid-sub-nav href='https://CNN.com' theme='dark'>CNN</squid-sub-nav>\n<squid-sub-nav href='https://www.bbc.co.uk/news' theme='dark'>BBC</squid-sub-nav>\n</squid-nav>\n</squid-nav-group>",
           "customElement": true
         }
       ],
@@ -6462,7 +6442,6 @@
           },
           "tagName": "squid-number",
           "summary": "The `SquidNumber` element is an implementation of a text field as number. This particular element is analagous to an `HTMLInputElement` with a type of `'number'`.",
-          "example": "<squid-number>Enter number</squid-number>",
           "customElement": true,
           "attributes": [
             {
@@ -6647,7 +6626,6 @@
           },
           "tagName": "squid-password",
           "summary": "The `SquidPassword` element is an implementation of a text field as password. This particular element is analagous to an `HTMLInputElement` with a type of `'password'`.",
-          "example": "<squid-password>Enter password</squid-password>",
           "customElement": true,
           "attributes": [
             {
@@ -7639,7 +7617,6 @@
           },
           "tagName": "squid-radio",
           "summary": "<squid-radio> elements of type radio are generally used in radio groups—collections of radio buttons describing a set of related options.\n\nOnly one radio button in a given group can be selected at the same time. Radio buttons are typically rendered as small circles, which are filled or highlighted when selected.",
-          "example": "<squid-radio-group>\n<h1 slot=\"title\">Vote</h1>\n<squid-radio name='test' value='yes' >YES</squid-radio>\n<squid-radio name='test' value='no'>No</squid-radio>\n<squid-radio name='test' value='maybe'>Maybe</squid-radio>\n</squid-radio-group>",
           "customElement": true
         }
       ],
@@ -7706,7 +7683,6 @@
           },
           "tagName": "squid-radio-group",
           "summary": "a collection of radio buttons describing a set of related options. Only one radio button in a group can be selected at the same time.",
-          "example": "<squid-radio-group>\n<h1 slot=\"title\">Vote</h1>\n<squid-radio name='test' value='yes' >YES</squid-radio>\n<squid-radio name='test' value='no'>No</squid-radio>\n<squid-radio name='test' value='maybe'>Maybe</squid-radio>\n</squid-radio-group>",
           "customElement": true
         }
       ],
@@ -8414,7 +8390,6 @@
           },
           "tagName": "squid-select",
           "summary": "The <select> HTML element represents a control that provides a menu of options:",
-          "example": "<squid-select name=\"pets\" id=\"pet-select\">\n<span slot='label'>Animals</span>\n<option value=\"\">--Please choose an option--</option>\n<option value=\"dog\">Dog</option>\n<option value=\"cat\">Cat</option>\n<option value=\"hamster\">Hamster</option>\n<option value=\"parrot\">Parrot</option>\n<option value=\"spider\">Spider</option>\n<option value=\"goldfish\">Goldfish</option>\n</squid-select>",
           "customElement": true
         }
       ],
@@ -9147,7 +9122,6 @@
           },
           "tagName": "squid-ssn",
           "summary": "`SquidSsn` is an implementation of [`SquidInput`](../squid-input) that serves as a social-security number mask for privacy reasons.",
-          "example": "<squid-ssn>Social security number</squid-ssn>",
           "customElement": true,
           "attributes": [
             {
@@ -9417,7 +9391,6 @@
           },
           "tagName": "squid-stepper",
           "summary": "The `SquidStepper` element to allow users to quickly specify a value within a given range.",
-          "example": "<squid-stepper name='stepper' label='Traveller Class' value='2'>\n<option value='1'>First</option>\n<option value='2'>Buisness</option>\n<option value='3'>Coach</option>\n</squid-stepper>",
           "customElement": true
         }
       ],
@@ -9479,7 +9452,6 @@
           },
           "tagName": "squid-sub-nav",
           "summary": "The `SquidSubNav` component is an of a sub navigation element.\nThe base element for a navigation it has an anchor element for linking.",
-          "example": "<squid-sub-nav href='https://google.com' theme='dark'>Google</squid-sub-nav>",
           "customElement": true
         }
       ],
@@ -9503,6 +9475,20 @@
           "description": "",
           "name": "SquidTelephone",
           "members": [
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "String"
+              },
+              "description": " Sets the input's value and emits an `squid-change` event when updated. Reflected as a property.",
+              "privacy": "public",
+              "attribute": "value",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
             {
               "kind": "method",
               "name": "__onInput",
@@ -9548,20 +9534,6 @@
             {
               "kind": "method",
               "name": "updatePattern",
-              "inheritedFrom": {
-                "name": "SquidInput",
-                "module": "src/squid-input/squid-input.js"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "value",
-              "type": {
-                "text": "String"
-              },
-              "description": " Sets the input's value and emits an `squid-change` event when updated. Reflected as a property.",
-              "privacy": "public",
-              "attribute": "value",
               "inheritedFrom": {
                 "name": "SquidInput",
                 "module": "src/squid-input/squid-input.js"
@@ -10015,7 +9987,6 @@
           },
           "tagName": "squid-telephone",
           "summary": "`SquidTelephone` is an implementation of [`SquidInputMask`](../squid-input-mask).",
-          "example": "<squid-telephone>Phone number</squid-telephone>",
           "customElement": true,
           "attributes": [
             {
@@ -10653,7 +10624,6 @@
           },
           "tagName": "squid-textarea",
           "summary": "The `<textarea>` HTML element represents a multi-line plain-text editing control, \nuseful when you want to allow users to enter a sizeable amount of free-form text, \nfor example a comment on a review or feedback form.",
-          "example": "<squid-textarea cols='100'>Tell us your story</squid-textarea>",
           "customElement": true
         }
       ],
@@ -11119,7 +11089,6 @@
           },
           "tagName": "squid-toggle",
           "summary": "The `SquidToggle` element is an implementation of the [checkbox element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox).\n\n> Toggle is a special type of checkbox that presents as a switch.\n> The main difference between a toggle and a checkbox is that the toggle switch is for action and checkbox is for status.",
-          "example": "<squid-toggle>Chcekbox</squid-toggle>\n<squid-toggle checked=\"true\">Chcekbox checked</squid-toggle>\n<squid-toggle disabled>Chcekbox &mdash; disabled</squid-toggle>\n<squid-toggle required>Chcekbox &mdash; required</squid-toggle>",
           "customElement": true,
           "attributes": [
             {

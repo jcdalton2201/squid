@@ -1,7 +1,7 @@
 
-const difUtil = require('../diff-util.js');
-const { AxePuppeteer } = require('@axe-core/puppeteer');
-const AxeUtil = require('../axe-util.js');
+import { setTestName, createPage, createBodyHandle } from '../diff-util.js';
+import { AxePuppeteer } from '@axe-core/puppeteer';
+import  { isValid } from '../axe-util.js';
 
 describe('Unit and Functional Tests for squid-currency',()=>{
     let browser = null;
@@ -22,12 +22,12 @@ describe('Unit and Functional Tests for squid-currency',()=>{
     afterAll(async () => { 
     });
     it('Test the accessibility of currency',async()=>{
-        browser = await difUtil.setTestName(
+        browser = await setTestName(
             'Test the accessibility of currency'
         );
-        page = await difUtil.createPage(browser);
+        page = await createPage(browser);
         // coverageUtil.startCoverage(page);
-        const bodyhandle = await difUtil.createBodyHandle(page);
+        const bodyhandle = await createBodyHandle(page);
         await page.evaluate(element => {
             element.innerHTML =
                 `<squid-currency >
@@ -40,17 +40,17 @@ describe('Unit and Functional Tests for squid-currency',()=>{
         },bodyhandle);
         await input.type('1234');
         const results = await new AxePuppeteer(page).include('squid-currency').analyze();
-        expect(AxeUtil.isValid(results)).toBeTruthy();
+        expect(isValid(results)).toBeTruthy();
         // const [jsCoverage] = await coverageUtil.stopCoverage(page);
         // await coverageUtil.displayCoverage(jsCoverage,{include:['squid-core-ui.js']});
     });
     it('Test the accessibility of currency',async()=>{
-        browser = await difUtil.setTestName(
+        browser = await setTestName(
             'Test the visuals of currency'
         );
-        page = await difUtil.createPage(browser);
+        page = await createPage(browser);
         // coverageUtil.startCoverage(page);
-        const bodyhandle = await difUtil.createBodyHandle(page);
+        const bodyhandle = await createBodyHandle(page);
         await page.evaluate(element => {
             element.innerHTML =
                 `<squid-currency >
@@ -70,12 +70,12 @@ describe('Unit and Functional Tests for squid-currency',()=>{
     });
     it('Test the max of currency',async()=>{
         
-        browser = await difUtil.setTestName(
+        browser = await setTestName(
             'Test the max of currency'
         );
-        page = await difUtil.createPage(browser);
+        page = await createPage(browser);
         // coverageUtil.startCoverage(page);
-        const bodyhandle = await difUtil.createBodyHandle(page);
+        const bodyhandle = await createBodyHandle(page);
         await page.evaluate(element => {
             element.innerHTML =
                 `<squid-currency max='1'>

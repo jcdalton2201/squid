@@ -1,13 +1,14 @@
-const chalk = require('chalk');
-const mkdirp = require('mkdirp');
-const fs = require('fs');
-const argv = require('minimist')(process.argv.slice(2));
-
+import chalk from 'chalk';
+import mkdirp from 'mkdirp';
+import fs from 'fs';
+import minimist from 'minimist';
+import { argv } from 'process';
+let arguments = minimist(argv.slice(2));
 class CreateComponent {
   constructor() {
     if (argv.name) {
-      let paths = argv.name.split('/');
-      let name = argv.name;
+      let paths = arguments.name.split('/');
+      let name = arguments.name;
       let dir = '';
       if (paths.length > 1) {
         name = paths.pop();

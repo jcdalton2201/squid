@@ -1,5 +1,5 @@
-const chalk = require('chalk');
-module.exports.isValid = function isValid(results) {
+import chalk from 'chalk';
+export  function isValid(results) {
     results.violations.forEach(item => {
         const id = item.id;
         item.nodes.forEach(node => {
@@ -14,4 +14,4 @@ module.exports.isValid = function isValid(results) {
         });
     });
     return results.violations.length < 1;
-};
+}
