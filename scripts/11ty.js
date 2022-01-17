@@ -1,18 +1,19 @@
 import fs from 'fs';
 // const MarkdownIt = require('markdown-it');
-const hljs = require('highlight.js');
-const md = require('markdown-it')({
-        highlight: (str,language) =>{
-            if(language && hljs.getLanguage(language)){
-                try {
-                    return hljs.highlight(str,{ language}).value
-                } catch (__) {
-                    
+import hljs from 'highlight.js';
+import system from 'markdown-it';
+const md = system({
+            highlight: (str,language) =>{
+                if(language && hljs.getLanguage(language)){
+                    try {
+                        return hljs.highlight(str,{ language}).value
+                    } catch (__) {
+                        
+                    }
                 }
+                return '';
             }
-            return '';
-        }
-    });
+        });
 const buildData = (file) => {
     return `
 exports.data = {
