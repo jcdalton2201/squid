@@ -6,7 +6,7 @@ function init(){
     
     const items = customElements.modules.map(item => {
         return item.exports.map(exportItem => {
-            return `- [${exportItem.name.replace('Squid','')}](./${exportItem.declaration.module})`.replace('.js','.md')
+            return `- [${exportItem.name.replace('Squid','')}](./${exportItem.declaration.module.substring(0,exportItem.declaration.module.lastIndexOf('/'))})`
         });
     }).flat();
     const currentComp = readMe.slice(0,readMe.indexOf('## Current components') + 22);
