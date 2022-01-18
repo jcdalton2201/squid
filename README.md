@@ -22,40 +22,40 @@ Even some frameworks have gotten on board the web components train. Currently Vu
 
 ## Current components
 
-- [A](./src/squid-a/squid-a.js)
-- [Accordion](./src/squid-accordion/squid-accordion.js)
-- [AccordionGroup](./src/squid-accordion-group/squid-accordion-group.js)
-- [Alert](./src/squid-alert/squid-alert.js)
-- [Button](./src/squid-button/squid-button.js)
-- [Calendar](./src/squid-calendar/squid-calendar.js)
-- [CharacterCount](./src/squid-character-count/squid-character-count.js)
-- [Checkbox](./src/squid-checkbox/squid-checkbox.js)
-- [CheckboxGroup](./src/squid-checkbox-group/squid-checkbox-group.js)
-- [Combobox](./src/squid-combobox/squid-combobox.js)
-- [Container](./src/squid-container/squid-container.js)
-- [Currency](./src/squid-currency/squid-currency.js)
-- [Datepicker](./src/squid-datepicker/squid-datepicker.js)
-- [Dialog](./src/squid-dialog/squid-dialog.js)
-- [Drawer](./src/squid-drawer/squid-drawer.js)
-- [Email](./src/squid-email/squid-email.js)
-- [Errors](./src/squid-errors/squid-errors.js)
-- [HeroNumber](./src/squid-hero-number/squid-hero-number.js)
-- [Input](./src/squid-input/squid-input.js)
-- [InputBase](./src/squid-input-base/squid-input-base.js)
-- [InputMask](./src/squid-input-mask/squid-input-mask.js)
-- [Nav](./src/squid-nav/squid-nav.js)
-- [NavGroup](./src/squid-nav-group/squid-nav-group.js)
-- [Number](./src/squid-number/squid-number.js)
-- [Password](./src/squid-password/squid-password.js)
-- [Radio](./src/squid-radio/squid-radio.js)
-- [RadioGroup](./src/squid-radio-group/squid-radio-group.js)
-- [Select](./src/squid-select/squid-select.js)
-- [Ssn](./src/squid-ssn/squid-ssn.js)
-- [Stepper](./src/squid-stepper/squid-stepper.js)
-- [SubNav](./src/squid-sub-nav/squid-sub-nav.js)
-- [Telephone](./src/squid-telephone/squid-telephone.js)
-- [Textarea](./src/squid-textarea/squid-textarea.js)
-- [Toggle](./src/squid-toggle/squid-toggle.js)
+- [A](./src/squid-a/squid-a.md)
+- [Accordion](./src/squid-accordion/squid-accordion.md)
+- [AccordionGroup](./src/squid-accordion-group/squid-accordion-group.md)
+- [Alert](./src/squid-alert/squid-alert.md)
+- [Button](./src/squid-button/squid-button.md)
+- [Calendar](./src/squid-calendar/squid-calendar.md)
+- [CharacterCount](./src/squid-character-count/squid-character-count.md)
+- [Checkbox](./src/squid-checkbox/squid-checkbox.md)
+- [CheckboxGroup](./src/squid-checkbox-group/squid-checkbox-group.md)
+- [Combobox](./src/squid-combobox/squid-combobox.md)
+- [Container](./src/squid-container/squid-container.md)
+- [Currency](./src/squid-currency/squid-currency.md)
+- [Datepicker](./src/squid-datepicker/squid-datepicker.md)
+- [Dialog](./src/squid-dialog/squid-dialog.md)
+- [Drawer](./src/squid-drawer/squid-drawer.md)
+- [Email](./src/squid-email/squid-email.md)
+- [Errors](./src/squid-errors/squid-errors.md)
+- [HeroNumber](./src/squid-hero-number/squid-hero-number.md)
+- [Input](./src/squid-input/squid-input.md)
+- [InputBase](./src/squid-input-base/squid-input-base.md)
+- [InputMask](./src/squid-input-mask/squid-input-mask.md)
+- [Nav](./src/squid-nav/squid-nav.md)
+- [NavGroup](./src/squid-nav-group/squid-nav-group.md)
+- [Number](./src/squid-number/squid-number.md)
+- [Password](./src/squid-password/squid-password.md)
+- [Radio](./src/squid-radio/squid-radio.md)
+- [RadioGroup](./src/squid-radio-group/squid-radio-group.md)
+- [Select](./src/squid-select/squid-select.md)
+- [Ssn](./src/squid-ssn/squid-ssn.md)
+- [Stepper](./src/squid-stepper/squid-stepper.md)
+- [SubNav](./src/squid-sub-nav/squid-sub-nav.md)
+- [Telephone](./src/squid-telephone/squid-telephone.md)
+- [Textarea](./src/squid-textarea/squid-textarea.md)
+- [Toggle](./src/squid-toggle/squid-toggle.md)
 
 ## Local development
 
@@ -92,6 +92,8 @@ Or simply run `npm i @populus/squid`. Make sure to have .npmrc set up to point t
 #registry=https://acecashexpress.visualstudio.com/
 ```
 
+    
+    
     
     
     
