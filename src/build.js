@@ -9,6 +9,7 @@ import './squid-checkbox/squid-checkbox.js';
 import './squid-checkbox-group/squid-checkbox-group.js';
 import './squid-combobox/squid-combobox.js';
 import './squid-container/squid-container.js';
+import './squid-credit-card/squid-credit-card.js';
 import './squid-currency/squid-currency.js';
 import './squid-datepicker/squid-datepicker.js';
 import './squid-dialog/squid-dialog.js';

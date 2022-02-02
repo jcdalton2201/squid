@@ -5,7 +5,7 @@ export default {
 };
 
 const temp = (args) => {
-    return `<squid-ssn '>${args.label}</squid-ssn`;
+    return `<squid-ssn '>${args.label}</squid-ssn>`;
 };
 
 export const ssn = temp.bind({});

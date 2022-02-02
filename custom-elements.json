@@ -147,6 +147,62 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/squid-accordion-group/squid-accordion-group.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "SquidAccordionGroup",
+          "members": [
+            {
+              "kind": "method",
+              "name": "disconnected"
+            },
+            {
+              "kind": "method",
+              "name": "_manageGroup",
+              "parameters": [
+                {
+                  "name": "evt",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_onKeyDown",
+              "parameters": [
+                {
+                  "name": "evt"
+                }
+              ]
+            }
+          ],
+          "superclass": {
+            "name": "BaseElement",
+            "module": "/src/utils/baseElement.js"
+          },
+          "tagName": "squid-accordion-group",
+          "summary": "`SquidAccordion` is a web component. \n\nThe `SquidAccordionGroup` element exists to group instances of `SquidAccordion`. Importing the accordion group also implicitly imports the accordions. The primary function is to group accordions so that only one accordion is open at a time. *",
+          "example": "<squid-accordion-group>\n<!-- one -->\n<squid-accordion>\n<span slot=\"summary\">The first accordion in the group</span>\n<div slot=\"content\">\n<p>Four score and seven years ago our fathers brought forth on this continent a new nation conceived in liberty and dedicated to the proposition that all men are created equal.</p>\n</div>\n</squid-accordion>\n\n<!-- two -->\n<squid-accordion>\n<span slot=\"summary\">The middle child</span>\n<div slot=\"content\">\n<p>Four score and seven years ago our fathers brought forth on this continent a new nation conceived in liberty and dedicated to the proposition that all men are created equal.</p>\n</div>\n</squid-accordion>\n\n<!-- three -->\n<squid-accordion>\n<span slot=\"summary\">Accordion number three</span>\n<div slot=\"content\">\n<p>Four score and seven years ago our fathers brought forth on this continent a new nation conceived in liberty and dedicated to the proposition that all men are created equal.</p>\n</div>\n</squid-accordion>\n</squid-accordion-group>",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "SquidAccordionGroup",
+          "declaration": {
+            "name": "SquidAccordionGroup",
+            "module": "src/squid-accordion-group/squid-accordion-group.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/squid-accordion/squid-accordion.js",
       "declarations": [
         {
@@ -214,62 +270,6 @@
           "declaration": {
             "name": "SquidAccordion",
             "module": "src/squid-accordion/squid-accordion.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/squid-accordion-group/squid-accordion-group.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "SquidAccordionGroup",
-          "members": [
-            {
-              "kind": "method",
-              "name": "disconnected"
-            },
-            {
-              "kind": "method",
-              "name": "_manageGroup",
-              "parameters": [
-                {
-                  "name": "evt",
-                  "type": {
-                    "text": "Event"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "_onKeyDown",
-              "parameters": [
-                {
-                  "name": "evt"
-                }
-              ]
-            }
-          ],
-          "superclass": {
-            "name": "BaseElement",
-            "module": "/src/utils/baseElement.js"
-          },
-          "tagName": "squid-accordion-group",
-          "summary": "`SquidAccordion` is a web component. \n\nThe `SquidAccordionGroup` element exists to group instances of `SquidAccordion`. Importing the accordion group also implicitly imports the accordions. The primary function is to group accordions so that only one accordion is open at a time. *",
-          "example": "<squid-accordion-group>\n<!-- one -->\n<squid-accordion>\n<span slot=\"summary\">The first accordion in the group</span>\n<div slot=\"content\">\n<p>Four score and seven years ago our fathers brought forth on this continent a new nation conceived in liberty and dedicated to the proposition that all men are created equal.</p>\n</div>\n</squid-accordion>\n\n<!-- two -->\n<squid-accordion>\n<span slot=\"summary\">The middle child</span>\n<div slot=\"content\">\n<p>Four score and seven years ago our fathers brought forth on this continent a new nation conceived in liberty and dedicated to the proposition that all men are created equal.</p>\n</div>\n</squid-accordion>\n\n<!-- three -->\n<squid-accordion>\n<span slot=\"summary\">Accordion number three</span>\n<div slot=\"content\">\n<p>Four score and seven years ago our fathers brought forth on this continent a new nation conceived in liberty and dedicated to the proposition that all men are created equal.</p>\n</div>\n</squid-accordion>\n</squid-accordion-group>",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "SquidAccordionGroup",
-          "declaration": {
-            "name": "SquidAccordionGroup",
-            "module": "src/squid-accordion-group/squid-accordion-group.js"
           }
         }
       ]
@@ -1810,6 +1810,985 @@
           "declaration": {
             "name": "SquidContainer",
             "module": "src/squid-container/squid-container.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/squid-credit-card/squid-credit-card.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "SquidCreditCard",
+          "members": [
+            {
+              "kind": "method",
+              "name": "_addMask",
+              "parameters": [
+                {
+                  "name": "value",
+                  "default": "''",
+                  "description": "value to add a mask to",
+                  "type": {
+                    "text": "String"
+                  }
+                }
+              ],
+              "description": "Mask the value of the SSN",
+              "inheritedFrom": {
+                "name": "SquidSsn",
+                "module": "src/squid-ssn/squid-ssn.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_unmask",
+              "parameters": [
+                {
+                  "name": "value",
+                  "default": "''",
+                  "description": "the Masked value",
+                  "type": {
+                    "text": "String"
+                  }
+                }
+              ],
+              "description": "Unmask the input value",
+              "inheritedFrom": {
+                "name": "SquidSsn",
+                "module": "src/squid-ssn/squid-ssn.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_mask",
+              "parameters": [
+                {
+                  "name": "value",
+                  "default": "''",
+                  "description": "value to be masked",
+                  "type": {
+                    "text": "String"
+                  }
+                },
+                {
+                  "name": "evt",
+                  "default": "{}",
+                  "description": "keyboard event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ],
+              "description": "Mask the value to not be seen",
+              "inheritedFrom": {
+                "name": "SquidSsn",
+                "module": "src/squid-ssn/squid-ssn.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_manageCursor",
+              "parameters": [
+                {
+                  "name": "maskedValue",
+                  "description": "the masked value",
+                  "type": {
+                    "text": "String"
+                  }
+                },
+                {
+                  "name": "selectionStart",
+                  "description": "the current cursor location",
+                  "type": {
+                    "text": "number"
+                  }
+                },
+                {
+                  "name": "evt",
+                  "default": "{}"
+                },
+                {
+                  "description": "keyboard Event",
+                  "name": "event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ],
+              "description": "Manage the location of the cursor",
+              "inheritedFrom": {
+                "name": "SquidSsn",
+                "module": "src/squid-ssn/squid-ssn.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_obfuscate",
+              "parameters": [
+                {
+                  "name": "value",
+                  "default": "''",
+                  "description": "value to obfucate",
+                  "type": {
+                    "text": "String"
+                  }
+                }
+              ],
+              "description": "Obfuscate the input value",
+              "inheritedFrom": {
+                "name": "SquidSsn",
+                "module": "src/squid-ssn/squid-ssn.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "checkValidity",
+              "description": "Overwrite the checkValidity to handel error messages",
+              "inheritedFrom": {
+                "name": "SquidInputBase",
+                "module": "src/squid-input-base/squid-input-base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "luhnCheck",
+              "parameters": [
+                {
+                  "name": "number",
+                  "description": "credit card number to check the luhn alg",
+                  "type": {
+                    "text": "Number"
+                  }
+                }
+              ],
+              "description": "This is a luhn algorithm  or modulus 10 to check if it is a valid cc number",
+              "return": {
+                "type": {
+                  "text": ""
+                }
+              }
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "default": "'ccnumber'"
+            },
+            {
+              "type": {
+                "text": "String"
+              },
+              "description": " A proxy for the input's `autocomplete` property. Reflected as a property.",
+              "name": "autocomplete",
+              "kind": "field",
+              "privacy": "public",
+              "attribute": "autocomplete",
+              "default": "'cc-number'",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "String"
+              },
+              "description": "value of the input.",
+              "privacy": "public",
+              "attribute": "value",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "__onBlur",
+              "description": "Handel the blur event to add placeholder back in.",
+              "inheritedFrom": {
+                "name": "SquidSsn",
+                "module": "src/squid-ssn/squid-ssn.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "__onFocus",
+              "inheritedFrom": {
+                "name": "SquidSsn",
+                "module": "src/squid-ssn/squid-ssn.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "__onInput",
+              "parameters": [
+                {
+                  "name": "evt",
+                  "description": "input event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ],
+              "description": "Handel the input event",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "__onKeydown",
+              "parameters": [
+                {
+                  "name": "evt",
+                  "description": "handel keydown event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ],
+              "description": "Handels the keydown event",
+              "inheritedFrom": {
+                "name": "SquidSsn",
+                "module": "src/squid-ssn/squid-ssn.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "__onPaste",
+              "parameters": [
+                {
+                  "name": "evt",
+                  "description": "Paste Event",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ],
+              "description": "Handel the paste event",
+              "inheritedFrom": {
+                "name": "SquidSsn",
+                "module": "src/squid-ssn/squid-ssn.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_parseAddtion",
+              "parameters": [
+                {
+                  "name": "evt",
+                  "description": "keyboard Event passed",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ],
+              "description": "adding to the mask",
+              "inheritedFrom": {
+                "name": "SquidSsn",
+                "module": "src/squid-ssn/squid-ssn.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_parseDeletion",
+              "parameters": [
+                {
+                  "name": "evt",
+                  "description": "keyboard Event passed",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ],
+              "description": "deleting to the mask",
+              "inheritedFrom": {
+                "name": "SquidSsn",
+                "module": "src/squid-ssn/squid-ssn.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_toggleButtonText",
+              "description": "toggle the text to show or hide ssn",
+              "inheritedFrom": {
+                "name": "SquidSsn",
+                "module": "src/squid-ssn/squid-ssn.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "__showHideToggle",
+              "description": "toggle the value of input from hidden to showing the value",
+              "inheritedFrom": {
+                "name": "SquidSsn",
+                "module": "src/squid-ssn/squid-ssn.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_isDelete",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "inheritedFrom": {
+                "name": "SquidSsn",
+                "module": "src/squid-ssn/squid-ssn.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "unmaskedValue",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "inheritedFrom": {
+                "name": "SquidSsn",
+                "module": "src/squid-ssn/squid-ssn.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "maskedValue",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "inheritedFrom": {
+                "name": "SquidSsn",
+                "module": "src/squid-ssn/squid-ssn.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_obfuscatedValue",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "inheritedFrom": {
+                "name": "SquidSsn",
+                "module": "src/squid-ssn/squid-ssn.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "updatePattern",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_showDisabled",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_inputType",
+              "default": "type",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
+            {
+              "type": {
+                "text": "String"
+              },
+              "description": " A proxy for the input disabled attribute. Reflected as a property.",
+              "name": "disabled",
+              "kind": "field",
+              "privacy": "public",
+              "attribute": "disabled",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
+            {
+              "type": {
+                "text": "String"
+              },
+              "description": " A proxy for the input required attribute. Reflected as a property.",
+              "name": "required",
+              "kind": "field",
+              "privacy": "public",
+              "attribute": "required",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
+            {
+              "type": {
+                "text": "String"
+              },
+              "description": " A proxy for the input autofocus attribute. Reflected as a property.",
+              "name": "autofocus",
+              "kind": "field",
+              "privacy": "public",
+              "attribute": "autofocus",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
+            {
+              "type": {
+                "text": "String"
+              },
+              "description": " Uses a compact input. This specific style is not defined by the ONE Design System, but used widely across Financial Services.",
+              "name": "compact",
+              "kind": "field",
+              "privacy": "public",
+              "attribute": "compact",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
+            {
+              "type": {
+                "text": "String"
+              },
+              "description": " Sets a tooltip on the combobox label using [`SquidTooltip`](../squid-tooltip). Reflected as a property.",
+              "name": "tooltip",
+              "kind": "field",
+              "privacy": "public",
+              "attribute": "tooltip",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
+            {
+              "type": {
+                "text": "String"
+              },
+              "description": " A proxy for the input placeholder attribute. Reflected as a property.",
+              "name": "placeholder",
+              "kind": "field",
+              "privacy": "public",
+              "attribute": "placeholder",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
+            {
+              "type": {
+                "text": "String"
+              },
+              "description": " The input's `minlength` attribute (`minLength` property). Reflected here solely as `minlength`.",
+              "name": "minlength",
+              "kind": "field",
+              "privacy": "public",
+              "attribute": "minlength",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
+            {
+              "type": {
+                "text": "String"
+              },
+              "description": " The input's `maxlength` attribute (`maxLength` property). Reflected here solely as `maxlength`.",
+              "name": "maxlength",
+              "kind": "field",
+              "privacy": "public",
+              "attribute": "maxlength",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
+            {
+              "type": {
+                "text": "String"
+              },
+              "description": " A proxy for the input's `readonly` attribute (`readOnly`) property. Reflected here as `readonly`.",
+              "name": "readonly",
+              "kind": "field",
+              "privacy": "public",
+              "attribute": "readonly",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
+            {
+              "type": {
+                "text": "String"
+              },
+              "description": " A RegEx to be used by the input for validation purposes. Serves as a proxy for the input's pattern property/attribute.",
+              "name": "pattern",
+              "kind": "field",
+              "privacy": "public",
+              "attribute": "pattern",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
+            {
+              "type": {
+                "text": "String"
+              },
+              "description": " A proxy for the input's `min` attribute. Reflected as a property.",
+              "name": "min",
+              "kind": "field",
+              "privacy": "public",
+              "attribute": "min",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
+            {
+              "type": {
+                "text": "String"
+              },
+              "description": " A proxy for the input's `max` attribute. Reflected as a property.",
+              "name": "max",
+              "kind": "field",
+              "privacy": "public",
+              "attribute": "max",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
+            {
+              "type": {
+                "text": "String"
+              },
+              "description": " Displays an instance of the [`SquidCharacterCount`](../squid-character-count) component if set to true and a maxlength is provided. Reflected as a property.",
+              "name": "counter",
+              "kind": "field",
+              "privacy": "public",
+              "attribute": "counter",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "size",
+              "privacy": "public",
+              "attribute": "size",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "errorMessage",
+              "privacy": "public",
+              "attribute": "errorMessage",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "step",
+              "privacy": "public",
+              "attribute": "step",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "form",
+              "return": {
+                "type": {
+                  "text": "HTMLElement"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SquidInputBase",
+                "module": "src/squid-input-base/squid-input-base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "validity",
+              "description": "proxy input validity",
+              "inheritedFrom": {
+                "name": "SquidInputBase",
+                "module": "src/squid-input-base/squid-input-base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "validationMessage",
+              "description": "proxy input validationMessage",
+              "return": {
+                "type": {
+                  "text": "String"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SquidInputBase",
+                "module": "src/squid-input-base/squid-input-base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "willValidate",
+              "description": "proxy input willValidate",
+              "return": {
+                "type": {
+                  "text": "Boolean"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SquidInputBase",
+                "module": "src/squid-input-base/squid-input-base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "blur",
+              "description": "proxy blur function",
+              "inheritedFrom": {
+                "name": "SquidInputBase",
+                "module": "src/squid-input-base/squid-input-base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "click",
+              "description": "proxy click function",
+              "inheritedFrom": {
+                "name": "SquidInputBase",
+                "module": "src/squid-input-base/squid-input-base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "focus",
+              "description": "proxy focus function",
+              "inheritedFrom": {
+                "name": "SquidInputBase",
+                "module": "src/squid-input-base/squid-input-base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "setErrorMessage",
+              "parameters": [
+                {
+                  "name": "key",
+                  "description": "the key of the error message",
+                  "type": {
+                    "text": "String"
+                  }
+                },
+                {
+                  "name": "message",
+                  "description": "the new error message",
+                  "type": {
+                    "text": "String"
+                  }
+                }
+              ],
+              "description": "Change the default error message",
+              "return": {
+                "type": {
+                  "text": "String"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SquidInputBase",
+                "module": "src/squid-input-base/squid-input-base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "setCustomValidity",
+              "parameters": [
+                {
+                  "name": "message",
+                  "default": "''",
+                  "description": "message to be set",
+                  "type": {
+                    "text": "String"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SquidInputBase",
+                "module": "src/squid-input-base/squid-input-base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "setHelper",
+              "parameters": [
+                {
+                  "name": "value",
+                  "description": "Helper Text",
+                  "type": {
+                    "text": "String"
+                  }
+                }
+              ],
+              "description": "Set the element's helper text",
+              "inheritedFrom": {
+                "name": "SquidInputBase",
+                "module": "src/squid-input-base/squid-input-base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "__onFormReset",
+              "inheritedFrom": {
+                "name": "SquidInputBase",
+                "module": "src/squid-input-base/squid-input-base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "__getInput",
+              "return": {
+                "type": {
+                  "text": "HTMLInputElement"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SquidInputBase",
+                "module": "src/squid-input-base/squid-input-base.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "__getHelper",
+              "return": {
+                "type": {
+                  "text": "HTMLElement"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SquidInputBase",
+                "module": "src/squid-input-base/squid-input-base.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_uid",
+              "inheritedFrom": {
+                "name": "SquidInputBase",
+                "module": "src/squid-input-base/squid-input-base.js"
+              }
+            }
+          ],
+          "events": [
+            {
+              "description": "The input value has changed.",
+              "name": "squid-change",
+              "inheritedFrom": {
+                "name": "SquidSsn",
+                "module": "src/squid-ssn/squid-ssn.js"
+              }
+            },
+            {
+              "description": "Event dispatched for an input change.",
+              "name": "squid-input-change",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "SquidSsn",
+            "module": "/src/squid-ssn/squid-ssn.js"
+          },
+          "tagName": "squid-credit-card",
+          "summary": "`SquidCreditCard` is an implementation of [`SquidInput`](../squid-input) that serves as a credit-card number mask for privacy reasons.",
+          "example": "<form name=\"\" autocomplete><squid-credit-card>Credit Card</squid-credit-card></form>",
+          "customElement": true,
+          "attributes": [
+            {
+              "name": "minlength",
+              "fieldName": "minlength",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
+            {
+              "name": "maxlength",
+              "fieldName": "maxlength",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
+            {
+              "name": "autocomplete",
+              "fieldName": "autocomplete",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
+            {
+              "name": "tooltip",
+              "fieldName": "tooltip",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
+            {
+              "name": "pattern",
+              "fieldName": "pattern",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
+            {
+              "name": "min",
+              "fieldName": "min",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
+            {
+              "name": "max",
+              "fieldName": "max",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
+            {
+              "name": "value",
+              "fieldName": "value",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
+            {
+              "name": "placeholder",
+              "fieldName": "placeholder",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
+            {
+              "name": "size",
+              "fieldName": "size",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
+            {
+              "name": "errorMessage",
+              "fieldName": "errorMessage",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
+            {
+              "name": "step",
+              "fieldName": "step",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
+            {
+              "name": "disabled",
+              "fieldName": "disabled",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
+            {
+              "name": "required",
+              "fieldName": "required",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
+            {
+              "name": "readonly",
+              "fieldName": "readonly",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
+            {
+              "name": "autofocus",
+              "fieldName": "autofocus",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
+            {
+              "name": "compact",
+              "fieldName": "compact",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            },
+            {
+              "name": "counter",
+              "fieldName": "counter",
+              "inheritedFrom": {
+                "name": "SquidInput",
+                "module": "src/squid-input/squid-input.js"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "SquidCreditCard",
+          "declaration": {
+            "name": "SquidCreditCard",
+            "module": "src/squid-credit-card/squid-credit-card.js"
           }
         }
       ]

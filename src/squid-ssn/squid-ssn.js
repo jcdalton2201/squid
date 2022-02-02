@@ -54,7 +54,7 @@ export class SquidSsn extends SquidInput {
             </div>
             <input class="textfield__input" 
                     type="${this._inputType}" 
-                    name="squid-input" 
+                    name="${this.name?this.name:''}"
                     value="" 
                     id="squid-input-${this._uid}" 
                     data-ref="input"
