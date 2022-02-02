@@ -16,6 +16,7 @@ const temp = (args) => {
                          max="${args.max}"
                          pattern="${args.pattern}"
                          autocomplete="${args.autocomplete}"
+                         name="${args.name}"
                          placeholder="${args.placeholder}"
                          maxlength="${args.maxlength}">${args.label}</squid-input>`;
 };
@@ -23,6 +24,7 @@ const temp = (args) => {
 export const input = temp.bind({});
 input.args ={
     label:'Label',
+    name:'first',
     disabled: false,
     readonly:false,
     required:false,
