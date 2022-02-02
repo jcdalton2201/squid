@@ -23,8 +23,8 @@ Even some frameworks have gotten on board the web components train. Currently Vu
 ## Current components
 
 - [A](./src/squid-a)
-- [Accordion](./src/squid-accordion)
 - [AccordionGroup](./src/squid-accordion-group)
+- [Accordion](./src/squid-accordion)
 - [Alert](./src/squid-alert)
 - [Button](./src/squid-button)
 - [Calendar](./src/squid-calendar)
@@ -33,6 +33,7 @@ Even some frameworks have gotten on board the web components train. Currently Vu
 - [CheckboxGroup](./src/squid-checkbox-group)
 - [Combobox](./src/squid-combobox)
 - [Container](./src/squid-container)
+- [CreditCard](./src/squid-credit-card)
 - [Currency](./src/squid-currency)
 - [Datepicker](./src/squid-datepicker)
 - [Dialog](./src/squid-dialog)
@@ -92,6 +93,10 @@ Or simply run `npm i @populus/squid`. Make sure to have .npmrc set up to point t
 #registry=https://acecashexpress.visualstudio.com/
 ```
 
+    
+    
+    
+    
     
     
     

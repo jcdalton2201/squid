@@ -1,5 +1,6 @@
 import {LitElement} from 'lit';
 export class BaseElement extends LitElement {
+
     constructor() {
         super();
         this.refs ={};

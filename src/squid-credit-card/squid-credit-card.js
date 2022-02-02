@@ -8,7 +8,7 @@ import styles from './squid-credit-card.scss';
  * @summary `SquidCreditCard` is an implementation of [`SquidInput`](../squid-input) that serves as a credit-card number mask for privacy reasons.
  * @prop {String} value - value of the input.
  * @event squid-change - The input value has changed.
- * @example <form name="" autocomplete><squid-credit-card>Credit Card</squid-credit-card></form>
+ * @example <form name="cc-number" autocomplete="cc-number"><squid-credit-card>Credit Card</squid-credit-card></form>
  */
 export class SquidCreditCard extends SquidSsn {
     static get styles() {
@@ -101,7 +101,8 @@ export class SquidCreditCard extends SquidSsn {
      * Overwrite the checkValidity to handel error messages
      */
     checkValidity() {
-        if (this._value.length < 16 || !this.luhnCheck(this._value)){
+        console.log(this.internals.form);
+        if (!this._value ||this._value.length < 16 || !this.luhnCheck(this._value)){
             this.setCustomValidity('Please enter in a valid credit card number');
             return false;
         } else {

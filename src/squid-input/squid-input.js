@@ -55,6 +55,7 @@ export class SquidInput extends SquidInputBase {
             autofocus:{type:Boolean},
             compact:{type:Boolean},
             counter:{type:Boolean},
+            name:{type:String},
         };
     }
     constructor(type){
@@ -100,7 +101,8 @@ export class SquidInput extends SquidInputBase {
         if(this.renderRoot){
             const oldValue = this.renderRoot.querySelector('input').value;
             if(value !== oldValue) {
-                this.renderRoot.querySelector('input').value = value; 
+                this.renderRoot.querySelector('input').value = value;
+                this.internals.setFormValue(value);
             }
             if(this.counter) {
                 this.renderRoot.querySelector('squid-character-count').count = (value && value.length) || 0;
@@ -120,7 +122,7 @@ export class SquidInput extends SquidInputBase {
             </div>
             <input class="textfield__input" 
                     type="${this._inputType}" 
-                    name="squid-input" 
+                    name="${this.name}" 
                     value="" 
                     id="squid-input-${this._uid}" 
                     data-ref="input"

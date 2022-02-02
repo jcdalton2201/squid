@@ -1,8 +1,12 @@
 import { BaseElement } from '../utils/baseElement.js';
 import {findParentForm} from '../utils/findParentForm.js';
 export class SquidInputBase extends BaseElement {
+    static get formAssociated() {
+        return true;
+    }
     constructor() {
         super();
+        this.internals = this.attachInternals();
         this._uid = btoa(Math.floor(Math.random()*100000)).replace(/=/gi,'');
         this.bindMethods(['__onFormReset','__getInput','__getHelper']);
         const {form} = this;

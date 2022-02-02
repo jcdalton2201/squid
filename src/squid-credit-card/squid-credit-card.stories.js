@@ -8,7 +8,7 @@ export default {
 const temp = (args) => {
     return `
   <form name="userForm" autocomplete>
-   <squid-credit-card>${args.label}</squid-credit-card>
+   <squid-credit-card name="cc-number" autocomplete="cc-number">${args.label}</squid-credit-card>
   </form>
   `;
 };
