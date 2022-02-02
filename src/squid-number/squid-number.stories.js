@@ -12,6 +12,7 @@ const temp = (args) => {
                           ${args.required?'required':''}
                           min="${args.min}"
                           max="${args.max}"
+                          name="${args.name}"
                           autocomplete="${args.autocomplete}"
                           placeholder="${args.placeholder}">${args.label}</squid-number`;
 };
@@ -27,6 +28,7 @@ number.args ={
     max:'',
     placeholder:'',
     counter:'',
+    name:'first'
   
 };
 number.story = {
