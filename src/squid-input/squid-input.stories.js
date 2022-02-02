@@ -7,7 +7,9 @@ export default {
 
 const temp = (args) => {  
 
-    return `<squid-input ${args.counter?'counter':''} 
+    return `
+    <form name="userForm" autocomplete>
+    <squid-input ${args.counter?'counter':''} 
                          ${args.disabled?'disabled':''} 
                          ${args.readonly?'readonly':''} 
                          ${args.required?'required':''} 
@@ -18,7 +20,8 @@ const temp = (args) => {
                          autocomplete="${args.autocomplete}"
                          name="${args.name}"
                          placeholder="${args.placeholder}"
-                         maxlength="${args.maxlength}">${args.label}</squid-input>`;
+                         maxlength="${args.maxlength}">${args.label}</squid-input>
+    </form>`;
 };
 
 export const input = temp.bind({});
