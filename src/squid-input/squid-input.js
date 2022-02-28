@@ -37,7 +37,7 @@ export class SquidInput extends SquidInputBase {
     }
     static get properties() {
         return {
-            minlength:{type:String},
+            minlength:{type:String,attribute:true},
             maxlength:{type:String},
             autocomplete:{type:String},
             tooltip:{type:String},
@@ -64,7 +64,9 @@ export class SquidInput extends SquidInputBase {
         this._inputType = type;
     }
     firstUpdated(){
+        console.log(this.maxlength);
         this.updatePattern();
+        this.update();
     }
     updatePattern(){
         if(this.pattern){
@@ -119,8 +121,10 @@ export class SquidInput extends SquidInputBase {
             <div class="label-wrapper">
                 <label class="textfield__label" for="squid-input-${this._uid}" data-ref="label"><slot></slot>${this._showDisabled}</label>
                 <squid-character-count data-ref="counter" ?hidden=${!this.counter} id="counter-${this._uid}" ></squid-character-count>
+                ${this.maxlength?'maxlength='+this.maxlength:'NO'}
             </div>
             <input class="textfield__input" 
+                    maxlength="${this.maxlength}"
                     type="${this._inputType}" 
                     name="${this.name}" 
                     value="" 
@@ -133,9 +137,9 @@ export class SquidInput extends SquidInputBase {
                     ?autofocus=${this.autofocus}
                     ?compact=${this.compact}
                     @input=${this.__onInput}
-                    ${this.maxlength?'maxlength='+this.maxlength:''}
+                    
                     ${this.max?'max='+this.max:''}
-                    ${this.minlength?'minlength='+this.minlength:''}
+                    minlength='${this.minlength}'
                     ${this.min?'min='+this.min:''}
                     placeholder="${this.placeholder?this.placeholder:''}"
                     autocomplete="${this.autocomplete?this.autocomplete:''}"
