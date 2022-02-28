@@ -1,11 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <body>
-    <form name="billingForm" id="userForm" autocomplete>
-        <squid-input name="ccname" id="ccname" autocomplete="cc-name">Name on Card</squid-input>
-        <squid-credit-card autocomplete="cc-number" name="cardnumber">Credit Card</squid-credit-card>
-        <squid-input  name="cvc" id="frmCCCVC" autocomplete="cc-csc" maxlength="5" minlength="3">CVC</squid-input>
-        <squid-input name="cc-exp" id="frmCCExp" autocomplete="cc-exp" pattern="[0-9][0-9]/[0-9][0-9][0-9][0-9]" >Expiry</squid-input>
+  <squid-drawer hide>
+        <span slot='button'>Info</span>
+        <span slot='title'>Shakespears Quotes</span>
+        <squid-accordion-group>
+      
+      <squid-accordion>
+        <span slot="summary">The first accordion in the group</span>
+        <div slot="content">
+          <p>Four score and seven years ago our fathers brought forth on this continent a new nation conceived in liberty and dedicated to the proposition that all men are created equal.</p>
+        </div>
+      </squid-accordion>
+    
+      
+      <squid-accordion>
+        <span slot="summary">The middle child</span>
+        <div slot="content">
+          <p>Four score and seven years ago our fathers brought forth on this continent a new nation conceived in liberty and dedicated to the proposition that all men are created equal.</p>
+        </div>
+      </squid-accordion>
+    
+      
+      <squid-accordion>
+        <span slot="summary">Accordion number three</span>
+        <div slot="content">
+          <p>Four score and seven years ago our fathers brought forth on this continent a new nation conceived in liberty and dedicated to the proposition that all men are created equal.</p>
+        </div>
+      </squid-accordion>
+    </squid-accordion-group>
+      </squid-drawer>
+    
+    <form name="userForm" id="userForm" autocomplete>
+        <squid-input name="firstname" id="firstname" autocomplete="given-name">Frist Name</squid-input>
+        <squid-input name="email" id="email" autocomplete="email">email</squid-input>
+        <input autocomplete="email">
+        <my-email name="cc-number" autocomplete="cc-number"></my-email>
+        <squid-credit-card autocomplete="cc-number" name="cc-number">Credit Card</squid-credit-card>
         <input type="submit" value="Send Request">
     </form>
 </body>
