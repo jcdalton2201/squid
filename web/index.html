@@ -1,6 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <body>
+    <squid-drawer hide>
+        <span slot='button'>Info</span>
+        <span slot='title'>Shakespears Quotes</span>
+        <squid-accordion-group>
+      
+      <squid-accordion>
+        <span slot="summary">The first accordion in the group</span>
+        <div slot="content">
+          <p>Four score and seven years ago our fathers brought forth on this continent a new nation conceived in liberty and dedicated to the proposition that all men are created equal.</p>
+        </div>
+      </squid-accordion>
+    
+      
+      <squid-accordion>
+        <span slot="summary">The middle child</span>
+        <div slot="content">
+          <p>Four score and seven years ago our fathers brought forth on this continent a new nation conceived in liberty and dedicated to the proposition that all men are created equal.</p>
+        </div>
+      </squid-accordion>
+    
+      
+      <squid-accordion>
+        <span slot="summary">Accordion number three</span>
+        <div slot="content">
+          <p>Four score and seven years ago our fathers brought forth on this continent a new nation conceived in liberty and dedicated to the proposition that all men are created equal.</p>
+        </div>
+      </squid-accordion>
+    </squid-accordion-group>
+      </squid-drawer>
+    
     <form name="userForm" id="userForm" autocomplete>
         <squid-input name="firstname" id="firstname" autocomplete="given-name">Frist Name</squid-input>
         <squid-input name="email" id="email" autocomplete="email">email</squid-input>

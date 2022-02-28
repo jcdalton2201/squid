@@ -51,11 +51,15 @@ export class SquidDrawer extends BaseElement {
         return {
             position:{
                 type:'String'
+            },
+            hide:{
+                type: Boolean
             }
         };
     }
     constructor() {
         super();
+        this.hide = false;
         this.position = 'left';
         this.bindMethods(['openDrawer','closeDrawer']);
         this.drawerTemplate = () =>
@@ -81,8 +85,8 @@ export class SquidDrawer extends BaseElement {
     }
     render() {
         return html` <div class="container">
-            <div class="button-wrapper">
-                <squid-button @click=${this.openDrawer}
+            <div class="button-wrapper" ?hide=${this.hide} >
+                <squid-button @click=${this.openDrawer} 
                     ><slot name='button'></slot></squid-button
                 >
             </div>

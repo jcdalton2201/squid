@@ -80,3 +80,6 @@
         padding: $space-inset-xs;
     }
 }
+.button-wrapper[hide] {
+    display: none;
+}

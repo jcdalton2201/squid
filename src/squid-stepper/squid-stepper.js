@@ -1,8 +1,9 @@
-
-import {html, render} from 'lit';
+import { css, html } from 'lit';
 import { BaseElement } from '../utils/baseElement.js';
 import { defineSquidElement } from '../utils/defineSquidElement.js';
-import styles from './squid-stepper.scss';
+
+var css_248z = css`#container label{color:var(--font-color-default,#4d4d4d);font-size:.75rem;letter-spacing:.5px;margin-bottom:.25rem .25rem .25rem .25rem;opacity:.9}#container .input{align-items:center;display:flex;font-size:1rem;text-align:center}#container .input button{align-items:center;border:1px solid #1a1a1a;border-radius:50%;cursor:pointer;display:flex;height:30px;justify-content:center;width:30px}#container .input button.disabled{background-color:#b3b3b3;cursor:not-allowed}#container .input button:hover{border-color:var(--color-primary-default,#0e307a)}#container .input button:focus{outline:1px auto #0d8bf2}`;
+
 /**
  * @tag squid-stepper
  * @summary The `SquidStepper` element to allow users to quickly specify a value within a given range.
@@ -16,9 +17,9 @@ import styles from './squid-stepper.scss';
     <option value='3'>Coach</option>
 </squid-stepper>
  */
-export class SquidStepper extends BaseElement {
+class SquidStepper extends BaseElement {
     static get styles() {
-        return [styles];
+        return [css_248z];
     }
     static get properties() {
         return {
@@ -41,9 +42,12 @@ export class SquidStepper extends BaseElement {
         if(!this.value){
             this.value = this.optionsMap.keys().next().value;
         }
-        this.__displayValue();
         this.__setValue();
+        this.__displayValue();
         console.log(this.internals.form);
+    }
+    updated(){
+        this.__displayValue();
     }
     constructor() {
         super();
@@ -76,7 +80,7 @@ export class SquidStepper extends BaseElement {
 
     }
     __displayValue(){
-        const {valueInput, increase, decrease} = this.refs;
+        const {increase, decrease} = this.refs;
         let index = this.keys.indexOf(this.value);
         decrease.classList.remove('disabled');
         increase.classList.remove('disabled');
@@ -86,8 +90,8 @@ export class SquidStepper extends BaseElement {
         if(index === this.keys.length - 1 ){
             increase.classList.add('disabled');
         }
-        render(html`${this.optionsMap.get(this.value)}`,valueInput);
-        this.requestUpdate();
+        // render(html`${this.optionsMap.get(this.value)}`,valueInput);
+        // this.requestUpdate();
     }
     render(){
         return html`
@@ -107,7 +111,7 @@ export class SquidStepper extends BaseElement {
                   <path d="M1.5 12A1.5 1.5 0 0 1 3 10.5h18a1.5 1.5 0 0 1 0 3H3A1.5 1.5 0 0 1 1.5 12z"></path>
           </svg>
           </button>
-          <div class='value' data-ref='valueInput' style='width:${this.displayLength}'></div>
+          <div class='value' data-ref='valueInput' style='width:${this.displayLength}'>${this.value}</div>
           <button class='increase' @click=${this.increase} data-ref='increase' aria-label="increase value">
           <svg aria-hidden="true" 
                focusable="false" 
@@ -146,5 +150,33 @@ export class SquidStepper extends BaseElement {
         
         this.__setValue();
     }
+    /**
+     * Proxy input checkValidity
+     */
+    checkValidity() {
+        return true;
+    }
+    /**
+     * proxy input validity
+     */
+    validity() {
+        return true;
+    }
+    /**
+     * proxy input validationMessage
+     * @returns {String}
+     */
+    validationMessage() {
+        return '';
+    }
+    /**
+     * proxy input willValidate
+     * @returns {Boolean}
+     */
+    willValidate() {
+        return true;
+    }
 }
 defineSquidElement('squid-stepper',SquidStepper);
+
+export { SquidStepper };
