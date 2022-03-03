@@ -9,6 +9,11 @@ import { defineSquidElement } from '../utils/defineSquidElement.js';
  */
 
 export class SquidEmail extends SquidInput {
+    static get properties() {
+        return {
+            ...super.properties,
+        };
+    }
     constructor() {
         super('email');
     }

@@ -13,41 +13,62 @@ import { emitEvent} from '../utils/squidEvents.js';
 export class SquidInputMask extends SquidInput {
     constructor(){
         super();
+        this._value = '';
     }
     static get properties() {
+        console.log(super.properties);
         return {
             ...super.properties,
             mask:{type:String},
         };
     }
+
     async firstUpdated(args){
         const { mask } = args;
         this.mask = this.mask || mask;
         this._maskUtil = new MaskUtil(this.__getInput(), this.mask, this);
         this.pattern = this._maskUtil.regExp;
     }
-    set value(value) {
-        if(this.renderRoot){
-            const oldValue = this.renderRoot.querySelector('input').value;
-            if(value !== oldValue) {
-                this.renderRoot.querySelector('input').value = value; 
-            }
-            if(this.counter) {
-                this.renderRoot.querySelector('squid-character-count').count = (value && value.length) || 0;
-            }
-            this.dispatchEvent(new CustomEvent('squid-input-change'));
+
+    updated(changedProperties){
+        if (changedProperties.has('value')) {
+            this.addMask();
         }
     }
-    get value(){
-        return this.renderRoot.querySelector('input').value;
+    
+    addMask(){
+        this._value = this.value;
+        const input = this.renderRoot.querySelector('input');
+        if(this._maskUtil){
+            const parsedData = this._maskUtil.parseRaw(this._value);
+            console.log(this.value);
+            if (parsedData && this._value !== parsedData) {
+                if (input.value !== parsedData) {
+                    input.value = parsedData;
+                    this.value = parsedData;
+                    this.setCustomValidity('');
+                }
+                emitEvent('squid-change',parsedData, this);
+            } else if (!parsedData) {
+                this.value = parsedData;
+                input.value = this._value;
+                emitEvent('squid-change', this._value, this);
+                if(parsedData === false){
+                    this.setCustomValidity('The information entered does not follow the proper format'); 
+                }
+            } else {
+                emitEvent('squid-change', this._value, this);
+            }
+        }
     }
     /**
      * Overwrite the input event
      * @param {Event} evt input event
      */
     __onInput(){
-        const input = this.__getInput();
+        const input = this.renderRoot.querySelector('input');
         const _value = input.value;
+        this.value = _value;
         if(this._maskUtil) {
             const parsedData = this._maskUtil.parseRaw(_value);
             if (parsedData && _value !== parsedData) {

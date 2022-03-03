@@ -32,15 +32,22 @@
       </squid-drawer>
     
     <form name="userForm" id="userForm" autocomplete>
-        <squid-input name="firstname" id="firstname" autocomplete="given-name">Frist Name</squid-input>
+        <squid-input name="firstname" id="firstname" autocomplete="given-name" value="jason">Frist Name</squid-input>
         <squid-input name="email" id="email" autocomplete="email">email</squid-input>
-        <input autocomplete="email">
-        <my-email name="cc-number" autocomplete="cc-number"></my-email>
-        <squid-credit-card autocomplete="cc-number" name="cc-number">Credit Card</squid-credit-card>
-        <input type="submit" value="Send Request">
+        <squid-email value="jcdalton@hotmail.com"></squid-email>
+        <squid-number value="994.54">number</squid-number>
+        <squid-input-mask mask="1AA1" value="5BA2">mask</squid-input-mask>
+        <squid-telephone value="9726861373">telephone</squid-telephone>
+        <squid-credit-card autocomplete="cc-number" name="cc-number" value="4111111111111111">Credit Card</squid-credit-card>
+        <squid-button >hello</squid-button>
     </form>
 </body>
 <script src="squid-core-ui.js"></script>
-
-</script>   
+</script>
+<script>
+  document.querySelector('squid-button').addEventListener('click',()=>{
+    // document.querySelector('#firstname').value = '8324430461';
+    console.log(document.querySelector('squid-credit-card').value);
+  });
+</script>
 </html>

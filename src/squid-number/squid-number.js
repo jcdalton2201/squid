@@ -9,16 +9,16 @@ export class SquidNumber extends SquidInput {
     constructor() {
         super('number');
     }
-    /**
-     * 
-     * @param {Event} evt keydown event
-     */
-    __onInput(evt) {
-        if(evt.target.value === '' && evt.target.validity.badInput){
-            return;
-        } else {
-            this.value = evt.target.value;
-        }
-    }
+    // /**
+    //  * 
+    //  * @param {Event} evt keydown event
+    //  */
+    // __onInput(evt) {
+    //     if(evt.target.value === '' && evt.target.validity.badInput){
+    //         return;
+    //     } else {
+    //         this.value = evt.target.value;
+    //     }
+    // }
 }
 defineSquidElement('squid-number',SquidNumber);

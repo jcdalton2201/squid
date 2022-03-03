@@ -15,18 +15,20 @@ export class SquidCreditCard extends SquidSsn {
         return [...super.styles,styles];
     }
     static get properties() {
-        return {};
+        return {...super.properties};
     }
     constructor() {
         super();
         this.name = 'ccnumber';
         this.autocomplete = 'cc-number';
     }
+    
     firstUpdated(){
         super.firstUpdated();
         this._placeholder = '****************';
         this.minlength = 16;
         this.maxlength = 16;
+        console.log(this.value);
     }
     /**
      * Mask the value of the SSN

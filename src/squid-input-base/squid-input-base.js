@@ -129,7 +129,10 @@ export class SquidInputBase extends BaseElement {
      * @returns {HTMLInputElement}
      */
     __getInput(){
-        return this.renderRoot.querySelector('input');
+        if(this.renderRoot){
+            return this.renderRoot.querySelector('input');
+        }
+        return null;
     }
     /**
      * @returns {HTMLElement}

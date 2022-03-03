@@ -101,6 +101,37 @@ export class SquidCurrency extends SquidInput {
         maskedValue = maskedValue.replace(threeDigitGroupings, ',');
         this.value = this.cleanValue;
         input.value = '$' + maskedValue;
+        this.requestUpdate();
+    }
+    setDollorSign(){
+        const removeLeadingZeros = /^0+/;
+        const notNumber = this.dollarOnly ? /[^\d]+/g : /[^\d.]+/g;
+        const currencyPattern = /^(0|0?[1-9]\d*)\.\d\d\d\d*$/;
+        const threeDigitGroupings = /\B(?=(\d{3})+(?!\d))/g;
+        const input = this.renderRoot.querySelector('input');
+        let maskedValue = input.value.replace(notNumber, '');
+        if (maskedValue[0] === '0' && maskedValue.length > 1) {
+            maskedValue = maskedValue.replace(removeLeadingZeros, '');
+        }
+        if (maskedValue.includes('.')) {
+            let [dollars, cents] = maskedValue.split('.');
+            //Prefix with 0 if decimal is entered in the first position
+            if (dollars === '') {
+                dollars = '0';
+            }
+            maskedValue = dollars + '.' + cents;
+            if (maskedValue.match(currencyPattern)) {
+                maskedValue = dollars + '.' + cents.substring(0, 2);
+            }
+        }
+        this.cleanValue = maskedValue;
+        maskedValue = maskedValue.replace(threeDigitGroupings, ',');
+        this.value = '$' + maskedValue;
+    }
+    updated(changedProperties){
+        if (changedProperties.has('value')) {
+            this.setDollorSign();
+        }
     }
 }
 defineSquidElement('squid-currency', SquidCurrency);

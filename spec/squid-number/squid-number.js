@@ -50,7 +50,7 @@ describe('Unit and Functional Tests for squid-number',()=>{
         },bodyhandle);
         await input.type('abcd');
         const value = await page.$eval('squid-number', el => el.value);
-        expect(value ).toEqual('');
+        expect(value ).toEqual(undefined);
         await input.type('1234');
         const value2 = await page.$eval('squid-number', el => el.value);
         expect(value2 ).toEqual('1234');

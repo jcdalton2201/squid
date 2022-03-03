@@ -22,6 +22,7 @@ Even some frameworks have gotten on board the web components train. Currently Vu
 
 ## Current components
 
+
 - [A](./src/squid-a)
 - [AccordionGroup](./src/squid-accordion-group)
 - [Accordion](./src/squid-accordion)
@@ -93,6 +94,31 @@ Or simply run `npm i @populus/squid`. Make sure to have .npmrc set up to point t
 #registry=https://acecashexpress.visualstudio.com/
 ```
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

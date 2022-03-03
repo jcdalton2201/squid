@@ -48,8 +48,14 @@ describe('Unit and Functional Tests for squid-ssn',()=>{
         const input = await page.evaluateHandle(body => {
             return body.querySelector('squid-ssn').renderRoot.querySelector('input');
         },bodyhandle);
+        
         await input.type('123456789');
+        const second = await page.evaluateHandle(body => {
+            return body.querySelector('squid-ssn');
+        },bodyhandle);
+        console.log(second.value);
         const ssn = await page.$eval('squid-ssn', el => el.value);
+        console.log(ssn);
         expect(ssn).toEqual('123456789');
         const button = await page.evaluateHandle(body => {
             return body.querySelector('squid-ssn').renderRoot.querySelector('button');

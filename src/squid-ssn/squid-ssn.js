@@ -28,20 +28,31 @@ export class SquidSsn extends SquidInput {
         this.maskedValue = '';
         this._obfuscatedValue = '';
     }
+
     static get styles() {
         return [...super.styles,styles];
     }
     /** Get the value from the value attribute */
+    // get value() {
     get value() {
         return this._value;
     }
+    //     return this._value;
+    // }
 
     // /** When the value changes, make sure the emit events and set up masks */
-    set value(_value) {
-        const value = this._unmask(_value.toString());
-        emitEvent('squid-change', _value,this);
-        const input = this.__getInput();
-        if(input){
+    // set value(_value) {
+    //     const value = this._unmask(_value.toString());
+    //     emitEvent('squid-change', _value,this);
+    //     const input = this.__getInput();
+    //     if(input){
+    //         this._mask(value);
+    //     }
+    // }
+    updated(changedProperties){
+        if (changedProperties.has('value')) {
+            const value = this._unmask(this.value.toString());
+            emitEvent('squid-change', this.value,this);
             this._mask(value);
         }
     }
@@ -55,7 +66,7 @@ export class SquidSsn extends SquidInput {
             <input class="textfield__input" 
                     type="${this._inputType}" 
                     name="${this.name?this.name:''}"
-                    value="" 
+                    value="${this.value}" 
                     id="squid-input-${this._uid}" 
                     data-ref="input"
                     ?disabled=${this.disabled}

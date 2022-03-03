@@ -64,7 +64,6 @@ export class SquidInput extends SquidInputBase {
         this._inputType = type;
     }
     firstUpdated(){
-        console.log(this.maxlength);
         this.updatePattern();
         this.update();
     }
@@ -74,47 +73,12 @@ export class SquidInput extends SquidInputBase {
             input.pattern = this.pattern;
         }
     }
-    // set pattern(value) {
-    //     console.log(value);
-    //     if(this.renderRoot){
-    //         const input = this.renderRoot.querySelector('input');
-    //         if(!input){
-    //             setTimeout(()=>{
-    //                 const input = this.renderRoot.querySelector('input');
-    //                 const oldValue = input.pattern;
-    //                 if(value) {
-    //                     input.pattern = value;
-    //                 }
-    //                 this.requestUpdate('pattern',oldValue);
-    //             });
-    //         } else {
-    //             const oldValue = input.pattern;
-    //             if(value) {
-    //                 input.pattern = value;
-    //             }
-    //             this.requestUpdate('pattern',oldValue);
-    //         }
-    //     }
-    // }
-    // get pattern(){
-    //     return this.renderRoot.querySelector('input').pattern;
-    // }
-    set value(value) {
-        if(this.renderRoot){
-            const oldValue = this.renderRoot.querySelector('input').value;
-            if(value !== oldValue) {
-                this.renderRoot.querySelector('input').value = value;
-                this.internals.setFormValue(value);
-            }
-            if(this.counter) {
-                this.renderRoot.querySelector('squid-character-count').count = (value && value.length) || 0;
-            }
-            this.dispatchEvent(new CustomEvent('squid-input-change'));
+    updated(changedProperties){
+        if (changedProperties.has('value')) {
+            this.updatePattern();
         }
     }
-    get value(){
-        return this.renderRoot.querySelector('input').value;
-    }
+
     render(){
         return html`
         <div id="container" data-ref="wrapper">
@@ -127,7 +91,7 @@ export class SquidInput extends SquidInputBase {
                     maxlength="${this.maxlength}"
                     type="${this._inputType}" 
                     name="${this.name}" 
-                    value="" 
+                    value="${this.value}" 
                     id="squid-input-${this._uid}" 
                     data-ref="input"
                     ${this.pattern?'pattern='+this.pattern:''}
