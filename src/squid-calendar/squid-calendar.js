@@ -57,11 +57,19 @@ export class SquidCalendar extends BaseElement {
         this.displayMonth.setDate(1);
     }
     firstUpdated() {
-        console.log(this.value);
         if (this.value) {
             this.displayMonth = new Date(this.value.getTime());
             this.requestUpdate();
         }
+    }
+    shouldUpdate(changedProperties){
+        if(changedProperties.has('value')){
+            if(this.value){
+                this.displayMonth = new Date(this.value.getTime());
+                this.requestUpdate();
+            }
+        }
+        return changedProperties;
     }
 
     render() {
