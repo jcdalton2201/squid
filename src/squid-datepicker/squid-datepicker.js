@@ -89,7 +89,7 @@ export class SquidDatepicker extends SquidInput {
                 aria-describedby=" helpers-${this._uid} counter-${this._uid}"
                 class="">
         <squid-helpers id="helpers-${this._uid}" data-ref="helpers"></squid-helpers>
-        <squid-calendar  class='hide' @date-selected=${this.selectedValue} @date-submit=${this.selectedValue} @date-close=${this.toggleCalendar}  data-ref="calendar" id="calendar-${this._uid}"></squid-calendar>
+        <squid-calendar value='${this.value}'  class='hide' @date-selected=${this.selectedValue} @date-submit=${this.selectedValue} @date-close=${this.toggleCalendar}  data-ref="calendar" id="calendar-${this._uid}"></squid-calendar>
     </div>
         `;
     }
