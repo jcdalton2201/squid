@@ -60,7 +60,7 @@ causing the problem (line of code or commit)
 ### Submitting a Pull Request
 Before you submit your pull request consider the following guidelines:
 
-* Search [GitHub](https://github.com/fed-libraries/squid/pulls) for an open or closed Pull Request
+* Search [GitHub](https://github.com/jcdalton2201/squid/pulls) for an open or closed Pull Request
 that relates to your submission. You don't want to duplicate effort.
 * Please refer to our [Code Standards](CODESTANDARDS.md)
 * Make your changes in your fork version of the repo on the dev branch:

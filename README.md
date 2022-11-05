@@ -1,10 +1,10 @@
 # <img src="logo.svg" width="70" height="70"> Squid
 
-Common Web Components for the Populus Financial Group organization.
+Common Web Components for the Arenish Fair Financial Group organization.
 
 Intested in [contributing](CONTRIBUTING.MD)?
 
-Squid is an implementation of the  [PFG Design](https://acecashexpress.visualstudio.com/PFG%20Design) written entirely in native web components. Not familiar with the web components spec? There are plenty of tutorials and resources available to get started.
+Squid is an implementation of the  [Arenish Fair Design](https://none/Arenish Fair%20Design) written entirely in native web components. Not familiar with the web components spec? There are plenty of tutorials and resources available to get started.
 
 - [Web components specification](https://github.com/w3c/webcomponents)
 - [WebComponents.org](https://www.webcomponents.org/)
@@ -12,7 +12,7 @@ Squid is an implementation of the  [PFG Design](https://acecashexpress.visualstu
 - [MDN Custom Elements article](https://developer.mozilla.org/en-US/docs/Web/API/Window/customElements)
 - [MDN Shadow DOM article](https://developer.mozilla.org/en-US/docs/Web/API/Element/attachShadow)
 
-If you want to know more about the web components spec, reach out to [Jason Dalton](mailto:jdalton@acecashexpress.com).
+If you want to know more about the web components spec, reach out to [Jason Dalton](mailto:jdalton@hotmaile.com).
 
 ## Why web components
 
@@ -83,15 +83,15 @@ Create a fork of this repo and clone the code on to your computer. Once the code
 In the package.json add to the dependencies add the line.
 
 ```json
-"@populus/squid" : "^0.0.1"
+"@arenish-fair/squid" : "^0.0.1"
 ```
 
 In the app.module.[ts,js] add `CUSTOM_ELEMENTS_SCHEMA` for the import and schema. Here is an example in typescript.
 
-Or simply run `npm i @populus/squid`. Make sure to have .npmrc set up to point to the Azure Devops server for populus artifacts.
+Or simply run `npm i @arenish-fair/squid`. Make sure to have .npmrc set up to point to the Azure Devops server for Arenish Fair artifacts.
 
 ```bash
-#registry=https://acecashexpress.visualstudio.com/
+#registry=https://arenish-fair.visualstudio.com/
 ```
 
     

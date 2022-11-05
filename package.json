@@ -1,7 +1,7 @@
 {
-  "name": "@populus/squid",
+  "name": "@arenish-fair/squid",
   "version": "0.0.1",
-  "description": "Component Library for FED at Populus Fin",
+  "description": "Component Library for FED at Arenish Fair ",
   "main": "index.js",
   "type": "module",
   "files": [

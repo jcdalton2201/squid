@@ -60,7 +60,7 @@ causing the problem (line of code or commit)
 ### Submitting a Pull Request
 Before you submit your pull request consider the following guidelines:
 
-* Search [GitHub](https://github.com/fed-libraries/squid/pulls) for an open or closed Pull Request
+* Search [GitHub](https://github.com/jcdalton2201/squid/issues) for an open or closed Pull Request
 that relates to your submission. You don't want to duplicate effort.
 * Please refer to our [Code Standards](CODESTANDARDS.md)
 * Make your changes in your fork version of the repo on the dev branch:
@@ -209,7 +209,7 @@ The footer should contain any information about **Breaking Changes** and is also
 
 **Breaking Changes** should start with the word `BREAKING CHANGE:` with a space or two newlines.
 The rest of the commit message is then used for this.
-[github]: https://github.com/fed-libraries/squid
+[github]: https://github.com/jcdalton2201/squid
 
 ## <a name="documentation"></a> Documentation
 
