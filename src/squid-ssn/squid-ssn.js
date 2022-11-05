@@ -148,6 +148,7 @@ export class SquidSsn extends SquidInput {
      * @param {Event} evt input event
      */
     __onInput(evt){
+        console.log('on input');
         if(!evt.inputType && this._isDelete){
             evt.inputType = 'deleteContentBackward';
         }

@@ -1,15 +1,23 @@
 
 import '../../dist/squid-dialog/squid-dialog.js';
+import '../../dist/squid-button/squid-button.js';
 import readme from './readme.md';
 export default {
     title: 'dialog',
-    argTypes: { onClick: { action: 'clicked' } }
+    parameters: {
+        actions: {
+            // handles: ['click', 'squid-button'],
+        },
+    },
 };
 
 const temp = (args) => {
-    return `<squid-dialog ${args.open?'open':''} >
-    <h1>${args.label}</h1>
-    </squid-dialog`;
+
+    return `
+    <squid-dialog ${args.open?'open':''}> 
+    <h1> ${args.label}</h1>
+    </squid-dialog>
+    `;
 };
 
 export const dialog = temp.bind({});
@@ -22,7 +30,14 @@ dialog.story = {
     name: 'dialog',
     parameters: {
         notes: {readme},
-        argTypes:{}
+        argTypes:{
+            label:{control: 'text'}
+        },
+        myaction: () =>{
+            document.addEventListener('click', ()=> console.log('meme'));
+        }
     },
 };
+
+// dialog.querySelector('squid-button');
     

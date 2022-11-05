@@ -23,41 +23,41 @@ Even some frameworks have gotten on board the web components train. Currently Vu
 ## Current components
 
 
-- [A](./src/squid-a)
 - [AccordionGroup](./src/squid-accordion-group)
-- [Accordion](./src/squid-accordion)
 - [Alert](./src/squid-alert)
-- [Button](./src/squid-button)
 - [Calendar](./src/squid-calendar)
+- [Accordion](./src/squid-accordion)
+- [A](./src/squid-a)
+- [Button](./src/squid-button)
 - [CharacterCount](./src/squid-character-count)
-- [Checkbox](./src/squid-checkbox)
 - [CheckboxGroup](./src/squid-checkbox-group)
+- [Checkbox](./src/squid-checkbox)
 - [Combobox](./src/squid-combobox)
-- [Container](./src/squid-container)
-- [CreditCard](./src/squid-credit-card)
 - [Currency](./src/squid-currency)
+- [Container](./src/squid-container)
 - [Datepicker](./src/squid-datepicker)
 - [Dialog](./src/squid-dialog)
-- [Drawer](./src/squid-drawer)
 - [Email](./src/squid-email)
 - [Errors](./src/squid-errors)
 - [HeroNumber](./src/squid-hero-number)
 - [Input](./src/squid-input)
+- [Drawer](./src/squid-drawer)
+- [CreditCard](./src/squid-credit-card)
 - [InputBase](./src/squid-input-base)
 - [InputMask](./src/squid-input-mask)
-- [Nav](./src/squid-nav)
-- [NavGroup](./src/squid-nav-group)
 - [Number](./src/squid-number)
 - [Password](./src/squid-password)
+- [Nav](./src/squid-nav)
+- [NavGroup](./src/squid-nav-group)
 - [Radio](./src/squid-radio)
 - [RadioGroup](./src/squid-radio-group)
 - [Select](./src/squid-select)
 - [Ssn](./src/squid-ssn)
-- [Stepper](./src/squid-stepper)
-- [SubNav](./src/squid-sub-nav)
-- [Telephone](./src/squid-telephone)
 - [Textarea](./src/squid-textarea)
 - [Toggle](./src/squid-toggle)
+- [SubNav](./src/squid-sub-nav)
+- [Telephone](./src/squid-telephone)
+- [Stepper](./src/squid-stepper)
 
 ## Local development
 
@@ -94,6 +94,18 @@ Or simply run `npm i @populus/squid`. Make sure to have .npmrc set up to point t
 #registry=https://acecashexpress.visualstudio.com/
 ```
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

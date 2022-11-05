@@ -8,5 +8,14 @@ module.exports = {
     "@storybook/addon-essentials",
     "@storybook/addon-notes/register",
     "@storybook/addon-a11y",
+    "@storybook/addon-postcss",
+    {
+      name: "@storybook/addon-postcss",
+      options: {
+        postcssLoaderOptions: {
+          implementation: require('postcss')
+        }
+      }
+    }
   ]
 }

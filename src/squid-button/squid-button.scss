@@ -32,20 +32,20 @@ button {
             display: none;
         }
     }
-    &.small {
-        min-width: auto;
-        height: fit-content;
-        padding: $button-space-padding-tiny;
-        font-size: $button-font-size-small;
-        line-height: $button-space-height-small;
-    }
-    &:visited {
-        color: var(--button-color-text-default, $button-color-text-default);
-    }
-    &:hover {
-        filter: brightness(120%) saturate(120%);
-        text-decoration: none;
-    }
+        &.small {
+            min-width: auto;
+            height: fit-content;
+            padding: $button-space-padding-tiny;
+            font-size: $button-font-size-small;
+            line-height: $button-space-height-small;
+        }
+        &:visited {
+            color: var(--button-color-text-default, $button-color-text-default);
+        }
+        &:hover {
+            filter: brightness(120%) saturate(120%);
+            text-decoration: none;
+        }
     &:active {
         filter: brightness(80%) saturate(80%);
         text-decoration: none;

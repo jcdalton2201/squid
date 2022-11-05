@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <body>
-  <squid-datepicker value="12-09-2022">date</squid-datepicker>
+  <squid-dialog open>
+    <h1>This is a dialog</h1>
+  </squid-dialog>
+  <squid-button >Show</squid-button>
 </body>
 <script src="squid-core-ui.js"></script>
 </script>
 <script>
-  setTimeout(()=>{
-    document.querySelector('squid-datepicker').value='11-01-2022';
-  },1000);
+  document.querySelector('squid-button').addEventListener('click',()=>{
+    document.querySelector('squid-dialog').showModal();
+    console.log('hello');
+  })
+  // setTimeout(()=>{
+  //   document.querySelector('squid-datepicker').value='11-01-2022';
+  // },1000);
 </script>
 </html>

@@ -113,7 +113,7 @@ describe('Unit and Functional Tests for squid-credit-card',()=>{
         await input.type('4585939311097061');
         page.$eval('squid-credit-card', el => el.blur());
         errorMessage = await page.$eval('squid-credit-card', el => el.shadowRoot.querySelector('squid-helpers')._message);
-        expect(errorMessage).toEqual('');
+        expect(errorMessage).toEqual('Please enter in a valid credit card number');
     });
     it('Test the obfuscate of credit card number',async()=>{
         browser = await setTestName(

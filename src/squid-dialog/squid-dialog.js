@@ -17,41 +17,42 @@ import { emitEvent} from '../utils/squidEvents.js';
 export class SquidDialog extends BaseElement {
     constructor() {
         super();
-        this.bindMethods(['close','__documentKeypress']);
+        this.bindMethods(['hideModal','__documentKeypress']);
     }
     static get styles() {
         return [styles];
     }
     static get properties() {
         return {
-            overlay: { type: String },
-            type: { type: String },
-            open: { type: Boolean },
+            open: {
+                type: Boolean,
+            }
         };
     }
+    firstUpdated(){
+        if(this.open){
+            this.hideModal();
+            this.showModal();
+        }
+    }
     render() {
-        return html` <div class="dialog" data-ref="dialog" ?open=${this.open}>
-            <div class="dialog-overlay ${this.overlay}" data-ref="overlay"></div>
-            <div class="dialog-container" data-ref="over-content">
-                <div class="header">
-                    <button
-                        action="javascript:void(0)"
-                        class="dialog-close"
-                        tabindex="0"
-                        role="link"
-                        aria-label="close"
-                        data-ref="close"
-                        @click=${this.close}
-                    >
-                        X
-                    </button>
-                </div>
-                <div class="content">
-                    <slot></slot>
-                </div>
-                <div class="dialog-buttons"><slot name="buttons"></slot></div>
-            </div>
-        </div>`;
+        return html` <dialog id="${this.id}" ?open=${this.open} >
+        <div class="header">
+                            <button
+                                action="javascript:void(0)"
+                                class="dialog-close"
+                                tabindex="0"
+                                role="link"
+                                aria-label="close"
+                                data-ref="close"
+                                @click=${this.hideModal}
+                            >
+                                X
+                            </button>
+                        </div>
+                        <div class="content"><slot></slot>
+                        </div>
+        </dialog>`;
     }
 
     /**
@@ -60,15 +61,15 @@ export class SquidDialog extends BaseElement {
      * to close the modal
      */
     showModal() {
-        if (!this.open) {
-            this.open = true;
-            document.addEventListener('keydown',this.__documentKeypress);
-        }
-        emitEvent('open',null,this);
+        this.open = true;
+        this.renderRoot.querySelector('dialog').showModal();
+        document.addEventListener('keydown',this.__documentKeypress);
+        emitEvent('open', null,this);
     }
 
-    close(){
+    hideModal(){
         this.open = false;
+        this.renderRoot.querySelector('dialog').close();
         emitEvent('close',null,this);
         document.removeEventListener('keydown',this.__documentKeypress);
     }

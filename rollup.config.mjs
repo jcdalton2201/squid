@@ -5,7 +5,7 @@ import commonjs from 'rollup-plugin-commonjs';
 // import postCSSPlugin from 'rollup-plugin-postcss';
 import postCSS from 'rollup-plugin-postcss';
 import postcssLit from 'rollup-plugin-postcss-lit';
-import { terser } from 'rollup-plugin-terser';
+import terser from '@rollup/plugin-terser';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 const __filename = fileURLToPath(import.meta.url);
