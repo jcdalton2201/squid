@@ -1,5 +1,5 @@
 import '../../dist/squid-stepper/squid-stepper.js';
-import readme from './readme.md';
+//import readme from './readme.md';
 export default {
     title: 'stepper',
 };

@@ -1,6 +1,6 @@
 
 import '../../dist/squid-errors/squid-errors.js';
-import readme from './readme.md';
+//import readme from './readme.md';
 export default {
     title: 'errors'
 };
@@ -48,7 +48,7 @@ errors.args ={
 errors.story = {
     name: 'errors',
     parameters: {
-        notes: {readme},
+        //notes: {readme},
         argTypes:{}
     },
 };

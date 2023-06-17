@@ -1,6 +1,6 @@
 
 import  '../../dist/squid-telephone/squid-telephone.js';
-import readme from './readme.md';
+//import readme from './readme.md';
 export default {
     title: 'input'
 };
@@ -18,7 +18,7 @@ telephone.args ={
 telephone.story = {
     name: 'telephone',
     parameters: {
-        notes: {readme},
+        //notes: {readme},
         argTypes:{}
     },
 };

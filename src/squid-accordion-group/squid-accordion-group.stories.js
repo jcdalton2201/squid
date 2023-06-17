@@ -1,6 +1,6 @@
 
 import '../../dist/squid-accordion-group/squid-accordion-group.js';
-import readme from './readme.md';
+//import readme from './readme.md';
 export default {
     title: 'accordion-group'
 };
@@ -41,7 +41,7 @@ accordionGroup.args ={
 accordionGroup.story = {
     name: 'accordion-group',
     parameters: {
-        notes: {readme},
+        //notes: {readme},
         argTypes:{}
     },
 };

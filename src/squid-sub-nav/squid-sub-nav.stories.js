@@ -1,5 +1,5 @@
 import '../../dist/squid-sub-nav/squid-sub-nav.js';
-import readme from './readme.md';
+//import readme from './readme.md';
 export default {
     title: 'nav'
 };
@@ -18,7 +18,7 @@ subNav.args ={
 subNav.story = {
     name: 'sub-nav',
     parameters: {
-        notes: {readme},
+        //notes: {readme},
         argTypes:{}
     },
 };

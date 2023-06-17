@@ -1,6 +1,6 @@
 
 import '../../dist/squid-container/squid-container.js';
-import readme from './readme.md';
+//import readme from './readme.md';
 export default {
     title: 'container'
 };
@@ -26,7 +26,7 @@ container.args ={
 container.story = {
     name: 'container',
     parameters: {
-        notes: {readme},
+        //notes: {readme},
         
     },
     argTypes:{

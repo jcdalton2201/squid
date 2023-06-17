@@ -1,6 +1,6 @@
 
 import '../../dist/squid-select/squid-select.js';
-import readme from './readme.md';
+//import readme from './readme.md';
 export default {
     title: 'input'
 };
@@ -32,7 +32,7 @@ select.args ={
 select.story = {
     name: 'select',
     parameters: {
-        notes: {readme},
+        //notes: {readme},
         argTypes:{
             icon: {control:'boolean'},
         }

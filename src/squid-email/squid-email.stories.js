@@ -1,6 +1,6 @@
 
 import '../../dist/squid-email/squid-email.js';
-import readme from './readme.md';
+//import readme from './readme.md';
 export default {
     title: 'input'
 };
@@ -38,7 +38,7 @@ email.args ={
 email.story = {
     name: 'email',
     parameters: {
-        notes: {readme},
+        //notes: {readme},
         argTypes:{
             label: {control:'text'},
             disabled: {control:'boolean'},

@@ -1,6 +1,6 @@
 
 import '../../dist/squid-combobox/squid-combobox.js';
-import readme from './readme.md';
+//import readme from './readme.md';
 export default {
     title: 'input'
 };
@@ -21,7 +21,7 @@ combobox.args ={
 combobox.story = {
     name: 'combobox',
     parameters: {
-        notes: {readme},
+        //notes: {readme},
         argTypes:{}
     },
 };

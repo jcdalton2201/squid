@@ -1,7 +1,7 @@
 import '../../dist/squid-nav-group/squid-nav-group.js';
 import '../../dist/squid-sub-nav/squid-sub-nav.js';
 import '../../dist/squid-nav/squid-nav.js';
-import readme from './readme.md';
+//import readme from './readme.md';
 export default {
     title: 'nav'
 };
@@ -27,7 +27,7 @@ navGroup.args ={
 navGroup.story = {
     name: 'nav-group',
     parameters: {
-        notes: {readme},
+        //notes: {readme},
         argTypes:{}
     },
 };

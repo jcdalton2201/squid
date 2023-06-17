@@ -1,6 +1,6 @@
 
 import '../../dist/squid-alert/squid-alert.js';
-import readme from './readme.md';
+//import readme from './readme.md';
 export default {
     title: 'alert'
 };
@@ -22,7 +22,7 @@ alert.args ={
 alert.story = {
     name: 'alert',
     parameters: {
-        notes: {readme},
+        //notes: {readme},
         argTypes:{}
     },
     argTypes:{

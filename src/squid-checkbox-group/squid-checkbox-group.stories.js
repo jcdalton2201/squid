@@ -1,6 +1,6 @@
 
 import '../../dist/squid-checkbox-group/squid-checkbox-group.js';
-import readme from './readme.md';
+//import readme from './readme.md';
 export default {
     title: 'checkbox'
 };
@@ -21,7 +21,7 @@ checkboxGroup.args ={
 checkboxGroup.story = {
     name: 'checkbox-group',
     parameters: {
-        notes: {readme},
+        //notes: {readme},
         argTypes:{}
     },
 };

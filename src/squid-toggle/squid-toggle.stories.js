@@ -1,6 +1,6 @@
 
 import '../../dist/squid-toggle/squid-toggle.js';
-import readme from './readme.md';
+//import readme from './readme.md';
 export default {
     title: 'input'
 };
@@ -19,7 +19,7 @@ toggle.args ={
 toggle.story = {
     name: 'toggle',
     parameters: {
-        notes: {readme},
+        //notes: {readme},
         argTypes:{}
     },
 };

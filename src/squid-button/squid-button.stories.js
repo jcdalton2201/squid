@@ -1,6 +1,6 @@
 
 import '../../dist/squid-button/squid-button.js';
-import readme from './readme.md';
+//import readme from './readme.md';
 export default {
     title: 'links'
 };
@@ -21,7 +21,7 @@ button.args ={
 button.story = {
     name: 'button',
     parameters: {
-        notes: {readme},
+        //notes: {readme},
         argTypes:{}
     },
     argTypes:{

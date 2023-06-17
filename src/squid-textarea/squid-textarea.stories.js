@@ -1,6 +1,6 @@
 
 import '../../dist/squid-textarea/squid-textarea.js';
-import readme from './readme.md';
+//import readme from './readme.md';
 export default {
     title: 'textarea'
 };
@@ -34,7 +34,7 @@ textarea.args ={
 textarea.story = {
     name: 'textarea',
     parameters: {
-        notes: {readme},
+        //notes: {readme},
         argTypes:{
             maxlength: {control:'text'},
             minlength: {control:'text'}

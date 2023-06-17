@@ -1,6 +1,6 @@
 
 import '../../dist/squid-credit-card/squid-credit-card.js';
-import readme from './readme.md';
+//import readme from './readme.md';
 export default {
     title: 'input',
 };
@@ -21,7 +21,7 @@ creditCard.args ={
 creditCard.story = {
     name: 'credit-card',
     parameters: {
-        notes: {readme},
+        //notes: {readme},
         argTypes:{}
     },
 };

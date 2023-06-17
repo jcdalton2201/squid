@@ -1,6 +1,6 @@
 
 import '../../dist/squid-currency/squid-currency.js';
-import readme from './readme.md';
+//import readme from './readme.md';
 export default {
     title: 'input'
 };
@@ -42,7 +42,7 @@ currency.args ={
 currency.story = {
     name: 'currency',
     parameters: {
-        notes: {readme},
+        //notes: {readme},
         argTypes:{
             label: {control:'text'},
             disabled: {control:'boolean'},

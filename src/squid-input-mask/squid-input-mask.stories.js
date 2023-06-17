@@ -1,6 +1,6 @@
 
 import '../../dist/squid-input-mask/squid-input-mask.js';
-import readme from './readme.md';
+//import readme from './readme.md';
 export default {
     title: 'input'
 };
@@ -48,7 +48,7 @@ inputMask.args ={
 inputMask.story = {
     name: 'input-mask',
     parameters: {
-        notes: {readme},
+        //notes: {readme},
         argTypes:{}
     },
 };

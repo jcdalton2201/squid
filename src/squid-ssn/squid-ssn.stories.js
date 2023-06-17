@@ -1,5 +1,5 @@
 import '../../dist/squid-ssn/squid-ssn.js';
-import readme from './readme.md';
+//import readme from './readme.md';
 export default {
     title: 'input',
 };

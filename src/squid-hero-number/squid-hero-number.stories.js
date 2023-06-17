@@ -1,6 +1,6 @@
 
 import '../../dist/squid-hero-number/squid-hero-number.js';
-import readme from './readme.md';
+//import readme from './readme.md';
 export default {
     title: 'hero-number'
 };
@@ -27,7 +27,7 @@ heroNumber.args ={
 heroNumber.story = {
     name: 'hero-number',
     parameters: {
-        notes: {readme},
+        //notes: {readme},
         argTypes:{}
     },
 };

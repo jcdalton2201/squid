@@ -1,6 +1,6 @@
 
 import '../../dist/squid-radio/squid-radio.js';
-import readme from './readme.md';
+//import readme from './readme.md';
 export default {
     title: 'radio'
 };
@@ -24,7 +24,7 @@ radio.args ={
 radio.story = {
     name: 'radio',
     parameters: {
-        notes: {readme},
+        //notes: {readme},
         argTypes:{}
     },
 };

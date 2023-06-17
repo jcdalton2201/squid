@@ -1,7 +1,7 @@
 
 import '../../dist/squid-dialog/squid-dialog.js';
 import '../../dist/squid-button/squid-button.js';
-import readme from './readme.md';
+//import readme from './readme.md';
 export default {
     title: 'dialog',
     parameters: {
@@ -29,7 +29,7 @@ dialog.args ={
 dialog.story = {
     name: 'dialog',
     parameters: {
-        notes: {readme},
+        //notes: {readme},
         argTypes:{
             label:{control: 'text'}
         },

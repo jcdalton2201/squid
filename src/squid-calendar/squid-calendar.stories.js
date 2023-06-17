@@ -1,6 +1,6 @@
 
 import '../../dist/squid-calendar/squid-calendar.js';
-import readme from './readme.md';
+//import readme from './readme.md';
 export default {
     title: 'calendar'
 };
@@ -18,7 +18,7 @@ calendar.args ={
 calendar.story = {
     name: 'calendar',
     parameters: {
-        notes: {readme},
+        //notes: {readme},
         argTypes:{}
     },
 };

@@ -13,7 +13,7 @@
     "build": "rollup -c",
     "cc": "node scripts/createComponent.js",
     "coverage": "nyc --reporter=lcov --reporter=text jasmine jasmine spec/**/*.js",
-    "docs": "pitsby build",
+    "docs": "storybook build -o ./docs",
     "lint": "eslint src --ignore-pattern *.stories.* --fix",
     "postcc": "npm run lint",
     "prebuild": "node scripts/buildfile.js && npm run lint && node scripts/readmeUpdate.js",
@@ -25,7 +25,9 @@
     "prewatchFiles": "npm run lint",
     "watchFiles": "rollup -c",
     "start": "npm-run-all -p bs watch",
-    "watch": "watch \"npm run watchFiles\" src/"
+    "watch": "watch \"npm run watchFiles\" src/",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "watch": {
     "start": "src/**/*.js"
@@ -36,12 +38,18 @@
     "@axe-core/puppeteer": "^4.7.3",
     "@custom-elements-manifest/analyzer": "^0.8.3",
     "@rollup/plugin-terser": "^0.4.3",
+    "@storybook/addon-essentials": "^7.0.22",
+    "@storybook/addon-links": "^7.0.22",
+    "@storybook/blocks": "^7.0.22",
+    "@storybook/web-components": "^7.0.22",
+    "@storybook/web-components-vite": "^7.0.22",
     "browser-sync": "^2.27.10",
     "chalk": "^5.1.2",
     "differencify": "^1.5.3",
     "eslint": "^8.26.0",
     "eslint-plugin-jasmine": "^4.1.3",
     "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-storybook": "^0.6.12",
     "globby": "^13.1.2",
     "jasmine": "^5.0.2",
     "jasmine-core": "^5.0.1",
@@ -53,6 +61,8 @@
     "postcss": "^8.4.18",
     "prettier": "^2.7.1",
     "puppeteer-to-istanbul": "^1.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
     "rollup": "^3.2.5",
     "rollup-plugin-commonjs": "^10.1.0",
@@ -63,6 +73,7 @@
     "sonarqube-scanner": "^3.0.1",
     "source-map": "^0.7.4",
     "standard-version": "^9.5.0",
+    "storybook": "^7.0.22",
     "watch": "^0.13.0"
   },
   "nyc": {
@@ -79,10 +90,17 @@
     "statements": 80
   },
   "dependencies": {
+    "@storybook/addon-a11y": "^7.0.22",
+    "@storybook/addon-docs": "^7.0.22",
     "highlight.js": "^11.6.0",
     "lit": "^2.4.1",
     "puppeteer": "^20.7.2",
     "sass": "^1.56.0"
   },
-  "customElements": "custom-elements.json"
+  "customElements": "custom-elements.json",
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
+  }
 }

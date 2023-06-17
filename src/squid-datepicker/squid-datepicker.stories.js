@@ -1,6 +1,6 @@
 
 import '../../dist/squid-datepicker/squid-datepicker.js';
-import readme from './readme.md';
+//import readme from './readme.md';
 export default {
     title: 'input'
 };
@@ -34,7 +34,7 @@ datepicker.args ={
 datepicker.story = {
     name: 'datepicker',
     parameters: {
-        notes: {readme},
+        //notes: {readme},
         argTypes:{}
     },
 };

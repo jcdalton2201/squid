@@ -1,6 +1,6 @@
 
 import '../../dist/squid-number/squid-number.js';
-import readme from './readme.md';
+//import readme from './readme.md';
 export default {
     title: 'input'
 };
@@ -34,7 +34,7 @@ number.args ={
 number.story = {
     name: 'number',
     parameters: {
-        notes: {readme},
+        //notes: {readme},
         argTypes:{}
     },
 };

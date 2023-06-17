@@ -1,7 +1,7 @@
 
 import { document } from 'global';
 import  '../../dist/squid-a/squid-a.js';
-import readme from './readme.md';
+//import readme from './readme.md';
 export default {
     title: 'links'
 };
@@ -23,7 +23,7 @@ a.args ={
 a.story = {
     name: 'a',
     parameters: {
-        notes: {readme},
+        //notes: {readme},
     },
     argTypes:{
         title: {control:'text'},

@@ -1,6 +1,6 @@
 
 import '../../dist/squid-drawer/squid-drawer.js';
-import readme from './readme.md';
+//import readme from './readme.md';
 export default {
     title: 'drawer'
 };
@@ -46,7 +46,7 @@ drawer.args ={
 drawer.story = {
     name: 'drawer',
     parameters: {
-        notes: {readme},
+        //notes: {readme},
         argTypes:{}
     },
 };

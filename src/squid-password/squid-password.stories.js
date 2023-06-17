@@ -1,6 +1,6 @@
 
 import '../../dist/squid-password/squid-password.js';
-import readme from './readme.md';
+//import readme from './readme.md';
 export default {
     title: 'input'
 };
@@ -27,7 +27,7 @@ password.args ={
 password.story = {
     name: 'password',
     parameters: {
-        notes: {readme},
+        //notes: {readme},
         argTypes:{}
     },
 };
