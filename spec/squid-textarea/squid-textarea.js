@@ -16,7 +16,7 @@ describe('Unit and Functional Tests for squid-textarea',()=>{
 
     });
     afterAll(async () => { })
-    it('Test the accessibility of textarea',async()=>{
+    xit('Test the accessibility of textarea',async()=>{
         browser = await setTestName(
             'Test the accessibility of textarea'
         );

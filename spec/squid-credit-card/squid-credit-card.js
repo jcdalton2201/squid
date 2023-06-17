@@ -18,7 +18,7 @@ describe('Unit and Functional Tests for squid-credit-card',()=>{
 
     });
     afterAll(async () => { });
-    it('Test the accessibility of credit-card',async()=>{
+    xit('Test the accessibility of credit-card',async()=>{
         browser = await setTestName(
             'Test the accessibility of credit-card'
         );

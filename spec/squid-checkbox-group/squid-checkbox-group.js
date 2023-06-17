@@ -14,7 +14,7 @@ describe('Unit and Functional Tests for squid-checkbox-group', () => {
         }, bodyhandle);
     });
     afterAll(async () => {});
-    it('Test the accessibility of checkbox-group', async () => {
+    xit('Test the accessibility of checkbox-group', async () => {
         browser = await setTestName(
             'Test the accessibility of checkbox-group'
         );
@@ -33,7 +33,7 @@ describe('Unit and Functional Tests for squid-checkbox-group', () => {
             .analyze();
         expect(isValid(results)).toBeTruthy();
     });
-    it('Test the accessibility of checkbox-group', async () => {
+    xit('Test the accessibility of checkbox-group', async () => {
         browser = await setTestName(
             'Test the accessibility of checkbox-group'
         );

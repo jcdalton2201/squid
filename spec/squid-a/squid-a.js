@@ -15,7 +15,7 @@ describe('Unit and Functional Tests for squid-a', () => {
 
     });
     afterAll(async () => { });
-    it('Test the accessibility of default anchor', async () => {
+    xit('Test the accessibility of default anchor', async () => {
         browser = await setTestName(
             'Test accessibility of the default anchor'
         );

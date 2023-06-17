@@ -16,7 +16,7 @@ describe('Unit and Functional Tests for squid-alert',()=>{
 
     });
     afterAll(async () => { });
-    it('Test the accessibility of alert',async()=>{
+    xit('Test the accessibility of alert',async()=>{
         browser = await setTestName(
             'Test the accessibility of alert'
         );

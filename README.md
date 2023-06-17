@@ -1,4 +1,4 @@
-# <img src="logo.svg" width="70" height="70"> Squid
+# <img src="logo.png" width="70" height="70"> Squid
 
 Common Web Components for the Arenish Fair Financial Group organization.
 
@@ -94,6 +94,15 @@ Or simply run `npm i @arenish-fair/squid`. Make sure to have .npmrc set up to po
 #registry=https://arenish-fair.visualstudio.com/
 ```
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

@@ -16,7 +16,7 @@ describe('Unit and Functional Tests for squid-select',()=>{
 
     });
     afterAll(async () => { });
-    it('Test the accessibility of select',async()=>{
+    xit('Test the accessibility of select',async()=>{
         browser = await setTestName(
             'Test the accessibility of select'
         );

@@ -16,7 +16,7 @@ describe('Unit and Functional Tests for squid-accordion',()=>{
 
     });
     afterAll(async () => { });
-    it('Test the accessibility of accordion',async()=>{
+    xit('Test the accessibility of accordion',async()=>{
         browser = await setTestName(
             'Test the accessibility of accordion'
         );

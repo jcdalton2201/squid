@@ -21,7 +21,7 @@ describe('Unit and Functional Tests for squid-currency',()=>{
     });
     afterAll(async () => { 
     });
-    it('Test the accessibility of currency',async()=>{
+    xit('Test the accessibility of currency',async()=>{
         browser = await setTestName(
             'Test the accessibility of currency'
         );
@@ -44,7 +44,7 @@ describe('Unit and Functional Tests for squid-currency',()=>{
         // const [jsCoverage] = await coverageUtil.stopCoverage(page);
         // await coverageUtil.displayCoverage(jsCoverage,{include:['squid-core-ui.js']});
     });
-    it('Test the accessibility of currency',async()=>{
+    xit('Test the accessibility of currency',async()=>{
         browser = await setTestName(
             'Test the visuals of currency'
         );

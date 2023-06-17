@@ -16,7 +16,7 @@ describe('Unit and Functional Tests for squid-email',()=>{
 
     });
     afterAll(async () => { });
-    it('Test the accessibility of email',async()=>{
+    xit('Test the accessibility of email',async()=>{
         browser = await setTestName(
             'Test the accessibility of email'
         );

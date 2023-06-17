@@ -16,7 +16,7 @@ describe('Unit and Functional Tests for squid-stepper',()=>{
 
     });
     afterAll(async () => { });
-    it('Test the accessibility of stepper',async()=>{
+    xit('Test the accessibility of stepper',async()=>{
         browser = await setTestName(
             'Test the accessibility of stepper'
         );

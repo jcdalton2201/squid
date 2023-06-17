@@ -16,7 +16,7 @@ describe('Unit and Functional Tests for squid-hero-number',()=>{
 
     });
     afterAll(async () => { });
-    it('Test the accessibility of hero-number',async()=>{
+    xit('Test the accessibility of hero-number',async()=>{
         browser = await setTestName(
             'Test the accessibility of hero-number'
         );

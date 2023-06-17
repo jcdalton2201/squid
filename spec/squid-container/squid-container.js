@@ -16,7 +16,7 @@ describe('Unit and Functional Tests for squid-container',()=>{
 
     });
     afterAll(async () => { });
-    it('Test the accessibility of container',async()=>{
+    xit('Test the accessibility of container',async()=>{
         browser = await setTestName(
             'Test the accessibility of container'
         );

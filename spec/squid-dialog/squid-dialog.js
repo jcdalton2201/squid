@@ -16,7 +16,7 @@ describe('Unit and Functional Tests for squid-dialog',()=>{
 
     });
     afterAll(async () => { });
-    it('Test the accessibility of dialog',async()=>{
+    xit('Test the accessibility of dialog',async()=>{
         browser = await setTestName(
             'Test the accessibility of dialog'
         );

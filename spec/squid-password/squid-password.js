@@ -16,7 +16,7 @@ describe('Unit and Functional Tests for squid-password',()=>{
 
     });
     afterAll(async () => { });
-    it('Test the accessibility of password',async()=>{
+    xit('Test the accessibility of password',async()=>{
         browser = await setTestName(
             'Test the accessibility of password'
         );

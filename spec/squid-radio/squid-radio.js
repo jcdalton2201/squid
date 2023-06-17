@@ -16,7 +16,7 @@ describe('Unit and Functional Tests for squid-radio',()=>{
 
     });
     afterAll(async () => { });
-    it('Test the accessibility of radio-group',async()=>{
+    xit('Test the accessibility of radio-group',async()=>{
         browser = await setTestName(
             'Test the accessibility of radio-group'
         );

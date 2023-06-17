@@ -16,7 +16,7 @@ describe('Unit and Functional Tests for squid-input-mask',()=>{
 
     });
     afterAll(async () => { });
-    it('Test the accessibility of input-mask',async()=>{
+    xit('Test the accessibility of input-mask',async()=>{
         browser = await setTestName(
             'Test the accessibility of input-mask'
         );

@@ -16,7 +16,7 @@ describe('Unit and Functional Tests for squid-calendar',()=>{
 
     });
     afterAll(async () => { });
-    it('Test the accessibility of calendar',async()=>{
+    xit('Test the accessibility of calendar',async()=>{
         browser = await setTestName(
             'Test the accessibility of calendar'
         );

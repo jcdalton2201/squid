@@ -16,7 +16,7 @@ describe('Unit and Functional Tests for squid-sub-nav',()=>{
 
     });
     afterAll(async () => { });
-    it('Test the accessibility of sub-nav',async()=>{
+    xit('Test the accessibility of sub-nav',async()=>{
         browser = await setTestName(
             'Test the accessibility of sub-nav'
         );

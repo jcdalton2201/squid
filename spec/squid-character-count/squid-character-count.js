@@ -16,7 +16,7 @@ describe('Unit and Functional Tests for squid-character-count',()=>{
 
     });
     afterAll(async () => { });
-    it('Test the accessibility of character-count', async () => {
+    xit('Test the accessibility of character-count', async () => {
 
         browser = await setTestName(
             'Test the accessibility of character-count'

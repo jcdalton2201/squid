@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
 import fs from 'fs';
-import mkdirp from 'mkdirp';
+import { mkdirp } from 'mkdirp'
 import sourceMapFireFox from 'source-map';
 import lineColumn from 'line-column';
 export default class V8ToCoverage {

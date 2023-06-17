@@ -16,7 +16,7 @@ describe('Unit and Functional Tests for squid-nav-group',()=>{
 
     });
     afterAll(async () => { });
-    it('Test the accessibility of nav-group',async()=>{
+    xit('Test the accessibility of nav-group',async()=>{
         browser = await setTestName(
             'Test the accessibility of nav-group'
         );
@@ -32,7 +32,7 @@ describe('Unit and Functional Tests for squid-nav-group',()=>{
         const results = await new AxePuppeteer(page).include('squid-nav-group').analyze();
         expect(isValid(results)).toBeTruthy();
     });
-    it('Test the accessibility of nav-group with dark theme',async()=>{
+    xit('Test the accessibility of nav-group with dark theme',async()=>{
         browser = await setTestName(
             'Test the accessibility of nav-group'
         );

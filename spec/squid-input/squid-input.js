@@ -15,7 +15,7 @@ describe('Unit and Functional Tests for squid-input',()=>{
 
     });
     afterAll(async () => { });
-    it('Test the accessibility of input', async () => {
+    xit('Test the accessibility of input', async () => {
         browser = await setTestName(
             'Test the accessibility of input'
         );

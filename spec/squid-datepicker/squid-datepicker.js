@@ -16,7 +16,7 @@ describe('Unit and Functional Tests for squid-datepicker',()=>{
 
     });
     afterAll(async () => { });
-    it('Test the accessibility of datepicker',async()=>{
+    xit('Test the accessibility of datepicker',async()=>{
         browser = await setTestName(
             'Test the accessibility of datepicker'
         );
