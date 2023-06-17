@@ -1,6 +1,6 @@
 {
   "name": "@arenish-fair/squid",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Component Library for FED at Arenish Fair ",
   "main": "index.js",
   "type": "module",
@@ -13,7 +13,7 @@
     "build": "rollup -c",
     "cc": "node scripts/createComponent.js",
     "coverage": "nyc --reporter=lcov --reporter=text jasmine jasmine spec/**/*.js",
-    "docs": "export NODE_OPTIONS=--openssl-legacy-provider && storybook build -o ./docs",
+    "docs": "pitsby build",
     "lint": "eslint src --ignore-pattern *.stories.* --fix",
     "postcc": "npm run lint",
     "prebuild": "node scripts/buildfile.js && npm run lint && node scripts/readmeUpdate.js",
