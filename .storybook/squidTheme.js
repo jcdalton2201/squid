@@ -1,6 +1,6 @@
 import { create } from '@storybook/theming/create';
 
 export default create({
-  brandImage: 'logo.png',
+  brandImage: 'https://raw.githubusercontent.com/jcdalton2201/squid/main/logo.png',
   brandTitle: "Squid Web Component"
 });
