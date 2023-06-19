@@ -20,7 +20,7 @@ stepper.args = {
 stepper.story = {
     name: 'stepper',
     parameters: {
-        notes: { readme },
+        // notes: { readme },
         argTypes: {},
     },
 };

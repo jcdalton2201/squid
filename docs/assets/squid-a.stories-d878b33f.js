@@ -6,11 +6,11 @@ import{c as a}from"./_commonjsHelpers-725317a4.js";import{i as d,x as c}from"./l
             class="${this.variant} ${this.size}"
             role="button" rel="${this.rel}">
                 <slot></slot>
-        </a>`}}u("squid-a",f);const w={title:"links"},p=o=>{const t=g.document.createElement("squid-a");return t.innerHTML=o.title,t.size=o.size,t.variant=o.variant,t},e=p.bind({});e.args={title:"link",size:"",variant:"action"};e.story={name:"a",parameters:{},argTypes:{title:{control:"text"},size:{control:"text"},variant:{control:{type:"select",options:["action","progressive","destructive","regressive","text","right","left"]}}}};var n,i,s;e.parameters={...e.parameters,docs:{...(n=e.parameters)==null?void 0:n.docs,source:{originalSource:`args => {
+        </a>`}}u("squid-a",f);const w={title:"links"},p=o=>{const t=g.document.createElement("squid-a");return t.innerHTML=o.title,t.size=o.size,t.variant=o.variant,t},e=p.bind({});e.args={title:"link",size:"",variant:"action"};e.story={name:"a",parameters:{},argTypes:{title:{control:"text"},size:{control:"text"},variant:{control:{type:"select"},options:["action","progressive","destructive","regressive","text","right","left"]}}};var n,i,s;e.parameters={...e.parameters,docs:{...(n=e.parameters)==null?void 0:n.docs,source:{originalSource:`args => {
   const a = document.createElement('squid-a');
   a.innerHTML = args.title;
   a.size = args.size;
   a.variant = args.variant;
   return a;
 }`,...(s=(i=e.parameters)==null?void 0:i.docs)==null?void 0:s.source}}};const k=["a"];export{k as __namedExportsOrder,e as a,w as default};
-//# sourceMappingURL=squid-a.stories-05664364.js.map
+//# sourceMappingURL=squid-a.stories-d878b33f.js.map

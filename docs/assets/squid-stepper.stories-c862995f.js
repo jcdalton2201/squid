@@ -30,15 +30,15 @@ import{i as o,x as p}from"./lit-element-2d3d1b94.js";import{B as u}from"./baseEl
      </button>
          </div>
         </div>
-        `}__setValue(){this.internals.setFormValue(this.value),this.dispatchEvent(new Event("change"))}increase(){let e=this.keys.indexOf(this.value);e<this.keys.length-1&&(this.value=this.keys[e+1],this.__displayValue()),this.__setValue()}decrease(){let e=this.keys.indexOf(this.value);e>0&&(this.value=this.keys[e-1],this.__displayValue()),this.__setValue()}checkValidity(){return!0}validity(){return!0}validationMessage(){return""}willValidate(){return!0}}d("squid-stepper",h);const m={title:"stepper"},v=i=>`<squid-stepper value='${i.value}' label='${i.label}'>
+        `}__setValue(){this.internals.setFormValue(this.value),this.dispatchEvent(new Event("change"))}increase(){let e=this.keys.indexOf(this.value);e<this.keys.length-1&&(this.value=this.keys[e+1],this.__displayValue()),this.__setValue()}decrease(){let e=this.keys.indexOf(this.value);e>0&&(this.value=this.keys[e-1],this.__displayValue()),this.__setValue()}checkValidity(){return!0}validity(){return!0}validationMessage(){return""}willValidate(){return!0}}d("squid-stepper",h);const m={title:"stepper"},v=a=>`<squid-stepper value='${a.value}' label='${a.label}'>
     <option value='1'>First</option>
                 <option value='2'>Buisness</option>
                 <option value='3'>Coach</option>
-    </squid-stepper`,a=v.bind({});a.args={value:"",label:"Traveller Class"};a.story={name:"stepper",parameters:{notes:{readme},argTypes:{}}};var r,l,n;a.parameters={...a.parameters,docs:{...(r=a.parameters)==null?void 0:r.docs,source:{originalSource:`args => {
+    </squid-stepper`,i=v.bind({});i.args={value:"",label:"Traveller Class"};i.story={name:"stepper",parameters:{argTypes:{}}};var r,l,n;i.parameters={...i.parameters,docs:{...(r=i.parameters)==null?void 0:r.docs,source:{originalSource:`args => {
   return \`<squid-stepper value='\${args.value}' label='\${args.label}'>
     <option value='1'>First</option>
                 <option value='2'>Buisness</option>
                 <option value='3'>Coach</option>
     </squid-stepper\`;
-}`,...(n=(l=a.parameters)==null?void 0:l.docs)==null?void 0:n.source}}};const y=["stepper"];export{y as __namedExportsOrder,m as default,a as stepper};
-//# sourceMappingURL=squid-stepper.stories-8be2d1cf.js.map
+}`,...(n=(l=i.parameters)==null?void 0:l.docs)==null?void 0:n.source}}};const y=["stepper"];export{y as __namedExportsOrder,m as default,i as stepper};
+//# sourceMappingURL=squid-stepper.stories-c862995f.js.map
