@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="module" src="../../dist/squid-core-ui.js"></script>
+  </head>
+  <body>
+    <div class="container-2">
+        <squid-button variant="action" id="action">Normal action button</squid-button>
+        <squid-button variant="progressive" size="small" id="progressive">Small progressive button</squid-button>
+        <form href='#'>
+            <squid-button variant="destructive" disabled id="destructive">Disabled destructive button</squid-button>
+        </form>
+        <squid-button variant="destructive" id="clear">Clear</squid-button>
+    </div>
+    <div id="results"></div>
+  </body>
+  <script>
+    const results = document.querySelector('#results');
+    const action = document.querySelector('#action');
+    action.addEventListener('click',(event)=>{
+        results.innerHTML = 'action clicked';
+    });
+    const progressive = document.querySelector('#progressive');
+    progressive.addEventListener('click',(event)=>{});
+    const destructive = document.querySelector('#destructive');
+    destructive.addEventListener('click',(event)=>{
+        results.innerHTML = 'destructive stuff';
+    });
+    const clear = document.querySelector('#clear');
+    clear.addEventListener('click',(event)=>{
+        results.innerHTML = '';
+    });
+  </script>
+</html>

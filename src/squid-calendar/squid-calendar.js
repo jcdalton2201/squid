@@ -76,11 +76,11 @@ export class SquidCalendar extends BaseElement {
         return html`
             <div data-ref="container" class="container">
                 <div class="header">
-                    ${this.value ? dayOfWeek[this.value.getDay()] : dayOfWeek[this.displayMonth.getDay()]},
-                    ${this.value ? months[this.value.getMonth()].abbr : months[this.displayMonth.getMonth()].abbr}
-                    ${this.value ? this.value.getDate() : this.currentDate.getDate()}
-                    ${this.value ? this.value.getFullYear() : this.currentDate.getFullYear()}
-                </div>
+${this.value ? dayOfWeek[this.value.getDay()] : dayOfWeek[this.currentDate.getDay()]},
+ ${this.value ? months[this.value.getMonth()].abbr : months[this.displayMonth.getMonth()].abbr}
+ ${this.value ? this.value.getDate() : this.currentDate.getDate()}
+ ${this.value ? this.value.getFullYear() : this.currentDate.getFullYear()}
+</div>
                 <div class="left-nav"  @click=${this.__decrease}>
                     <svg
                         aria-hidden="true"

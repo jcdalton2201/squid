@@ -1,9 +1,11 @@
 import { defineConfig } from 'cypress';
+import setupNodeEvents from  '@cypress/code-coverage/plugins';
 
 export default defineConfig({
     fixturesFolder: false,
-    experimentalShadowDomSupport: true,
     e2e: {
-        supportFile: false,
+        setupNodeEvents,
+        video: false,
     },
+    
 });

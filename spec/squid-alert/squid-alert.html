@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="module" src="../../dist/squid-core-ui.js"></script>
+</head>
+
+<body>
+    <div class="container-2">
+        <h2>Global Alert</h2>
+        <squid-alert type='global'>
+            <p slot="message"><strong class="emphasis">Global alert</strong> message goes here stating the message. </p>
+            <span slot="button-text">Acknowledge</span>
+        </squid-alert>
+        <h2>Warning Alert</h2>
+        <squid-alert type="warning">
+            <p slot="message">Message goes here stating the message. <a href="javascript:void(0);">Link</a></p>
+            <span slot="button-text">Acknowledge</span>
+        </squid-alert>
+        <h2>Error alert</h2>
+        <squid-alert type="error">
+            <p slot="message">Message goes here stating the message. <a href="javascript:void(0);">Link</a></p>
+            <span slot="button-text">Acknowledge</span>
+        </squid-alert>
+        <h2>Informational alert</h2>
+        <squid-alert type="informational">
+            <p slot="message">Message goes here stating the message. <a href="javascript:void(0);">Link</a></p>
+            <span slot="button-text">Acknowledge</span>
+        </squid-alert>
+        <h2>Success alert</h2>
+        <squid-alert type="success">
+            <p slot="message">Message goes here stating the message. <a href="javascript:void(0);">Link</a></p>
+            <span slot="button-text">Acknowledge</span>
+        </squid-alert>
+    </div>
+</body>

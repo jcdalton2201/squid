@@ -1,4 +1,6 @@
-describe('element-one', () => {
+/* eslint-disable no-undef */
+
+describe('squid-a', () => {
     beforeEach(() => {
         cy.visit('/spec/squid-a/squid-a.html');
     });
@@ -25,5 +27,11 @@ describe('element-one', () => {
             .find('a');
         a.should('exist');
         a.should('have.class', 'right');
+    });
+    it('test click will take you to google',  () =>{
+        const a = cy
+            .get('#right').shadow()
+            .find('a').click();
+        a.should('have.attr', 'href').and('contain','google.com');
     });
 });
