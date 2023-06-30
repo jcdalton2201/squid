@@ -111,7 +111,7 @@ class SquidStepper extends BaseElement {
                   <path d="M1.5 12A1.5 1.5 0 0 1 3 10.5h18a1.5 1.5 0 0 1 0 3H3A1.5 1.5 0 0 1 1.5 12z"></path>
           </svg>
           </button>
-          <div class='value' data-ref='valueInput' style='width:${this.displayLength}'>${this.value}</div>
+          <div class='value' data-ref='valueInput' style='width:${this.displayLength}'>${this.optionsMap.get(this.value)}</div>
           <button class='increase' @click=${this.increase} data-ref='increase' aria-label="increase value">
           <svg aria-hidden="true" 
                focusable="false" 

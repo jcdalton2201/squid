@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="../../dist/squid-core-ui.js"></script>
+</head>
+<body>
+    <squid-combobox name="world" placeholder="Harry Potter characters" datavalue="value" datalabel="key">
+        <label slot="label">Favorite Harry Potter Character</label>
+      </squid-combobox>
+</body>
+<script>
+    console.log(document.querySelector('squid-combobox'));
+    document.querySelector('squid-combobox').data = [{
+        value:'Harry Potter',
+        key:'Harry Potter'
+    },
+    {
+        value:'Ron Weasley',
+        key:'Ron Weasley'
+    },
+    {
+        value:'Hermione Granger',
+        key:'Hermione Granger'
+    },
+    {
+        value:'Albus Dumbledore',
+        key:'Albus Dumbledore'
+    },
+    {
+        value:'Severus Snape',
+        key:'Severus Snape'
+    },
+    {
+        value:'Sirius Black',
+        key:'Sirius Black'
+    },
+    {
+        value:`Neville 'freaking' Longbottom`,
+        key:`Neville freaking' Longbottom`
+    },
+    {
+        value:`Voldemort`,
+        key:`He Who Must Not Be Named`
+    }]
+</script>
+</html>

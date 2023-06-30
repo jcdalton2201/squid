@@ -1,5 +1,5 @@
 import chalk from 'chalk';
-import mkdirp from 'mkdirp';
+import { mkdirp } from 'mkdirp';
 import fs from 'fs';
 import minimist from 'minimist';
 import { argv } from 'process';
@@ -136,44 +136,61 @@ defineSquidElement('squid-${name}',Squid${this.__camelCased(name)});
    * @param {String} dir
    */
   _buildSpec(name, dir) {
-    const file = `spec${dir}/squid-${name}/squid-${name}.js`;
+    const file = `spec${dir}/squid-${name}/squid-${name}.html`;
     const writeStream = fs.createWriteStream(file);
     writeStream.write(`
-import { setTestName, createPage, createBodyHandle } from '../diff-util.js';
-import { AxePuppeteer } from '@axe-core/puppeteer';
-import  { isValid } from '../axe-util.js';
-describe('Unit and Functional Tests for squid-${name}',()=>{
-    let browser = null;
-    let page = null;
-    beforeAll(async () => {
-        jasmine.DEFAULT_TIMEOUT_INTERVAL = 120000;
-    });
-    afterEach(async () => {
-        const bodyhandle = await page.$('body');
-        await page.evaluate(element => {
-            element.innerHTML = '';
-        }, bodyhandle);
-
-    });
-    afterAll(async () => { })
-    it('Test the accessibility of ${name}',async()=>{
-        browser = await setTestName(
-            'Test the accessibility of ${name}'
-        );
-        page = await createPage(browser);
-        const bodyhandle = await createBodyHandle(page);
-        await page.evaluate(element => {
-            element.innerHTML =
-                \`<squid-${name} >
-                Test
-                </squid-${name}>\`;
-        }, bodyhandle);
-        await page.waitForSelector('squid-${name}');
-        const results = await new AxePuppeteer(page).include('squid-${name}').analyze();
-        expect(isValid(results)).toBeTruthy();
-  });
-});
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="../../dist/squid-core-ui.js"></script>
+</head>
+<body>
+    <squid-${name} id="test">    
+    </squid-${name}>
+</body>
 `);
+//     const file = `spec${dir}/squid-${name}/squid-${name}.js`;
+//     const writeStream = fs.createWriteStream(file);
+//     writeStream.write(`
+// import { setTestName, createPage, createBodyHandle } from '../diff-util.js';
+// import { AxePuppeteer } from '@axe-core/puppeteer';
+// import  { isValid } from '../axe-util.js';
+// describe('Unit and Functional Tests for squid-${name}',()=>{
+//     let browser = null;
+//     let page = null;
+//     beforeAll(async () => {
+//         jasmine.DEFAULT_TIMEOUT_INTERVAL = 120000;
+//     });
+//     afterEach(async () => {
+//         const bodyhandle = await page.$('body');
+//         await page.evaluate(element => {
+//             element.innerHTML = '';
+//         }, bodyhandle);
+
+//     });
+//     afterAll(async () => { })
+//     it('Test the accessibility of ${name}',async()=>{
+//         browser = await setTestName(
+//             'Test the accessibility of ${name}'
+//         );
+//         page = await createPage(browser);
+//         const bodyhandle = await createBodyHandle(page);
+//         await page.evaluate(element => {
+//             element.innerHTML =
+//                 \`<squid-${name} >
+//                 Test
+//                 </squid-${name}>\`;
+//         }, bodyhandle);
+//         await page.waitForSelector('squid-${name}');
+//         const results = await new AxePuppeteer(page).include('squid-${name}').analyze();
+//         expect(isValid(results)).toBeTruthy();
+//   });
+// });
+// `);
   }
 }
 new CreateComponent();
