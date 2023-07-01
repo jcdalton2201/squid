@@ -87,6 +87,7 @@ export class SquidCombobox extends SquidInputBase {
         
         let oldValue = this._data;
         this._objectData = null;
+        console.log('***********',JSON.stringify(value));
         if(value.find(item => typeof item === 'object')) {
             if(!this.datalabel || !this.datavalue){
                 console.error(`We must have a ${this.datalabel?'':' datalabel '} ${this.datavalue?'':' datavalue '}`);

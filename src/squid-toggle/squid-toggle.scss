@@ -28,9 +28,9 @@
         &:disabled + .simpleToggleSwitch{
             cursor: not-allowed;
         }
-        &:read-only + .simpleToggleSwitch{
-            cursor: not-allowed;
-        }
+        // &:read-only + .simpleToggleSwitch{
+        //     cursor: not-allowed;
+        // }
     }
     .simpleToggleSwitch {
         position: absolute;
