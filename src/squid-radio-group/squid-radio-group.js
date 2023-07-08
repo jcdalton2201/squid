@@ -33,6 +33,7 @@ export class SquidRadioGroup extends BaseElement {
     }
     constructor(){
         super();
+        this.internals = this.attachInternals();
         this.bindMethods(['__onChange','__onFieldsetKeyup']);
     }
     async firstUpdated(){
@@ -46,6 +47,10 @@ export class SquidRadioGroup extends BaseElement {
         <slot @squid-change=${this.__onChange}></slot>
 </fielset>
         `;
+    }
+    /**check the if the element is valid */
+    checkValidity (){
+        return true;
     }
     /**
      * update all of the radio buttons.

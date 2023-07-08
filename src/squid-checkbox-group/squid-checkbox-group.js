@@ -42,6 +42,7 @@ export class SquidCheckboxGroup extends BaseElement{
     }
     constructor() {
         super();
+        this.internals = this.attachInternals();
         this.bindMethods(['__onChange']);
         const {form} = this;
         this.addEventListener('keydown', evt => {
@@ -70,6 +71,13 @@ export class SquidCheckboxGroup extends BaseElement{
     /** Return the value of all checked squid-checkboxes */
     get value() {
         return [...this.checkedElements].map(checkbox => checkbox.value);
+    }
+    set value(items){
+        this.elements.map((checkbox)=> checkbox.value ='');
+    }
+    /**check the if the element is valid */
+    checkValidity (){
+        return true;
     }
     /**
      * Custom change event from checkbox
