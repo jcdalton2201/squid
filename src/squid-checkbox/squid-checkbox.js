@@ -100,7 +100,6 @@ export class SquidCheckbox extends SquidInputBase {
      * @param {Event} evt onChange Event
      */
     __onChange(evt){
-        console.log('onchange');
         if(this.checked !== evt.currentTarget.checked) {
             this.checked = evt.currentTarget.checked;
         }
