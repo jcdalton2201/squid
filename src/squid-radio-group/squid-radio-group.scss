@@ -1,0 +1,9 @@
+::slotted(h1){
+    font-size: 1.5rem;
+}
+::slotted(squid-radio){
+    margin-bottom: 16px;
+}
+fieldset {
+    width: fit-content;
+}

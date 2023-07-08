@@ -64,7 +64,7 @@ export class SquidRadio extends SquidInputBase {
                     ?autofocus=${this.autofocus}
                     aria-checked=${this.checked}
                     @change=${this.__onChange}
-                    ?checked=${this.checked}
+                    .checked=${this.checked}
                     aria-describedby="helpers-${this._uid}"
                 />
                 <label

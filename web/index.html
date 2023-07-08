@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <body>
-  <squid-stepper label='Traveller Class' id="test">
-    <option value='1'>someone</option>
-    <option value='2'>next</option>
-    <option value='3'>what</option>
-</squid-stepper>
+  <squid-toggle>Chcekbox</squid-toggle>
+<squid-toggle checked="true">Chcekbox checked</squid-toggle>
+<squid-toggle disabled>Chcekbox &mdash; disabled</squid-toggle>
+<squid-toggle required>Chcekbox &mdash; required</squid-toggle>
+  <squid-button>update</squid-button>
 </body>
 <script src="squid-core-ui.js"></script>
 </script>
 <script>
-  
+  document.querySelector('squid-button').addEventListener('click', () => {
+    console.log(document.querySelector('squid-radio-group').value);
+    document.querySelector('squid-radio-group').value = '';
+    // document.querySelector('squid-radio-group').value = ['The Last Jedi'];
+    // document.querySelector('#phantom').disabled = true;
+  })
 </script>
+
 </html>

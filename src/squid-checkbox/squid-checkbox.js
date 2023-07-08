@@ -43,14 +43,13 @@ export class SquidCheckbox extends SquidInputBase {
             readonly: { type: Boolean },
             autofocus: { type: Boolean },
             compact: { type: Boolean },
-            checked: { type: Boolean, attribute: true,reflect:true },
+            checked: { type: Boolean },
         };
     }
     constructor() {
         super();
         this.bindMethods(['__onChange']);
         this._value = false;
-        this.checked = false;
     }
     get indeterminate() {
         return this.__getInput().indeterminate;
@@ -72,12 +71,13 @@ export class SquidCheckbox extends SquidInputBase {
                     id="squid-input-${this._uid}"
                     data-ref="input"
                     ?disabled=${this.disabled}
-                    ?required=${this.required}
+                    .required=${this.required}
                     ?readonly=${this.readonly}
-                    ?autofocus=${this.autofocus}
-                    ?compact=${this.compact}
-                    ?checked=${this.checked}
+                    .autofocus=${this.autofocus}
+                    .compact=${this.compact}
+                    .checked=${this.checked}
                     aria-checked=${this.checked}
+                    aria-disabled=${this.disabled}
                     @change=${this.__onChange}
                     aria-describedby="helpers-${this._uid}"
                 />
@@ -94,15 +94,18 @@ export class SquidCheckbox extends SquidInputBase {
     }
     updated(){
         emitEvent('changed',this.checked,this);
+        
     }
     /**
      * Handle the checking of the box
      * @param {Event} evt onChange Event
      */
     __onChange(evt){
+        console.log('**_onchange**');
         if(this.checked !== evt.currentTarget.checked) {
             this.checked = evt.currentTarget.checked;
         }
+        
     }
 }
 defineSquidElement('squid-checkbox', SquidCheckbox);

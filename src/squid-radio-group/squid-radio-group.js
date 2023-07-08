@@ -20,7 +20,9 @@ export class SquidRadioGroup extends BaseElement {
         return [styles];
     }
     static get properties() {
-        return {};
+        return {
+            value: { type: String, attribute: true,reflect:true },
+        };
     }
     get value(){
         if(!this.querySelector('squid-radio[checked]')){
@@ -29,7 +31,9 @@ export class SquidRadioGroup extends BaseElement {
         return this.querySelector('squid-radio[checked]').value;
     }
     set value(_value){
-        this.querySelector(`squid-radio[value="${_value}"]`).checked = true;
+        this.options?.forEach((radio) => radio.checked = false);
+        if(this.querySelector(`squid-radio[value="${_value}"]`))
+            this.querySelector(`squid-radio[value="${_value}"]`).checked  = true;
     }
     constructor(){
         super();
@@ -39,6 +43,9 @@ export class SquidRadioGroup extends BaseElement {
     async firstUpdated(){
         this.options = [...this.querySelectorAll('squid-radio')].map(item => item);
         this.addEventListener('keydown',this.__onFieldsetKeyup);
+        if(this.value){
+            this.requestUpdate();
+        }
     }
     render(){
         return html`

@@ -51,10 +51,10 @@
        &+.checkbox__label {
             &::after {
                 content: "";
-                opacity: 1
+                opacity: 0
             }
             &::before {
-                background-color: $color-neutral-50;
+                background-color: #80808075;
                 border: 1px solid $color-neutral-50
             }
         } 

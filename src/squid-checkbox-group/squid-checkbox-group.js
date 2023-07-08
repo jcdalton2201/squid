@@ -73,7 +73,17 @@ export class SquidCheckboxGroup extends BaseElement{
         return [...this.checkedElements].map(checkbox => checkbox.value);
     }
     set value(items){
-        this.elements.map((checkbox)=> checkbox.value ='');
+        if(items instanceof Array){
+            this.elements.forEach((checkbox)=>{
+                if(items.includes(checkbox.value)){
+                    checkbox.checked = true;
+                } else {
+                    checkbox.checked = false;
+                }
+            });
+        } else {
+            this.elements.map((checkbox)=> checkbox.checked = false);
+        }
     }
     /**check the if the element is valid */
     checkValidity (){
