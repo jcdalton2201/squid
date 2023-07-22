@@ -2,17 +2,31 @@
 <html lang="en">
 
 <body>
-  <squid-radio-group value="maybe">
-    <h1 slot="title">Vote</h1>
-    <squid-radio name='test' value='yes' >YES</squid-radio>
-    <squid-radio name='test' value='no'>No</squid-radio>
-    <squid-radio name='test' value='maybe'>Maybe</squid-radio>
-  </squid-radio-group>
+  <squid-select name="pets" id="pet-select" >
+    <span slot='label'>Animals</span>
+    <option value="">--Please choose an option--</option>
+    <option value="dog">Dog</option>
+    <option value="cat">Cat</option>
+    <option value="hamster">Hamster</option>
+    <option value="parrot">Parrot</option>
+    <option value="spider">Spider</option>
+    <option value="goldfish">Goldfish</option>
+  </squid-select>
+  <select name="pets" id="pet-select" value="hamster">
+    <span slot='label'>Animals</span>
+    <option value="">--Please choose an option--</option>
+    <option value="dog">Dog</option>
+    <option value="cat">Cat</option>
+    <option value="hamster">Hamster</option>
+    <option value="parrot">Parrot</option>
+    <option value="spider">Spider</option>
+    <option value="goldfish">Goldfish</option>
+  </select>
 </body>
 <script src="squid-core-ui.js"></script>
 </script>
 <script>
-  
+
 </script>
 
 </html>

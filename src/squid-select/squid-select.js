@@ -3,6 +3,7 @@ import {html} from 'lit';
 import { SquidInput } from '../squid-input/squid-input.js';
 import { defineSquidElement } from '../utils/defineSquidElement.js';
 import styles from './squid-select.scss';
+
 /**
  * @tag squid-select
  * @summary The <select> HTML element represents a control that provides a menu of options:
@@ -29,34 +30,36 @@ export class SquidSelect extends SquidInput {
             icon: {
                 type:Boolean,
                 reflect: true
-            }
+            },
+            value: { 
+                type: String
+            },
         };
     }
     constructor() {
         super();
+        this.value ='';
         this.bindMethods(['__slotUpdate','__onChange','__setValue']);
     }
     
     firstUpdated(){
         this.buildRefs();
+        if(this.value){
+            this.renderOptions.host.querySelectorAll('option').forEach((element)=>{
+                if(element.value === this.value){
+                    element.selected = true;
+                } else {
+                    element.selected = false;
+                }
+            });
+            this.requestUpdate();
+        }
     }
     get checkValidity() {
         const input = this.renderRoot.querySelector('select');
         return input.checkValidity.bind(input);
     }
-    set value(_value){
-
-        if(this.renderRoot.querySelector('select')){
-            this.__setValue(_value);
-        } else {
-            setTimeout(()=>{this.__setValue(_value);} );
-        }
-
-        
-    }
-    get value(){
-        return this.renderRoot.querySelector('select').value;
-    }
+    
     render(){
         return html`
         <div id="container" data-ref="wrapper">
@@ -68,7 +71,7 @@ export class SquidSelect extends SquidInput {
             <select class="select__input" 
                     type="${this._inputType}" 
                     name="squid-input" 
-                    value="" 
+                    value="${this.value}"
                     id="squid-input-${this._uid}" 
                     data-ref="input"
                     ?disabled=${this.disabled}
@@ -97,7 +100,8 @@ export class SquidSelect extends SquidInput {
             <slot @slotchange=${this.__slotUpdate}></slot>
         </div>`;
     }
-    __onChange() {
+    __onChange(evt) {
+        this.value = evt.target.value;
         this.dispatchEvent(new CustomEvent('squid-select-change'));
     }
     __slotUpdate(){
