@@ -22,6 +22,7 @@ Even some frameworks have gotten on board the web components train. Currently Vu
 
 ## Current components
 
+
 - [AccordionGroup](./src/squid-accordion-group)
 - [Alert](./src/squid-alert)
 - [Calendar](./src/squid-calendar)
@@ -266,6 +267,7 @@ Or simply run `npm i @arenish-fair/squid`. Make sure to have .npmrc set up to po
     
     
 >>>>>>> f84285900041914b7e481f30b53930cd2470e18a
+    
     
     
     

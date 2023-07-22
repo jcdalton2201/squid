@@ -2,21 +2,17 @@
 <html lang="en">
 
 <body>
-  <squid-toggle>Chcekbox</squid-toggle>
-<squid-toggle checked="true">Chcekbox checked</squid-toggle>
-<squid-toggle disabled>Chcekbox &mdash; disabled</squid-toggle>
-<squid-toggle required>Chcekbox &mdash; required</squid-toggle>
-  <squid-button>update</squid-button>
+  <squid-radio-group value="maybe">
+    <h1 slot="title">Vote</h1>
+    <squid-radio name='test' value='yes' >YES</squid-radio>
+    <squid-radio name='test' value='no'>No</squid-radio>
+    <squid-radio name='test' value='maybe'>Maybe</squid-radio>
+  </squid-radio-group>
 </body>
 <script src="squid-core-ui.js"></script>
 </script>
 <script>
-  document.querySelector('squid-button').addEventListener('click', () => {
-    console.log(document.querySelector('squid-radio-group').value);
-    document.querySelector('squid-radio-group').value = '';
-    // document.querySelector('squid-radio-group').value = ['The Last Jedi'];
-    // document.querySelector('#phantom').disabled = true;
-  })
+  
 </script>
 
 </html>

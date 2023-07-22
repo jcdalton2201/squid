@@ -38,10 +38,16 @@ export class SquidCheckboxGroup extends BaseElement{
         return {
             legend: { type:String },
             required: { type: Boolean },
+            value: { type: String, converter: {
+                fromAttribute(value) {
+                    return value.split(',');
+                }
+            } }
         };
     }
     constructor() {
         super();
+        this.value = [];
         this.internals = this.attachInternals();
         this.bindMethods(['__onChange']);
         const {form} = this;
