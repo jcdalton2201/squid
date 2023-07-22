@@ -43,7 +43,7 @@ export class SquidCheckbox extends SquidInputBase {
             readonly: { type: Boolean },
             autofocus: { type: Boolean },
             compact: { type: Boolean },
-            checked: { type: Boolean },
+            checked: { type: Boolean, reflect: true },
         };
     }
     constructor() {
