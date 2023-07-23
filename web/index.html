@@ -2,26 +2,17 @@
 <html lang="en">
 
 <body>
-  <squid-select name="pets" id="pet-select" >
-    <span slot='label'>Animals</span>
-    <option value="">--Please choose an option--</option>
-    <option value="dog">Dog</option>
-    <option value="cat">Cat</option>
-    <option value="hamster">Hamster</option>
-    <option value="parrot">Parrot</option>
-    <option value="spider">Spider</option>
-    <option value="goldfish">Goldfish</option>
-  </squid-select>
-  <select name="pets" id="pet-select" value="hamster">
-    <span slot='label'>Animals</span>
-    <option value="">--Please choose an option--</option>
-    <option value="dog">Dog</option>
-    <option value="cat">Cat</option>
-    <option value="hamster">Hamster</option>
-    <option value="parrot">Parrot</option>
-    <option value="spider">Spider</option>
-    <option value="goldfish">Goldfish</option>
-  </select>
+  <squid-combobox name="world" placeholder="Harry Potter characters" value="ME">
+    <label slot="label">Favorite Harry Potter Character</label>
+    <option value="ME">Harry Potter</option>
+    <option value="Ron Weasley">Ron Weasley</option>
+    <option value="Hermione Granger">Hermione Granger</option>
+    <option value="Albus Dumbledore">Albus Dumbledore</option>
+    <option value="Severus Snape">Severus Snape</option>
+    <option value="Sirius Black">Sirius Black</option>
+    <option value="Neville 'freaking' Longbottom">Neville Longbottom</option>
+    <option value="Voldemort">He Who Must Not Be Named</option>
+  </squid-combobox>
 </body>
 <script src="squid-core-ui.js"></script>
 </script>

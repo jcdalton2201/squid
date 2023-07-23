@@ -41,8 +41,7 @@ export class SquidCombobox extends SquidInputBase {
         return {
             value:{
                 type:String,
-                attribute:true,
-                reflect:true},
+            },
             disabled:{type:Boolean},
             required:{type:Boolean},
             readonly:{type:Boolean},
@@ -53,41 +52,41 @@ export class SquidCombobox extends SquidInputBase {
     }
     constructor() {
         super();
-        this.bindMethods(['_openOptions','_closeOptions','_keyDown', '_selectNext','_selectPrevious','_keyInput','_selectValue',]);
+        this.bindMethods(['_openOptions','_closeOptions','_keyDown', '_selectNext','_selectPrevious','_keyInput','_selectValue','_setValue']);
+        this.value = '';
         this._data = [];
         this._displayData = [];
         this.activeElemen = null;
         this.addEventListener('blur', this._closeOptions);
     }
-    set value(value) {
-        if(this.renderRoot.querySelector('input')){
-            const oldValue = this.renderRoot.querySelector('input').value;
-            if(value !== oldValue) {
-                if(this._objectData){
-                    const objValue = [...this._objectData.values()].indexOf(value);
-                    this.renderRoot.querySelector('input').value = [...this._objectData.keys()][objValue];
-                } else {
-                    this.renderRoot.querySelector('input').value = value; 
-                }
-            }
-            this.dispatchEvent(new CustomEvent('squid-input-change'));
-        }
-    }
-    get value(){
-        if(this.renderRoot.querySelector('input')){
-            if(this._objectData){
-                return this._objectData.get(this.renderRoot.querySelector('input').value);
-            }
-            return this.renderRoot.querySelector('input').value;
-        }
-        return '';
-    }
+    // set value(value) {
+    //     if(this.renderRoot?.querySelector('input')){
+    //         const oldValue = this.renderRoot.querySelector('input').value;
+    //         if(value !== oldValue) {
+    //             if(this._objectData){
+    //                 const objValue = [...this._objectData.values()].indexOf(value);
+    //                 this.renderRoot.querySelector('input').value = [...this._objectData.keys()][objValue];
+    //             } else {
+    //                 this.renderRoot.querySelector('input').value = value; 
+    //             }
+    //         }
+    //         this.dispatchEvent(new CustomEvent('squid-input-change'));
+    //     }
+    // }
+    // get value(){
+    //     if(this.renderRoot?.querySelector('input')){
+    //         if(this._objectData){
+    //             return this._objectData.get(this.renderRoot.querySelector('input').value);
+    //         }
+    //         return this.renderRoot.querySelector('input').value;
+    //     }
+    //     return '';
+    // }
     
     set data(value){
         
         let oldValue = this._data;
         this._objectData = null;
-        console.log('***********',JSON.stringify(value));
         if(value.find(item => typeof item === 'object')) {
             if(!this.datalabel || !this.datavalue){
                 console.error(`We must have a ${this.datalabel?'':' datalabel '} ${this.datavalue?'':' datavalue '}`);
@@ -103,6 +102,16 @@ export class SquidCombobox extends SquidInputBase {
     }
     firstUpdated(){
         this.buildRefs();
+        this._objectData = new Map();
+        this.renderOptions?.host?.querySelectorAll('option').forEach((element) =>{
+            this._objectData.set(element.innerText,element.value);
+            this._data = [...this._objectData.keys()];
+        });
+        if(this.value){
+            // eslint-disable-next-line no-unused-vars
+            this.value = [...this._objectData].find(([key, val]) => val == this.value)[0];
+            this.requestUpdate();
+        }
         
     }
     render(){
@@ -123,10 +132,11 @@ export class SquidCombobox extends SquidInputBase {
             ?required=${this.required}
             ?readonly=${this.readonly}
             ?autofocus=${this.autofocus}
-
             @input=${this._keyInput}
             @keydown=${this._keyDown}
             aria-describedby="helpers-${this._uid}"
+            @blur=${this._setValue}
+            .value="${this.value}"
             >
             <squid-helpers id="helpers-${this._uid}" data-ref="helpers"></squid-helpers>
         </div>
@@ -169,7 +179,7 @@ export class SquidCombobox extends SquidInputBase {
      * @param {Event} evt keydown event
      */
     _keyDown(evt){
-        const { optionsList } = this.refs;
+        const { optionsList, input } = this.refs;
         if(optionsList.hasAttribute('open')){
             if(evt.key === 'ArrowDown' || evt.key === 'ArrowRight'){
                 this._selectNext();
@@ -178,17 +188,17 @@ export class SquidCombobox extends SquidInputBase {
                 this._selectPrevious();
             }
             if(evt.key === 'Enter'){
-                const { input } = this.refs;
-                input.value = this._displayData[this.activeElement];
+                this.value = this._displayData[this.activeElement];
+                input.value = this.value;
                 this._closeOptions();
+                this.requestUpdate();
             }
         }
         // } else {
         //     this._openOptions();
         // }
         if(evt.key === 'Escape'){
-            const { input } = this.refs;
-            input.value = '';
+            this.value = '';
             this._closeOptions();
         }
     }
@@ -259,6 +269,11 @@ export class SquidCombobox extends SquidInputBase {
         this.requestUpdate('_displayData',oldValue);
     }
 
+    _setValue(){
+        const { input } = this.refs;
+        this.value = input.value;
+    }
+
     /**
      * the click event for a selected value
      * @param {MouseEvent} evt click event
@@ -267,8 +282,10 @@ export class SquidCombobox extends SquidInputBase {
         const item = parseInt(evt.currentTarget.id.replace('result-row-',''));
         const { input } = this.refs;
         input.value = this._displayData[item];
+        this.value = this._displayData[item];
         this.activeElement = undefined;
         this._closeOptions();
+        this.requestUpdate();
     }
 
 }
