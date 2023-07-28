@@ -38,7 +38,7 @@ export class SquidDatepicker extends SquidInput {
                         if(value){
                             return new Date(value);
                         }
-                        return null;
+                        return undefined;
                     },
                 },
             },
@@ -75,7 +75,7 @@ export class SquidDatepicker extends SquidInput {
                 ?disabled=${this.disabled}
                 ?required=${this.required}
                 ?readonly=${this.readonly}
-                value=${this.value ?this.value:''}
+                value=${this.value ?this.localization.format(this.value):''}
                 ?autofocus=${this.autofocus}
                 ?compact=${this.compact}
                 @input=${this.__onInput}

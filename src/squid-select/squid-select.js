@@ -32,20 +32,27 @@ export class SquidSelect extends SquidInput {
                 reflect: true
             },
             value: { 
-                type: String
+                type: String,
             },
         };
     }
     constructor() {
         super();
         this.value ='';
+        this.firstUpdate = false;
         this.bindMethods(['__slotUpdate','__onChange','__setValue']);
     }
     
     firstUpdated(){
         this.buildRefs();
-        if(this.value){
-            this.renderOptions.host.querySelectorAll('option').forEach((element)=>{
+    }
+    updated() {
+        this.updateSelect();
+    }
+    updateSelect() {
+        if(this.value && !this.firstUpdate){
+            this.firstUpdate = true;
+            this.shadowRoot.querySelectorAll('option').forEach((element)=>{
                 if(element.value === this.value){
                     element.selected = true;
                 } else {
@@ -112,6 +119,9 @@ export class SquidSelect extends SquidInput {
                 input.appendChild(item);
             });
         }
+        setTimeout(()=>{
+            this.updateSelect();
+        });
     }
     __setValue(_value){
         const oldValue = this.renderRoot.querySelector('select').value;

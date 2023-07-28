@@ -49,7 +49,7 @@ export class SquidCheckbox extends SquidInputBase {
     constructor() {
         super();
         this.bindMethods(['__onChange']);
-        this._value = false;
+        this._value = '';
     }
     get indeterminate() {
         return this.__getInput().indeterminate;

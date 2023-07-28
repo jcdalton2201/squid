@@ -2,7 +2,7 @@ import { html } from 'lit';
 import { BaseElement } from '../utils/baseElement.js';
 import { defineSquidElement } from '../utils/defineSquidElement.js';
 import styles from './squid-checkbox-group.scss';
-import {findParentForm} from '../utils/findParentForm.js';
+import { findParentForm } from '../utils/findParentForm.js';
 import { emitEvent } from '../utils/squidEvents';
 /**
  * @prop {String} legend - Set the fieldset's legend text. Reflected as a property.
@@ -30,33 +30,35 @@ The `SquidCheckbox` element is an implementation of the [checkbox element](https
 </squid-checkbox-group>
  * 
  */
-export class SquidCheckboxGroup extends BaseElement{
+export class SquidCheckboxGroup extends BaseElement {
     static get styles() {
         return [styles];
     }
     static get properties() {
         return {
-            legend: { type:String },
+            legend: { type: String },
             required: { type: Boolean },
-            value: { type: String, converter: {
-                fromAttribute(value) {
-                    return value.split(',');
+            value: {
+                type: String, converter: {
+                    fromAttribute(value) {
+                        return value.split(',');
+                    }
                 }
-            } }
+            }
         };
     }
     constructor() {
         super();
         this.value = [];
         this.internals = this.attachInternals();
-        this.bindMethods(['__onChange']);
-        const {form} = this;
+        this.bindMethods(['__onChange', 'slotChange','updateCheckBoxes']);
+        const { form } = this;
         this.addEventListener('keydown', evt => {
-            if(form && evt.code === 'Enter') {
+            if (form && evt.code === 'Enter') {
                 form.dispatchEvent(new CustomEvent('submit'));
             }
         });
-        this.addEventListener('changed',this.__onChange);
+        this.addEventListener('changed', this.__onChange);
 
     }
     /**
@@ -78,30 +80,51 @@ export class SquidCheckboxGroup extends BaseElement{
     get value() {
         return [...this.checkedElements].map(checkbox => checkbox.value);
     }
-    set value(items){
-        if(items instanceof Array){
-            this.elements.forEach((checkbox)=>{
-                if(items.includes(checkbox.value)){
-                    checkbox.checked = true;
-                } else {
-                    checkbox.checked = false;
-                }
+    set value(items) {
+        if (items instanceof Array && items.length > 0) {
+            setTimeout(()=>{
+                this.renderOptions?.host?.querySelectorAll('squid-checkbox').forEach((checkbox) => {
+                    // this.elements.forEach((checkbox)=>{
+                    if (items.includes(checkbox.value)) {
+                        checkbox.checked = true;
+                    } else {
+                        checkbox.checked = false;
+                    }
+                });
             });
         } else {
-            this.elements.map((checkbox)=> checkbox.checked = false);
+            this.elements.map((checkbox) => checkbox.checked = false);
         }
     }
     /**check the if the element is valid */
-    checkValidity (){
+    checkValidity() {
         return true;
     }
     /**
      * Custom change event from checkbox
      * @param {Event} evt change Event
      */
-    __onChange(evt){
+    __onChange(evt) {
         evt.stopImmediatePropagation();
-        emitEvent('group-changed',this.value,this);
+        emitEvent('group-changed', this.value, this);
+    }
+    slotChange() {
+        this.updateCheckBoxes();
+    }
+    updateCheckBoxes() {
+        if (this.value instanceof Array && this.value.length > 0) {
+            this.renderOptions?.host?.querySelectorAll('squid-checkbox').forEach((checkbox) => {
+                // this.elements.forEach((checkbox)=>{
+                console.log(checkbox);
+                if (this.value.includes(checkbox.value)) {
+                    checkbox.checked = true;
+                } else {
+                    checkbox.checked = false;
+                }
+            });
+        } else {
+            this.elements.map((checkbox) => checkbox.checked = false);
+        }
     }
     render() {
         return html`<fieldset class="fieldset" data-ref="fieldset">
@@ -113,7 +136,7 @@ export class SquidCheckboxGroup extends BaseElement{
                 data-ref="checkboxGroup"
                 aria-describedby="helpers"
             >
-                <slot></slot>
+                <slot @slotchange=${this.slotChange}></slot>
             </div>
         </fieldset>`;
     }

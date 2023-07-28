@@ -31,14 +31,20 @@ export class SquidRadioGroup extends BaseElement {
         return this.querySelector('squid-radio[checked]').value;
     }
     set value(_value){
-        this.options?.forEach((radio) => radio.checked = false);
-        if(this.querySelector(`squid-radio[value="${_value}"]`))
-            this.querySelector(`squid-radio[value="${_value}"]`).checked  = true;
+        setTimeout(()=>{
+            this.options?.forEach((radio) => {
+                if(radio.value === _value) {
+                    radio.checked = true;
+                } else {
+                    radio.checked = false;
+                }
+            });
+        });
     }
     constructor(){
         super();
         this.internals = this.attachInternals();
-        this.bindMethods(['__onChange','__onFieldsetKeyup']);
+        this.bindMethods(['__onChange','__onFieldsetKeyup','slotChange']);
     }
     async firstUpdated(){
         this.options = [...this.querySelectorAll('squid-radio')].map(item => item);
@@ -51,13 +57,16 @@ export class SquidRadioGroup extends BaseElement {
         return html`
 <fieldset>
         <legend><slot name='title'></slot></legend>
-        <slot @squid-change=${this.__onChange}></slot>
+        <slot @squid-change=${this.__onChange} @slotchange=${this.slotChange}></slot>
 </fielset>
         `;
     }
     /**check the if the element is valid */
     checkValidity (){
         return true;
+    }
+    slotChange(){
+       
     }
     /**
      * update all of the radio buttons.
