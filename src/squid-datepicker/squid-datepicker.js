@@ -30,7 +30,11 @@ export class SquidDatepicker extends SquidInput {
                 converter: {
                     toAttribute(value) {
                         if(value instanceof Date){
-                            return this.localization.format(value);
+                            return new Intl.DateTimeFormat('en-US',{
+                                day: '2-digit',
+                                month: '2-digit',
+                                year: 'numeric',
+                            }).format(value);
                         } 
                         return value;
                     },
@@ -46,7 +50,7 @@ export class SquidDatepicker extends SquidInput {
     }
     constructor() {
         super();
-        this.bindMethods(['toggleCalendar', 'selectedValue']);
+        this.bindMethods(['toggleCalendar', 'selectedValue', 'dateConverter']);
         const lang = document.querySelector('html').lang || 'en-US';
         this.dayFormat = this.dayFormat || '2-digit';
         this.monthFormat = this.monthFormat || '2-digit';
@@ -59,6 +63,11 @@ export class SquidDatepicker extends SquidInput {
     }
     firstUpdated(){
         this.buildRefs();
+    }
+    dateConverter(){
+        return {
+            
+        };
     }
     render(){
         return html`
@@ -108,7 +117,7 @@ export class SquidDatepicker extends SquidInput {
         } catch (error) {
             input.value = '';
         }
-        this.value = input.value;
+        this.value = new Date(input.value);
         calendar.classList.toggle('hide');
     }
 }

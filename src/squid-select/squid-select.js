@@ -46,11 +46,22 @@ export class SquidSelect extends SquidInput {
     firstUpdated(){
         this.buildRefs();
     }
-    updated() {
+    /**
+     * 
+     * @param {Map} changedProperties 
+     */
+    updated(changedProperties) {
+        if(changedProperties.has('value')){
+            const newValue = changedProperties.get('value');
+            if(newValue !== this.value){
+                this.firstUpdate = false;
+            }
+        }
         this.updateSelect();
+
     }
     updateSelect() {
-        if(this.value && !this.firstUpdate){
+        if(this.value && !this.firstUpdate && this.shadowRoot.querySelector('option')){
             this.firstUpdate = true;
             this.shadowRoot.querySelectorAll('option').forEach((element)=>{
                 if(element.value === this.value){
@@ -61,6 +72,10 @@ export class SquidSelect extends SquidInput {
             });
             this.requestUpdate();
         }
+    }
+    get selectedIndex() {
+        const input = this.renderRoot.querySelector('select');
+        return input.selectedIndex;
     }
     get checkValidity() {
         const input = this.renderRoot.querySelector('select');

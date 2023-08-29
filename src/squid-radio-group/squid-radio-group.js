@@ -4,6 +4,7 @@ import { defineSquidElement } from '../utils/defineSquidElement.js';
 import styles from './squid-radio-group.scss';
 import '../squid-radio/squid-radio.js';
 import { BaseElement } from '../utils/baseElement.js';
+import { emitEvent } from '../utils/squidEvents.js';
 /**
  * @tag squid-radio-group
  * @summary a collection of radio buttons describing a set of related options. Only one radio button in a group can be selected at the same time.
@@ -81,6 +82,7 @@ export class SquidRadioGroup extends BaseElement {
                 item.__getInput().checked = false;
             }
         });
+        emitEvent('change',evt.target.value, this);
     }
 
     /**

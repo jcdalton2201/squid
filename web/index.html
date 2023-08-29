@@ -2,12 +2,24 @@
 <html lang="en">
 
 <body>
-  <squid-datepicker formInput  id="impactAnaysisData" name="impactAnaysisData" ref="impactAnaysisData" placeholder="please input date" value="">ARB Date</squid-datepicker>
+  <squid-select name="pets" id="pet-select" value="dog">
+     <span slot='label'>Animals</span>
+       <option value="">--Please choose an option--</option>
+       <option value="dog">Dog</option>
+       <option value="cat">Cat</option>
+       <option value="hamster">Hamster</option>
+       <option value="parrot">Parrot</option>
+       <option value="spider">Spider</option>
+       <option value="goldfish">Goldfish</option>
+   </squid-select>
 </body>
 <script src="squid-core-ui.js"></script>
 </script>
 <script>
-
+setTimeout(()=>{
+  document.querySelector('squid-select').value = 'hamster';
+  console.log('change');
+},3000)
 </script>
 
 </html>
