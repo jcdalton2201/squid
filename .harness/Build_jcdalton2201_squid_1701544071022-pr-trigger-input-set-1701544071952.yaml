@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_jcdalton2201_squid_1701544071022-pr-trigger-input-set
+  identifier: Build_jcdalton2201_squid_1701544071022prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_jcdalton2201_squid_1701544071022
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
