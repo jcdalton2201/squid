@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_jcdalton2201_squid_1701544071022-push-trigger-input-set
+  identifier: Build_jcdalton2201_squid_1701544071022pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_jcdalton2201_squid_1701544071022
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
