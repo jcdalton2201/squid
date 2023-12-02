@@ -31,17 +31,36 @@ pipeline:
                     command: npm run test
                   timeout: ""
                   type: Run
-              - step:
-                  identifier: npmtest1
-                  name: npm_test
-                  spec:
-                    command: npm run lint
-                  timeout: ""
-                  type: Run
           platform:
-            arch: Amd64
             os: Linux
+            arch: Amd64
           runtime:
-            spec: {}
             type: Cloud
+            spec: {}
         type: CI
+    - stage:
+        name: Haness Apprval
+        identifier: Haness_Apprval
+        description: ""
+        type: Approval
+        spec:
+          execution:
+            steps:
+              - step:
+                  name: Jason Approval
+                  identifier: Jason_Approval
+                  type: HarnessApproval
+                  timeout: 1d
+                  spec:
+                    approvalMessage: |-
+                      Please review the following information
+                      and approve the pipeline progression
+                    includePipelineExecutionHistory: true
+                    approvers:
+                      minimumCount: 1
+                      disallowPipelineExecutor: false
+                      userGroups:
+                        - account._account_all_users
+                    isAutoRejectEnabled: false
+                    approverInputs: []
+        tags: {}
